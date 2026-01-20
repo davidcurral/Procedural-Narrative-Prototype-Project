@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7c1xfww0va0j"]
+
+[ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://d0nbyjr02ewts" path="res://Scripts/game_state.gd" id="3_8gbba"]
+[ext_resource type="Resource" uid="uid://cb3cii30s3bfv" path="res://Resources/card_0.tres" id="4_21xkr"]
+[ext_resource type="Resource" uid="uid://bdmamyf0k44xw" path="res://Resources/card_1.tres" id="5_6bp64"]
+[ext_resource type="Resource" uid="uid://cilfe2wgdflto" path="res://Resources/card_3.tres" id="6_344ge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u77a"]
+bg_color = Color(0.60318226, 0.67185843, 0.7425517, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bo1nx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7u77a")
+
+[node name="GameState" type="Node" parent="."]
+script = ExtResource("3_8gbba")
+card_list = [ExtResource("4_21xkr"), ExtResource("5_6bp64"), ExtResource("6_344ge")]
