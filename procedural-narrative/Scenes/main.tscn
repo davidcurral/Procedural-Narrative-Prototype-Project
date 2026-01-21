@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=9 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
-[ext_resource type="Script" uid="uid://d0nbyjr02ewts" path="res://Scripts/game_state.gd" id="3_8gbba"]
-[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card.gd" id="3_21xkr"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_21xkr"]
 [ext_resource type="Resource" uid="uid://cb3cii30s3bfv" path="res://Resources/card_0.tres" id="4_21xkr"]
 [ext_resource type="Resource" uid="uid://bdmamyf0k44xw" path="res://Resources/card_1.tres" id="5_6bp64"]
 [ext_resource type="Resource" uid="uid://dptf0vp2o7gbu" path="res://Resources/card_2.tres" id="6_344ge"]
@@ -23,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bo1nx")
 card_scene = ExtResource("2_6bp64")
-card_list = Array[ExtResource("3_21xkr")]([ExtResource("4_21xkr"), ExtResource("5_6bp64"), ExtResource("6_344ge")])
+card_list = Array[ExtResource("3_21xkr")]([ExtResource("5_6bp64"), ExtResource("6_344ge"), ExtResource("4_21xkr")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -55,8 +54,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.56
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bp64")
-
-[node name="GameState" type="Node" parent="."]
-script = ExtResource("3_8gbba")
 
 [connection signal="pressed" from="Panel/HBoxContainer/NextCard" to="." method="_on_next_card_pressed"]

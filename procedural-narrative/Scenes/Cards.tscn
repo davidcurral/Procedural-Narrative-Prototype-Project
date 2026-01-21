@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cephiiu50nyso"]
+[gd_scene load_steps=3 format=3 uid="uid://cephiiu50nyso"]
+
+[ext_resource type="Script" uid="uid://omiivakegf6c" path="res://Scripts/card_item.gd" id="1_3q7ms"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dooop"]
 bg_color = Color(0.728822, 0.728822, 0.7288219, 1)
@@ -15,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3q7ms")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(350, 550)
