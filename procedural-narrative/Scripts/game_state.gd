@@ -8,13 +8,24 @@ When you add memory, GameState becomes both:
 A state machine
 A story historian
 '''
+# -- Static Data ---
+var card_list: Array [Cards] = []
 
+
+# -- Runtime Data --
+var card_state: Dictionary = {}
+
+# -- Signals --
 signal card_selected
-
-@export var card_list: Array[Cards]
-@export var card_scene = PackedScene
+#signal updtae_UI
 
 
-func _ready() -> void: # initialize state and emit first card
-	pass
+	
+func set_static_data(cards: Array[Cards]):
+	card_list = cards
+	card_selected.emit()
+	
+func initialize():
+	card_state.clear()
+	
 	
