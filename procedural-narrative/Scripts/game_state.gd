@@ -1,7 +1,6 @@
 extends Node
 
-'''
-Cartas que serão instanciadas 1 a 1 como Reigns
+'''Cartas que serão instanciadas 1 a 1 como Reigns
 
 When you add memory, GameState becomes both:
 A state machine
@@ -13,7 +12,6 @@ Logic Loop:
 	3 - Emit next card
 	
 	IMPORTANT - ❗ GameState should NOT reference Main. Ever.
-	
 '''
 # -- Static Data ---
 var all_card_list: Array [Cards] = []
@@ -23,19 +21,31 @@ var rare_mult = 0.75
 var epic_mult = 0.5
 var max_weight = .7
 
-
 # -- Runtime Data --
 #var card_visibility_state: Dictionary = {}
 var available_cards_list: Dictionary = {}
 var rng = RandomNumberGenerator.new()
+var stored_current_card
+
+# -- World variables --
+var world_state: Dictionary = {"church": 50,"army": 50,"wealth": 50,"people": 50,} 
+var memory_flags: Dictionary = {}
+var unlocked_arcs: Array = []
+var card_cooldowns: Dictionary = {}
+
+const LEFT_CHOICE = 0
+const RIGHT_CHOICE = 1
+
 
 # -- Signals --
 signal card_selected (card_resource)
 signal choice_made (choice_id)
+signal world_change 
 
 # -- Func --
 func _ready():
 	choice_made.connect(_on_choice_made)
+	
 	
 	
 func set_static_data(cards: Array[Cards], initial_cards : Array [Cards]):
@@ -45,20 +55,23 @@ func set_static_data(cards: Array[Cards], initial_cards : Array [Cards]):
 	
 func initialize():
 	available_cards_list.clear()
-	
 	for card_data in all_card_list:
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
 				
-	#card_selected.emit(card_id)
 	show_first_card()
 
 	
 func _on_choice_made(choice_id):
-	pick_next_card()	
+	pick_next_card(choice_id)	
 
-func pick_next_card(): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
-	resolve_current_card()
+func pick_next_card(choice_id: int): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
+	
+	if choice_id == LEFT_CHOICE:
+		apply_effects(stored_current_card.left_effects)
+	else:
+		apply_effects(stored_current_card.right_effects)
+
 	compute_card_probability_of_appearing() # futuro tirar isto do loop e adicionar uma carta que passa sempre se necess~ário
 	var 	weight_treshold = rng.randf_range(0,max_weight)
 
@@ -67,13 +80,21 @@ func pick_next_card(): #Resolve current card → compute weights for all valid c
 		if card_resource.weight >= weight_treshold:
 			print("Card Name: " ,card_resource.name , " Weight: ", card_resource.weight ," >= ","Treshold: ", snapped(weight_treshold, 0.01))
 			card_selected.emit(card_resource)
+			stored_current_card = card_resource
 			break
 		else:
 			weight_treshold = rng.randf_range(0,max_weight)
 
-		
-func resolve_current_card():
-	pass
+	
+
+func apply_effects(effects: Array) -> void:
+	for effect in effects:
+		match effect["type"]:
+			"stat": world_state[effect["target"]] += effect["value"] 
+			"flag": memory_flags[effect["target"]] = effect["value"] 
+			"unlock": unlocked_arcs.append(effect["target"]) 
+			"cooldown": card_cooldowns[effect["target"]] = effect["value"]
+	world_change.emit()
 	
 func compute_card_probability_of_appearing() -> void:
 	var total_available_cards = available_cards_list.size()
@@ -84,10 +105,12 @@ func compute_card_probability_of_appearing() -> void:
 		elif card_resource.card_rarity == 1:
 			card_resource.weight = 1.0/total_available_cards * rare_mult
 		elif card_resource.card_rarity == 2:
-			card_resource.weight = 1.0/total_available_cards * epic_mult
-
-			
+			card_resource.weight = 1.0/total_available_cards * epic_mult		
 	
 func show_first_card():
-	rng.randi_range(0,len(initial_card_list))
+	var card_picked = rng.randi_range(0,len(available_cards_list))
+	var card_resource = available_cards_list[card_picked] 
+	stored_current_card = card_resource
+	card_selected.emit(card_resource)
+
 	

@@ -10,33 +10,42 @@ Main emits choice made
 @export var initial_card_list: Array[Cards]
 
 @onready var card_display = $Panel/HBoxContainer/Panel
-@onready var card_node = $Panel/HBoxContainer/Panel/Cards
-var current_card = 0
-var choice_id
-var previous_card_id
-#var i = 0
+@onready var card_node = $Panel/HBoxContainer/Panel/VBoxContainer/Cards
+
+#var choice_id
+var right_choice
+var left_choice
+const LEFT_CHOICE = 0
+const RIGHT_CHOICE = 1
+
+
+#-- World Variables -- 
+@onready var world_val1 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label
+@onready var world_val2 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label2
+@onready var world_val3 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label3
 
 func _ready():
 	GameState.card_selected.connect(updateUI)
 	GameState.set_static_data(card_list, initial_card_list)	
+	GameState.world_change.connect(world_UI)
 	GameState.initialize()
 
-	
 
 func updateUI(card_resource):
 		card_node.setup(card_resource)
+		world_UI()
+
+func world_UI():
+	world_val1.text = "Church: " + str(GameState.world_state.get("church"))
+	world_val2.text = "Wealth:  " + str(GameState.world_state.get("wealth"))
+	world_val3.text = "Army:  " + str(GameState.world_state.get("army"))
 
 
-	
-
-'''func createUI():
-	for card_id in GameState.available_cards_list.keys(): # Get id from card
-		var card_resource = GameState.available_cards_list[card_id] # retreving the dictionary stored as valued
-		var card_node = card_scene.instantiate()
-		card_display.add_child(card_node)
-		card_node.setup(card_resource)
-		card_node.visible = false'''
-
-
-func _on_next_card_pressed() -> void:
+func _on_next_card_pressed(choice_id) -> void:
 	GameState.choice_made.emit(choice_id)
+
+func _on_right_choice_pressed() -> void:
+	_on_next_card_pressed(RIGHT_CHOICE)
+
+func _on_left_choice_pressed() -> void:
+	_on_next_card_pressed(LEFT_CHOICE)
