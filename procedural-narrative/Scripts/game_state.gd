@@ -19,9 +19,9 @@ Logic Loop:
 var all_card_list: Array [Cards] = []
 var initial_card_list: Array[Cards]
 var common_mult = 1
-var rare_mult = 0.5
-var epic_mult = 0.1
-var max_weight = 1
+var rare_mult = 0.75
+var epic_mult = 0.5
+var max_weight = .7
 
 
 # -- Runtime Data --
@@ -30,12 +30,12 @@ var available_cards_list: Dictionary = {}
 var rng = RandomNumberGenerator.new()
 
 # -- Signals --
-signal card_selected
-signal choice_made
+signal card_selected (card_resource)
+signal choice_made (choice_id)
 
 # -- Func --
 func _ready():
-	pass
+	choice_made.connect(_on_choice_made)
 	
 	
 func set_static_data(cards: Array[Cards], initial_cards : Array [Cards]):
@@ -50,39 +50,42 @@ func initialize():
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
 				
-	card_selected.emit()
+	#card_selected.emit(card_id)
 	show_first_card()
-	#print(all_card_list)
-	#print(available_cards_list)
+
 	
+func _on_choice_made(choice_id):
+	pick_next_card()	
+
 func pick_next_card(): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
-	var card_not_picked = true
-	
 	resolve_current_card()
-	
-	while card_not_picked:
-		var card_weight = compute_card_probability_of_appearing() 
-		var 	weight_treshold = rng.randf_range(0,max_weight)
-		if card_weight >= weight_treshold:
-			card_not_picked = false
-			card_selected.emit()
-		return
-	
-	
+	compute_card_probability_of_appearing() # futuro tirar isto do loop e adicionar uma carta que passa sempre se necess~ário
+	var 	weight_treshold = rng.randf_range(0,max_weight)
+
+	for card_id in available_cards_list.keys():
+		var card_resource = available_cards_list[card_id] 
+		if card_resource.weight >= weight_treshold:
+			print("Card Name: " ,card_resource.name , " Weight: ", card_resource.weight ," >= ","Treshold: ", snapped(weight_treshold, 0.01))
+			card_selected.emit(card_resource)
+			break
+		else:
+			weight_treshold = rng.randf_range(0,max_weight)
+
+		
 func resolve_current_card():
 	pass
 	
-func compute_card_probability_of_appearing() -> float:
+func compute_card_probability_of_appearing() -> void:
 	var total_available_cards = available_cards_list.size()
-	var weight: float = 0.0
-	for card_data in all_card_list:
-		if available_cards_list[card_data.card_rarity] == 'common':
-			weight = 1.0/total_available_cards * common_mult
-		elif available_cards_list[card_data.card_rarity] == 'rare':
-			weight = 1.0/total_available_cards * rare_mult
-		elif available_cards_list[card_data.card_rarity] == 'epic':
-			weight = 1.0/total_available_cards * epic_mult
-	return weight
+	for card_id in available_cards_list.keys(): # Get id from card
+		var card_resource = available_cards_list[card_id] # returns int no string
+		if card_resource.card_rarity == 0:
+			card_resource.weight = 1.0/total_available_cards * common_mult
+		elif card_resource.card_rarity == 1:
+			card_resource.weight = 1.0/total_available_cards * rare_mult
+		elif card_resource.card_rarity == 2:
+			card_resource.weight = 1.0/total_available_cards * epic_mult
+
 			
 	
 func show_first_card():

@@ -4,4 +4,9 @@
 
 [resource]
 script = ExtResource("1_hax5l")
+name = "Card 3"
+id = 3
+value0 = 3.0
+value1 = 3.5
+value2 = -3.5
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

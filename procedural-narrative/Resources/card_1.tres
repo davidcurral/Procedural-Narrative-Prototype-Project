@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_snm3h")
+card_rarity = 1
 name = "Card 1"
 id = 1
 value1 = 1.5

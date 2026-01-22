@@ -11,7 +11,7 @@ enum card_rarity_options {common, rare, epic}
 @export var available: bool = true
 @export var visible: bool = true
 
-#@export var weight: float
+@export var weight: float
 
 
 @export var value0: float

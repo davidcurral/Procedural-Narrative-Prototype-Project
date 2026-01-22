@@ -18,3 +18,6 @@ func Update_Card_UI():
 	val0.text = "Value 0 : " + str(card_data.value0)
 	val1.text = "Value 1 : " + str(card_data.value1)
 	val2.text = "Value 2 : " + str(card_data.value2)
+
+func return_card_ID():
+	return card_data.id

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=12 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
@@ -6,6 +6,9 @@
 [ext_resource type="Resource" uid="uid://cb3cii30s3bfv" path="res://Resources/card_0.tres" id="4_21xkr"]
 [ext_resource type="Resource" uid="uid://bdmamyf0k44xw" path="res://Resources/card_1.tres" id="5_6bp64"]
 [ext_resource type="Resource" uid="uid://dptf0vp2o7gbu" path="res://Resources/card_2.tres" id="6_344ge"]
+[ext_resource type="Resource" uid="uid://cilfe2wgdflto" path="res://Resources/card_3.tres" id="7_ynf5e"]
+[ext_resource type="Resource" uid="uid://k6053o8spyal" path="res://Resources/card_4.tres" id="8_hptm8"]
+[ext_resource type="Resource" uid="uid://dncpnwud4xho3" path="res://Resources/card_5.tres" id="9_d1ilt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u77a"]
 bg_color = Color(0.60318226, 0.67185843, 0.7425517, 1)
@@ -22,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bo1nx")
 card_scene = ExtResource("2_6bp64")
-card_list = Array[ExtResource("3_21xkr")]([ExtResource("5_6bp64"), ExtResource("6_344ge"), ExtResource("4_21xkr")])
+card_list = Array[ExtResource("3_21xkr")]([ExtResource("4_21xkr"), ExtResource("5_6bp64"), ExtResource("6_344ge"), ExtResource("7_ynf5e"), ExtResource("8_hptm8"), ExtResource("9_d1ilt")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -54,5 +57,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.56
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bp64")
+
+[node name="Cards" parent="Panel/HBoxContainer/Panel" instance=ExtResource("2_6bp64")]
+layout_mode = 1
 
 [connection signal="pressed" from="Panel/HBoxContainer/NextCard" to="." method="_on_next_card_pressed"]
