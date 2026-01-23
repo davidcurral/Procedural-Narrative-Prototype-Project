@@ -6,8 +6,10 @@
 script = ExtResource("1_wyyf0")
 name = "Card 5"
 id = 5
-left_card_target = 3
-left_card_number_value = 321
-right_card_target = 3
-right_card_number_value = -234
+left_card_target_1 = 1
+left_card_number_value_1 = 100
+left_card_number_value_2 = -100
+right_card_number_value_1 = 25
+right_card_target_2 = 1
+right_card_number_value_2 = -10
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

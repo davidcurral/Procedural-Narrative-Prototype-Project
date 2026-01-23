@@ -69,8 +69,11 @@ func pick_next_card(choice_id: int): #Resolve current card → compute weights f
 	
 	if choice_id == LEFT_CHOICE:
 		apply_effects(stored_current_card.left_effects)
+
 	else:
 		apply_effects(stored_current_card.right_effects)
+
+	#EffectUtils.enum_to_string(stored_current_card.target_options, stored_current_card.effect["target"])
 
 	compute_card_probability_of_appearing() # futuro tirar isto do loop e adicionar uma carta que passa sempre se necess~ário
 	var 	weight_treshold = rng.randf_range(0,max_weight)

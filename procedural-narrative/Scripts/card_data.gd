@@ -28,28 +28,43 @@ enum type_options {stat, flag, unlock}
 enum target_options {church, people, wealth, army}
 
 # -- Left Variables --
-@export_group("Left Group")
-@export var left_card_type: type_options
-@export var left_card_target: target_options
-@export var left_card_number_value: int
+# -- 1º Effect--
 
-#enum value_options {int, bool}  # ask if it is possible to choose
-#@export var card_value: value_options
+@export_group("Left Group")
+@export_subgroup("1º Effect")
+@export var left_card_type_1: type_options
+@export var left_card_target_1: target_options
+@export var left_card_number_value_1: int
+
+# -- 2º Effect--
+@export_subgroup("2º Effect")
+@export var left_card_type_2: type_options
+@export var left_card_target_2: target_options
+@export var left_card_number_value_2: int
 
 
 # -- Right Variables --
+# -- 1º Effect--
 @export_group("Right Group")
-@export var right_card_type: type_options
-@export var right_card_target: target_options
-@export var right_card_number_value: int
+@export_subgroup("1º Effect")
+@export var right_card_type_1: type_options
+@export var right_card_target_1: target_options
+@export var right_card_number_value_1: int
 
-func _init():
+# -- 2º Effect--
+@export_subgroup("2º Effect")
+@export var right_card_type_2: type_options
+@export var right_card_target_2: target_options
+@export var right_card_number_value_2: int
+
+
+func build_effects():
 	left_effects = [
-	#{ card_type: "stat", card_target: "wealth", card_value : card_number_value },
-	{"type": left_card_type, "target": left_card_target, "value": left_card_number_value }#,
-	#{ card_type: "flag", card_target: "angered_church", card_value : true}
+	{"type": left_card_type_1, "target": left_card_target_1, "value": left_card_number_value_1},
+	{"type": left_card_type_2, "target": left_card_target_2, "value": left_card_number_value_2}
 	]
 
 	right_effects = [
-	#{ card_type: "stat", card_target: "army", "value": card_number_value }
-	{"type": right_card_type, "target": right_card_target, "value": right_card_number_value }]
+	{"type": right_card_type_1, "target": right_card_target_1, "value": right_card_number_value_1 },
+	{"type": right_card_type_2, "target": right_card_target_2, "value": right_card_number_value_2 }
+	]
