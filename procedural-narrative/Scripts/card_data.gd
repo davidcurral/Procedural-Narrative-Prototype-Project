@@ -27,9 +27,15 @@ var right_effects: Array = []
 enum type_options {stat, flag, unlock}
 enum target_options {church, people, wealth, army}
 
+const TARGET_KEYS = {
+	target_options.church: "church",
+	target_options.people: "people",
+	target_options.wealth: "wealth",
+	target_options.army: "army"
+}
+
 # -- Left Variables --
 # -- 1º Effect--
-
 @export_group("Left Group")
 @export_subgroup("1º Effect")
 @export var left_card_type_1: type_options

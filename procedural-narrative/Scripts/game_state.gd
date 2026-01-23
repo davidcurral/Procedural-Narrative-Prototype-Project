@@ -21,6 +21,7 @@ var rare_mult = 0.75
 var epic_mult = 0.5
 var max_weight = .7
 
+
 # -- Runtime Data --
 #var card_visibility_state: Dictionary = {}
 var available_cards_list: Dictionary = {}
@@ -66,14 +67,11 @@ func _on_choice_made(choice_id):
 	pick_next_card(choice_id)	
 
 func pick_next_card(choice_id: int): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
-	
 	if choice_id == LEFT_CHOICE:
 		apply_effects(stored_current_card.left_effects)
 
 	else:
 		apply_effects(stored_current_card.right_effects)
-
-	#EffectUtils.enum_to_string(stored_current_card.target_options, stored_current_card.effect["target"])
 
 	compute_card_probability_of_appearing() # futuro tirar isto do loop e adicionar uma carta que passa sempre se necess~ário
 	var 	weight_treshold = rng.randf_range(0,max_weight)
@@ -81,22 +79,21 @@ func pick_next_card(choice_id: int): #Resolve current card → compute weights f
 	for card_id in available_cards_list.keys():
 		var card_resource = available_cards_list[card_id] 
 		if card_resource.weight >= weight_treshold:
-			print("Card Name: " ,card_resource.name , " Weight: ", card_resource.weight ," >= ","Treshold: ", snapped(weight_treshold, 0.01))
+			#print("Card Name: " ,card_resource.name , " Weight: ", card_resource.weight ," >= ","Treshold: ", snapped(weight_treshold, 0.01))
 			card_selected.emit(card_resource)
 			stored_current_card = card_resource
 			break
 		else:
 			weight_treshold = rng.randf_range(0,max_weight)
 
-	
-
-func apply_effects(effects: Array) -> void:
+func apply_effects(effects: Array) -> void:    # Careful with enums, they appear to be strings but are ints, when comparing need to match
 	for effect in effects:
 		match effect["type"]:
-			"stat": world_state[effect["target"]] += effect["value"] 
-			"flag": memory_flags[effect["target"]] = effect["value"] 
-			"unlock": unlocked_arcs.append(effect["target"]) 
-			"cooldown": card_cooldowns[effect["target"]] = effect["value"]
+			stored_current_card.type_options.stat: apply_world_stat(effect)
+			stored_current_card.type_options.flag: memory_flags[effect["target"]] = effect["value"] 
+			stored_current_card.type_options.unlock: unlocked_arcs.append(effect["target"]) 
+			stored_current_card.type_option.countdown: card_cooldowns[effect["target"]] = effect["value"]
+
 	world_change.emit()
 	
 func compute_card_probability_of_appearing() -> void:
@@ -109,6 +106,15 @@ func compute_card_probability_of_appearing() -> void:
 			card_resource.weight = 1.0/total_available_cards * rare_mult
 		elif card_resource.card_rarity == 2:
 			card_resource.weight = 1.0/total_available_cards * epic_mult		
+	
+func apply_world_stat(effect):
+	var key = stored_current_card.TARGET_KEYS.get(effect["target"])
+	if key == null:
+		push_error("Unknown stat target")
+		return
+
+	world_state[key] = world_state.get(key, 0) + effect["value"]
+	
 	
 func show_first_card():
 	var card_picked = rng.randi_range(0,len(available_cards_list))

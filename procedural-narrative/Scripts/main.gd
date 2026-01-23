@@ -23,6 +23,7 @@ const RIGHT_CHOICE = 1
 @onready var world_val1 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label
 @onready var world_val2 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label2
 @onready var world_val3 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label3
+@onready var world_val4 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label4
 
 func _ready():
 	GameState.card_selected.connect(updateUI)
@@ -36,9 +37,11 @@ func updateUI(card_resource):
 		world_UI()
 
 func world_UI():
+	#print("Changing Game World Variables")
 	world_val1.text = "Church: " + str(GameState.world_state.get("church"))
 	world_val2.text = "Wealth:  " + str(GameState.world_state.get("wealth"))
 	world_val3.text = "Army:  " + str(GameState.world_state.get("army"))
+	world_val4.text = "People::  " + str(GameState.world_state.get("people"))
 
 
 func _on_next_card_pressed(choice_id) -> void:
