@@ -1,16 +1,29 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dptf0vp2o7gbu"]
+[gd_resource type="Resource" script_class="Cards" load_steps=5 format=3 uid="uid://dptf0vp2o7gbu"]
 
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_47m10"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="1_ko13b"]
+
+[sub_resource type="Resource" id="Resource_jdmtv"]
+script = ExtResource("1_47m10")
+type = 2
+value = 1
+arc = 1
+description = "Triggers church tax"
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_47m10"]
+script = ExtResource("1_47m10")
+type = 2
+target = 3
+value = 1
+arc = 4
+description = "Army gains strenght"
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [resource]
 script = ExtResource("1_ko13b")
 name = "Card 2"
 id = 2
-available = false
-left_card_number_value_1 = 100
-left_card_target_2 = 2
-left_card_number_value_2 = -200
-right_card_number_value_1 = -100
-right_card_target_2 = 2
-right_card_number_value_2 = 250
+left_effects = Array[ExtResource("1_47m10")]([SubResource("Resource_jdmtv")])
+right_effects = Array[ExtResource("1_47m10")]([SubResource("Resource_47m10")])
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

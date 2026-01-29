@@ -30,9 +30,9 @@ var stored_current_card
 
 # -- World variables --
 var world_state: Dictionary = {"church": 50,"army": 50,"wealth": 50,"people": 50,} 
-var memory_flags: Dictionary = {}
-var unlocked_arcs: Array = []
-var card_cooldowns: Dictionary = {}
+#var memory_flags: Dictionary = {}
+#var unlocked_arcs: Array = []
+#var card_cooldowns: Dictionary = {}
 
 const LEFT_CHOICE = 0
 const RIGHT_CHOICE = 1
@@ -79,7 +79,6 @@ func pick_next_card(choice_id: int): #Resolve current card → compute weights f
 	for card_id in available_cards_list.keys():
 		var card_resource = available_cards_list[card_id] 
 		if card_resource.weight >= weight_treshold:
-			#print("Card Name: " ,card_resource.name , " Weight: ", card_resource.weight ," >= ","Treshold: ", snapped(weight_treshold, 0.01))
 			card_selected.emit(card_resource)
 			stored_current_card = card_resource
 			break
@@ -90,9 +89,9 @@ func apply_effects(effects: Array) -> void:    # Careful with enums, they appear
 	for effect in effects:
 		match effect["type"]:
 			stored_current_card.type_options.stat: apply_world_stat(effect)
-			stored_current_card.type_options.flag: memory_flags[effect["target"]] = effect["value"] 
-			stored_current_card.type_options.unlock: unlocked_arcs.append(effect["target"]) 
-			stored_current_card.type_option.countdown: card_cooldowns[effect["target"]] = effect["value"]
+			stored_current_card.type_options.flag: GameMemory.memory_flags[effect["target"]] = effect["value"] 
+			stored_current_card.type_options.unlock: GameMemory.memory_arcs[effect["target"]] = effect["value"] 
+			stored_current_card.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
 
 	world_change.emit()
 	

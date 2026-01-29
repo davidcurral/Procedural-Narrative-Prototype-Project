@@ -10,25 +10,36 @@ var card_data
 
 func setup(_card_data):
 	card_data = _card_data
-	card_data.build_effects()
 	Update_Card_UI()
 	
 func Update_Card_UI():
 	name_label.text = card_data.name
 	
 	var left_text := "Left\n"
-
 	for effect in card_data.left_effects:
-		var target_name = enum_to_string(card_data.target_options, effect["target"])
+		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
-		left_text += "%s: %+d\n" % [target_name, value]
-	left.text = left_text
+		var description = effect["description"]
+		var arc = effect["arc"]
+		if arc == 0:
+			left_text += "%s: %+d\n" % [target_name, value] + "\n" + description
+		else:
+			left_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" + description
+
+		
+	left.text = left_text 
 	
 	var right_text := "Right\n"
 	for effect in card_data.right_effects:
-		var target_name = enum_to_string(card_data.target_options, effect["target"])
+		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
-		right_text += "%s: %+d\n" % [target_name, value]
+		var description = effect["description"]
+		var arc = effect["arc"]
+		if arc == 0:
+			right_text += "%s: %+d\n" % [target_name, value] + "\n" + description
+		else:
+			right_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" + description
+
 
 	right.text = right_text
 

@@ -1,16 +1,35 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://cb3cii30s3bfv"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cb3cii30s3bfv"]
 
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_5a8tv"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="1_p537c"]
+
+[sub_resource type="Resource" id="Resource_5a8tv"]
+script = ExtResource("1_5a8tv")
+value = -20
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_na1hv"]
+script = ExtResource("1_5a8tv")
+target = 1
+value = 20
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_8aaqp"]
+script = ExtResource("1_5a8tv")
+value = 15
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_vbudk"]
+script = ExtResource("1_5a8tv")
+target = 3
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [resource]
 resource_name = "Card 0"
 script = ExtResource("1_p537c")
 card_rarity = 1
 name = "Card 0"
-left_card_number_value_1 = 10
-left_card_target_2 = 1
-left_card_number_value_2 = 10
-right_card_number_value_1 = -10
-right_card_target_2 = 1
-right_card_number_value_2 = 20
+left_effects = [SubResource("Resource_5a8tv"), SubResource("Resource_na1hv")]
+right_effects = Array[ExtResource("1_5a8tv")]([SubResource("Resource_8aaqp"), SubResource("Resource_vbudk")])
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

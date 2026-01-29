@@ -4,12 +4,25 @@
 
 [resource]
 script = ExtResource("1_wyyf0")
+card_rarity = null
 name = "Card 5"
 id = 5
-left_card_target_1 = 1
-left_card_number_value_1 = 100
+available = null
+weight = null
+left_card_type_1 = 1
+left_card_target_1 = null
+left_card_number_value_1 = 1
+card_discription_left_1 = "This card represent the first chapter of Church Arc"
+left_card_type_2 = null
+left_card_target_2 = null
 left_card_number_value_2 = -100
+card_discription_left_2 = null
+right_card_type_1 = null
+right_card_target_1 = null
 right_card_number_value_1 = 25
+card_discription_right_1 = null
+right_card_type_2 = null
 right_card_target_2 = 1
 right_card_number_value_2 = -10
+card_discription_right_2 = null
 metadata/_custom_type_script = "uid://nvquj6gcvoei"
