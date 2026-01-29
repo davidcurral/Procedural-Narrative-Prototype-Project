@@ -25,4 +25,5 @@ const ARC_KEYS = {
 @export var target: target_options
 @export var value: int
 @export var arc: arc_options = 0
+var arc_chapter: Array = []
 @export var description := ""

@@ -52,3 +52,7 @@ func _on_right_choice_pressed() -> void:
 
 func _on_left_choice_pressed() -> void:
 	_on_next_card_pressed(LEFT_CHOICE)
+
+
+func _on_memory_print() -> void:
+	print(GameMemory.memory_arcs)

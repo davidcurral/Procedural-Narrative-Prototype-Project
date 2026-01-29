@@ -85,13 +85,13 @@ func pick_next_card(choice_id: int): #Resolve current card → compute weights f
 		else:
 			weight_treshold = rng.randf_range(0,max_weight)
 
-func apply_effects(effects: Array) -> void:    # Careful with enums, they appear to be strings but are ints, when comparing need to match
-	for effect in effects:
+func apply_effects(effects_list: Array) -> void:    # Careful with enums, they appear to be strings but are ints, when comparing need to match
+	for effect in effects_list:
 		match effect["type"]:
-			stored_current_card.type_options.stat: apply_world_stat(effect)
-			stored_current_card.type_options.flag: GameMemory.memory_flags[effect["target"]] = effect["value"] 
-			stored_current_card.type_options.unlock: GameMemory.memory_arcs[effect["target"]] = effect["value"] 
-			stored_current_card.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
+			effect.type_options.stat: apply_world_stat(effect)
+			effect.type_options.flag: GameMemory.memory_flags[effect["target"]] = effect["value"] 
+			effect.type_options.unlock: apply_world_arcs(effect) 
+			effect.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
 
 	world_change.emit()
 	
@@ -107,12 +107,21 @@ func compute_card_probability_of_appearing() -> void:
 			card_resource.weight = 1.0/total_available_cards * epic_mult		
 	
 func apply_world_stat(effect):
-	var key = stored_current_card.TARGET_KEYS.get(effect["target"])
+	var key = effect.TARGET_KEYS.get(effect["target"])
 	if key == null:
 		push_error("Unknown stat target")
 		return
-
 	world_state[key] = world_state.get(key, 0) + effect["value"]
+	
+func apply_world_arcs(effect):
+	var key = effect.ARC_KEYS.get(effect["arc"])
+	if key == null:
+		push_error("Unknown stat target")
+		return
+		
+	if effect.value not in effect.arc_chapter:
+		effect.arc_chapter.append(effect.value)
+	GameMemory.memory_arcs[key] = effect.arc_chapter
 	
 	
 func show_first_card():

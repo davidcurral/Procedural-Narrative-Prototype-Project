@@ -122,6 +122,19 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.51
 
+[node name="RightChoice2" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(175, 100)
+layout_mode = 0
+offset_left = 87.0
+offset_top = 408.0
+offset_right = 262.0
+offset_bottom = 508.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.49
+text = "Print Memory "
+
 [connection signal="pressed" from="Panel/HBoxContainer/NextCard" to="." method="_on_next_card_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LeftChoice" to="." method="_on_left_choice_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/RightChoice" to="." method="_on_right_choice_pressed"]
+[connection signal="pressed" from="Panel/RightChoice2" to="." method="_on_memory_print"]
