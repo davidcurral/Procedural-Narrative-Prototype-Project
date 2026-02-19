@@ -38,10 +38,10 @@ func updateUI(card_resource):
 
 func world_UI():
 	#print("Changing Game World Variables")
-	world_val1.text = "Church: " + str(GameState.world_state.get("church"))
-	world_val2.text = "Wealth:  " + str(GameState.world_state.get("wealth"))
-	world_val3.text = "Army:  " + str(GameState.world_state.get("army"))
-	world_val4.text = "People::  " + str(GameState.world_state.get("people"))
+	world_val1.text = "Resources: " + str(GameState.world_state.get("Resources"))
+	world_val2.text = "Security:  " + str(GameState.world_state.get("Security"))
+	world_val3.text = "Moral:  " + str(GameState.world_state.get("Moral"))
+	world_val4.text = "Progress:  " + str(GameState.world_state.get("Progress"))
 
 
 func _on_next_card_pressed(choice_id) -> void:

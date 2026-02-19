@@ -3,6 +3,8 @@ extends Node
 var card_data
 
 @onready var name_label = $Panel/VBoxContainer/Name
+@onready var context_label = $Panel/VBoxContainer/Context
+
 @onready var left = $Panel/VBoxContainer/Description/VBoxContainer/Val0
 @onready var right = $Panel/VBoxContainer/Description/VBoxContainer/Val1
 
@@ -14,8 +16,9 @@ func setup(_card_data):
 	
 func Update_Card_UI():
 	name_label.text = card_data.name
+	context_label.text = card_data.context
 	
-	var left_text := "Left\n"
+	var left_text: String = card_data.left_description + "\n"
 	for effect in card_data.left_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
@@ -29,7 +32,7 @@ func Update_Card_UI():
 		
 	left.text = left_text 
 	
-	var right_text := "Right\n"
+	var right_text: String = card_data.right_description + "\n"
 	for effect in card_data.right_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]

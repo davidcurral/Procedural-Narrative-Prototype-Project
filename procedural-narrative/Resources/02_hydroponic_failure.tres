@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://djgi3rlq1oma6"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_yopsa"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_hxass"]
+
+[sub_resource type="Resource" id="Resource_yopsa"]
+script = ExtResource("1_yopsa")
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_hxass"]
+script = ExtResource("1_yopsa")
+target = 3
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_e7ct2"]
+script = ExtResource("1_yopsa")
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_e1gio"]
+script = ExtResource("1_yopsa")
+target = 3
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("2_hxass")
+name = "Hydroponic Failure"
+context = "Food production system malfunctioning"
+id = 2
+left_effects = Array[ExtResource("1_yopsa")]([SubResource("Resource_yopsa"), SubResource("Resource_hxass")])
+left_description = "Repair System"
+right_effects = Array[ExtResource("1_yopsa")]([SubResource("Resource_e7ct2"), SubResource("Resource_e1gio")])
+right_description = "Reduce Food Distribution"
+metadata/_custom_type_script = "uid://nvquj6gcvoei"

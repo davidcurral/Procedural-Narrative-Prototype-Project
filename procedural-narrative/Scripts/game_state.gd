@@ -29,7 +29,7 @@ var rng = RandomNumberGenerator.new()
 var stored_current_card
 
 # -- World variables --
-var world_state: Dictionary = {"church": 50,"army": 50,"wealth": 50,"people": 50,} 
+var world_state: Dictionary = {"Resources": 50,"Security": 50,"Moral": 50,"Progress": 50,"Risk":0} 
 #var memory_flags: Dictionary = {}
 #var unlocked_arcs: Array = []
 #var card_cooldowns: Dictionary = {}

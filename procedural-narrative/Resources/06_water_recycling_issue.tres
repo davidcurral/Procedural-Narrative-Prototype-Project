@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://c2tiqcqseca0r"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_a7kw8"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_gubvk"]
+[ext_resource type="Resource" uid="uid://b47a1btk0hh34" path="res://Resources/Effect/card_effect.tres" id="2_o4bke"]
+
+[sub_resource type="Resource" id="Resource_5g08j"]
+script = ExtResource("1_a7kw8")
+target = 3
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_p4dc0"]
+script = ExtResource("1_a7kw8")
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_lpjye"]
+script = ExtResource("1_a7kw8")
+target = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("2_gubvk")
+name = "Water Recycling Issue"
+context = "Water purification malfunction."
+id = 6
+left_effects = Array[ExtResource("1_a7kw8")]([ExtResource("2_o4bke"), SubResource("Resource_5g08j")])
+left_description = "Strict Rationing"
+right_effects = Array[ExtResource("1_a7kw8")]([SubResource("Resource_p4dc0"), SubResource("Resource_lpjye")])
+right_description = "Upgrade System"
+metadata/_custom_type_script = "uid://nvquj6gcvoei"

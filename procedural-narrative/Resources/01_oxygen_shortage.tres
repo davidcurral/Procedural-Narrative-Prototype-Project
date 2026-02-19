@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://d3dgr3undvshu"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_21f72"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_su4xj"]
+
+[sub_resource type="Resource" id="Resource_21f72"]
+script = ExtResource("1_21f72")
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_su4xj"]
+script = ExtResource("1_21f72")
+target = 3
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_asaem"]
+script = ExtResource("1_21f72")
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_adpg4"]
+script = ExtResource("1_21f72")
+target = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("2_su4xj")
+name = "Oxygen Shortage"
+context = "Air reserves are dropping"
+id = 1
+left_effects = Array[ExtResource("1_21f72")]([SubResource("Resource_21f72"), SubResource("Resource_su4xj")])
+left_description = "Ration Oxygen"
+right_effects = Array[ExtResource("1_21f72")]([SubResource("Resource_asaem"), SubResource("Resource_adpg4")])
+right_description = "Increase Production"
+metadata/_custom_type_script = "uid://nvquj6gcvoei"

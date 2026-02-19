@@ -13,13 +13,18 @@ enum card_rarity_options {common, rare, epic}
 @export var card_rarity: card_rarity_options
 
 @export var name: String = ''
+@export var context: String = ''
+
 @export var id: int
 
 @export var available: bool = true
 var weight: float
 
 @export var left_effects: Array[Effect]
+@export var left_description: String = ''
 @export var right_effects: Array[Effect]
+@export var right_description: String = ''
+
 
 
 '''
