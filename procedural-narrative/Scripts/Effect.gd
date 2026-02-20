@@ -22,10 +22,11 @@ const ARC_KEYS = {
 	#arc_options.Rebellion: "Rebellion"
 }
 
-
+var card_id: int
+var choice: String
 @export var type: type_options
 @export var target: target_options
 @export var value: int
 @export var arc: arc_options = 0
 var arc_chapter: Array = []
-@export var description := ""
+#@export var description := ""

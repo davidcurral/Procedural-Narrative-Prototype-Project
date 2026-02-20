@@ -60,7 +60,7 @@ func initialize():
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
 				
-	show_first_card()
+	#show_first_card()
 
 	
 func _on_choice_made(choice_id):
@@ -125,8 +125,8 @@ func apply_world_arcs(effect):
 	
 	
 func show_first_card():
-	var card_picked = rng.randi_range(0,len(available_cards_list))
-	var card_resource = available_cards_list[card_picked] 
+	var card_picked = rng.randi_range(0,len(initial_card_list))
+	var card_resource = initial_card_list[card_picked] 
 	stored_current_card = card_resource
 	card_selected.emit(card_resource)
 

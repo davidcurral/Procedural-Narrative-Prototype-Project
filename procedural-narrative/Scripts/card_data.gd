@@ -10,22 +10,25 @@ Types of effects
 '''
 
 enum card_rarity_options {common, rare, epic}
-@export var card_rarity: card_rarity_options
-
-@export var name: String = ''
-@export var context: String = ''
 
 @export var id: int
-
+@export var name: String = ''
+var game_name: String = ''
+@export var context: String = ''
+@export var card_rarity: card_rarity_options
 @export var available: bool = true
 var weight: float
+var arc: float
+var cooldown: float
+
 
 @export var left_effects: Array[Effect]
 @export var left_description: String = ''
 @export var right_effects: Array[Effect]
 @export var right_description: String = ''
 
-
+var left_effect: Array = []
+var right_effect: Array = []
 
 '''
 # -- Left Variables --

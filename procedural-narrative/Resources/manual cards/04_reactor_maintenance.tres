@@ -24,9 +24,9 @@ metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [resource]
 script = ExtResource("2_gpb48")
+id = 4
 name = "Reactor Maintenance"
 context = "Nuclear reactor requires inspection"
-id = 4
 left_effects = Array[ExtResource("1_tt15l")]([SubResource("Resource_tt15l"), SubResource("Resource_gpb48")])
 left_description = "Perform Maintenance"
 right_effects = Array[ExtResource("1_tt15l")]([SubResource("Resource_maukm"), SubResource("Resource_s80l7")])

@@ -1,0 +1,9 @@
+Id;choice;type;target;value;extra
+1;left;stat;resources;10;
+1;left;stat;moral;-10;
+1;right;stat;resources;-10;
+1;right;stat;progress;5;
+2;left;stat;resources;-10;
+2;left;stat;moral;5;
+2;right;stat;resources;5;
+2;right;stat;moral;-10;

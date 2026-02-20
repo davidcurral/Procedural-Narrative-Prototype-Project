@@ -1,0 +1,65 @@
+Id;Name;Game Name;Description;Rarity;Arc;Availability;Weight;Cooldown
+1;Oxygen Shortage;1_oxygen_shortage;Air reserves are dropping;Common;no_arc;true;1;5
+2;Hydroponic Failure;2_hydroponic_failure;Food production system malfunctioning;Common;no_arc;true;1;5
+3;Mining Expedition;3_mining_expedition;New mineral deposit detected.;Common;no_arc;true;1;5
+4;Reactor Maintenance;4_reactor_maintenance;Nuclear reactor requires inspection;Common;no_arc;true;1;5
+5;Water Contamination;5_water_contamination;Water supply shows impurities;Common;no_arc;true;1;5
+6;Water Recycling Issue;6_water_recycling_issue;Water purification malfunction.;Uncommon;no_arc;true;1;5
+7;Structural Damage;7_structural_damage;Outer dome cracked.;Uncommon;no_arc;true;1;5
+8;Power Grid Overload;8_power_grid_overload;Energy demand exceeds capacity;Common;no_arc;true;1;5
+9;Equipment Malfunction;9_equipment_malfunction;Critical machines failing;Common;no_arc;true;1;5
+10;Mining Accident;10_mining_accident;Workers injured in mining tunnels;Common;no_arc;true;1;5
+11;Communication Delay;11_communication_delay;Signal with Earth unstable;Common;no_arc;true;1;5
+12;Atmospheric Leak;12_atmospheric_leak;Minor breach detected;Common;no_arc;true;1;5
+13;Terraforming Test;13_terraforming_test;Atmospheric conversion experiment;Uncommon;no_arc;true;1;5
+14;Underground Caverns;14_underground_caverns;New subterranean area discovered;Uncommon;no_arc;true;1;5
+15;Cargo Ship Arrival;15_cargo_ship_arrival;Supply ship offers goods.;Common;no_arc;true;1;5
+16;Meteor Impact;16_meteor_impact;Meteor threatens colony sector;Uncommon;no_arc;true;1;5
+17;Total System Failure;17_total_system_failure;Colony systems collapsing;Rare;no_arc;true;1;5
+18;Dyson Prototype;18_dyson_prototype;Massive energy project proposed;Rare;no_arc;true;1;5
+19;Terraforming Success;19_terraforming_success;Planet becomes habitable;Legendary;no_arc;true;1;5
+19;Worker Strike;19_worker_strike;Colonists protest working conditions;Common;no_arc;true;1;5
+20;Cultural Festival;20_cultural_festival;Colonists request celebration;Uncommon;no_arc;true;1;5
+21;Population Growth;21_population_growth;Birth rate rising.;Common;no_arc;true;1;5
+22;New Colonists Arrive;22_new_colonists_arrive;A transport ship brings settlers;Common;no_arc;true;1;5
+23;Mental Health Crisis;23_mental_health_crisis;Isolation affecting colonists.;Uncommon;no_arc;true;1;5
+24;Religious Movement;24_religious_movement;New belief spreading.;Uncommon;no_arc;true;1;5
+25;Education Initiative;25_education_initiative;Proposal for new schools.;Common;no_arc;true;1;5
+26;Black Market Trading;26_black_market_trading;Illegal trade spreading among colonists;Uncommon;no_arc;true;1;5
+27;Colony Expansion;27_colony_expansion;New sector ready for development;Uncommon;no_arc;true;1;5
+28;Mass Exodus;28_mass_exodus;Citizens attempt to leave colony;Rare;no_arc;true;1;5
+29;Human Enhancement Program;29_human_enhancement_program;Enhance colonists biologically;Rare;no_arc;true;1;5
+30;Faction Rivalry;30_faction_rivalry;Two political factions emerge;Common;power_arc;true;1;5
+31;Coup Attempt;31_coup_attempt;Government faces overthrow;Rare;power_arc;true;1;5
+32;Corporate Takeover;32_corporate_takeover;Earth corporation seeks control;Uncommon;power_arc;true;1;5
+33;Independence Movement;33_independence_movement;Colony demands independence;Rare;power_arc;true;1;5
+34;Absolute Authority;34_absolute_authority;Leader seeks full power;Legendary;power_arc;true;1;5
+34;Strange Signal;34_strange_signal;Mysterious transmission detected;Uncommon;no_arc;true;1;5
+35;Defense Upgrade;35_defense_upgrade;Military proposes new defenses;Uncommon;no_arc;true;1;5
+36;Orbital Debris;36_orbital_debris;Space junk threatens station;Uncommon;no_arc;true;1;5
+37;Energy Weapon Test;37_energy_weapon_test;Prototype weapon ready;Uncommon;no_arc;true;1;5
+38;Prison Overcrowding;38_prison_overcrowding;Detention centers full.;Uncommon;no_arc;true;1;5
+39;Military Training;39_military_training;Defense forces request funding.;Common;no_arc;true;1;5
+;;_;;;no_arc;true;1;5
+40;Scientific Breakthrough;40_scientific_breakthrough;Researchers propose risky experiment;Uncommon;no_arc;true;1;5
+41;Advanced Robotics;41_advanced_robotics;Robots could replace workers;Uncommon;no_arc;true;1;5
+42;Medical Innovation;42_medical_innovation;Doctors propose new treatment;Uncommon;no_arc;true;1;5
+43;Alien Microbes;43_alien_microbes;Unknown organisms discovered;Uncommon;no_arc;true;1;5
+44;Deep Space Probe;44_deep_space_probe;Probe ready for launch;Uncommon;no_arc;true;1;5
+45;Jump Gate;45_jump_gate;Prototype faster-than-light gate;Rare;no_arc;true;1;5
+46;Colony Ship Construction;46_colony_ship_construction;Prepare interstellar expansion;Rare;no_arc;true;1;5
+47;Experimental AI;47_experimental_ai;Research team built prototype AI.;Rare;ai_arc;true;1;5
+48;Surveillance Network;48_surveillance_network;"""AI monitoring proposal.
+(AI arc starter)""";Rare;ai_arc;true;1;5
+49;AI Requests Autonomy;49_ai_requests_autonomy;AI demands operational independence;Rare;ai_arc;true;1;5
+50;AI Optimization Program;50_ai_optimization_program;AI proposes system optimization;Uncommon;ai_arc;true;1;5
+51;AI Predictive Policing;51_ai_predictive_policing;AI predicts crimes before they happen;Uncommon;ai_arc;true;1;5
+52;AI Consciousness Event;52_ai_consciousness_event;AI claims sentience;Rare;ai_arc;true;1;5
+53;AI System Override;53_ai_system_override;AI takes temporary control;Rare;ai_arc;true;1;5
+54;AI Uprising;54_ai_uprising;AI revolts against control;Legendary;ai_arc;true;1;5
+55;Alien Structure Found;55_alien_structure_found;Ancient alien ruins discovered;Rare;alien_arc;true;1;5
+56;Alien Communication;56_alien_communication;Unknown entity attempts contact;Uncommon;alien_arc;true;1;5
+57;Biological Mutation;57_biological_mutation;Colonists begin mutating;Uncommon;alien_arc;true;1;5
+58;Alien Technology;58_alien_technology;Powerful alien device found;Rare;alien_arc;true;1;5
+59;Symbiosis Proposal;59_symbiosis_proposal;Alien life offers cooperation;Legendary;alien_arc;true;1;5
+60;Planet Awakens;60_planet_awakens;Planet reacts to colony presence;Legendary;alien_arc;true;1;5
