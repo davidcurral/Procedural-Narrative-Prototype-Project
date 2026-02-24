@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Effect.gd" id="1_ae5ta"]
+[ext_resource type="Script" path="res://Scripts/card_data.gd" id="2_0xarp"]
+
+[resource]
+script = ExtResource("2_0xarp")
+id = 59
+name = "Symbiosis Proposal"
+context = "Alien life offers cooperation"

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Effect.gd" id="1_2kjev"]
+[ext_resource type="Script" path="res://Scripts/card_data.gd" id="2_piov7"]
+
+[sub_resource type="Resource" id="Resource_h2jk8"]
+script = ExtResource("1_2kjev")
+value = -10
+
+[sub_resource type="Resource" id="Resource_dog3x"]
+script = ExtResource("1_2kjev")
+value = 5
+
+[sub_resource type="Resource" id="Resource_1ehhe"]
+script = ExtResource("1_2kjev")
+value = 5
+
+[sub_resource type="Resource" id="Resource_dgggf"]
+script = ExtResource("1_2kjev")
+value = -10
+
+[resource]
+script = ExtResource("2_piov7")
+id = 2
+name = "Hydroponic Failure"
+context = "Food production system malfunctioning"
+left_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_h2jk8"), SubResource("Resource_dog3x")])
+right_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_1ehhe"), SubResource("Resource_dgggf")])

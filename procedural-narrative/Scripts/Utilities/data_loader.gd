@@ -8,15 +8,17 @@ return dictionary of cards
 '''
 @onready var card_builder_dictionary: Dictionary = {}
 @onready var effect_builder_dictionary: Dictionary = {}
-
+@onready var folder_path = "res://Resources/auto cards"
 
 
 func _ready():
-	print("Awake")
+	print("Load Cards...")
 	load_card()
+	print("Load Effects...")
 	load_efect()
+	print("Link and build cards...")
 	link_effects_to_cards()
-	
+	print("Done")	
 	
 func load_card():
 	var path = "res://Assets/Cards CSV/Cards_test.csv"
@@ -76,15 +78,22 @@ func link_effects_to_cards():
 			for effect in effect_builder_dictionary[card.id]:	
 				if effect.card_id == card.id:
 					match effect.choice:
-						"left":
+						"left": 
 							card.left_effects.append(effect)
 						"right":
 							card.right_effects.append(effect)
 						"both":
 							card.left_effects.append(effect)
 							card.right_effects.append(effect)
+		# Save card as a real file
+		var path = "res://Resources/auto cards//%s.tres" % card.game_name
+		#var formated_path = path % [card.id,card.game_name]
+		ResourceSaver.save(card, path)
 						
-	
-		#print("Card: ",card.id)
-		#print("Left Effects: ",card.left_effects,"Right Effects: ", card.right_effects)				
-	
+func add_cards_to_main():
+	var main_dictionary = get_parent().card_list
+	for card in folder_path:
+		main_dictionary.append()
+		
+		
+								
