@@ -6,7 +6,7 @@ Main emits choice made
 '''
 
 @export var card_scene: PackedScene
-@export var card_list: Array[Cards]
+@export var card_list: Array[Cards] = []
 @export var initial_card_list: Array[Cards]
 
 @onready var card_display = $Panel/HBoxContainer/Panel
@@ -26,6 +26,7 @@ const RIGHT_CHOICE = 1
 @onready var world_val4 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label4
 
 func _ready():
+	print("Start _ready Main")
 	GameState.card_selected.connect(updateUI)
 	GameState.set_static_data(card_list, initial_card_list)	
 	GameState.world_change.connect(world_UI)

@@ -8,17 +8,16 @@ return dictionary of cards
 '''
 @onready var card_builder_dictionary: Dictionary = {}
 @onready var effect_builder_dictionary: Dictionary = {}
-@onready var folder_path = "res://Resources/auto cards"
+var folder_path: = "res://Resources/auto cards"
 
 
-func _ready():
-	print("Load Cards...")
+func _enter_tree():
 	load_card()
-	print("Load Effects...")
 	load_efect()
-	print("Link and build cards...")
 	link_effects_to_cards()
-	print("Done")	
+	add_cards_to_main()
+	print("Done\n")	
+	
 	
 func load_card():
 	var path = "res://Assets/Cards CSV/Cards_test.csv"
@@ -91,9 +90,21 @@ func link_effects_to_cards():
 		ResourceSaver.save(card, path)
 						
 func add_cards_to_main():
-	var main_dictionary = get_parent().card_list
-	for card in folder_path:
-		main_dictionary.append()
+	# This "open" method returns an instance for accessing your dir
+	var dir := DirAccess.open(folder_path)
+	var files := dir.get_files()
+	
+	var main_array = get_parent().card_list
+	
+	for file_name in files:
+		# Optional: ignore non-tres files
+		if not file_name.ends_with(".tres"):
+			continue
+		
+		var full_path = folder_path + "/" + file_name
+		var card_resource = load(full_path)
+		main_array.append(card_resource)
+		print(main_array)
 		
 		
 								
