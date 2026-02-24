@@ -27,6 +27,6 @@ var choice: String
 @export var type: type_options
 @export var target: target_options
 @export var value: int
-@export var arc: arc_options = 0
+@export var arc: arc_options 
 var arc_chapter: Array = []
 #@export var description := ""

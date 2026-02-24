@@ -27,8 +27,8 @@ var cooldown: float
 @export var right_effects: Array[Effect]
 @export var right_description: String = ''
 
-var left_effect: Array = []
-var right_effect: Array = []
+#var left_effect: Array = []
+#var right_effect: Array = []
 
 '''
 # -- Left Variables --

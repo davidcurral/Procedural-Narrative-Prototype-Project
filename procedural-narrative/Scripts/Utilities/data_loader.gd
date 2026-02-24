@@ -1,12 +1,19 @@
 @tool
 extends Node
 
+@export var build: bool = false:
+	set(value):
+		if value:
+			if Engine.is_editor_hint():
+				run()
+				build = false
+
 @onready var card_builder_dictionary: Dictionary = {}
 @onready var effect_builder_dictionary: Dictionary = {}
 var folder_path: = "res://Resources/auto cards"
 
 
-func _enter_tree():
+func run():
 	load_card()
 	load_efect()
 	link_effects_to_cards()
@@ -55,8 +62,8 @@ func load_efect():
 		var effect = Effect.new()
 		effect.card_id = int(line[0])
 		effect.choice = line[1]
-		effect.type = line[2]
-		effect.target = line[3]
+		effect.type = type_to_enum(line[2])
+		effect.target = target_to_enum(line[3])
 		effect.value = float(line[4])
 		#effect.extra = line[5]
 		if effect.card_id not in effect_builder_dictionary:
@@ -99,5 +106,28 @@ func add_cards_to_main():
 		var card_resource = load(full_path)
 		main_array.append(card_resource)
 		
-		
+
+static func type_to_enum(value: String) -> int:
+	if value == "stat":
+		return 0
+	elif value == "flag":
+		return 1
+	elif value == "unlock":
+		return 2
+	elif value == "countdown":
+		return 3
+	return 0	
+	
+static func target_to_enum(value: String) -> int:
+	if value == "resources":
+		return 0
+	elif value == "progress":
+		return 1
+	elif value == "security":
+		return 2
+	elif value == "moral":
+		return 3
+	elif value == "risk":
+		return 4	
+	return 0	
 								

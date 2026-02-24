@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://710vos44c7uk"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bi1yka3anqa6r"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_2kjev"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_piov7"]
@@ -9,6 +9,7 @@ value = -10
 
 [sub_resource type="Resource" id="Resource_piov7"]
 script = ExtResource("1_2kjev")
+target = 3
 value = 5
 
 [sub_resource type="Resource" id="Resource_h2jk8"]
@@ -17,6 +18,7 @@ value = 5
 
 [sub_resource type="Resource" id="Resource_dog3x"]
 script = ExtResource("1_2kjev")
+target = 3
 value = -10
 
 [resource]

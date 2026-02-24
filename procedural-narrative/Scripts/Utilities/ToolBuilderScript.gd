@@ -5,8 +5,9 @@ extends Node
 @export var build: bool = false:
 	set(value):
 		if value:
-			build_database()
-			build = false
+			if Engine.is_editor_hint():
+				build_database()
+				build = false
 			
 			
 func build_database():

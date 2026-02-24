@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=10 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_jjvhh"]
-[ext_resource type="Resource" uid="uid://biyn164p3wqr5" path="res://Resources/manual cards/56_ai_uprising.tres" id="3_21xkr"]
-[ext_resource type="Resource" uid="uid://cavov70jgh2j4" path="res://Resources/manual cards/36_strange_signal.tres" id="4_6bp64"]
-[ext_resource type="Resource" uid="uid://c0yll1jb4p62o" path="res://Resources/manual cards/62_planet_awakens.tres" id="5_344ge"]
+[ext_resource type="Resource" uid="uid://bx4htnae2si2l" path="res://Resources/manual cards/20_worker_strike.tres" id="3_6bp64"]
 [ext_resource type="Script" uid="uid://bwcixh2xe0uk5" path="res://Scripts/Utilities/data_loader.gd" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://bbx5hja5ve1l0" path="res://Scripts/Utilities/ToolBuilderScript.gd" id="8_344ge"]
 [ext_resource type="Resource" uid="uid://7yho5snn7qd3" path="res://Resources/card_database.tres" id="9_ynf5e"]
@@ -17,14 +15,13 @@ bg_color = Color(0.60318226, 0.67185843, 0.7425517, 1)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_bo1nx")
-initial_card_list = Array[ExtResource("2_jjvhh")]([ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge")])
+initial_card_list = Array[ExtResource("2_jjvhh")]([ExtResource("3_6bp64")])
 database = ExtResource("9_ynf5e")
 
 [node name="Panel" type="Panel" parent="."]
@@ -44,35 +41,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NextCard" type="Button" parent="Panel/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(175, 100)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.49
-text = "NEXT CARD"
-
 [node name="LeftChoice" type="Button" parent="Panel/HBoxContainer"]
 custom_minimum_size = Vector2(175, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.49
+theme_override_font_sizes/font_size = 22
 text = "Left Choice"
-
-[node name="RightChoice" type="Button" parent="Panel/HBoxContainer"]
-custom_minimum_size = Vector2(175, 100)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.49
-text = "Right Choice"
 
 [node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 9.86
+size_flags_stretch_ratio = 11.4
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bp64")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Panel"]
@@ -86,12 +67,13 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.56
+size_flags_stretch_ratio = 0.5
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "VAR 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -100,6 +82,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "VAR 2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -108,6 +91,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "VAR 3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -116,6 +100,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "VAR 4"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -123,18 +108,24 @@ vertical_alignment = 1
 [node name="Cards" parent="Panel/HBoxContainer/Panel/VBoxContainer" instance=ExtResource("2_6bp64")]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.51
+size_flags_stretch_ratio = 3.57
 
-[node name="RightChoice2" type="Button" parent="Panel"]
+[node name="RightChoice" type="Button" parent="Panel/HBoxContainer"]
 custom_minimum_size = Vector2(175, 100)
-layout_mode = 0
-offset_left = 87.0
-offset_top = 408.0
-offset_right = 262.0
-offset_bottom = 508.0
+layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.49
+theme_override_font_sizes/font_size = 22
+text = "Right Choice"
+
+[node name="PrintMemory" type="Button" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(175, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.49
+theme_override_font_sizes/font_size = 22
 text = "Print Memory "
 
 [node name="DataLoader" type="Node" parent="."]
@@ -144,7 +135,6 @@ script = ExtResource("7_6bp64")
 script = ExtResource("8_344ge")
 database = ExtResource("9_ynf5e")
 
-[connection signal="pressed" from="Panel/HBoxContainer/NextCard" to="." method="_on_next_card_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LeftChoice" to="." method="_on_left_choice_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/RightChoice" to="." method="_on_right_choice_pressed"]
-[connection signal="pressed" from="Panel/RightChoice2" to="." method="_on_memory_print"]
+[connection signal="pressed" from="Panel/HBoxContainer/PrintMemory" to="." method="_on_memory_print"]
