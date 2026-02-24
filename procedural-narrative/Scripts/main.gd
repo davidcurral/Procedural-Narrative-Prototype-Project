@@ -1,3 +1,4 @@
+
 extends Node
 '''
 Cartas que serão Mostradas no HUD
@@ -5,9 +6,10 @@ Cartas que serão Mostradas no HUD
 Main emits choice made
 '''
 
-@export var card_scene: PackedScene
-@export var card_list: Array[Cards] = []
+#@export var card_scene: PackedScene
+#@export var card_list: Array[Cards] = []
 @export var initial_card_list: Array[Cards]
+@export var database: CardDatabase
 
 @onready var card_display = $Panel/HBoxContainer/Panel
 @onready var card_node = $Panel/HBoxContainer/Panel/VBoxContainer/Cards
@@ -26,9 +28,8 @@ const RIGHT_CHOICE = 1
 @onready var world_val4 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label4
 
 func _ready():
-	print("Start _ready Main")
 	GameState.card_selected.connect(updateUI)
-	GameState.set_static_data(card_list, initial_card_list)	
+	GameState.set_static_data(database.card_list, initial_card_list)	
 	GameState.world_change.connect(world_UI)
 	GameState.initialize()
 
@@ -38,7 +39,6 @@ func updateUI(card_resource):
 		world_UI()
 
 func world_UI():
-	#print("Changing Game World Variables")
 	world_val1.text = "Resources: " + str(GameState.world_state.get("Resources"))
 	world_val2.text = "Security:  " + str(GameState.world_state.get("Security"))
 	world_val3.text = "Moral:  " + str(GameState.world_state.get("Moral"))

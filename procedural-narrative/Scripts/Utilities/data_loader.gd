@@ -1,11 +1,6 @@
+@tool
 extends Node
 
-'''
-read cards.csv
-read effects.csv
-build CardData objects
-return dictionary of cards
-'''
 @onready var card_builder_dictionary: Dictionary = {}
 @onready var effect_builder_dictionary: Dictionary = {}
 var folder_path: = "res://Resources/auto cards"
@@ -15,7 +10,7 @@ func _enter_tree():
 	load_card()
 	load_efect()
 	link_effects_to_cards()
-	add_cards_to_main()
+	#add_cards_to_main()
 	print("Done\n")	
 	
 	
@@ -69,7 +64,6 @@ func load_efect():
 
 		effect_builder_dictionary[effect.card_id].append(effect)
 
-
 func link_effects_to_cards():
 	for card in card_builder_dictionary.values():
 		if card.id in effect_builder_dictionary:
@@ -104,7 +98,6 @@ func add_cards_to_main():
 		var full_path = folder_path + "/" + file_name
 		var card_resource = load(full_path)
 		main_array.append(card_resource)
-		print(main_array)
 		
 		
 								
