@@ -39,7 +39,7 @@ func load_card():
 		card.game_name = line[2]
 		card.context = line[3]
 		card.card_rarity = line[4]
-		card.arc = line[5]
+		card.arc = arc_to_enum(line[5])
 		if line[6] == 'true':
 			card.available = true
 		else:
@@ -130,4 +130,14 @@ static func target_to_enum(value: String) -> int:
 	elif value == "risk":
 		return 4	
 	return 0	
-								
+
+static func arc_to_enum(value: String) -> int:
+	if value == "no_arc":
+		return 0
+	elif value == "ai_arc":
+		return 1
+	elif value == "alien_arc":
+		return 2
+	elif value == "power_arc":
+		return 3	
+	return 0									

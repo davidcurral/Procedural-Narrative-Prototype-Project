@@ -15,18 +15,13 @@ const TARGET_KEYS = {
 	target_options.risk: "Risk"
 
 }
-const ARC_KEYS = {
-	arc_options.AI: "AI Arc",
-	arc_options.Aliens: "Alien Life Form",
-	arc_options.Authoritarian_ruler: "Authoritarian Ruler",
-	#arc_options.Rebellion: "Rebellion"
-}
+
 
 var card_id: int
 var choice: String
 @export var type: type_options
 @export var target: target_options
 @export var value: int
-@export var arc: arc_options 
+#@export var arc: arc_options 
 var arc_chapter: Array = []
 #@export var description := ""

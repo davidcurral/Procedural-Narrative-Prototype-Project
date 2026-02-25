@@ -14,17 +14,15 @@ Logic Loop:
 	IMPORTANT - ❗ GameState should NOT reference Main. Ever.
 '''
 # -- Static Data ---
-var all_card_list: Array [Cards] = []
+var card_database: Array [Cards] = []
 var initial_card_list: Array[Cards]
-var common_mult = 1
-var rare_mult = 0.75
-var epic_mult = 0.5
-var max_weight = .7
+var max_weight = 1
 
 
 # -- Runtime Data --
-#var card_visibility_state: Dictionary = {}
-var available_cards_list: Dictionary = {}
+var available_cards_list: Dictionary = {} # card_id : card
+var cooldown_tracker: Dictionary = {} # card_id : card.cooldown
+
 var rng = RandomNumberGenerator.new()
 var stored_current_card
 
@@ -43,48 +41,42 @@ signal card_selected (card_resource)
 signal choice_made (choice_id)
 signal world_change 
 
-# -- Func --
+# -- Functions --
 func _ready():
 	choice_made.connect(_on_choice_made)
 	
 	
-	
+# --- Starting Functions ---
 func set_static_data(cards: Array[Cards], initial_cards : Array [Cards]):
-	all_card_list = cards
+	card_database = cards
 	initial_card_list = initial_cards
-	
 	
 func initialize():		
 	available_cards_list.clear()
-	for card_data in all_card_list:
+	for card_data in card_database:
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
-				
 	show_first_card()
-
 	
-func _on_choice_made(choice_id):
-	pick_next_card(choice_id)	
 
-func pick_next_card(choice_id: int): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
+# --- Running Functions ---
+func _on_choice_made(choice_id):
+	card_processing(choice_id)	
+	
+func card_processing(choice_id: int): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
 	if choice_id == LEFT_CHOICE:
 		apply_effects(stored_current_card.left_effects)
-
 	else:
 		apply_effects(stored_current_card.right_effects)
 
-	compute_card_probability_of_appearing() # futuro tirar isto do loop e adicionar uma carta que passa sempre se necess~ário
-	var 	weight_treshold = rng.randf_range(0,max_weight)
+	on_card_played(stored_current_card)
+	process_cooldowns()
+	choose_next_card()
+	#pick_next_card()
+	print("Cooldown: ",cooldown_tracker)
 
-	for card_id in available_cards_list.keys():
-		var card_resource = available_cards_list[card_id] 
-		if card_resource.weight >= weight_treshold:
-			card_selected.emit(card_resource)
-			stored_current_card = card_resource
-			break
-		else:
-			weight_treshold = rng.randf_range(0,max_weight)
 
+# --- Logic Fucntions ---
 func apply_effects(effects_list: Array) -> void:    # Careful with enums, they appear to be strings but are ints, when comparing need to match
 	for effect in effects_list:
 		match effect["type"]:
@@ -95,17 +87,64 @@ func apply_effects(effects_list: Array) -> void:    # Careful with enums, they a
 
 	world_change.emit()
 	
-func compute_card_probability_of_appearing() -> void:
-	var total_available_cards = available_cards_list.size()
-	for card_id in available_cards_list.keys(): # Get id from card
-		var card_resource = available_cards_list[card_id] # returns int no string
-		if card_resource.card_rarity == 0:
-			card_resource.weight = 1.0/total_available_cards * common_mult
-		elif card_resource.card_rarity == 1:
-			card_resource.weight = 1.0/total_available_cards * rare_mult
-		elif card_resource.card_rarity == 2:
-			card_resource.weight = 1.0/total_available_cards * epic_mult		
+func choose_next_card():
+	var weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
 	
+	for card_id in available_cards_list.keys():			
+		var card_resource = available_cards_list[card_id]
+		if not cooldown_tracker.has(card_resource.id):
+			print("True")
+			if card_resource.weight >= weight_treshold:
+				card_selected.emit(card_resource)
+				stored_current_card = card_resource
+				break
+			else:
+				weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
+		else:
+			print("False")
+			
+			
+func pick_next_card():  # see this new fucntion to calculate weights!!!!!
+	var candidates = []
+
+	for card in available_cards_list.values():
+		if cooldown_tracker.has(card.id):
+			continue
+
+		candidates.append(card)
+	if candidates.is_empty():
+		return
+
+	var total_weight = 0
+	for card in candidates:
+		total_weight += card.weight
+
+	var roll = rng.randi_range(0, total_weight - 1)
+
+	var cumulative = 0
+	for card in candidates:
+		cumulative += card.weight
+		if roll < cumulative:
+			card_selected.emit(card)
+			stored_current_card = card
+			return	
+
+func on_card_played(card: Cards):
+	if card.cooldown > 0:
+		cooldown_tracker[card.id] = card.cooldown
+
+
+func process_cooldowns():
+	var to_remove = []
+	for id in cooldown_tracker:
+		cooldown_tracker[id] -= 1
+		if cooldown_tracker[id] <= 0:
+			to_remove.append(id)
+	for id in to_remove:
+		cooldown_tracker.erase(id)
+
+
+# --- Utilities Functions ---	
 func apply_world_stat(effect):
 	var key = effect.TARGET_KEYS.get(effect["target"])
 	if key == null:
@@ -122,13 +161,26 @@ func apply_world_arcs(effect):
 	if effect.value not in effect.arc_chapter:
 		effect.arc_chapter.append(effect.value)
 	GameMemory.memory_arcs[key] = effect.arc_chapter
-	
-	
+		
 func show_first_card():
 	#var card_picked = rng.randi_range(0,len(initial_card_list))
 	#var card_resource = initial_card_list[card_picked] 
 	var card_resource = initial_card_list[0]
 	stored_current_card = card_resource
 	card_selected.emit(card_resource)
-
 	
+
+		
+
+# ---- Legacy ---
+'''func compute_card_probability_of_appearing() -> void:
+	var total_available_cards = available_cards_list.size()
+	for card_id in available_cards_list.keys(): # Get id from card
+		var card_resource = available_cards_list[card_id] # returns int no string
+		if card_resource.card_rarity == 0:
+			card_resource.weight = 1.0/total_available_cards * common_mult
+		elif card_resource.card_rarity == 1:
+			card_resource.weight = 1.0/total_available_cards * rare_mult
+		elif card_resource.card_rarity == 2:
+			card_resource.weight = 1.0/total_available_cards * epic_mult	
+'''	

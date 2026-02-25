@@ -8,3 +8,5 @@ script = ExtResource("2_0xarp")
 id = 59
 name = "Symbiosis Proposal"
 context = "Alien life offers cooperation"
+weight = 0.85
+cooldown = 500

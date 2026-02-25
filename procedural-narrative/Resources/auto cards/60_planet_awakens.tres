@@ -8,3 +8,6 @@ script = ExtResource("2_fin48")
 id = 60
 name = "Planet Awakens"
 context = "Planet reacts to colony presence"
+weight = 1.0
+arc = 2
+cooldown = 500

@@ -26,5 +26,7 @@ script = ExtResource("2_qy31l")
 id = 1
 name = "Oxygen Shortage"
 context = "Air reserves are dropping"
+weight = 1.0
+cooldown = 2
 left_effects = Array[ExtResource("1_lucnn")]([SubResource("Resource_lucnn"), SubResource("Resource_qy31l")])
 right_effects = Array[ExtResource("1_lucnn")]([SubResource("Resource_o186i"), SubResource("Resource_vsdgv")])

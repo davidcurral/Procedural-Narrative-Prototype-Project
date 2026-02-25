@@ -10,6 +10,14 @@ Types of effects
 '''
 
 enum card_rarity_options {common, rare, epic}
+enum arc_options {no_arc, AI, Aliens, Authoritarian_ruler}
+
+const ARC_KEYS = {
+	arc_options.AI: "AI Arc",
+	arc_options.Aliens: "Alien Life Form",
+	arc_options.Authoritarian_ruler: "Authoritarian Ruler",
+	#arc_options.Rebellion: "Rebellion"
+}
 
 @export var id: int
 @export var name: String = ''
@@ -17,9 +25,9 @@ var game_name: String = ''
 @export var context: String = ''
 @export var card_rarity: card_rarity_options
 @export var available: bool = true
-var weight: float
-var arc: float
-var cooldown: float
+@export var weight: float
+@export var arc: arc_options 
+@export var cooldown: int
 
 
 @export var left_effects: Array[Effect]

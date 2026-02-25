@@ -26,5 +26,7 @@ script = ExtResource("2_piov7")
 id = 2
 name = "Hydroponic Failure"
 context = "Food production system malfunctioning"
+weight = 1.0
+cooldown = 2
 left_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_2kjev"), SubResource("Resource_piov7")])
 right_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_h2jk8"), SubResource("Resource_dog3x")])
