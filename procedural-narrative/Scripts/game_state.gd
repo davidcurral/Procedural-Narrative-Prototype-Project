@@ -110,20 +110,19 @@ func pick_next_card():  # see this new fucntion to calculate weights!!!!!
 	for card in available_cards_list.values():
 		if cooldown_tracker.has(card.id):
 			continue
-
 		candidates.append(card)
 	if candidates.is_empty():
 		return
 
 	var total_weight = 0
 	for card in candidates:
-		total_weight += card.weight
+		total_weight += card.weight # Single value sum of all weights
 
 	var roll = rng.randi_range(0, total_weight - 1)
 
 	var cumulative = 0
 	for card in candidates:
-		cumulative += card.weight
+		cumulative += card.weight # compares with intervals (probabilities)
 		if roll < cumulative:
 			card_selected.emit(card)
 			stored_current_card = card
