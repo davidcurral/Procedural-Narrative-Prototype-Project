@@ -28,9 +28,9 @@ var stored_current_card
 
 # -- World variables --
 var world_state: Dictionary = {"Resources": 50,"Security": 50,"Moral": 50,"Progress": 50,"Risk":0} 
-#var memory_flags: Dictionary = {}
-#var unlocked_arcs: Array = []
-#var card_cooldowns: Dictionary = {}
+var event_memory : Array[Dictionary] = []
+var memory_limit : int = 15
+var current_turn : int = 0
 
 const LEFT_CHOICE = 0
 const RIGHT_CHOICE = 1
@@ -69,10 +69,9 @@ func card_processing(choice_id: int): #Resolve current card → compute weights 
 	else:
 		apply_effects(stored_current_card.right_effects)
 
-	on_card_played(stored_current_card)
+	on_card_played(stored_current_card, choice_id)
 	process_cooldowns()
-	choose_next_card()
-	#pick_next_card()
+	pick_next_card()
 	print("Cooldown: ",cooldown_tracker)
 
 
@@ -86,23 +85,6 @@ func apply_effects(effects_list: Array) -> void:    # Careful with enums, they a
 			effect.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
 
 	world_change.emit()
-	
-func choose_next_card():
-	var weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
-	
-	for card_id in available_cards_list.keys():			
-		var card_resource = available_cards_list[card_id]
-		if not cooldown_tracker.has(card_resource.id):
-			print("True")
-			if card_resource.weight >= weight_treshold:
-				card_selected.emit(card_resource)
-				stored_current_card = card_resource
-				break
-			else:
-				weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
-		else:
-			print("False")
-			
 			
 func pick_next_card():  # see this new fucntion to calculate weights!!!!!
 	var candidates = []
@@ -128,10 +110,23 @@ func pick_next_card():  # see this new fucntion to calculate weights!!!!!
 			stored_current_card = card
 			return	
 
-func on_card_played(card: Cards):
+func on_card_played(card: Cards, choice: int):
+	current_turn += 1
+
+	var memory_entry = {
+		"card_id": card.id,
+		"choice": choice,
+		"turn": current_turn,
+		"arc": card.arc
+	}
+
+	event_memory.append(memory_entry)
+
+	if event_memory.size() > memory_limit:
+		event_memory.pop_front()
+	
 	if card.cooldown > 0:
 		cooldown_tracker[card.id] = card.cooldown
-
 
 func process_cooldowns():
 	var to_remove = []
@@ -182,4 +177,21 @@ func show_first_card():
 			card_resource.weight = 1.0/total_available_cards * rare_mult
 		elif card_resource.card_rarity == 2:
 			card_resource.weight = 1.0/total_available_cards * epic_mult	
+-------		
+func choose_next_card():
+	var weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
+	
+	for card_id in available_cards_list.keys():			
+		var card_resource = available_cards_list[card_id]
+		if not cooldown_tracker.has(card_resource.id):
+			print("True")
+			if card_resource.weight >= weight_treshold:
+				card_selected.emit(card_resource)
+				stored_current_card = card_resource
+				break
+			else:
+				weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
+		else:
+			print("False")
+			
 '''	
