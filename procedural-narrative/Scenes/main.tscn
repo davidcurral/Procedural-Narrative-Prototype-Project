@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=15 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
@@ -13,6 +13,47 @@ bg_color = Color(0.60318226, 0.67185843, 0.7425517, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
+bg_color = Color(0.7225545, 0.72255445, 0.72255456, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynf5e"]
+bg_color = Color(0.1812182, 0.5784468, 0.3598875, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
+border_blend = true
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
+bg_color = Color(0.7308222, 0.71392596, 0.1583367, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
+border_blend = true
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ilt"]
+bg_color = Color(0.80499446, 0.313842, 0.22545129, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
+border_blend = true
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
+bg_color = Color(0.13377044, 0.5110136, 0.8227028, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
+border_blend = true
+corner_detail = 4
 
 [node name="Main" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -53,7 +94,7 @@ text = "Left Choice"
 [node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 11.4
+size_flags_stretch_ratio = 12.92
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bp64")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Panel"]
@@ -67,10 +108,25 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.56
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="Control1" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label1" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+offset_right = -39.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -78,8 +134,40 @@ text = "VAR 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control1"]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ynf5e")
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Control2" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+offset_right = -39.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -87,8 +175,39 @@ text = "VAR 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="ProgressBar2" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control2"]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hptm8")
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Control3" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label3" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+offset_right = -39.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -96,8 +215,39 @@ text = "VAR 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="ProgressBar3" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control3"]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d1ilt")
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Control4" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label4" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+offset_right = -39.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -105,10 +255,27 @@ text = "VAR 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ProgressBar4" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control4"]
+custom_minimum_size = Vector2(40, 120)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6iyac")
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
 [node name="Cards" parent="Panel/HBoxContainer/Panel/VBoxContainer" instance=ExtResource("2_6bp64")]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.57
+size_flags_stretch_ratio = 2.72
 
 [node name="RightChoice" type="Button" parent="Panel/HBoxContainer"]
 custom_minimum_size = Vector2(175, 100)

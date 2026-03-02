@@ -13,6 +13,7 @@ func setup(_card_data):
 	Update_Card_UI()
 	
 func Update_Card_UI():
+	
 	name_label.text = card_data.name
 	context_label.text = card_data.context
 	
@@ -42,6 +43,7 @@ func Update_Card_UI():
 			right_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" #+ description
 
 	right.text = right_text
+
 
 func return_card_ID():
 	return card_data.id

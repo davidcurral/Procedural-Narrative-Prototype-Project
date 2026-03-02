@@ -22,10 +22,10 @@ const RIGHT_CHOICE = 1
 
 
 #-- World Variables -- 
-@onready var world_val1 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label
-@onready var world_val2 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label2
-@onready var world_val3 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label3
-@onready var world_val4 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Label4
+@onready var world_val1 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control1
+@onready var world_val2 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control2
+@onready var world_val3 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control3
+@onready var world_val4 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control4
 
 func _ready():
 	GameState.card_selected.connect(updateUI)
@@ -37,12 +37,19 @@ func _ready():
 func updateUI(card_resource):
 		card_node.setup(card_resource)
 		world_UI()
+		world_progress_bar()
 
 func world_UI():
-	world_val1.text = "Resources: " + str(GameState.world_state.get("Resources"))
-	world_val2.text = "Security:  " + str(GameState.world_state.get("Security"))
-	world_val3.text = "Moral:  " + str(GameState.world_state.get("Moral"))
-	world_val4.text = "Progress:  " + str(GameState.world_state.get("Progress"))
+	world_val1.get_child(0).text = "Resources: " + str(GameState.world_state.get("Resources"))
+	world_val2.get_child(0).text = "Security:  " + str(GameState.world_state.get("Security"))
+	world_val3.get_child(0).text = "Moral:  " + str(GameState.world_state.get("Moral"))
+	world_val4.get_child(0).text = "Progress:  " + str(GameState.world_state.get("Progress"))
+
+func world_progress_bar():
+	world_val1.get_child(1).value = GameState.world_state.get("Resources")
+	world_val2.get_child(1).value = GameState.world_state.get("Security")
+	world_val3.get_child(1).value = GameState.world_state.get("Moral")
+	world_val4.get_child(1).value = GameState.world_state.get("Progress")
 
 
 func _on_next_card_pressed(choice_id) -> void:
