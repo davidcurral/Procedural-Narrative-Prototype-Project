@@ -27,6 +27,7 @@ var game_name: String = ''
 @export var available: bool = true
 @export var weight: float
 @export var arc: arc_options 
+@export var arc_progression: int = 0
 @export var cooldown: int
 
 

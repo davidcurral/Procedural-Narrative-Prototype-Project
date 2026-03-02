@@ -9,4 +9,6 @@ id = 59
 name = "Symbiosis Proposal"
 context = "Alien life offers cooperation"
 weight = 0.85
+arc = 2
+arc_progress = 2
 cooldown = 500

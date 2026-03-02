@@ -63,4 +63,4 @@ func _on_left_choice_pressed() -> void:
 
 
 func _on_memory_print() -> void:
-	print(GameMemory.memory_arcs)
+	print(GameState.event_memory)
