@@ -1,12 +1,11 @@
 extends Node
 
 # IMPORTANT - ❗ GameState should NOT reference Main. Ever.
-
+#region Variables
 # -- Static Data ---
 var card_database: Array [Cards] = []
 var initial_card_list: Array[Cards]
 var max_weight = 1
-
 
 # -- Runtime Data --
 var available_cards_list: Dictionary = {} # card_id : card
@@ -35,6 +34,9 @@ signal card_selected (card_resource)
 signal choice_made (choice_id)
 signal world_change 
 
+#endregion 
+
+#region Functions 
 # -- Functions --
 func _ready():
 	choice_made.connect(_on_choice_made)
@@ -82,12 +84,15 @@ func apply_effects(effects_list: Array) -> void:    # Careful with enums, they a
 func on_card_played(card: Cards, choice: int):
 	current_turn += 1
 
-	var memory_entry = {
-		"card_id": card.id,
+	var memory_entry: Dictionary = {
+		#"card_id": card.id,
 		"choice": choice,
 		"turn": current_turn,
-		"arc": card.arc,
-		"arc_progress": card.arc_progression
+		#"arc": card.arc,
+		#"arc_progress": card.arc_progression,
+		"left_effects": card.left_effects,
+		"right_effects": card.right_effects,
+		"card": card
 	}
 
 	event_memory.append(memory_entry)
@@ -99,7 +104,7 @@ func on_card_played(card: Cards, choice: int):
 		cooldown_tracker[card.id] = card.cooldown
 
 func process_cooldowns():
-	var to_remove = []
+	var to_remove: Array = []
 	for id in cooldown_tracker:
 		cooldown_tracker[id] -= 1
 		if cooldown_tracker[id] <= 0:
@@ -107,19 +112,23 @@ func process_cooldowns():
 	for id in to_remove:
 		cooldown_tracker.erase(id)
 
-func pick_next_card():  # see this new fucntion to calculate weights!!!!!
-	var candidates = []
+func pick_next_card() -> void: 
+	var candidates: Array = []
 
 	for card in available_cards_list.values():
 		if cooldown_tracker.has(card.id):
 			continue
 		candidates.append(card)
+		
 	if candidates.is_empty():
 		return
+	
+	arc_lockdown(candidates)
 
 	var total_weight = 0
 	for card in candidates:
 		total_weight += card.weight # Single value sum of all weights
+		
 
 	var roll = rng.randi_range(0, total_weight - 1)
 	var cumulative = 0
@@ -132,14 +141,14 @@ func pick_next_card():  # see this new fucntion to calculate weights!!!!!
 
 
 # --- Utilities Functions ---	
-func apply_world_stat(effect):
+func apply_world_stat(effect) -> void:
 	var key = effect.TARGET_KEYS.get(effect["target"])
 	if key == null:
 		push_error("Unknown stat target")
 		return
 	world_state[key] = world_state.get(key, 0) + effect["value"]
 	
-func apply_world_arcs(effect): # rever se preciso disto assim	
+func apply_world_arcs(effect) -> void: # rever se preciso disto assim	
 	var key = effect.ARC_KEYS.get(effect["arc"])
 	if key == null:
 		push_error("Unknown stat target")
@@ -149,35 +158,43 @@ func apply_world_arcs(effect): # rever se preciso disto assim
 		effect.arc_chapter.append(effect.value)
 	GameMemory.memory_arcs[key] = effect.arc_chapter
 		
-func show_first_card():
+func show_first_card() -> void:
 	#var card_picked = rng.randi_range(0,len(initial_card_list))
 	#var card_resource = initial_card_list[card_picked] 
 	var card_resource = initial_card_list[0]
 	stored_current_card = card_resource
 	card_selected.emit(card_resource)
 	
-func get_effects_in_memory(target):
-	var target_map = {"Resources": 0, "Moral": 1, "Progress": 2, "Security": 3}
+func get_effects_in_memory(target)-> int:
+	var target_map: Dictionary = {"Resources": 0, "Progress": 1, "Security": 2,"Moral": 3}
 	if not target_map.has(target): return 0
 	
 	var target_id = target_map[target]
 	var count: int = 0
 	
-	for event in event_memory:
-		for effect in event:
-			if effect.target == target_id:
-				count += 1 if effect.value > 0 else -1
+	for entry in event_memory:
+		if entry.get("choice") == 0:
+			for effect in entry.get("left_effects"):
+				#print("Left - ","Effect accurate target: ", effect.target, " Target ID: ", target_id)
+				if effect.target == target_id:
+					count += 1 if effect.value > 0 else 0
+		elif entry.get("choice") == 1:
+			for effect in entry.get("right_effects"):
+				#print("Right - ","Effect accurate target: ", effect.target, " Target ID: ", target_id)
+
+				if effect.target == target_id:
+					count += 1 if effect.value > 0 else 0 # ver se é preciso por a 0 ao invés de -1
+		#print("ID: ", target_id, "     Count: ", count,"\n")
 	return count
 
 # ----- Arc  Functions ----
-func evaluate_arc_unlocks():
+func evaluate_arc_unlocks()-> void:
 	check_ai_arc_unlock()
-	check_rebellion_unlock()
+	#check_rebellion_unlock()
 	#check_terraform_unlock()
 
-func progress_arc(card: Cards):
-	var arc_map = { 1: "AI",  2: "Aliens", 3: "Authoritarian_ruler"}
-
+func progress_arc(card: Cards)-> void:
+	var arc_map: Dictionary = { 1: "AI",  2: "Aliens", 3: "Authoritarian_ruler"}
 	if not active_arcs.has(card.arc):
 		return
 		
@@ -185,47 +202,55 @@ func progress_arc(card: Cards):
 	if active_arcs[card.arc_progression] == -1:   # Use -1 as the final card of the arc
 		complete_arc(arc_map[card.arc])
 
-func complete_arc(arc_name: String):
+func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)
 	completed_arcs.append(arc_name)
 	print(arc_name + " completed")
 
-# ----- Arc Condition Functions
-func check_ai_arc_unlock(): # Too much automation + low morale = AI becomes dominant.
+func arc_lockdown(candidates: Array)-> void:		
+	if active_arcs.size() >= 2:
+		for cards in candidates:
+			if not active_arcs.has(cards.arc):
+				candidates.erase(cards.arc)
+
+
+#region Arc Condition Functions ---- Show first card of arc?
+func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
 	if active_arcs.has("AI_Uprising"):
 		return
 	if completed_arcs.has("AI_Uprising"):
 		return
 
-	if get_effects_in_memory("Progress") >= 3 and world_state.morale < 40: # substituir count_arc_events por event_memory has X cards of type 
+	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < 90:  
 		active_arcs["AI_Uprising"] = 1
 		print("AI Uprising Started")
-		
-func check_rebellion_unlock():
+
+func check_rebellion_unlock() -> void: 
 	if active_arcs.has("Rebellion"):
 		return
-	if get_effects_in_memory("Resources") >= 3 and world_state.morale < 40:
+	if completed_arcs.has("Rebellion"):
+		return
+		
+	if get_effects_in_memory("Resources") >= 3 and world_state.get("Moral") < 40:	
 		active_arcs["Rebellion"] = 1
-		print("Rebellion Arc Started")
+		print("Rebellion Arc Started")		
 
-'''func check_terraform_unlock(): # Played 4 Science-tag cards in last 8 turns & Progress > 60
+func check_terraform_unlock() -> void:
 	if active_arcs.has("Terraforming"):
 		return
+	if completed_arcs.has("Terraforming"):
+		return
 
-	var science_recent = 0
-
-	for entry in event_memory:
-		if entry.arc == "Science" and current_turn - entry.turn <= 8:
-			science_recent += 1
-
-	if science_recent >= 4 and world_state.progress > 60:
+	if get_effects_in_memory("Progress") > 4 and world_state.get("Progress") > 60:
 		active_arcs["Terraforming"] = 1
-		print("Terraforming Arc Started")'''
-		
+		print("Terraforming Arc Started")
+#endregion
+
+#endregion
 
 
-
-
+func visual_pass():
+	pass
 
 
 # ---- Legacy ---

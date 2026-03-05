@@ -295,6 +295,19 @@ size_flags_stretch_ratio = 2.49
 theme_override_font_sizes/font_size = 22
 text = "Print Memory "
 
+[node name="CheckArcs" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.89800006
+anchor_top = 0.595
+anchor_right = 0.98300004
+anchor_bottom = 0.651
+offset_left = -15.160156
+offset_top = -12.600037
+offset_right = 10.639893
+offset_bottom = -0.08001709
+text = "Print Arc Status"
+
 [node name="DataLoader" type="Node" parent="."]
 script = ExtResource("7_6bp64")
 
@@ -305,3 +318,4 @@ database = ExtResource("9_ynf5e")
 [connection signal="pressed" from="Panel/HBoxContainer/LeftChoice" to="." method="_on_left_choice_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/RightChoice" to="." method="_on_right_choice_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/PrintMemory" to="." method="_on_memory_print"]
+[connection signal="pressed" from="Panel/CheckArcs" to="." method="_on_check_arcs_pressed"]

@@ -63,4 +63,9 @@ func _on_left_choice_pressed() -> void:
 
 
 func _on_memory_print() -> void:
-	print(GameState.event_memory)
+	print("Event Memory: ", GameState.event_memory)
+
+
+func _on_check_arcs_pressed() -> void:
+	print("Active Arcs: ", GameState.active_arcs)
+	print("Locked Arcs: ", GameState.locked_arcs)
