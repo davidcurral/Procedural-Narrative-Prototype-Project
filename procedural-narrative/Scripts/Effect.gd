@@ -5,7 +5,7 @@ class_name Effect
 # -- Common variables --
 enum type_options {stat, flag, unlock}
 enum target_options {resources, progress, security, moral, risk}
-enum arc_options {no_arc, AI, Aliens, Authoritarian_ruler}
+enum arc_options {no_arc, AI, Aliens, Rebellion}
 
 const TARGET_KEYS = {
 	target_options.resources: "Resources",

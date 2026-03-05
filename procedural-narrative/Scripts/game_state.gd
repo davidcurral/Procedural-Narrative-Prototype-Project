@@ -190,11 +190,12 @@ func get_effects_in_memory(target)-> int:
 # ----- Arc  Functions ----
 func evaluate_arc_unlocks()-> void:
 	check_ai_arc_unlock()
+	#check_alien_arc_unlock()
 	#check_rebellion_unlock()
 	#check_terraform_unlock()
 
-func progress_arc(card: Cards)-> void:
-	var arc_map: Dictionary = { 1: "AI",  2: "Aliens", 3: "Authoritarian_ruler"}
+func progress_arc(card: Cards)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
+	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
 	if not active_arcs.has(card.arc):
 		return
 		
@@ -223,7 +224,23 @@ func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI beco
 
 	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < 90:  
 		active_arcs["AI_Uprising"] = 1
-		print("AI Uprising Started")
+		for card in available_cards_list:
+			if card.arc == 1 and card.arc_progression == 1:
+				card.weight = 10
+				print("AI Uprising Started")
+
+func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
+	if active_arcs.has("Alien"):
+		return
+	if completed_arcs.has("Aien"):
+		return
+
+	if get_effects_in_memory("Progress") >= 1 and world_state.get("Resources") > 60:  
+		active_arcs["Aliens"] = 1
+		for card in available_cards_list:
+			if card.arc == 2 and card.arc_progression == 1:
+				card.weight = 10
+				print("Alien Lifeforms Started")
 
 func check_rebellion_unlock() -> void: 
 	if active_arcs.has("Rebellion"):
@@ -233,6 +250,9 @@ func check_rebellion_unlock() -> void:
 		
 	if get_effects_in_memory("Resources") >= 3 and world_state.get("Moral") < 40:	
 		active_arcs["Rebellion"] = 1
+		for card in available_cards_list:
+			if card.arc == 3 and card.arc_progression == 1:
+				card.weight = 10
 		print("Rebellion Arc Started")		
 
 func check_terraform_unlock() -> void:

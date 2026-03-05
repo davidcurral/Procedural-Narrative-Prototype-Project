@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardDatabase" load_steps=7 format=3 uid="uid://7yho5snn7qd3"]
+[gd_resource type="Resource" script_class="CardDatabase" load_steps=9 format=3 uid="uid://7yho5snn7qd3"]
 
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="1_vg1d5"]
 [ext_resource type="Script" uid="uid://b4gjbeghvnxg0" path="res://Scripts/Utilities/card_database.gd" id="2_4q1l7"]
@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://bi1yka3anqa6r" path="res://Resources/auto cards/2_hydroponic_failure.tres" id="3_5km27"]
 [ext_resource type="Resource" uid="uid://cnh7rrk5dd7uk" path="res://Resources/auto cards/59_symbiosis_proposal.tres" id="4_ljpky"]
 [ext_resource type="Resource" uid="uid://myvso8xldmbd" path="res://Resources/auto cards/60_planet_awakens.tres" id="5_wdxk7"]
+[ext_resource type="Resource" uid="uid://chxjw4sy3elih" path="res://Resources/manual cards/49_experimental_ai.tres" id="6_5km27"]
+[ext_resource type="Resource" uid="uid://jr0stdgm4jv7" path="res://Resources/manual cards/50_surveillance_network.tres" id="7_ljpky"]
 
 [resource]
 script = ExtResource("2_4q1l7")
-card_list = Array[ExtResource("1_vg1d5")]([ExtResource("2_26kh7"), ExtResource("3_5km27"), ExtResource("4_ljpky"), ExtResource("5_wdxk7")])
+card_list = Array[ExtResource("1_vg1d5")]([ExtResource("2_26kh7"), ExtResource("3_5km27"), ExtResource("4_ljpky"), ExtResource("5_wdxk7"), ExtResource("6_5km27"), ExtResource("7_ljpky")])
 metadata/_custom_type_script = "uid://b4gjbeghvnxg0"
