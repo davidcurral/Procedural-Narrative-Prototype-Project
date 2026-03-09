@@ -10,6 +10,7 @@ var max_weight = 1
 # -- Runtime Data --
 var available_cards_list: Dictionary = {} # card_id : card
 var cooldown_tracker: Dictionary = {} # card_id : card.cooldown
+var arc_cards_list: Array [Cards] = []
 
 var rng = RandomNumberGenerator.new()
 var stored_current_card
@@ -49,9 +50,12 @@ func set_static_data(cards: Array[Cards], initial_cards : Array [Cards]):
 	
 func initialize():		
 	available_cards_list.clear()
+	arc_cards_list.clear()
 	for card_data in card_database:
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
+		if card_data.arc != 0:
+			arc_cards_list.append(card_data)
 	show_first_card()
 	
 
@@ -65,9 +69,10 @@ func card_processing(choice_id: int): #Resolve current card → compute weights 
 	else:
 		apply_effects(stored_current_card.right_effects)
 
-	on_card_played(stored_current_card, choice_id)
+	on_card_played_memory_append(stored_current_card, choice_id)
 	process_cooldowns()
 	evaluate_arc_unlocks()
+	progress_arc(stored_current_card)
 	pick_next_card()
 
 # --- Logic Fucntions ---
@@ -81,7 +86,7 @@ func apply_effects(effects_list: Array) -> void:    # Careful with enums, they a
 
 	world_change.emit()
 			
-func on_card_played(card: Cards, choice: int):
+func on_card_played_memory_append(card: Cards, choice: int):
 	current_turn += 1
 
 	var memory_entry: Dictionary = {
@@ -123,7 +128,7 @@ func pick_next_card() -> void:
 	if candidates.is_empty():
 		return
 	
-	arc_lockdown(candidates)
+	arc_amount_limit(candidates)
 
 	var total_weight = 0
 	for card in candidates:
@@ -198,17 +203,34 @@ func progress_arc(card: Cards)-> void: # ver quando chamar isto e o que fazer- >
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
 	if not active_arcs.has(card.arc):
 		return
-		
+	
+	for cards in arc_cards_list:
+		if cards.arc == card.arc:
+			if cards.arc_progression == card.arc_progression + 1:	
+				available_cards_list[cards.id] = cards
+				available_cards_list.erase(card.id)
+	
 	active_arcs[card.arc] = card.arc_progression
-	if active_arcs[card.arc_progression] == -1:   # Use -1 as the final card of the arc
-		complete_arc(arc_map[card.arc])
+
+	for arc_cards in arc_cards_list:
+		if arc_cards.arc_progression == active_arcs[card.arc]:
+			for left_effects in arc_cards.left_effects:
+				if left_effects.type == 1:
+					complete_arc(arc_map[card.arc])
+					available_cards_list.erase(card.id)
+		
+			for right_effects in arc_cards.right_effects:
+				if right_effects.type == 1:
+					complete_arc(arc_map[card.arc])
+					available_cards_list.erase(card.id)
+			
 
 func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)
 	completed_arcs.append(arc_name)
 	print(arc_name + " completed")
 
-func arc_lockdown(candidates: Array)-> void:		
+func arc_amount_limit(candidates: Array)-> void:		
 	if active_arcs.size() >= 2:
 		for cards in candidates:
 			if not active_arcs.has(cards.arc):
@@ -223,7 +245,7 @@ func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI beco
 		return
 
 	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < 90:  
-		active_arcs["AI_Uprising"] = 1
+		active_arcs["AI_Uprising"] = 0 			# 0 = unlocked but has not appear yet
 		for card in available_cards_list:
 			if card.arc == 1 and card.arc_progression == 1:
 				card.weight = 10
@@ -236,7 +258,7 @@ func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI b
 		return
 
 	if get_effects_in_memory("Progress") >= 1 and world_state.get("Resources") > 60:  
-		active_arcs["Aliens"] = 1
+		active_arcs["Aliens"] = 0
 		for card in available_cards_list:
 			if card.arc == 2 and card.arc_progression == 1:
 				card.weight = 10
@@ -249,7 +271,7 @@ func check_rebellion_unlock() -> void:
 		return
 		
 	if get_effects_in_memory("Resources") >= 3 and world_state.get("Moral") < 40:	
-		active_arcs["Rebellion"] = 1
+		active_arcs["Rebellion"] = 0
 		for card in available_cards_list:
 			if card.arc == 3 and card.arc_progression == 1:
 				card.weight = 10
@@ -262,7 +284,7 @@ func check_terraform_unlock() -> void:
 		return
 
 	if get_effects_in_memory("Progress") > 4 and world_state.get("Progress") > 60:
-		active_arcs["Terraforming"] = 1
+		active_arcs["Terraforming"] = 0
 		print("Terraforming Arc Started")
 #endregion
 

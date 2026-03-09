@@ -33,6 +33,7 @@ id = 50
 name = "Surveilance Network"
 context = "Add AI to security network"
 available = false
+weight = 0.9
 arc = 1
 arc_progression = 2
 cooldown = 500
