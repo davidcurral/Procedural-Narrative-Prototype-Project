@@ -91,13 +91,14 @@ func on_card_played_memory_append(card: Cards, choice: int):
 
 	var memory_entry: Dictionary = {
 		#"card_id": card.id,
+		"card": card,
 		"choice": choice,
 		"turn": current_turn,
 		#"arc": card.arc,
 		#"arc_progress": card.arc_progression,
 		"left_effects": card.left_effects,
-		"right_effects": card.right_effects,
-		"card": card
+		"right_effects": card.right_effects
+		
 	}
 
 	event_memory.append(memory_entry)
@@ -205,6 +206,8 @@ func progress_arc(card: Cards)-> void: # ver quando chamar isto e o que fazer- >
 		return
 	
 	for cards in arc_cards_list:
+		print("Cards_arc: ", cards.arc , " Current Card: ", card.arc)
+
 		if cards.arc == card.arc:
 			if cards.arc_progression == card.arc_progression + 1:	
 				available_cards_list[cards.id] = cards
@@ -246,7 +249,8 @@ func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI beco
 
 	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < 90:  
 		active_arcs["AI_Uprising"] = 0 			# 0 = unlocked but has not appear yet
-		for card in available_cards_list:
+		for elements in available_cards_list:
+			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 1 and card.arc_progression == 1:
 				card.weight = 10
 				print("AI Uprising Started")
@@ -259,7 +263,8 @@ func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI b
 
 	if get_effects_in_memory("Progress") >= 1 and world_state.get("Resources") > 60:  
 		active_arcs["Aliens"] = 0
-		for card in available_cards_list:
+		for elements in available_cards_list:
+			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 2 and card.arc_progression == 1:
 				card.weight = 10
 				print("Alien Lifeforms Started")
@@ -272,7 +277,8 @@ func check_rebellion_unlock() -> void:
 		
 	if get_effects_in_memory("Resources") >= 3 and world_state.get("Moral") < 40:	
 		active_arcs["Rebellion"] = 0
-		for card in available_cards_list:
+		for elements in available_cards_list:
+			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 3 and card.arc_progression == 1:
 				card.weight = 10
 		print("Rebellion Arc Started")		
@@ -289,38 +295,3 @@ func check_terraform_unlock() -> void:
 #endregion
 
 #endregion
-
-
-func visual_pass():
-	pass
-
-
-# ---- Legacy ---
-'''func compute_card_probability_of_appearing() -> void:
-	var total_available_cards = available_cards_list.size()
-	for card_id in available_cards_list.keys(): # Get id from card
-		var card_resource = available_cards_list[card_id] # returns int no string
-		if card_resource.card_rarity == 0:
-			card_resource.weight = 1.0/total_available_cards * common_mult
-		elif card_resource.card_rarity == 1:
-			card_resource.weight = 1.0/total_available_cards * rare_mult
-		elif card_resource.card_rarity == 2:
-			card_resource.weight = 1.0/total_available_cards * epic_mult	
--------		
-func choose_next_card():
-	var weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
-	
-	for card_id in available_cards_list.keys():			
-		var card_resource = available_cards_list[card_id]
-		if not cooldown_tracker.has(card_resource.id):
-			print("True")
-			if card_resource.weight >= weight_treshold:
-				card_selected.emit(card_resource)
-				stored_current_card = card_resource
-				break
-			else:
-				weight_treshold = snapped(rng.randf_range(0,max_weight),0.01)
-		else:
-			print("False")
-			
-'''		

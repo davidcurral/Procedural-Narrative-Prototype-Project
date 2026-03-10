@@ -69,3 +69,11 @@ func _on_memory_print() -> void:
 func _on_check_arcs_pressed() -> void:
 	print("Active Arcs: ", GameState.active_arcs)
 	print("Locked Arcs: ", GameState.locked_arcs)
+
+
+func _on_available_cards_pressed() -> void:
+	print(GameState.available_cards_list)
+
+
+func _on_arc_cards_list_pressed() -> void:
+	print(GameState.arc_cards_list)

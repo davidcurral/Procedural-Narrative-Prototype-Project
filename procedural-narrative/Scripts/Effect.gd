@@ -22,6 +22,15 @@ var choice: String
 @export var type: type_options
 @export var target: target_options
 @export var value: int
-#@export var arc: arc_options 
+@export var arc: arc_options 
 var arc_chapter: Array = []
 #@export var description := ""
+
+
+
+#region Rename Resource print
+# Override this method to change how the resource prints
+func _to_string() -> String:
+	return "%s_%d" % [type, value]
+
+#endregion 

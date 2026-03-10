@@ -27,8 +27,8 @@ func Update_Card_UI():
 		if card_data.arc == 0:
 			left_text += "%s: %+d\n" % [target_name, value] #+ "\n" #+ description
 		else:
-			left_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" #+ description
-
+			left_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" + "%s: %+d\n" % [target_name, value] #+ description
+			
 	left.text = left_text 
 	
 	var right_text: String = card_data.right_description + "\n\n"
@@ -40,7 +40,7 @@ func Update_Card_UI():
 		if card_data.arc == 0:
 			right_text += "%s: %+d\n" % [target_name, value] #+ "\n" + description
 		else:
-			right_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" #+ description
+			right_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" + "%s: %+d\n" % [target_name, value] #+ description
 
 	right.text = right_text
 

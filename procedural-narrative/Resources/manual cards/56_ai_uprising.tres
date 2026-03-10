@@ -7,6 +7,7 @@
 script = ExtResource("1_m6me5")
 target = 1
 value = 50
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_o1gk0"]
@@ -14,6 +15,7 @@ script = ExtResource("1_m6me5")
 type = 1
 target = 1
 value = 1
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_qosm7"]

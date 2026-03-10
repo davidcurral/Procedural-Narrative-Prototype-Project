@@ -308,6 +308,31 @@ offset_right = 10.639893
 offset_bottom = -0.08001709
 text = "Print Arc Status"
 
+[node name="AvailableCards" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.89500004
+anchor_top = 0.66400003
+anchor_right = 0.98300004
+anchor_bottom = 0.731
+offset_left = -9.400024
+offset_top = -0.12005615
+offset_right = 10.639893
+offset_bottom = 0.52001953
+text = "Print Available Cards"
+
+[node name="ArcCardsList" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.892
+anchor_top = 0.75200003
+anchor_right = 0.98300004
+anchor_bottom = 0.8
+offset_left = -0.64001465
+offset_top = -0.16003418
+offset_right = 12.639893
+text = "Print Arc Cards List"
+
 [node name="DataLoader" type="Node" parent="."]
 script = ExtResource("7_6bp64")
 
@@ -319,3 +344,5 @@ database = ExtResource("9_ynf5e")
 [connection signal="pressed" from="Panel/HBoxContainer/RightChoice" to="." method="_on_right_choice_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/PrintMemory" to="." method="_on_memory_print"]
 [connection signal="pressed" from="Panel/CheckArcs" to="." method="_on_check_arcs_pressed"]
+[connection signal="pressed" from="Panel/AvailableCards" to="." method="_on_available_cards_pressed"]
+[connection signal="pressed" from="Panel/ArcCardsList" to="." method="_on_arc_cards_list_pressed"]

@@ -7,24 +7,28 @@
 script = ExtResource("1_m1uyx")
 target = 2
 value = 10
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_chf7g"]
 script = ExtResource("1_m1uyx")
 target = 3
 value = -5
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_wxmrr"]
 script = ExtResource("1_m1uyx")
 target = 2
 value = -5
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_2gx6g"]
 script = ExtResource("1_m1uyx")
 target = 3
 value = 9
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [resource]
