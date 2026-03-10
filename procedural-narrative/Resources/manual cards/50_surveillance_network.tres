@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://jr0stdgm4jv7"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://jr0stdgm4jv7"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_m1uyx"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_pikpn"]
@@ -31,18 +31,24 @@ value = 9
 arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
+[sub_resource type="Resource" id="Resource_xuu4a"]
+script = ExtResource("1_m1uyx")
+type = 1
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_pikpn")
 id = 50
 name = "Surveilance Network"
 context = "Add AI to security network"
 available = false
-weight = 0.9
+weight = 1.0
 arc = 1
 arc_progression = 2
 cooldown = 500
 left_effects = Array[ExtResource("1_m1uyx")]([SubResource("Resource_aeu67"), SubResource("Resource_chf7g")])
 left_description = "Allow AI"
-right_effects = Array[ExtResource("1_m1uyx")]([SubResource("Resource_wxmrr"), SubResource("Resource_2gx6g")])
+right_effects = Array[ExtResource("1_m1uyx")]([SubResource("Resource_wxmrr"), SubResource("Resource_2gx6g"), SubResource("Resource_xuu4a")])
 right_description = "Terminate Program"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

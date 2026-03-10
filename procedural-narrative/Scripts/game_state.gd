@@ -202,28 +202,21 @@ func evaluate_arc_unlocks()-> void:
 
 func progress_arc(card: Cards)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
-	if not active_arcs.has(card.arc):
+	if card.arc == 0:
 		return
-	
+		
 	for cards in arc_cards_list:
-		print("Cards_arc: ", cards.arc , " Current Card: ", card.arc)
-
 		if cards.arc == card.arc:
 			if cards.arc_progression == card.arc_progression + 1:	
 				available_cards_list[cards.id] = cards
 				available_cards_list.erase(card.id)
 	
-	active_arcs[card.arc] = card.arc_progression
+	active_arcs[arc_map[card.arc]] = card.arc_progression
 
 	for arc_cards in arc_cards_list:
-		if arc_cards.arc_progression == active_arcs[card.arc]:
-			for left_effects in arc_cards.left_effects:
-				if left_effects.type == 1:
-					complete_arc(arc_map[card.arc])
-					available_cards_list.erase(card.id)
-		
-			for right_effects in arc_cards.right_effects:
-				if right_effects.type == 1:
+		if arc_cards.arc_progression == active_arcs[arc_map[card.arc]]:			
+			for effect in arc_cards.left_effects + arc_cards.right_effects:
+				if effect.type == 1:
 					complete_arc(arc_map[card.arc])
 					available_cards_list.erase(card.id)
 			

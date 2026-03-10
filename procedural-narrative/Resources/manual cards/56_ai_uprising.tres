@@ -27,12 +27,12 @@ metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 [resource]
 script = ExtResource("2_22qxa")
 id = 56
-name = "Ai UPrising"
+name = "Ai Uprising"
 context = "Ai will dominate the dome"
 available = false
-weight = 0.9
+weight = 1.0
 arc = 1
-arc_progression = 7
+arc_progression = 3
 cooldown = 500
 left_effects = Array[ExtResource("1_m6me5")]([SubResource("Resource_13rto"), SubResource("Resource_o1gk0")])
 left_description = "Adopt as GOD"

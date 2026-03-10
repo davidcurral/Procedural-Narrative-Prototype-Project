@@ -15,32 +15,24 @@ func setup(_card_data):
 func Update_Card_UI():
 	
 	name_label.text = card_data.name
-	context_label.text = card_data.context
-	
-	var left_text: String = card_data.left_description + "\n\n"
-	
+	if card_data.arc != 0:
+		context_label.text = translate_arc(card_data.arc) + " - " +card_data.context + "\n"
+	else:
+		context_label.text = card_data.context
+		
+	var left_text: String = card_data.left_description + "\n\n"	
 	for effect in card_data.left_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
-		#var description = effect["description"]
-		#var arc = effect["arc"]
-		if card_data.arc == 0:
-			left_text += "%s: %+d\n" % [target_name, value] #+ "\n" #+ description
-		else:
-			left_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" + "%s: %+d\n" % [target_name, value] #+ description
-			
+		left_text += "%s: %+d\n" % [target_name, value] #+ "\n" #+ description
+		
 	left.text = left_text 
 	
 	var right_text: String = card_data.right_description + "\n\n"
 	for effect in card_data.right_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
-		#var description = effect["description"]
-		#var arc = effect["arc"]
-		if card_data.arc == 0:
-			right_text += "%s: %+d\n" % [target_name, value] #+ "\n" + description
-		else:
-			right_text += enum_to_string(effect.arc_options, effect["arc"]) + "\n" + "%s: %+d\n" % [target_name, value] #+ description
+		right_text += "%s: %+d\n" % [target_name, value] #+ "\n" + description
 
 	right.text = right_text
 
@@ -50,3 +42,7 @@ func return_card_ID():
 
 func enum_to_string(enum_dict: Dictionary, value: int) -> String:
 	return enum_dict.keys()[value]
+
+func translate_arc(arc: int) -> String:
+	var arc_map: Dictionary = { 1: "AI Arc",  2: "Alien Arc", 3: "Rebellion Arc"}
+	return arc_map[arc]
