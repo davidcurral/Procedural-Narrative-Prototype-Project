@@ -64,6 +64,8 @@ func _on_choice_made(choice_id):
 	card_processing(choice_id)	
 	
 func card_processing(choice_id: int): #Resolve current card → compute weights for all valid cards → select next → set as current → emit
+	print_arc_start()
+		
 	if choice_id == LEFT_CHOICE:
 		apply_effects(stored_current_card.left_effects)
 	else:
@@ -80,7 +82,7 @@ func apply_effects(effects_list: Array) -> void:    # Careful with enums, they a
 	for effect in effects_list:
 		match effect["type"]:
 			effect.type_options.stat: apply_world_stat(effect)
-			effect.type_options.unlock: apply_world_arcs(effect) 
+			#effect.type_options.unlock: apply_world_arcs(effect) 
 			#effect.type_options.flag: GameMemory.memory_flags[effect["target"]] = effect["value"] 
 			#effect.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
 
@@ -130,7 +132,6 @@ func pick_next_card() -> void:
 		return
 	
 	arc_amount_limit(candidates)
-	#print("Candidates: ", candidates, "\n")
 
 	var total_weight = 0
 	for card in candidates:
@@ -163,17 +164,16 @@ func apply_world_stat(effect) -> void:
 		
 	if effect.value not in effect.arc_chapter:
 		effect.arc_chapter.append(effect.value)
-	GameMemory.memory_arcs[key] = effect.arc_chapter ''' 
+		GameMemory.memory_arcs[key] = effect.arc_chapter''' 
 	
-		
 func show_first_card() -> void: 
 	var card_resource = initial_card_list[0]
 	stored_current_card = card_resource
 	card_selected.emit(card_resource)
 	#var card_picked = rng.randi_range(0,len(initial_card_list))
-	#var card_resource = initial_card_list[card_picked] 
+	#var card_resource = initial_card_list[card_picked]
 	
- func get_effects_in_memory(target)-> int:
+func get_effects_in_memory(target)-> int:
 	var target_map: Dictionary = {"Resources": 0, "Progress": 1, "Security": 2,"Moral": 3}
 	if not target_map.has(target): return 0
 	
@@ -242,6 +242,23 @@ func arc_amount_limit(candidates: Array)-> void:
 				if not active_arcs.has(arc_map[cards.arc]):
 					candidates.erase(cards)
 
+func print_arc_start() -> void:
+	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
+
+	if not active_arcs.has(stored_current_card.arc):
+		if stored_current_card.arc_progression == 1:
+			match stored_current_card.arc:
+				1: 
+					active_arcs[arc_map[stored_current_card.arc]] = 1
+					print("AI Uprising Started")
+				2:
+					active_arcs[arc_map[stored_current_card.arc]] = 1
+					print("Alien Life Found")
+				3:
+					active_arcs[arc_map[stored_current_card.arc]] = 1
+					print("Rebellion is coming")
+
+			
 #region Arc Condition Functions ---- Show first card of arc?
 func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
 	if active_arcs.has("AI_Uprising"):
@@ -249,7 +266,7 @@ func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI beco
 	if completed_arcs.has("AI_Uprising"):
 		return
 
-	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < 90:  
+	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < -90:  
 		active_arcs["AI_Uprising"] = 0 			# 0 = unlocked but has not appear yet
 		for elements in available_cards_list:
 			var card: Cards =  available_cards_list.get(elements)
