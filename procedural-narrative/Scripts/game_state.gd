@@ -6,6 +6,7 @@ extends Node
 var card_database: Array [Cards] = []
 var initial_card_list: Array[Cards]
 var max_weight = 1
+var max_concurrent_arcs: int
 
 # -- Runtime Data --
 var available_cards_list: Dictionary = {} # card_id : card
@@ -44,9 +45,10 @@ func _ready():
 	
 	
 # --- Starting Functions ---
-func set_static_data(cards: Array[Cards], initial_cards : Array [Cards]):
+func set_static_data(cards: Array[Cards], initial_cards : Array [Cards], max_arcs: int):
 	card_database = cards
 	initial_card_list = initial_cards
+	max_concurrent_arcs = max_arcs
 	
 func initialize():		
 	available_cards_list.clear()
@@ -236,7 +238,7 @@ func complete_arc(arc_name: String)-> void:
 
 func arc_amount_limit(candidates: Array)-> void:		
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
-	if active_arcs.size() >= 2:
+	if active_arcs.size() >= max_concurrent_arcs:
 		for cards in candidates:
 			if cards.arc != 0:
 				if not active_arcs.has(arc_map[cards.arc]):

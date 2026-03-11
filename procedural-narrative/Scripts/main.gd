@@ -10,6 +10,9 @@ Main emits choice made
 #@export var card_list: Array[Cards] = []
 @export var initial_card_list: Array[Cards]
 @export var database: CardDatabase
+@export var max_concurrent_arcs: int = 2
+
+
 
 @onready var card_display = $Panel/HBoxContainer/Panel
 @onready var card_node = $Panel/HBoxContainer/Panel/VBoxContainer/Cards
@@ -29,7 +32,7 @@ const RIGHT_CHOICE = 1
 
 func _ready():
 	GameState.card_selected.connect(updateUI)
-	GameState.set_static_data(database.card_list, initial_card_list)	
+	GameState.set_static_data(database.card_list, initial_card_list, max_concurrent_arcs)	
 	GameState.world_change.connect(world_UI)
 	GameState.initialize()
 
