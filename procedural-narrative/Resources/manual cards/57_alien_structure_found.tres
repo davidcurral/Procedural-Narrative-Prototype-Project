@@ -1,8 +1,40 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=3 format=3 uid="uid://btx40h8efyh6l"]
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://btx40h8efyh6l"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_pl4ih"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_dxjc5"]
 
+[sub_resource type="Resource" id="Resource_3fgn5"]
+script = ExtResource("1_pl4ih")
+target = 1
+value = 10
+arc = 2
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_065br"]
+script = ExtResource("1_pl4ih")
+target = 2
+value = 10
+arc = 2
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_u0it8"]
+script = ExtResource("1_pl4ih")
+type = 1
+value = 1
+arc = 2
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_dxjc5")
+id = 57
+name = " Alien Structure"
+context = "You find an aliend strucutre on the planet"
+weight = 1.0
+arc = 2
+arc_progression = 1
+cooldown = 500
+left_effects = Array[ExtResource("1_pl4ih")]([SubResource("Resource_3fgn5")])
+left_description = "Explore Structure"
+right_effects = Array[ExtResource("1_pl4ih")]([SubResource("Resource_065br"), SubResource("Resource_u0it8")])
+right_description = "Leave it alone"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

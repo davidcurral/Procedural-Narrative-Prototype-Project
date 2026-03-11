@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://biyn164p3wqr5"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://biyn164p3wqr5"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_m6me5"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_22qxa"]
@@ -22,6 +22,14 @@ metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 script = ExtResource("1_m6me5")
 target = 2
 value = -40
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_qmmec"]
+script = ExtResource("1_m6me5")
+type = 1
+value = 1
+arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [resource]
@@ -36,6 +44,6 @@ arc_progression = 3
 cooldown = 500
 left_effects = Array[ExtResource("1_m6me5")]([SubResource("Resource_13rto"), SubResource("Resource_o1gk0")])
 left_description = "Adopt as GOD"
-right_effects = Array[ExtResource("1_m6me5")]([SubResource("Resource_qosm7")])
+right_effects = Array[ExtResource("1_m6me5")]([SubResource("Resource_qosm7"), SubResource("Resource_qmmec")])
 right_description = "Destroy all machines"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

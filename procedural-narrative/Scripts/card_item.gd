@@ -24,7 +24,8 @@ func Update_Card_UI():
 	for effect in card_data.left_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
-		left_text += "%s: %+d\n" % [target_name, value] #+ "\n" #+ description
+		if effect.type == 0:
+			left_text += "%s: %+d\n" % [target_name, value] #+ "\n" #+ description
 		
 	left.text = left_text 
 	
@@ -32,7 +33,8 @@ func Update_Card_UI():
 	for effect in card_data.right_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
-		right_text += "%s: %+d\n" % [target_name, value] #+ "\n" + description
+		if effect.type == 0:
+			right_text += "%s: %+d\n" % [target_name, value] #+ "\n" + description
 
 	right.text = right_text
 

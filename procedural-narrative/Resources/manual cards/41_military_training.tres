@@ -1,8 +1,45 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=3 format=3 uid="uid://b3dvibudaxrva"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b3dvibudaxrva"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_d4dqj"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_dpe1x"]
 
+[sub_resource type="Resource" id="Resource_8bsru"]
+script = ExtResource("1_d4dqj")
+value = -15
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_6kh8n"]
+script = ExtResource("1_d4dqj")
+target = 2
+value = 5
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_byaa3"]
+script = ExtResource("1_d4dqj")
+target = 3
+value = 5
+arc = 3
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_al0r1"]
+script = ExtResource("1_d4dqj")
+type = 1
+value = 1
+arc = 3
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_dpe1x")
+id = 41
+name = "Military Training"
+context = "Prepare for civil war"
+available = false
+weight = 1.0
+arc = 3
+arc_progression = 2
+cooldown = 500
+left_effects = Array[ExtResource("1_d4dqj")]([SubResource("Resource_8bsru"), SubResource("Resource_6kh8n")])
+left_description = "Invest in army"
+right_effects = Array[ExtResource("1_d4dqj")]([SubResource("Resource_byaa3"), SubResource("Resource_al0r1")])
+right_description = "Allow elections"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

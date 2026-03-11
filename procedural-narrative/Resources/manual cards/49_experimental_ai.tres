@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=5 format=3 uid="uid://chxjw4sy3elih"]
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://chxjw4sy3elih"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_xi0r6"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_234iw"]
@@ -17,6 +17,12 @@ value = -5
 arc = 1
 metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
+[sub_resource type="Resource" id="Resource_kdev2"]
+script = ExtResource("1_xi0r6")
+target = 3
+value = 10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_234iw")
 id = 49
@@ -27,4 +33,7 @@ arc = 1
 arc_progression = 1
 cooldown = 500
 left_effects = Array[ExtResource("1_xi0r6")]([SubResource("Resource_ki37w"), SubResource("Resource_v4y2d")])
+left_description = "Allow access"
+right_effects = Array[ExtResource("1_xi0r6")]([SubResource("Resource_kdev2")])
+right_description = "Limit access"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

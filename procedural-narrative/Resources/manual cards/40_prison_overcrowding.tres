@@ -1,8 +1,33 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=3 format=3 uid="uid://cm5q0rw6aktj"]
+[gd_resource type="Resource" script_class="Cards" load_steps=5 format=3 uid="uid://cm5q0rw6aktj"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_h44gc"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_vpe0p"]
 
+[sub_resource type="Resource" id="Resource_07yqg"]
+script = ExtResource("1_h44gc")
+target = 2
+value = -10
+arc = 3
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_4w6yy"]
+script = ExtResource("1_h44gc")
+target = 3
+value = -10
+arc = 3
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_vpe0p")
+id = 40
+name = "Prison Overcrowding"
+context = "Prisons are full"
+weight = 1.0
+arc = 3
+arc_progression = 1
+cooldown = 500
+left_effects = Array[ExtResource("1_h44gc")]([SubResource("Resource_07yqg")])
+left_description = "Pardon them"
+right_effects = Array[ExtResource("1_h44gc")]([SubResource("Resource_4w6yy")])
+right_description = "Kill Some people"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

@@ -72,7 +72,7 @@ func card_processing(choice_id: int): #Resolve current card → compute weights 
 	on_card_played_memory_append(stored_current_card, choice_id)
 	process_cooldowns()
 	evaluate_arc_unlocks()
-	progress_arc(stored_current_card)
+	progress_arc(stored_current_card,choice_id)
 	pick_next_card()
 
 # --- Logic Fucntions ---
@@ -80,9 +80,9 @@ func apply_effects(effects_list: Array) -> void:    # Careful with enums, they a
 	for effect in effects_list:
 		match effect["type"]:
 			effect.type_options.stat: apply_world_stat(effect)
-			effect.type_options.flag: GameMemory.memory_flags[effect["target"]] = effect["value"] 
 			effect.type_options.unlock: apply_world_arcs(effect) 
-			effect.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
+			#effect.type_options.flag: GameMemory.memory_flags[effect["target"]] = effect["value"] 
+			#effect.type_option.countdown: GameMemory.memory_counters[effect["target"]] = effect["value"]
 
 	world_change.emit()
 			
@@ -130,6 +130,7 @@ func pick_next_card() -> void:
 		return
 	
 	arc_amount_limit(candidates)
+	#print("Candidates: ", candidates, "\n")
 
 	var total_weight = 0
 	for card in candidates:
@@ -154,7 +155,7 @@ func apply_world_stat(effect) -> void:
 		return
 	world_state[key] = world_state.get(key, 0) + effect["value"]
 	
-func apply_world_arcs(effect) -> void: # rever se preciso disto assim	
+'''func apply_world_arcs(effect) -> void: # rever se preciso disto assim	 
 	var key = effect.ARC_KEYS.get(effect["arc"])
 	if key == null:
 		push_error("Unknown stat target")
@@ -162,16 +163,17 @@ func apply_world_arcs(effect) -> void: # rever se preciso disto assim
 		
 	if effect.value not in effect.arc_chapter:
 		effect.arc_chapter.append(effect.value)
-	GameMemory.memory_arcs[key] = effect.arc_chapter
+	GameMemory.memory_arcs[key] = effect.arc_chapter ''' 
+	
 		
-func show_first_card() -> void:
-	#var card_picked = rng.randi_range(0,len(initial_card_list))
-	#var card_resource = initial_card_list[card_picked] 
+func show_first_card() -> void: 
 	var card_resource = initial_card_list[0]
 	stored_current_card = card_resource
 	card_selected.emit(card_resource)
+	#var card_picked = rng.randi_range(0,len(initial_card_list))
+	#var card_resource = initial_card_list[card_picked] 
 	
-func get_effects_in_memory(target)-> int:
+ func get_effects_in_memory(target)-> int:
 	var target_map: Dictionary = {"Resources": 0, "Progress": 1, "Security": 2,"Moral": 3}
 	if not target_map.has(target): return 0
 	
@@ -200,10 +202,24 @@ func evaluate_arc_unlocks()-> void:
 	#check_rebellion_unlock()
 	#check_terraform_unlock()
 
-func progress_arc(card: Cards)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
+func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
 	if card.arc == 0:
 		return
+		
+	if choice_id == 0:
+		for effect in card.left_effects:
+			if effect.type == 1:
+				complete_arc(arc_map[card.arc])		
+				available_cards_list.erase(card.id)
+				return
+	elif choice_id == 1:
+		for effect in card.right_effects:
+			if effect.type == 1:
+				complete_arc(arc_map[card.arc])		
+				available_cards_list.erase(card.id)
+				return
+		
 		
 	for cards in arc_cards_list:
 		if cards.arc == card.arc:
@@ -213,25 +229,18 @@ func progress_arc(card: Cards)-> void: # ver quando chamar isto e o que fazer- >
 	
 	active_arcs[arc_map[card.arc]] = card.arc_progression
 
-	for arc_cards in arc_cards_list:
-		if arc_cards.arc_progression == active_arcs[arc_map[card.arc]]:			
-			for effect in arc_cards.left_effects + arc_cards.right_effects:
-				if effect.type == 1:
-					complete_arc(arc_map[card.arc])
-					available_cards_list.erase(card.id)
-			
-
 func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)
 	completed_arcs.append(arc_name)
 	print(arc_name + " completed")
 
 func arc_amount_limit(candidates: Array)-> void:		
+	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
 	if active_arcs.size() >= 2:
 		for cards in candidates:
-			if not active_arcs.has(cards.arc):
-				candidates.erase(cards.arc)
-
+			if cards.arc != 0:
+				if not active_arcs.has(arc_map[cards.arc]):
+					candidates.erase(cards)
 
 #region Arc Condition Functions ---- Show first card of arc?
 func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
@@ -287,4 +296,4 @@ func check_terraform_unlock() -> void:
 		print("Terraforming Arc Started")
 #endregion
 
-#endregion
+#endregion  

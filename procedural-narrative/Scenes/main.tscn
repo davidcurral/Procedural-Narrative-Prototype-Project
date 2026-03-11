@@ -332,6 +332,7 @@ offset_left = -0.64001465
 offset_top = -0.16003418
 offset_right = 12.639893
 text = "Print Arc Cards List"
+script = ExtResource("8_344ge")
 
 [node name="DataLoader" type="Node" parent="."]
 script = ExtResource("7_6bp64")

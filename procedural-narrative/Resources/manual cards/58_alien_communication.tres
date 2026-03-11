@@ -1,8 +1,38 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=3 format=3 uid="uid://ohj7y06m43e"]
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://ohj7y06m43e"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ren0n"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_3u6pk"]
 
+[sub_resource type="Resource" id="Resource_uyfe0"]
+script = ExtResource("1_ren0n")
+target = 1
+value = 5
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_uo3sk"]
+script = ExtResource("1_ren0n")
+target = 3
+value = -5
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_ugivx"]
+script = ExtResource("1_ren0n")
+type = 1
+arc = 2
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_3u6pk")
+id = 58
+name = "Alien Communication"
+context = "Strange signals are being captured by the radio"
+available = false
+weight = 1.0
+arc = 2
+arc_progression = 2
+cooldown = 500
+left_effects = Array[ExtResource("1_ren0n")]([SubResource("Resource_uyfe0"), SubResource("Resource_uo3sk")])
+left_description = "Try to Underrstand them"
+right_effects = Array[ExtResource("1_ren0n")]([SubResource("Resource_ugivx")])
+right_description = "Ignore them"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

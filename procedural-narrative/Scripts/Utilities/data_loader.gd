@@ -46,6 +46,7 @@ func load_card():
 			card.available = false
 		card.weight = float(line[7])
 		card.cooldown = int(line[8])
+		card.arc_progression = int(line[9])
 		card_builder_dictionary[card.id] = card
 
 func load_efect():
