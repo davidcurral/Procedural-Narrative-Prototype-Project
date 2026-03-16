@@ -73,6 +73,7 @@ func translate_arc(arc: int) -> String:
 
 func _on_left_button_mouse_entered() -> void:
 	left_effects_panel_UI.visible = true
+	$Sound/Reveal.play()
 	
 func _on_left_button_mouse_exited() -> void:
 	left_effects_panel_UI.visible = false
@@ -80,6 +81,7 @@ func _on_left_button_mouse_exited() -> void:
 
 func _on_right_button_mouse_entered() -> void:
 	right_effects_panel_UI.visible = true
+	$Sound/Reveal.play()
 
 
 func _on_right_button_mouse_exited() -> void:
@@ -87,8 +89,18 @@ func _on_right_button_mouse_exited() -> void:
 
 
 func _on_left_button_pressed() -> void:
+	$Sound/SelectEffect.play()
+	#$AnimationPlayer.play("Card_Left")
 	GameState.choice_made.emit(LEFT_CHOICE)
+	#$AnimationPlayer.play("RESET")
+
+
 
 func _on_right_button_pressed() -> void:
+	$Sound/SelectEffect.play()
+	#$AnimationPlayer.play("Card_Right")
 	GameState.choice_made.emit(RIGHT_CHOICE)
+	#$AnimationPlayer.play("RESET")
+
+
 #endregion 
