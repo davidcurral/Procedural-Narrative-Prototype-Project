@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=14 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
@@ -10,9 +10,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u77a"]
 bg_color = Color(0.60318226, 0.67185843, 0.7425517, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
 bg_color = Color(0.7225545, 0.72255445, 0.72255456, 1)
@@ -65,7 +62,7 @@ script = ExtResource("1_bo1nx")
 initial_card_list = Array[ExtResource("2_jjvhh")]([ExtResource("3_6bp64")])
 database = ExtResource("9_ynf5e")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ScenePanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,57 +71,32 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7u77a")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScenePanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1528.0
+offset_top = 207.0
+offset_right = -92.0
+offset_bottom = -261.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LeftChoice" type="Button" parent="Panel/HBoxContainer"]
-custom_minimum_size = Vector2(175, 100)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.49
-theme_override_font_sizes/font_size = 22
-text = "Left Choice"
-
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 12.92
-theme_override_styles/panel = SubResource("StyleBoxFlat_6bp64")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.56
-
-[node name="Control1" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="Control1" type="Control" parent="ScenePanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Label1" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control1"]
+[node name="Label1" type="Label" parent="ScenePanel/VBoxContainer/Control1"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 34.0
 offset_right = -39.0
-offset_bottom = -34.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -134,38 +106,37 @@ text = "VAR 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control1"]
-custom_minimum_size = Vector2(40, 120)
+[node name="ProgressBar" type="ProgressBar" parent="ScenePanel/VBoxContainer/Control1"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_top = -50.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ynf5e")
 step = 1.0
 value = 50.0
-fill_mode = 3
 show_percentage = false
 
-[node name="Control2" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="ScenePanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control2"]
+[node name="Label2" type="Label" parent="ScenePanel/VBoxContainer/Control2"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 34.0
 offset_right = -39.0
-offset_bottom = -34.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -175,37 +146,36 @@ text = "VAR 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar2" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control2"]
-custom_minimum_size = Vector2(40, 120)
+[node name="ProgressBar2" type="ProgressBar" parent="ScenePanel/VBoxContainer/Control2"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_top = -50.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hptm8")
 step = 1.0
 value = 50.0
-fill_mode = 3
 show_percentage = false
 
-[node name="Control3" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="Control3" type="Control" parent="ScenePanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Label3" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control3"]
+[node name="Label3" type="Label" parent="ScenePanel/VBoxContainer/Control3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 34.0
 offset_right = -39.0
-offset_bottom = -34.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -215,37 +185,36 @@ text = "VAR 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar3" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control3"]
-custom_minimum_size = Vector2(40, 120)
+[node name="ProgressBar3" type="ProgressBar" parent="ScenePanel/VBoxContainer/Control3"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_top = -50.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_d1ilt")
 step = 1.0
 value = 50.0
-fill_mode = 3
 show_percentage = false
 
-[node name="Control4" type="Control" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="Control4" type="Control" parent="ScenePanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Label4" type="Label" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control4"]
+[node name="Label4" type="Label" parent="ScenePanel/VBoxContainer/Control4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 34.0
 offset_right = -39.0
-offset_bottom = -34.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -255,84 +224,111 @@ text = "VAR 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar4" type="ProgressBar" parent="Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control4"]
-custom_minimum_size = Vector2(40, 120)
+[node name="ProgressBar4" type="ProgressBar" parent="ScenePanel/VBoxContainer/Control4"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_left = -1.0
+offset_top = -50.0
+offset_right = -25.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6iyac")
 step = 1.0
 value = 50.0
-fill_mode = 3
 show_percentage = false
 
-[node name="Cards" parent="Panel/HBoxContainer/Panel/VBoxContainer" instance=ExtResource("2_6bp64")]
-layout_mode = 2
+[node name="Cards" parent="ScenePanel" instance=ExtResource("2_6bp64")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.99994
+offset_top = -285.0
+offset_right = -240.99994
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.72
 
-[node name="RightChoice" type="Button" parent="Panel/HBoxContainer"]
+[node name="Buttons" type="Control" parent="ScenePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1490.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftChoice" type="Button" parent="ScenePanel/Buttons"]
 custom_minimum_size = Vector2(175, 100)
-layout_mode = 2
+layout_mode = 0
+offset_left = 34.0
+offset_top = 734.0
+offset_right = 209.0
+offset_bottom = 834.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.49
+theme_override_font_sizes/font_size = 22
+text = "Left Choice"
+
+[node name="RightChoice" type="Button" parent="ScenePanel/Buttons"]
+custom_minimum_size = Vector2(175, 100)
+layout_mode = 0
+offset_left = 228.0
+offset_top = 736.0
+offset_right = 403.0
+offset_bottom = 836.0
 size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.49
 theme_override_font_sizes/font_size = 22
 text = "Right Choice"
 
-[node name="PrintMemory" type="Button" parent="Panel/HBoxContainer"]
-custom_minimum_size = Vector2(175, 100)
+[node name="VBoxContainer" type="VBoxContainer" parent="ScenePanel/Buttons"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 49.0
+offset_right = 252.0
+offset_bottom = 277.0
+scale = Vector2(1.3, 1.3)
+
+[node name="PrintMemory" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_vertical = 6
 size_flags_stretch_ratio = 2.49
 theme_override_font_sizes/font_size = 22
 text = "Print Memory "
 
-[node name="CheckArcs" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.89800006
-anchor_top = 0.595
-anchor_right = 0.98300004
-anchor_bottom = 0.651
-offset_left = -15.160156
-offset_top = -12.600037
-offset_right = 10.639893
-offset_bottom = -0.08001709
+[node name="CheckArcs" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.4
+theme_override_font_sizes/font_size = 22
 text = "Print Arc Status"
 
-[node name="AvailableCards" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.89500004
-anchor_top = 0.66400003
-anchor_right = 0.98300004
-anchor_bottom = 0.731
-offset_left = -9.400024
-offset_top = -0.12005615
-offset_right = 10.639893
-offset_bottom = 0.52001953
+[node name="AvailableCards" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.95
+theme_override_font_sizes/font_size = 22
 text = "Print Available Cards"
 
-[node name="ArcCardsList" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.892
-anchor_top = 0.75200003
-anchor_right = 0.98300004
-anchor_bottom = 0.8
-offset_left = -0.64001465
-offset_top = -0.16003418
-offset_right = 12.639893
+[node name="ArcCardsList" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 22
 text = "Print Arc Cards List"
-script = ExtResource("8_344ge")
 
 [node name="DataLoader" type="Node" parent="."]
 script = ExtResource("7_6bp64")
@@ -341,9 +337,9 @@ script = ExtResource("7_6bp64")
 script = ExtResource("8_344ge")
 database = ExtResource("9_ynf5e")
 
-[connection signal="pressed" from="Panel/HBoxContainer/LeftChoice" to="." method="_on_left_choice_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/RightChoice" to="." method="_on_right_choice_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/PrintMemory" to="." method="_on_memory_print"]
-[connection signal="pressed" from="Panel/CheckArcs" to="." method="_on_check_arcs_pressed"]
-[connection signal="pressed" from="Panel/AvailableCards" to="." method="_on_available_cards_pressed"]
-[connection signal="pressed" from="Panel/ArcCardsList" to="." method="_on_arc_cards_list_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/LeftChoice" to="." method="_on_left_choice_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/RightChoice" to="." method="_on_right_choice_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/PrintMemory" to="." method="_on_memory_print"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/CheckArcs" to="." method="_on_check_arcs_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/AvailableCards" to="." method="_on_available_cards_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/ArcCardsList" to="." method="_on_arc_cards_list_pressed"]

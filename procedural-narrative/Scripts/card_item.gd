@@ -10,8 +10,11 @@ var card_data
 
 @onready var left_button_effect_text = $Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI/LB_Text
 @onready var right_button_effect_text = $Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI/RB_Text
-@onready var left_effects_panel_UI =$Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI
+@onready var left_effects_panel_UI = $Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI
 @onready var right_effects_panel_UI = $Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI
+
+const LEFT_CHOICE = 0
+const RIGHT_CHOICE = 1
 
 
 func setup(_card_data):
@@ -32,7 +35,7 @@ func Update_Card_UI():
 	
 
 func show_card_effects_on_button_hover():
-	var left_effects_text: String
+	var left_effects_text: String = ""
 	for effect in card_data.left_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
@@ -44,7 +47,7 @@ func show_card_effects_on_button_hover():
 
 	left_button_effect_text.text = "\n"+left_effects_text 
 	
-	var right_effects_text: String 
+	var right_effects_text: String = ""
 	for effect in card_data.right_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
@@ -67,6 +70,7 @@ func translate_arc(arc: int) -> String:
 	return arc_map[arc]
 
 #region Buttons
+
 func _on_left_button_mouse_entered() -> void:
 	left_effects_panel_UI.visible = true
 	
@@ -80,4 +84,11 @@ func _on_right_button_mouse_entered() -> void:
 
 func _on_right_button_mouse_exited() -> void:
 	right_effects_panel_UI.visible = false
+
+
+func _on_left_button_pressed() -> void:
+	GameState.choice_made.emit(LEFT_CHOICE)
+
+func _on_right_button_pressed() -> void:
+	GameState.choice_made.emit(RIGHT_CHOICE)
 #endregion 

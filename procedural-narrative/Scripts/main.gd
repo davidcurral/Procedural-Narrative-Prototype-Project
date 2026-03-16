@@ -13,9 +13,7 @@ Main emits choice made
 @export var max_concurrent_arcs: int = 2
 
 
-
-@onready var card_display = $Panel/HBoxContainer/Panel
-@onready var card_node = $Panel/HBoxContainer/Panel/VBoxContainer/Cards
+@onready var card_node = $ScenePanel/Cards
 
 #var choice_id
 var right_choice
@@ -25,10 +23,10 @@ const RIGHT_CHOICE = 1
 
 
 #-- World Variables -- 
-@onready var world_val1 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control1
-@onready var world_val2 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control2
-@onready var world_val3 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control3
-@onready var world_val4 = $Panel/HBoxContainer/Panel/VBoxContainer/HBoxContainer/Control4
+@onready var world_val1 = $ScenePanel/VBoxContainer/Control1
+@onready var world_val2 = $ScenePanel/VBoxContainer/Control2
+@onready var world_val3 = $ScenePanel/VBoxContainer/Control3
+@onready var world_val4 = $ScenePanel/VBoxContainer/Control4
 
 func _ready():
 	GameState.card_selected.connect(updateUI)

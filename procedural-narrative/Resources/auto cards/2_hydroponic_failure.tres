@@ -29,4 +29,6 @@ context = "Food production system malfunctioning"
 weight = 1.0
 cooldown = 2
 left_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_2kjev"), SubResource("Resource_piov7")])
+left_description = ""
 right_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_h2jk8"), SubResource("Resource_dog3x")])
+right_description = ""
