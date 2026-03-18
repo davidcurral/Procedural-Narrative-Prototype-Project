@@ -90,17 +90,20 @@ func _on_right_button_mouse_exited() -> void:
 
 func _on_left_button_pressed() -> void:
 	$Sound/SelectEffect.play()
-	#$AnimationPlayer.play("Card_Left")
+	$%AnimationPlayer.play("Card_Left")
+	await get_tree().create_timer(.4).timeout
 	GameState.choice_made.emit(LEFT_CHOICE)
-	#$AnimationPlayer.play("RESET")
+	#$%AnimationPlayer.play("RESET")
 
 
 
 func _on_right_button_pressed() -> void:
 	$Sound/SelectEffect.play()
-	#$AnimationPlayer.play("Card_Right")
+	$%AnimationPlayer.play("Card_Right")
+	await get_tree().create_timer(.4).timeout
+
 	GameState.choice_made.emit(RIGHT_CHOICE)
-	#$AnimationPlayer.play("RESET")
+	#$%AnimationPlayer.play("RESET")
 
 
 #endregion 
