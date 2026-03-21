@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://55qbupr6x1c1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cnj2"]
+bg_color = Color(0.42941594, 0.42941606, 0.4294159, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrbyj"]
+bg_color = Color(0.58103293, 0.581033, 0.58103275, 1)
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cnj2")
+
+[node name="Game_Name" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 306.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 63
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_manager" type="Control" parent="Panel"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Button_manager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Play" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 34
+text = "Play"
+
+[node name="Back" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 34
+text = "Back"
+
+[node name="Panel" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1351.0
+offset_top = -280.0
+offset_right = -99.0
+offset_bottom = 382.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jrbyj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

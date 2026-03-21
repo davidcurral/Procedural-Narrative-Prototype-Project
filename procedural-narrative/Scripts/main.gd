@@ -27,8 +27,15 @@ const RIGHT_CHOICE = 1
 @onready var world_val2 = $ScenePanel/VBoxContainer/Control2
 @onready var world_val3 = $ScenePanel/VBoxContainer/Control3
 @onready var world_val4 = $ScenePanel/VBoxContainer/Control4
+@onready var turns = $ScenePanel/Turns
+@onready var fade_anim = $FadeTransition/AnimationPlayer
 
 func _ready():
+	if $FadeTransition.visible == true:
+		$FadeTransition/fade_timer.start()
+		$FadeTransition.show()
+		fade_anim.play("fade_out")
+
 	GameState.card_selected.connect(updateUI)
 	GameState.set_static_data(database.card_list, initial_card_list, max_concurrent_arcs)	
 	GameState.world_change.connect(world_UI)
@@ -45,6 +52,8 @@ func world_UI():
 	world_val2.get_child(0).text = "Security:  " + str(GameState.world_state.get("Security"))
 	world_val3.get_child(0).text = "Moral:  " + str(GameState.world_state.get("Moral"))
 	world_val4.get_child(0).text = "Progress:  " + str(GameState.world_state.get("Progress"))
+
+	turns.text = str(GameState.current_turn)
 
 func world_progress_bar():
 	world_val1.get_child(1).value = GameState.world_state.get("Resources")
@@ -78,3 +87,7 @@ func _on_available_cards_pressed() -> void:
 
 func _on_arc_cards_list_pressed() -> void:
 	print(GameState.arc_cards_list)
+
+
+func _on_fade_timer_timeout() -> void:
+	$FadeTransition.hide()

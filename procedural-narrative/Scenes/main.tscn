@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=15 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_jjvhh"]
 [ext_resource type="Resource" uid="uid://bx4htnae2si2l" path="res://Resources/manual cards/20_worker_strike.tres" id="3_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dv8127gyeypre" path="res://Scenes/fade_transition.tscn" id="5_344ge"]
 [ext_resource type="Script" uid="uid://bwcixh2xe0uk5" path="res://Scripts/Utilities/data_loader.gd" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://bbx5hja5ve1l0" path="res://Scripts/Utilities/ToolBuilderScript.gd" id="8_344ge"]
 [ext_resource type="Resource" uid="uid://7yho5snn7qd3" path="res://Resources/card_database.tres" id="9_ynf5e"]
@@ -256,7 +257,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1490.0
+offset_right = -1523.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -322,6 +323,30 @@ size_flags_stretch_ratio = 2.0
 theme_override_font_sizes/font_size = 22
 text = "Print Arc Cards List"
 
+[node name="Turns" type="Label" parent="ScenePanel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Turns - "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FadeTransition" parent="." instance=ExtResource("5_344ge")]
+visible = false
+layout_mode = 1
+offset_right = 0.0
+
+[node name="fade_timer" type="Timer" parent="FadeTransition"]
+
 [node name="DataLoader" type="Node" parent="."]
 script = ExtResource("7_6bp64")
 
@@ -335,3 +360,4 @@ database = ExtResource("9_ynf5e")
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/CheckArcs" to="." method="_on_check_arcs_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/AvailableCards" to="." method="_on_available_cards_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/ArcCardsList" to="." method="_on_arc_cards_list_pressed"]
+[connection signal="timeout" from="FadeTransition/fade_timer" to="." method="_on_fade_timer_timeout"]
