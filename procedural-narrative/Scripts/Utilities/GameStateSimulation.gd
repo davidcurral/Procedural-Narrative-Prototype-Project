@@ -1,8 +1,10 @@
 extends Node
+class_name GameStateSimulation
 
 # IMPORTANT - ❗ GameState should NOT reference Main. Ever.
 #region Variables
 # -- Static Data ---
+@export var database: Array[Cards]
 var card_database: Array [Cards] = []
 var initial_card_list: Array[Cards]
 var max_weight = 1
@@ -53,12 +55,13 @@ func set_static_data(cards: Array[Cards], initial_cards : Array [Cards], max_arc
 func initialize():		
 	available_cards_list.clear()
 	arc_cards_list.clear()
-	for card_data in card_database:
+
+	for card_data in database:
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
 		if card_data.arc != 0:
 			arc_cards_list.append(card_data)
-	show_first_card()
+	#show_first_card()
 	
 
 # --- Running Functions ---
