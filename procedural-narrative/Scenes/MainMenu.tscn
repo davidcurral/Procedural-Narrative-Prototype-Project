@@ -1,12 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3e6w1vbqrnap"]
+[gd_scene load_steps=11 format=3 uid="uid://c3e6w1vbqrnap"]
 
 [ext_resource type="Script" uid="uid://bjk3ck1cb4051" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://dvljrdmkvnt4v" path="res://Assets/Backgrounds/f2a56e92-e08b-4f60-8cc5-663d292c76e8.png" id="2_8saeu"]
 [ext_resource type="PackedScene" uid="uid://dv8127gyeypre" path="res://Scenes/fade_transition.tscn" id="2_853f1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
-bg_color = Color(0.42941594, 0.42941606, 0.4294159, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghw46"]
+texture = ExtResource("2_8saeu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8um5k"]
+bg_color = Color(0.44705883, 0.41568628, 0.40784314, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 5
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xim88"]
+bg_color = Color(0.32624683, 0.30078664, 0.2944215, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqhg"]
+bg_color = Color(0.19027689, 0.17454338, 0.16929775, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8saeu"]
+bg_color = Color(0.6488547, 0.5869435, 0.47720307, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -42,9 +65,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -80.0
+offset_right = 191.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_853f1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ghw46")
 
 [node name="Game_Name" type="Label" parent="Panel"]
 layout_mode = 1
@@ -52,13 +79,15 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 306.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 63
-text = "Game Title"
+theme_override_colors/font_color = Color(0.25391474, 0.2669605, 0.21504211, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 82
+text = "Narrative Choices"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button_manager" type="Control" parent="Panel"]
-custom_minimum_size = Vector2(250, 300)
+custom_minimum_size = Vector2(300, 400)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,24 +108,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 90
 
 [node name="Play" type="Button" parent="Panel/Button_manager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_8um5k")
 text = "Play"
 
 [node name="Settings" type="Button" parent="Panel/Button_manager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_xim88")
 text = "Settings"
 
 [node name="Quit" type="Button" parent="Panel/Button_manager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
 text = "Quit"
 
 [node name="GameChoicePanel" type="Panel" parent="Panel"]

@@ -1,13 +1,13 @@
 extends Node
 class_name GameStateSimulation
 
-# IMPORTANT - ❗ GameState should NOT reference Main. Ever.
 #region Variables
 # -- Static Data ---
 var card_database: CardDatabase
 var initial_card_list: Array[Cards]
 var max_weight = 1
 var max_concurrent_arcs: int
+var simple_run: bool = false
 
 # -- Runtime Data --
 var available_cards_list: Dictionary = {} # card_id : card
@@ -79,9 +79,12 @@ func card_processing(choice_id: int): #Resolve current card → compute weights 
 		apply_effects(stored_current_card.right_effects)
 
 	on_card_played_memory_append(stored_current_card, choice_id)
-	process_cooldowns()
-	evaluate_arc_unlocks()
-	progress_arc(stored_current_card,choice_id)
+	
+	if simple_run == false: 
+		process_cooldowns()
+		evaluate_arc_unlocks()
+		progress_arc(stored_current_card,choice_id)
+		
 	pick_next_card()
 
 # --- Logic Fucntions ---
@@ -99,12 +102,9 @@ func on_card_played_memory_append(card: Cards, choice: int):
 	current_turn += 1
 
 	var memory_entry: Dictionary = {
-		#"card_id": card.id,
 		"card": card,
 		"choice": choice,
 		"turn": current_turn,
-		#"arc": card.arc,
-		#"arc_progress": card.arc_progression,
 		"left_effects": card.left_effects,
 		"right_effects": card.right_effects
 		
@@ -120,6 +120,7 @@ func on_card_played_memory_append(card: Cards, choice: int):
 
 func process_cooldowns():
 	var to_remove: Array = []
+	
 	for id in cooldown_tracker:
 		cooldown_tracker[id] -= 1
 		if cooldown_tracker[id] <= 0:
@@ -163,15 +164,6 @@ func apply_world_stat(effect) -> void:
 		return
 	world_state[key] = world_state.get(key, 0) + effect["value"]
 	
-'''func apply_world_arcs(effect) -> void: # rever se preciso disto assim	 
-	var key = effect.ARC_KEYS.get(effect["arc"])
-	if key == null:
-		push_error("Unknown stat target")
-		return
-		
-	if effect.value not in effect.arc_chapter:
-		effect.arc_chapter.append(effect.value)
-		GameMemory.memory_arcs[key] = effect.arc_chapter''' 
 	
 func show_first_card() -> void: 
 	var card_resource = initial_card_list[0]
@@ -265,7 +257,7 @@ func print_arc_start() -> void:
 					active_arcs[arc_map[stored_current_card.arc]] = 1
 					#print("Rebellion is coming")
 
-			
+		
 #region Arc Condition Functions ---- Show first card of arc?
 func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
 	if active_arcs.has("AI_Uprising"):

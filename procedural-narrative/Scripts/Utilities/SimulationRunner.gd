@@ -72,10 +72,10 @@ func run_experiments():
 				turn,
 				card.id,
 				choice,
-				game_state.world_state.get("wealth", 0),
-				game_state.world_state.get("morale", 0),
-				game_state.world_state.get("stability", 0),
-				game_state.world_state.get("progress", 0)
+				game_state.world_state.get("Resources", 0),
+				game_state.world_state.get("Security", 0),
+				game_state.world_state.get("Moral", 0),
+				game_state.world_state.get("Progress", 0)
 			])
 			
 		#Card frequency
@@ -88,10 +88,10 @@ func run_experiments():
 			run_id,
 			card_diversity.size(),
 			repetition_score,
-			game_state.world_state.get("wealth", 0),
-			game_state.world_state.get("morale", 0),
-			game_state.world_state.get("stability", 0),
-			game_state.world_state.get("progress", 0)
+			game_state.world_state.get("Resources", 0),
+			game_state.world_state.get("Security", 0),
+			game_state.world_state.get("Moral", 0),
+			game_state.world_state.get("Progress", 0)
 		])
 		
 		
