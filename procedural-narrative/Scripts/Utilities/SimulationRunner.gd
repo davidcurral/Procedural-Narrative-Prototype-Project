@@ -1,7 +1,7 @@
 extends Node
 
-@export var runs: int = 100
-@export var turns_per_run: int = 100
+@export var runs: int = 2
+@export var turns_per_run: int = 3
 @export var use_memory: bool = true   # Toggle A/B test
 
 var rng = RandomNumberGenerator.new()
@@ -27,13 +27,15 @@ func run_experiments():
 	card_frequency_rows.append("run,card_id,card_frequency")
 
 	for run_id in range(runs):
-		var game_state = GameStateSimulation.new()
+		var game_state = GameStateSimulation.new() # This Game state cannot be an autoload to work
+		game_state.set_static_data()
 		game_state.initialize()
 		
 		var last_cards: Array = []
 		var card_diversity: Array = []
 		var repetition_score: int = 0
 		var distribution_cards: Dictionary = {}
+		print("Run: ", run_id,)
 		
 		for turn in range(turns_per_run):
 			var card = game_state.pick_next_card()
@@ -43,7 +45,10 @@ func run_experiments():
 			
 			var choice = simulate_choice()
 			
-			distribution_cards[card.id] += 1
+			if not distribution_cards.has(card.id):
+				distribution_cards[card.id] = 1
+			else:
+				distribution_cards[card.id] += 1
 			
 			# Track repetition (last 10 turns)
 			if last_cards.has(card.id):
@@ -59,7 +64,7 @@ func run_experiments():
 			
 			# Apply effects
 			#game.play_card(card, choice)
-			game_state.process_card(choice)
+			game_state.card_processing(choice)
 			
 			# Log turn
 			log_rows.append("%d,%d,%d,%s,%d,%d,%d,%d" % [
@@ -83,7 +88,6 @@ func run_experiments():
 			game_state.world_state.get("stability", 0),
 			game_state.world_state.get("progress", 0)
 		])
-		print("Run: ", run_id)
 
 
 #endregion
@@ -94,15 +98,16 @@ func simulate_choice():
 #region SAVE CSV
 func save_csv():
 	
-	var log_file = FileAccess.open("user://Data/simulation_log.csv", FileAccess.WRITE)
+	var log_file = FileAccess.open("res://Data/simulation_log.csv", FileAccess.WRITE)	
 	for row in log_rows:
-		log_file.store_line(row)
+		log_file.store_line(row) #writes a string followed by a newline character (\n)
+
 	
-	var summary_file = FileAccess.open("user://Data/simulation_summary.csv", FileAccess.WRITE)
+	var summary_file = FileAccess.open("res://Data/simulation_summary.csv", FileAccess.WRITE)
 	for row in summary_rows:
 		summary_file.store_line(row)
 		
-	var frequency_file = FileAccess.open("user://Data/simulation_card_frequency.csv", FileAccess.WRITE)
+	var frequency_file = FileAccess.open("res://Data/simulation_card_frequency.csv", FileAccess.WRITE)
 	for row in card_frequency_rows:
 		frequency_file.store_line(row)
 	

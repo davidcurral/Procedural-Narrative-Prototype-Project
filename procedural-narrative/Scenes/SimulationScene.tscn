@@ -1,34 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bckgleo5efb3m"]
+[gd_scene load_steps=4 format=3 uid="uid://bckgleo5efb3m"]
 
 [ext_resource type="Script" uid="uid://b40ey0d1erfap" path="res://Scripts/Utilities/SimulationRunner.gd" id="1_03oeb"]
-[ext_resource type="Script" uid="uid://8jga105olem2" path="res://Scripts/Utilities/GameStateSimulation.gd" id="2_sw34h"]
-[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_8nx6j"]
-[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="4_6v2gu"]
+[ext_resource type="Script" uid="uid://binrmk3v3yuh2" path="res://Scripts/cards_static.gd" id="2_sw34h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2id2"]
 bg_color = Color(0.42638546, 0.54488266, 0.5772344, 1)
-
-[sub_resource type="Resource" id="Resource_oekra"]
-script = ExtResource("3_8nx6j")
-metadata/_custom_type_script = "uid://nvquj6gcvoei"
-
-[sub_resource type="Resource" id="Resource_rh67c"]
-script = ExtResource("3_8nx6j")
-id = 1
-name = "1"
-metadata/_custom_type_script = "uid://nvquj6gcvoei"
-
-[sub_resource type="Resource" id="Resource_u73lg"]
-script = ExtResource("3_8nx6j")
-id = 2
-name = "2"
-metadata/_custom_type_script = "uid://nvquj6gcvoei"
-
-[sub_resource type="Resource" id="Resource_5ltfx"]
-script = ExtResource("3_8nx6j")
-id = 3
-name = "3"
-metadata/_custom_type_script = "uid://nvquj6gcvoei"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -39,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_03oeb")
 runs = 3
-turns_per_run = 3
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -67,8 +42,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Start Simulation"
 
-[node name="GameState" type="Node" parent="."]
+[node name="CardsStatic" type="Node" parent="."]
 script = ExtResource("2_sw34h")
-database = Array[ExtResource("3_8nx6j")]([SubResource("Resource_oekra"), SubResource("Resource_rh67c"), SubResource("Resource_u73lg"), SubResource("Resource_5ltfx")])
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

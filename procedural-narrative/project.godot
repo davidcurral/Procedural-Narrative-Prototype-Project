@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Procedural Narrative"
-run/main_scene="uid://c7c1xfww0va0j"
+run/main_scene="uid://bckgleo5efb3m"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameState="*res://Scripts/game_state.gd"
+CardsStatic="*res://Scripts/cards_static.gd"
 GameMemory="*res://Scripts/game_memory.gd"
 
 [display]

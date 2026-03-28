@@ -4,8 +4,7 @@ class_name GameStateSimulation
 # IMPORTANT - ❗ GameState should NOT reference Main. Ever.
 #region Variables
 # -- Static Data ---
-@export var database: Array[Cards]
-var card_database: Array [Cards] = []
+var card_database: CardDatabase
 var initial_card_list: Array[Cards]
 var max_weight = 1
 var max_concurrent_arcs: int
@@ -32,7 +31,6 @@ var active_arcs : Dictionary = {}   # arc_name : step
 var completed_arcs : Array[String] = []
 var locked_arcs : Array[String] = []
 
-
 # -- Signals --
 signal card_selected (card_resource)
 signal choice_made (choice_id)
@@ -42,21 +40,25 @@ signal world_change
 
 #region Functions 
 # -- Functions --
-func _ready():
+func _ready(): 
 	choice_made.connect(_on_choice_made)
 	
-	
 # --- Starting Functions ---
-func set_static_data(cards: Array[Cards], initial_cards : Array [Cards], max_arcs: int):
-	card_database = cards
-	initial_card_list = initial_cards
-	max_concurrent_arcs = max_arcs
+func set_static_data():
+	if CardsStatic.database != null:
+		card_database = CardsStatic.database.duplicate()
+
+	else:
+		push_error("CardsStatic.database still  nul!")
+	
+	#initial_card_list = initial_cards
+	max_concurrent_arcs = CardsStatic.max_concurrent_arcs
 	
 func initialize():		
 	available_cards_list.clear()
 	arc_cards_list.clear()
 
-	for card_data in database:
+	for card_data in card_database.card_list:
 		if card_data.available == true:
 			available_cards_list[card_data.id] = card_data
 		if card_data.arc != 0:
@@ -127,7 +129,7 @@ func process_cooldowns():
 
 func pick_next_card() -> Cards: 
 	var candidates: Array = []
-
+	
 	for card in available_cards_list.values():
 		if cooldown_tracker.has(card.id):
 			continue
@@ -237,7 +239,7 @@ func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto 
 func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)
 	completed_arcs.append(arc_name)
-	print(arc_name + " completed")
+	#print(arc_name + " completed")
 
 func arc_amount_limit(candidates: Array)-> void:		
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
@@ -255,13 +257,13 @@ func print_arc_start() -> void:
 			match stored_current_card.arc:
 				1: 
 					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("AI Uprising Started")
+					#print("AI Uprising Started")
 				2:
 					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("Alien Life Found")
+					#print("Alien Life Found")
 				3:
 					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("Rebellion is coming")
+					#print("Rebellion is coming")
 
 			
 #region Arc Condition Functions ---- Show first card of arc?
@@ -277,7 +279,7 @@ func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI beco
 			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 1 and card.arc_progression == 1:
 				card.weight = 10
-				print("AI Uprising Started")
+				#print("AI Uprising Started")
 
 func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
 	if active_arcs.has("Alien"):
@@ -291,7 +293,7 @@ func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI b
 			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 2 and card.arc_progression == 1:
 				card.weight = 10
-				print("Alien Lifeforms Started")
+				#print("Alien Lifeforms Started")
 
 func check_rebellion_unlock() -> void: 
 	if active_arcs.has("Rebellion"):
@@ -305,7 +307,7 @@ func check_rebellion_unlock() -> void:
 			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 3 and card.arc_progression == 1:
 				card.weight = 10
-		print("Rebellion Arc Started")		
+		#print("Rebellion Arc Started")		
 
 func check_terraform_unlock() -> void:
 	if active_arcs.has("Terraforming"):
@@ -315,7 +317,7 @@ func check_terraform_unlock() -> void:
 
 	if get_effects_in_memory("Progress") > 4 and world_state.get("Progress") > 60:
 		active_arcs["Terraforming"] = 0
-		print("Terraforming Arc Started")
+		#print("Terraforming Arc Started")
 #endregion
 
 #endregion  
