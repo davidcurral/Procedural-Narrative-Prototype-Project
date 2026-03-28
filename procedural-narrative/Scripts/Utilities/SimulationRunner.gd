@@ -77,6 +77,11 @@ func run_experiments():
 				game_state.world_state.get("stability", 0),
 				game_state.world_state.get("progress", 0)
 			])
+			
+		#Card frequency
+		for card_id in distribution_cards:
+			var count = distribution_cards[card_id]
+			card_frequency_rows.append("%d,%s,%d" % [run_id, card_id, count])
 		
 		# Summary per run
 		summary_rows.append("%d,%d,%d,%d,%d,%d,%d" % [
@@ -88,7 +93,8 @@ func run_experiments():
 			game_state.world_state.get("stability", 0),
 			game_state.world_state.get("progress", 0)
 		])
-
+		
+		
 
 #endregion
 
@@ -98,18 +104,17 @@ func simulate_choice():
 #region SAVE CSV
 func save_csv():
 	
-	var log_file = FileAccess.open("res://Data/simulation_log.csv", FileAccess.WRITE)	
+	var log_file = FileAccess.open("res://Data/sim_log.txt", FileAccess.WRITE)	
 	for row in log_rows:
 		log_file.store_line(row) #writes a string followed by a newline character (\n)
-
 	
-	var summary_file = FileAccess.open("res://Data/simulation_summary.csv", FileAccess.WRITE)
-	for row in summary_rows:
-		summary_file.store_line(row)
-		
-	var frequency_file = FileAccess.open("res://Data/simulation_card_frequency.csv", FileAccess.WRITE)
+	var frequency_file = FileAccess.open("res://Data/sim_card_frequency.txt", FileAccess.WRITE)
 	for row in card_frequency_rows:
 		frequency_file.store_line(row)
+		
+	var summary_file = FileAccess.open("res://Data/sim_summary.txt", FileAccess.WRITE)
+	for row in summary_rows:
+		summary_file.store_line(row)
 	
 #endregion
 

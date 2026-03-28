@@ -1,4 +1,4 @@
 run,unique_cards,repetitions,final_wealth,final_morale,final_stability,final_progress
 0,3,0,0,0,0,0
 1,3,0,0,0,0,0
-2,2,1,0,0,0,0
+2,3,0,0,0,0,0
