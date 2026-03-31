@@ -5,6 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_qj8lr"]
 script = ExtResource("1_qj8lr")
+target = 6
 value = 10
 
 [sub_resource type="Resource" id="Resource_waakb"]
@@ -19,6 +20,7 @@ value = 10
 
 [sub_resource type="Resource" id="Resource_7c8dh"]
 script = ExtResource("1_qj8lr")
+target = 6
 value = -10
 
 [resource]
@@ -26,7 +28,7 @@ script = ExtResource("2_waakb")
 id = 25
 name = "Religious Movement"
 context = "New belief spreading."
-weight = 1.0
+base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_qj8lr")]([SubResource("Resource_qj8lr"), SubResource("Resource_waakb")])
 left_discription = "Allow"

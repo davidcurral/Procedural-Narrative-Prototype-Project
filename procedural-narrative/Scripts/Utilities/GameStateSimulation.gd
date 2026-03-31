@@ -7,7 +7,7 @@ var card_database: CardDatabase
 var initial_card_list: Array[Cards]
 var max_weight = 1
 var max_concurrent_arcs: int
-var simple_run: bool = false
+var simple_run: bool
 
 # -- Runtime Data --
 var available_cards_list: Dictionary = {} # card_id : card
@@ -44,15 +44,15 @@ func _ready():
 	choice_made.connect(_on_choice_made)
 	
 # --- Starting Functions ---
-func set_static_data():
+func set_static_data(use_memory : bool):
 	if CardsStatic.database != null:
 		card_database = CardsStatic.database.duplicate()
-
 	else:
 		push_error("CardsStatic.database still  nul!")
 	
 	#initial_card_list = initial_cards
 	max_concurrent_arcs = CardsStatic.max_concurrent_arcs
+	simple_run = !use_memory
 	
 func initialize():		
 	available_cards_list.clear()
@@ -60,7 +60,12 @@ func initialize():
 
 	for card_data in card_database.card_list:
 		if card_data.available == true:
-			available_cards_list[card_data.id] = card_data
+			if simple_run == true:
+				if card_data.arc == 0:
+					available_cards_list[card_data.id] = card_data
+			else:
+				available_cards_list[card_data.id] = card_data
+
 		if card_data.arc != 0:
 			arc_cards_list.append(card_data)
 	#show_first_card()

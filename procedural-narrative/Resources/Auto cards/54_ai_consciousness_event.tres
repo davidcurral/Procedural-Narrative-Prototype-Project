@@ -21,6 +21,7 @@ value = 20
 [sub_resource type="Resource" id="Resource_obvuu"]
 script = ExtResource("1_ijhdv")
 type = 2
+target = 6
 value = 4
 
 [sub_resource type="Resource" id="Resource_jlbwd"]
@@ -38,7 +39,7 @@ script = ExtResource("2_ho3b8")
 id = 54
 name = "AI Consciousness Event"
 context = "AI claims sentience"
-weight = 1.0
+base_weight = 3.0
 arc = 1
 arc_progression = 6
 cooldown = 5

@@ -51,7 +51,7 @@ func load_card():
 			card.available = true
 		else:
 			card.available = false
-		card.weight = float(line[7])
+		card.base_weight = float(line[7])
 		card.cooldown = int(line[8])
 		card.arc_progression = int(line[9])
 		card.left_discription = line[10]

@@ -10,6 +10,7 @@ value = 30
 
 [sub_resource type="Resource" id="Resource_v0gak"]
 script = ExtResource("1_63ae2")
+target = 6
 value = 10
 
 [resource]
@@ -17,7 +18,7 @@ script = ExtResource("2_v0gak")
 id = 48
 name = "Colony Ship Construction"
 context = "Prepare interstellar expansion"
-weight = 1.0
+base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_63ae2")]([SubResource("Resource_63ae2"), SubResource("Resource_v0gak")])
 left_discription = "Build ships"

@@ -24,7 +24,7 @@ id = 50
 name = "Surveillance Network"
 context = "\"AI monitoring proposal.
 (AI arc starter)\""
-weight = 1.0
+base_weight = 3.0
 arc = 1
 arc_progression = 2
 cooldown = 5

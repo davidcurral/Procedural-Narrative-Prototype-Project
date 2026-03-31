@@ -6,6 +6,7 @@
 [sub_resource type="Resource" id="Resource_lpwp6"]
 script = ExtResource("1_lpwp6")
 type = 2
+target = 6
 
 [sub_resource type="Resource" id="Resource_adex3"]
 script = ExtResource("1_lpwp6")
@@ -22,7 +23,7 @@ script = ExtResource("2_adex3")
 id = 61
 name = "Symbiosis Proposal"
 context = "Alien life offers cooperation"
-weight = 1.0
+base_weight = 3.0
 arc = 2
 arc_progression = 5
 cooldown = 5

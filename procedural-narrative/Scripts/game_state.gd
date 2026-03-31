@@ -223,7 +223,7 @@ func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto 
 				available_cards_list.erase(card.id)
 				return
 			
-	for cards in arc_cards_list:
+	for cards in arc_cards_list: #adiciona a próxima carta à lista de disponíveis
 		if cards.arc == card.arc:
 			if cards.arc_progression == card.arc_progression + 1:	
 				available_cards_list[cards.id] = cards

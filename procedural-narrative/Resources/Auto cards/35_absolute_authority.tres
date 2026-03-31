@@ -6,6 +6,7 @@
 [sub_resource type="Resource" id="Resource_f1h86"]
 script = ExtResource("1_f1h86")
 type = 2
+target = 6
 
 [sub_resource type="Resource" id="Resource_ku4jf"]
 script = ExtResource("1_f1h86")
@@ -20,14 +21,14 @@ value = -10
 [sub_resource type="Resource" id="Resource_h16y5"]
 script = ExtResource("1_f1h86")
 type = 2
+target = 6
 
 [resource]
 script = ExtResource("2_ku4jf")
 id = 35
 name = "Absolute Authority"
 context = "Leader seeks full power"
-available = false
-weight = 1.0
+base_weight = 3.0
 arc = 3
 arc_progression = 5
 cooldown = 5

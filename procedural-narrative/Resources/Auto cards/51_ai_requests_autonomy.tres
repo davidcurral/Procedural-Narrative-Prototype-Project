@@ -21,6 +21,7 @@ value = -15
 [sub_resource type="Resource" id="Resource_4m05v"]
 script = ExtResource("1_en1g4")
 type = 2
+target = 6
 value = 1
 
 [sub_resource type="Resource" id="Resource_5fh4a"]
@@ -38,7 +39,7 @@ script = ExtResource("2_gcbm6")
 id = 51
 name = "AI Requests Autonomy"
 context = "AI demands operational independence"
-weight = 1.0
+base_weight = 3.0
 arc = 1
 arc_progression = 3
 cooldown = 5

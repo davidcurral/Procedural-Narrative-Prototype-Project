@@ -6,6 +6,7 @@
 [sub_resource type="Resource" id="Resource_phx0b"]
 script = ExtResource("1_phx0b")
 type = 2
+target = 6
 
 [sub_resource type="Resource" id="Resource_irbfj"]
 script = ExtResource("1_phx0b")
@@ -21,7 +22,7 @@ script = ExtResource("2_irbfj")
 id = 62
 name = "Planet Awakens"
 context = "Planet reacts to colony presence"
-weight = 1.0
+base_weight = 3.0
 arc = 2
 arc_progression = 6
 cooldown = 5

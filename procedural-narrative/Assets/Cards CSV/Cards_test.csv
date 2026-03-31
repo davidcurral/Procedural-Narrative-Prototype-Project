@@ -1,5 +1,0 @@
-Id;Name;Game Name;Description;Rarity;Arc;Availability;Weight;Cooldown
-1;Oxygen Shortage;1_oxygen_shortage;Air reserves are dropping;Common;no_arc;true;1;5
-2;Hydroponic Failure;2_hydroponic_failure;Food production system malfunctioning;Common;no_arc;true;1;5
-59;Symbiosis Proposal;59_symbiosis_proposal;Alien life offers cooperation;Legendary;alien_arc;true;1;5
-60;Planet Awakens;60_planet_awakens;Planet reacts to colony presence;Legendary;alien_arc;true;1;5

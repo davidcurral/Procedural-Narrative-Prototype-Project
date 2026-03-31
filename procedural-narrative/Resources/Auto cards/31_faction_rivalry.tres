@@ -16,6 +16,7 @@ value = -10
 [sub_resource type="Resource" id="Resource_voda0"]
 script = ExtResource("1_1xp1w")
 type = 2
+target = 6
 value = 1
 
 [sub_resource type="Resource" id="Resource_kuspr"]
@@ -28,7 +29,7 @@ script = ExtResource("2_nd13o")
 id = 31
 name = "Faction Rivalry"
 context = "Two political factions emerge"
-weight = 1.0
+base_weight = 3.0
 arc = 3
 arc_progression = 1
 cooldown = 5

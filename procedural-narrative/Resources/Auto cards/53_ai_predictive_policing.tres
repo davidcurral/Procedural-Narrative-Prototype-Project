@@ -11,6 +11,7 @@ value = 20
 [sub_resource type="Resource" id="Resource_qpwhl"]
 script = ExtResource("1_dc7vr")
 type = 2
+target = 6
 value = 3
 
 [sub_resource type="Resource" id="Resource_e7pq2"]
@@ -23,7 +24,7 @@ script = ExtResource("2_qpwhl")
 id = 53
 name = "AI Predictive Policing"
 context = "AI predicts crimes before they happen"
-weight = 1.0
+base_weight = 3.0
 arc = 1
 arc_progression = 5
 cooldown = 5

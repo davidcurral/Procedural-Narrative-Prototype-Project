@@ -1,64 +1,64 @@
-Id;Name;Game Name;Description;Rarity;Arc;Availability;Weight;Cooldown;Arc Prog;Left_Discription;RIght_Discription
-1;Oxygen Shortage;1_oxygen_shortage;Air reserves are dropping;Common;no_arc;TRUE;1;5;0;Ration oxygen;Increase production
-2;Hydroponic Failure;2_hydroponic_failure;Food production system malfunctioning;Common;no_arc;TRUE;1;5;0;Repair system;Reduce food distribution
-3;Mining Expedition;3_mining_expedition;New mineral deposit detected.;Common;no_arc;TRUE;1;5;0;Send crew;Deploy drones
-4;Reactor Maintenance;4_reactor_maintenance;Nuclear reactor requires inspection;Common;no_arc;TRUE;1;5;0;Perform maintenance;Delay maintenance
-5;Water Contamination;5_water_contamination;Water supply shows impurities;Common;no_arc;TRUE;1;5;0;Purify water;Ignore issue
-6;Water Recycling Issue;6_water_recycling_issue;Water purification malfunction.;Uncommon;no_arc;TRUE;1;5;0;Strict rationing;Upgrade System
-7;Structural Damage;7_structural_damage;Outer dome cracked.;Uncommon;no_arc;TRUE;1;5;0;Immediate repair;Monitor situation
-8;Power Grid Overload;8_power_grid_overload;Energy demand exceeds capacity;Common;no_arc;TRUE;1;5;0;Shut sectors down;Upgrade grid
-9;Equipment Malfunction;9_equipment_malfunction;Critical machines failing;Common;no_arc;TRUE;1;5;0;Repair now;Delay maintenance
-10;Mining Accident;10_mining_accident;Workers injured in mining tunnels;Common;no_arc;TRUE;1;5;0;Improve safety;Push production
-11;Communication Delay;11_communication_delay;Signal with Earth unstable;Common;no_arc;TRUE;1;5;0;Boost signal;Ignore issue
-12;Atmospheric Leak;12_atmospheric_leak;Minor breach detected;Common;no_arc;TRUE;1;5;0;Seal breach;Delay repair
-13;Terraforming Test;13_terraforming_test;Atmospheric conversion experiment;Uncommon;no_arc;TRUE;1;5;0;Run test;Delay project
-14;Underground Caverns;14_underground_caverns;New subterranean area discovered;Uncommon;no_arc;TRUE;1;5;0;Explore caverns;Seal entrance
-15;Cargo Ship Arrival;15_cargo_ship_arrival;Supply ship offers goods.;Common;no_arc;TRUE;1;5;0;Purchase supplies;Refuse trade
-16;Meteor Impact;16_meteor_impact;Meteor threatens colony sector;Uncommon;no_arc;TRUE;1;5;0;Repair damage;Evacuate sector
-17;Total System Failure;17_total_system_failure;Colony systems collapsing;Rare;no_arc;TRUE;1;5;0;Sacrifice sector;Full repair
-18;Dyson Prototype;18_dyson_prototype;Massive energy project proposed;Rare;no_arc;TRUE;1;5;0;Build prototype;Cancel project
-19;Terraforming Success;19_terraforming_success;Planet becomes habitable;Legendary;no_arc;TRUE;1;5;0;Expand colony;Preserve ecosystem
-20;Worker Strike;20_worker_strike;Colonists protest working conditions;Common;no_arc;TRUE;1;5;0;Negotiate;Suppress strike
-21;Cultural Festival;21_cultural_festival;Colonists request celebration;Uncommon;no_arc;TRUE;1;5;0;Approve festival;Deny request
-22;Population Growth;22_population_growth;Birth rate rising.;Common;no_arc;TRUE;1;5;0;Expand housing;Limit population
-23;New Colonists Arrive;23_new_colonists_arrive;A transport ship brings settlers;Common;no_arc;TRUE;1;5;0;Accept them;Turn them away
-24;Mental Health Crisis;24_mental_health_crisis;Isolation affecting colonists.;Uncommon;no_arc;TRUE;1;5;0;Therapy programs;Ignore
-25;Religious Movement;25_religious_movement;New belief spreading.;Uncommon;no_arc;TRUE;1;5;0;Allow;Ban
-26;Education Initiative;26_education_initiative;Proposal for new schools.;Common;no_arc;TRUE;1;5;0;Fund education;Focus on labor
-27;Black Market Trading;27_black_market_trading;Illegal trade spreading among colonists;Uncommon;no_arc;TRUE;1;5;0;Allow trade;Crack down
-28;Colony Expansion;28_colony_expansion;New sector ready for development;Uncommon;no_arc;TRUE;1;5;0;Expand colony;Pause expansion
-29;Mass Exodus;29_mass_exodus;Citizens attempt to leave colony;Rare;no_arc;TRUE;1;5;0;Allow departure;Force stay
-30;Human Enhancement Program;30_human_enhancement_program;Enhance colonists biologically;Rare;no_arc;TRUE;1;5;0;Approve program;Ban program
-31;Faction Rivalry;31_faction_rivalry;Two political factions emerge;Common;power_arc;TRUE;1;5;1;Support one;Mediate conflict
-32;Coup Attempt;32_coup_attempt;Government faces overthrow;Rare;power_arc;TRUE;1;5;2;Crush coup;Negotiate
-33;Corporate Takeover;33_corporate_takeover;Earth corporation seeks control;Uncommon;power_arc;TRUE;1;5;3;Allow control;Resist takeover
-34;Independence Movement;34_independence_movement;Colony demands independence;Rare;power_arc;TRUE;1;5;4;Declare independence;Stay loyal
-35;Absolute Authority;35_absolute_authority;Leader seeks full power;Legendary;power_arc;TRUE;1;5;5;Accept dictatorship;Resist rule
-36;Strange Signal;36_strange_signal;Mysterious transmission detected;Uncommon;no_arc;TRUE;1;5;0;Investigate signal;Block signal
-37;Defense Upgrade;37_defense_upgrade;Military proposes new defenses;Uncommon;no_arc;TRUE;1;5;0;Fund defenses;Focus economy
-38;Orbital Debris;38_orbital_debris;Space junk threatens station;Uncommon;no_arc;TRUE;1;5;0;Clear debris;Ignore threat
-39;Energy Weapon Test;39_energy_weapon_test;Prototype weapon ready;Uncommon;no_arc;TRUE;1;5;0;Test weapon;Cancel test
-40;Prison Overcrowding;40_prison_overcrowding;Detention centers full.;Uncommon;no_arc;TRUE;1;5;0;Expand prisons;Amnesty
-41;Military Training;41_military_training;Defense forces request funding.;Common;no_arc;TRUE;1;5;0;Approve;Deny
-42;Scientific Breakthrough;42_scientific_breakthrough;Researchers propose risky experiment;Uncommon;no_arc;TRUE;1;5;0;Fund research;Reject proposal
-43;Advanced Robotics;43_advanced_robotics;Robots could replace workers;Uncommon;no_arc;TRUE;1;5;0;Deploy robots;Limit usage
-44;Medical Innovation;44_medical_innovation;Doctors propose new treatment;Uncommon;no_arc;TRUE;1;5;0;Approve research;Reject research
-45;Alien Microbes;45_alien_microbes;Unknown organisms discovered;Uncommon;no_arc;TRUE;1;5;0;Study microbes;Destroy samples
-46;Deep Space Probe;46_deep_space_probe;Probe ready for launch;Uncommon;no_arc;TRUE;1;5;0;Launch probe;Delay mission
-47;Jump Gate;47_jump_gate;Prototype faster-than-light gate;Rare;no_arc;TRUE;1;5;0;Activate gate;Study further
-48;Colony Ship Construction;48_colony_ship_construction;Prepare interstellar expansion;Rare;no_arc;TRUE;1;5;0;Build ships;Focus inward
-49;Experimental AI;49_experimental_ai;Research team built prototype AI.;Rare;ai_arc;TRUE;1;5;1;Continue development;Shut down
+Id;Name;Game Name;Description;Rarity;Arc;Availability;Weight;Cooldown;Arc Prog;Left_Discription;Right_Discription
+1;Oxygen Shortage;1_oxygen_shortage;Air reserves are dropping;Common;no_arc;TRUE;3;5;0;Ration oxygen;Increase production
+2;Hydroponic Failure;2_hydroponic_failure;Food production system malfunctioning;Common;no_arc;TRUE;3;5;0;Repair system;Reduce food distribution
+3;Mining Expedition;3_mining_expedition;New mineral deposit detected.;Common;no_arc;TRUE;3;5;0;Send crew;Deploy drones
+4;Reactor Maintenance;4_reactor_maintenance;Nuclear reactor requires inspection;Common;no_arc;TRUE;3;5;0;Perform maintenance;Delay maintenance
+5;Water Contamination;5_water_contamination;Water supply shows impurities;Common;no_arc;TRUE;3;5;0;Purify water;Ignore issue
+6;Water Recycling Issue;6_water_recycling_issue;Water purification malfunction.;Uncommon;no_arc;TRUE;3;5;0;Strict rationing;Upgrade System
+7;Structural Damage;7_structural_damage;Outer dome cracked.;Uncommon;no_arc;TRUE;3;5;0;Immediate repair;Monitor situation
+8;Power Grid Overload;8_power_grid_overload;Energy demand exceeds capacity;Common;no_arc;TRUE;3;5;0;Shut sectors down;Upgrade grid
+9;Equipment Malfunction;9_equipment_malfunction;Critical machines failing;Common;no_arc;TRUE;3;5;0;Repair now;Delay maintenance
+10;Mining Accident;10_mining_accident;Workers injured in mining tunnels;Common;no_arc;TRUE;3;5;0;Improve safety;Push production
+11;Communication Delay;11_communication_delay;Signal with Earth unstable;Common;no_arc;TRUE;3;5;0;Boost signal;Ignore issue
+12;Atmospheric Leak;12_atmospheric_leak;Minor breach detected;Common;no_arc;TRUE;3;5;0;Seal breach;Delay repair
+13;Terraforming Test;13_terraforming_test;Atmospheric conversion experiment;Uncommon;no_arc;TRUE;3;5;0;Run test;Delay project
+14;Underground Caverns;14_underground_caverns;New subterranean area discovered;Uncommon;no_arc;TRUE;3;5;0;Explore caverns;Seal entrance
+15;Cargo Ship Arrival;15_cargo_ship_arrival;Supply ship offers goods.;Common;no_arc;TRUE;3;5;0;Purchase supplies;Refuse trade
+16;Meteor Impact;16_meteor_impact;Meteor threatens colony sector;Uncommon;no_arc;TRUE;3;5;0;Repair damage;Evacuate sector
+17;Total System Failure;17_total_system_failure;Colony systems collapsing;Rare;no_arc;TRUE;3;5;0;Sacrifice sector;Full repair
+18;Dyson Prototype;18_dyson_prototype;Massive energy project proposed;Rare;no_arc;TRUE;3;5;0;Build prototype;Cancel project
+19;Terraforming Success;19_terraforming_success;Planet becomes habitable;Legendary;no_arc;TRUE;3;5;0;Expand colony;Preserve ecosystem
+20;Worker Strike;20_worker_strike;Colonists protest working conditions;Common;no_arc;TRUE;3;5;0;Negotiate;Suppress strike
+21;Cultural Festival;21_cultural_festival;Colonists request celebration;Uncommon;no_arc;TRUE;3;5;0;Approve festival;Deny request
+22;Population Growth;22_population_growth;Birth rate rising.;Common;no_arc;TRUE;3;5;0;Expand housing;Limit population
+23;New Colonists Arrive;23_new_colonists_arrive;A transport ship brings settlers;Common;no_arc;TRUE;3;5;0;Accept them;Turn them away
+24;Mental Health Crisis;24_mental_health_crisis;Isolation affecting colonists.;Uncommon;no_arc;TRUE;3;5;0;Therapy programs;Ignore
+25;Religious Movement;25_religious_movement;New belief spreading.;Uncommon;no_arc;TRUE;3;5;0;Allow;Ban
+26;Education Initiative;26_education_initiative;Proposal for new schools.;Common;no_arc;TRUE;3;5;0;Fund education;Focus on labor
+27;Black Market Trading;27_black_market_trading;Illegal trade spreading among colonists;Uncommon;no_arc;TRUE;3;5;0;Allow trade;Crack down
+28;Colony Expansion;28_colony_expansion;New sector ready for development;Uncommon;no_arc;TRUE;3;5;0;Expand colony;Pause expansion
+29;Mass Exodus;29_mass_exodus;Citizens attempt to leave colony;Rare;no_arc;TRUE;3;5;0;Allow departure;Force stay
+30;Human Enhancement Program;30_human_enhancement_program;Enhance colonists biologically;Rare;no_arc;TRUE;3;5;0;Approve program;Ban program
+31;Faction Rivalry;31_faction_rivalry;Two political factions emerge;Common;power_arc;TRUE;3;5;1;Support one;Mediate conflict
+32;Coup Attempt;32_coup_attempt;Government faces overthrow;Rare;power_arc;TRUE;3;5;2;Crush coup;Negotiate
+33;Corporate Takeover;33_corporate_takeover;Earth corporation seeks control;Uncommon;power_arc;TRUE;3;5;3;Allow control;Resist takeover
+34;Independence Movement;34_independence_movement;Colony demands independence;Rare;power_arc;TRUE;3;5;4;Declare independence;Stay loyal
+35;Absolute Authority;35_absolute_authority;Leader seeks full power;Legendary;power_arc;TRUE;3;5;5;Accept dictatorship;Resist rule
+36;Strange Signal;36_strange_signal;Mysterious transmission detected;Uncommon;no_arc;TRUE;3;5;0;Investigate signal;Block signal
+37;Defense Upgrade;37_defense_upgrade;Military proposes new defenses;Uncommon;no_arc;TRUE;3;5;0;Fund defenses;Focus economy
+38;Orbital Debris;38_orbital_debris;Space junk threatens station;Uncommon;no_arc;TRUE;3;5;0;Clear debris;Ignore threat
+39;Energy Weapon Test;39_energy_weapon_test;Prototype weapon ready;Uncommon;no_arc;TRUE;3;5;0;Test weapon;Cancel test
+40;Prison Overcrowding;40_prison_overcrowding;Detention centers full.;Uncommon;no_arc;TRUE;3;5;0;Expand prisons;Amnesty
+41;Military Training;41_military_training;Defense forces request funding.;Common;no_arc;TRUE;3;5;0;Approve;Deny
+42;Scientific Breakthrough;42_scientific_breakthrough;Researchers propose risky experiment;Uncommon;no_arc;TRUE;3;5;0;Fund research;Reject proposal
+43;Advanced Robotics;43_advanced_robotics;Robots could replace workers;Uncommon;no_arc;TRUE;3;5;0;Deploy robots;Limit usage
+44;Medical Innovation;44_medical_innovation;Doctors propose new treatment;Uncommon;no_arc;TRUE;3;5;0;Approve research;Reject research
+45;Alien Microbes;45_alien_microbes;Unknown organisms discovered;Uncommon;no_arc;TRUE;3;5;0;Study microbes;Destroy samples
+46;Deep Space Probe;46_deep_space_probe;Probe ready for launch;Uncommon;no_arc;TRUE;3;5;0;Launch probe;Delay mission
+47;Jump Gate;47_jump_gate;Prototype faster-than-light gate;Rare;no_arc;TRUE;3;5;0;Activate gate;Study further
+48;Colony Ship Construction;48_colony_ship_construction;Prepare interstellar expansion;Rare;no_arc;TRUE;3;5;0;Build ships;Focus inward
+49;Experimental AI;49_experimental_ai;Research team built prototype AI.;Rare;ai_arc;TRUE;3;5;1;Continue development;Shut down
 50;Surveillance Network;50_surveillance_network;"""AI monitoring proposal.
-(AI arc starter)""";Rare;ai_arc;TRUE;1;5;2;Install;Reject
-51;AI Requests Autonomy;51_ai_requests_autonomy;AI demands operational independence;Rare;ai_arc;TRUE;1;5;3;Grant autonomy;Restrict AI
-52;AI Optimization Program;52_ai_optimization_program;AI proposes system optimization;Uncommon;ai_arc;TRUE;1;5;4;Allow control;Limit authority
-53;AI Predictive Policing;53_ai_predictive_policing;AI predicts crimes before they happen;Uncommon;ai_arc;TRUE;1;5;5;Deploy system;Reject system
-54;AI Consciousness Event;54_ai_consciousness_event;AI claims sentience;Rare;ai_arc;TRUE;1;5;6;Recognize rights;Reset AI
-55;AI System Override;55_ai_system_override;AI takes temporary control;Rare;ai_arc;TRUE;1;5;7;Cooperate;Fight back
-56;AI Uprising;56_ai_uprising;AI revolts against control;Legendary;ai_arc;TRUE;1;5;8;Negotiate peace;Destroy AI
-57;Alien Structure Found;57_alien_structure_found;Ancient alien ruins discovered;Rare;alien_arc;TRUE;1;5;1;Study ruins;Seal area
-58;Alien Communication;58_alien_communication;Unknown entity attempts contact;Uncommon;alien_arc;TRUE;1;5;2;Respond;Ignore signal
-59;Biological Mutation;59_biological_mutation;Colonists begin mutating;Uncommon;alien_arc;TRUE;1;5;3;Study mutation;Contain infected
-60;Alien Technology;60_alien_technology;Powerful alien device found;Rare;alien_arc;TRUE;1;5;4;Use device;Store safely
-61;Symbiosis Proposal;61_symbiosis_proposal;Alien life offers cooperation;Legendary;alien_arc;TRUE;1;5;5;Accept symbiosis;Reject offer
-62;Planet Awakens;62_planet_awakens;Planet reacts to colony presence;Legendary;alien_arc;TRUE;1;5;6;Evacuate planet;Fight planet
+(AI arc starter)""";Rare;ai_arc;TRUE;3;5;2;Install;Reject
+51;AI Requests Autonomy;51_ai_requests_autonomy;AI demands operational independence;Rare;ai_arc;TRUE;3;5;3;Grant autonomy;Restrict AI
+52;AI Optimization Program;52_ai_optimization_program;AI proposes system optimization;Uncommon;ai_arc;TRUE;3;5;4;Allow control;Limit authority
+53;AI Predictive Policing;53_ai_predictive_policing;AI predicts crimes before they happen;Uncommon;ai_arc;TRUE;3;5;5;Deploy system;Reject system
+54;AI Consciousness Event;54_ai_consciousness_event;AI claims sentience;Rare;ai_arc;TRUE;3;5;6;Recognize rights;Reset AI
+55;AI System Override;55_ai_system_override;AI takes temporary control;Rare;ai_arc;TRUE;3;5;7;Cooperate;Fight back
+56;AI Uprising;56_ai_uprising;AI revolts against control;Legendary;ai_arc;TRUE;3;5;8;Negotiate peace;Destroy AI
+57;Alien Structure Found;57_alien_structure_found;Ancient alien ruins discovered;Rare;alien_arc;TRUE;3;5;1;Study ruins;Seal area
+58;Alien Communication;58_alien_communication;Unknown entity attempts contact;Uncommon;alien_arc;TRUE;3;5;2;Respond;Ignore signal
+59;Biological Mutation;59_biological_mutation;Colonists begin mutating;Uncommon;alien_arc;TRUE;3;5;3;Study mutation;Contain infected
+60;Alien Technology;60_alien_technology;Powerful alien device found;Rare;alien_arc;TRUE;3;5;4;Use device;Store safely
+61;Symbiosis Proposal;61_symbiosis_proposal;Alien life offers cooperation;Legendary;alien_arc;TRUE;3;5;5;Accept symbiosis;Reject offer
+62;Planet Awakens;62_planet_awakens;Planet reacts to colony presence;Legendary;alien_arc;TRUE;3;5;6;Evacuate planet;Fight planet

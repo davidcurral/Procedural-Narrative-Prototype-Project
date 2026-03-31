@@ -11,6 +11,7 @@ value = 25
 [sub_resource type="Resource" id="Resource_bxp2q"]
 script = ExtResource("1_j1txs")
 type = 2
+target = 6
 value = 1
 
 [sub_resource type="Resource" id="Resource_31703"]
@@ -23,7 +24,7 @@ script = ExtResource("2_bxp2q")
 id = 57
 name = "Alien Structure Found"
 context = "Ancient alien ruins discovered"
-weight = 1.0
+base_weight = 3.0
 arc = 2
 arc_progression = 1
 cooldown = 5

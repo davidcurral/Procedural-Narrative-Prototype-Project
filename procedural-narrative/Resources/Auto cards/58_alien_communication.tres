@@ -16,6 +16,7 @@ value = -10
 [sub_resource type="Resource" id="Resource_l0662"]
 script = ExtResource("1_fqglw")
 type = 2
+target = 6
 value = 2
 
 [sub_resource type="Resource" id="Resource_xlr16"]
@@ -28,7 +29,7 @@ script = ExtResource("2_0k51d")
 id = 58
 name = "Alien Communication"
 context = "Unknown entity attempts contact"
-weight = 1.0
+base_weight = 3.0
 arc = 2
 arc_progression = 2
 cooldown = 5
