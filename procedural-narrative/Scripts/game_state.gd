@@ -211,13 +211,14 @@ func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto 
 		
 	if choice_id == 0:
 		for effect in card.left_effects:
-			if effect.type == 1:
+			if effect.type == 2:
 				complete_arc(arc_map[card.arc])		
 				available_cards_list.erase(card.id)
 				return
+				
 	elif choice_id == 1:
 		for effect in card.right_effects:
-			if effect.type == 1:
+			if effect.type == 2:
 				complete_arc(arc_map[card.arc])		
 				available_cards_list.erase(card.id)
 				return

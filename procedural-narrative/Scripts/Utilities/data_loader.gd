@@ -144,7 +144,7 @@ static func target_to_enum(value: String) -> int:
 		return 4	
 	elif value == "influence":
 		return 5	
-	return 0	
+	return 6
 
 static func arc_to_enum(value: String) -> int:
 	if value == "no_arc":

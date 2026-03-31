@@ -197,8 +197,8 @@ func get_effects_in_memory(target)-> int:
 # ----- Arc  Functions ----
 func evaluate_arc_unlocks()-> void:
 	check_ai_arc_unlock()
-	#check_alien_arc_unlock()
-	#check_rebellion_unlock()
+	check_alien_arc_unlock()
+	check_rebellion_unlock()
 	#check_terraform_unlock()
 
 func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
