@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dx4bwspmyl4gt"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_xh4ag"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_x76fh"]
+
+[sub_resource type="Resource" id="Resource_xh4ag"]
+script = ExtResource("1_xh4ag")
+target = 2
+value = 15
+
+[sub_resource type="Resource" id="Resource_x76fh"]
+script = ExtResource("1_xh4ag")
+value = -10
+
+[sub_resource type="Resource" id="Resource_wgujs"]
+script = ExtResource("1_xh4ag")
+value = 5
+
+[sub_resource type="Resource" id="Resource_f73q0"]
+script = ExtResource("1_xh4ag")
+target = 2
+value = -10
+
+[resource]
+script = ExtResource("2_x76fh")
+id = 41
+name = "Military Training"
+context = "Defense forces request funding."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_xh4ag")]([SubResource("Resource_xh4ag"), SubResource("Resource_x76fh")])
+left_discription = "Approve"
+right_effects = Array[ExtResource("1_xh4ag")]([SubResource("Resource_wgujs"), SubResource("Resource_f73q0")])
+right_discription = "Deny"

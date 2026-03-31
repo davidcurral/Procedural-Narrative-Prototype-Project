@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=5 format=3 uid="uid://b46dtg7n3f7gg"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_x5cwq"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_5hxnb"]
+
+[sub_resource type="Resource" id="Resource_x5cwq"]
+script = ExtResource("1_x5cwq")
+type = 2
+
+[sub_resource type="Resource" id="Resource_5hxnb"]
+script = ExtResource("1_x5cwq")
+target = 1
+value = 15
+
+[resource]
+script = ExtResource("2_5hxnb")
+id = 47
+name = "Jump Gate"
+context = "Prototype faster-than-light gate"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_x5cwq")]([SubResource("Resource_x5cwq"), SubResource("Resource_5hxnb")])
+left_discription = "Activate gate"
+right_discription = "Study further"

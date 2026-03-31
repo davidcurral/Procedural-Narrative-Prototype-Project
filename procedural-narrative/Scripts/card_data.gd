@@ -32,9 +32,9 @@ var game_name: String = ''
 
 
 @export var left_effects: Array[Effect]
-@export var left_description: String = 'Left Discription'
+@export var left_discription: String = 'Left Discription'
 @export var right_effects: Array[Effect]
-@export var right_description: String = 'Right Discription'
+@export var right_discription: String = 'Right Discription'
 
 
 

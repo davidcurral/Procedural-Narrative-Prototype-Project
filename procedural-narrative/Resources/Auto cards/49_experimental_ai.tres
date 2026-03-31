@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://dq4n1g3e35g2a"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_qqt10"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_mhoqv"]
+
+[sub_resource type="Resource" id="Resource_qqt10"]
+script = ExtResource("1_qqt10")
+target = 1
+value = 15
+
+[sub_resource type="Resource" id="Resource_mhoqv"]
+script = ExtResource("1_qqt10")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_h1msy"]
+script = ExtResource("1_qqt10")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("2_mhoqv")
+id = 49
+name = "Experimental AI"
+context = "Research team built prototype AI."
+weight = 1.0
+arc = 1
+arc_progression = 1
+cooldown = 5
+left_effects = Array[ExtResource("1_qqt10")]([SubResource("Resource_qqt10"), SubResource("Resource_mhoqv")])
+left_discription = "Continue development"
+right_effects = Array[ExtResource("1_qqt10")]([SubResource("Resource_h1msy")])
+right_discription = "Shut down"

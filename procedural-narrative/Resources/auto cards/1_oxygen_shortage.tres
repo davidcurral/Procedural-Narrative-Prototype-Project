@@ -1,34 +1,34 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b41g3p0n5i8sr"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dd1s5n4btmqje"]
 
-[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_lucnn"]
-[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_qy31l"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ektly"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_c6qw1"]
 
-[sub_resource type="Resource" id="Resource_lucnn"]
-script = ExtResource("1_lucnn")
+[sub_resource type="Resource" id="Resource_ektly"]
+script = ExtResource("1_ektly")
 value = 10
 
-[sub_resource type="Resource" id="Resource_qy31l"]
-script = ExtResource("1_lucnn")
+[sub_resource type="Resource" id="Resource_c6qw1"]
+script = ExtResource("1_ektly")
 target = 3
 value = -10
 
-[sub_resource type="Resource" id="Resource_o186i"]
-script = ExtResource("1_lucnn")
+[sub_resource type="Resource" id="Resource_d5efj"]
+script = ExtResource("1_ektly")
 value = -10
 
-[sub_resource type="Resource" id="Resource_vsdgv"]
-script = ExtResource("1_lucnn")
+[sub_resource type="Resource" id="Resource_krejy"]
+script = ExtResource("1_ektly")
 target = 1
 value = 5
 
 [resource]
-script = ExtResource("2_qy31l")
+script = ExtResource("2_c6qw1")
 id = 1
 name = "Oxygen Shortage"
 context = "Air reserves are dropping"
 weight = 1.0
-cooldown = 2
-left_effects = Array[ExtResource("1_lucnn")]([SubResource("Resource_lucnn"), SubResource("Resource_qy31l")])
-left_description = "Repair Tanks"
-right_effects = Array[ExtResource("1_lucnn")]([SubResource("Resource_o186i"), SubResource("Resource_vsdgv")])
-right_description = "Dellay Repair"
+cooldown = 5
+left_effects = Array[ExtResource("1_ektly")]([SubResource("Resource_ektly"), SubResource("Resource_c6qw1")])
+left_discription = "Ration oxygen"
+right_effects = Array[ExtResource("1_ektly")]([SubResource("Resource_d5efj"), SubResource("Resource_krejy")])
+right_discription = "Increase production"

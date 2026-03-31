@@ -34,7 +34,5 @@ arc = 2
 arc_progression = 1
 cooldown = 500
 left_effects = Array[ExtResource("1_pl4ih")]([SubResource("Resource_3fgn5")])
-left_description = "Explore Structure"
 right_effects = Array[ExtResource("1_pl4ih")]([SubResource("Resource_065br"), SubResource("Resource_u0it8")])
-right_description = "Leave it alone"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

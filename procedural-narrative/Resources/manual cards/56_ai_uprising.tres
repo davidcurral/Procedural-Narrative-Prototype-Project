@@ -43,7 +43,5 @@ arc = 1
 arc_progression = 3
 cooldown = 500
 left_effects = Array[ExtResource("1_m6me5")]([SubResource("Resource_13rto"), SubResource("Resource_o1gk0")])
-left_description = "Adopt as GOD"
 right_effects = Array[ExtResource("1_m6me5")]([SubResource("Resource_qosm7"), SubResource("Resource_qmmec")])
-right_description = "Destroy all machines"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

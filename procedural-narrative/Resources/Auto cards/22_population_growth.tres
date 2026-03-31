@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cyk75y1k6fy4n"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_chfuv"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_wdkd6"]
+
+[sub_resource type="Resource" id="Resource_chfuv"]
+script = ExtResource("1_chfuv")
+value = -10
+
+[sub_resource type="Resource" id="Resource_wdkd6"]
+script = ExtResource("1_chfuv")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_vm6oo"]
+script = ExtResource("1_chfuv")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_ybrc8"]
+script = ExtResource("1_chfuv")
+target = 3
+value = -10
+
+[resource]
+script = ExtResource("2_wdkd6")
+id = 22
+name = "Population Growth"
+context = "Birth rate rising."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_chfuv")]([SubResource("Resource_chfuv"), SubResource("Resource_wdkd6")])
+left_discription = "Expand housing"
+right_effects = Array[ExtResource("1_chfuv")]([SubResource("Resource_vm6oo"), SubResource("Resource_ybrc8")])
+right_discription = "Limit population"

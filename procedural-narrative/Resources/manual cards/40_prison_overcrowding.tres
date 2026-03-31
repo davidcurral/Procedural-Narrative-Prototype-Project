@@ -27,7 +27,5 @@ arc = 3
 arc_progression = 1
 cooldown = 500
 left_effects = Array[ExtResource("1_h44gc")]([SubResource("Resource_07yqg")])
-left_description = "Pardon them"
 right_effects = Array[ExtResource("1_h44gc")]([SubResource("Resource_4w6yy")])
-right_description = "Kill Some people"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

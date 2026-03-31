@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://d1yj0ftkjcd05"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_2nfi0"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_hrpid"]
+
+[sub_resource type="Resource" id="Resource_2nfi0"]
+script = ExtResource("1_2nfi0")
+value = 15
+
+[sub_resource type="Resource" id="Resource_hrpid"]
+script = ExtResource("1_2nfi0")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_ks7fo"]
+script = ExtResource("1_2nfi0")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("2_hrpid")
+id = 15
+name = "Cargo Ship Arrival"
+context = "Supply ship offers goods."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_2nfi0")]([SubResource("Resource_2nfi0"), SubResource("Resource_hrpid")])
+left_discription = "Purchase supplies"
+right_effects = Array[ExtResource("1_2nfi0")]([SubResource("Resource_ks7fo")])
+right_discription = "Refuse trade"

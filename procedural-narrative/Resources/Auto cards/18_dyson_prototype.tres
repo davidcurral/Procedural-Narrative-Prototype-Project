@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://bf1brs3x7ivqv"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_sglnx"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_vodli"]
+
+[sub_resource type="Resource" id="Resource_sglnx"]
+script = ExtResource("1_sglnx")
+target = 1
+value = 30
+
+[sub_resource type="Resource" id="Resource_vodli"]
+script = ExtResource("1_sglnx")
+value = -30
+
+[sub_resource type="Resource" id="Resource_fplsk"]
+script = ExtResource("1_sglnx")
+value = 10
+
+[resource]
+script = ExtResource("2_vodli")
+id = 18
+name = "Dyson Prototype"
+context = "Massive energy project proposed"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_sglnx")]([SubResource("Resource_sglnx"), SubResource("Resource_vodli")])
+left_discription = "Build prototype"
+right_effects = Array[ExtResource("1_sglnx")]([SubResource("Resource_fplsk")])
+right_discription = "Cancel project"

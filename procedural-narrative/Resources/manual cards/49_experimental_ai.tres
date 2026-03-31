@@ -33,7 +33,5 @@ arc = 1
 arc_progression = 1
 cooldown = 500
 left_effects = Array[ExtResource("1_xi0r6")]([SubResource("Resource_ki37w"), SubResource("Resource_v4y2d")])
-left_description = "Allow access"
 right_effects = Array[ExtResource("1_xi0r6")]([SubResource("Resource_kdev2")])
-right_description = "Limit access"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

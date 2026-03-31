@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cwdn4mnen3xv7"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_5bw0s"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_xcyvx"]
+
+[sub_resource type="Resource" id="Resource_5bw0s"]
+script = ExtResource("1_5bw0s")
+value = 20
+
+[sub_resource type="Resource" id="Resource_xcyvx"]
+script = ExtResource("1_5bw0s")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_3e3hr"]
+script = ExtResource("1_5bw0s")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_ts0oh"]
+script = ExtResource("1_5bw0s")
+target = 1
+value = -5
+
+[resource]
+script = ExtResource("2_xcyvx")
+id = 43
+name = "Advanced Robotics"
+context = "Robots could replace workers"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_5bw0s")]([SubResource("Resource_5bw0s"), SubResource("Resource_xcyvx")])
+left_discription = "Deploy robots"
+right_effects = Array[ExtResource("1_5bw0s")]([SubResource("Resource_3e3hr"), SubResource("Resource_ts0oh")])
+right_discription = "Limit usage"

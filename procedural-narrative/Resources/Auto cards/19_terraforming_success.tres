@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=5 format=3 uid="uid://c5k5rj5pidk6p"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_66my8"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_xhvwc"]
+
+[sub_resource type="Resource" id="Resource_66my8"]
+script = ExtResource("1_66my8")
+type = 2
+
+[sub_resource type="Resource" id="Resource_xhvwc"]
+script = ExtResource("1_66my8")
+type = 2
+
+[resource]
+script = ExtResource("2_xhvwc")
+id = 19
+name = "Terraforming Success"
+context = "Planet becomes habitable"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_66my8")]([SubResource("Resource_66my8")])
+left_discription = "Expand colony"
+right_effects = Array[ExtResource("1_66my8")]([SubResource("Resource_xhvwc")])
+right_discription = "Preserve ecosystem"

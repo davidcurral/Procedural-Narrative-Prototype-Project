@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b2ywe6jkda7e7"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_u6k2a"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_c60iv"]
+
+[sub_resource type="Resource" id="Resource_u6k2a"]
+script = ExtResource("1_u6k2a")
+value = -10
+
+[sub_resource type="Resource" id="Resource_c60iv"]
+script = ExtResource("1_u6k2a")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_uyp62"]
+script = ExtResource("1_u6k2a")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_er0fm"]
+script = ExtResource("1_u6k2a")
+value = 5
+
+[resource]
+script = ExtResource("2_c60iv")
+id = 5
+name = "Water Contamination"
+context = "Water supply shows impurities"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_u6k2a")]([SubResource("Resource_u6k2a"), SubResource("Resource_c60iv")])
+left_discription = "Purify water"
+right_effects = Array[ExtResource("1_u6k2a")]([SubResource("Resource_uyp62"), SubResource("Resource_er0fm")])
+right_discription = "Ignore issue"

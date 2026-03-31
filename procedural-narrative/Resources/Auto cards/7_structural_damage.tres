@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bgy5aotr54hco"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_sva5q"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_k21in"]
+
+[sub_resource type="Resource" id="Resource_sva5q"]
+script = ExtResource("1_sva5q")
+value = -15
+
+[sub_resource type="Resource" id="Resource_k21in"]
+script = ExtResource("1_sva5q")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_8jbhi"]
+script = ExtResource("1_sva5q")
+value = 5
+
+[sub_resource type="Resource" id="Resource_kprhj"]
+script = ExtResource("1_sva5q")
+target = 4
+value = 1
+
+[resource]
+script = ExtResource("2_k21in")
+id = 7
+name = "Structural Damage"
+context = "Outer dome cracked."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_sva5q")]([SubResource("Resource_sva5q"), SubResource("Resource_k21in")])
+left_discription = "Immediate repair"
+right_effects = Array[ExtResource("1_sva5q")]([SubResource("Resource_8jbhi"), SubResource("Resource_kprhj")])
+right_discription = "Monitor situation"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://coj5i2mjf5qry"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_s1o7x"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_8p15y"]
+
+[sub_resource type="Resource" id="Resource_s1o7x"]
+script = ExtResource("1_s1o7x")
+value = 15
+
+[sub_resource type="Resource" id="Resource_8p15y"]
+script = ExtResource("1_s1o7x")
+target = 3
+value = -5
+
+[sub_resource type="Resource" id="Resource_xfq1h"]
+script = ExtResource("1_s1o7x")
+target = 1
+value = 10
+
+[sub_resource type="Resource" id="Resource_y3wck"]
+script = ExtResource("1_s1o7x")
+value = -10
+
+[resource]
+script = ExtResource("2_8p15y")
+id = 3
+name = "Mining Expedition"
+context = "New mineral deposit detected."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_s1o7x")]([SubResource("Resource_s1o7x"), SubResource("Resource_8p15y")])
+left_discription = "Send crew"
+right_effects = Array[ExtResource("1_s1o7x")]([SubResource("Resource_xfq1h"), SubResource("Resource_y3wck")])
+right_discription = "Deploy drones"

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://b58uo540abs3s"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ffufi"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_33qeh"]
+
+[sub_resource type="Resource" id="Resource_ffufi"]
+script = ExtResource("1_ffufi")
+value = -20
+
+[sub_resource type="Resource" id="Resource_33qeh"]
+script = ExtResource("1_ffufi")
+target = 1
+value = 15
+
+[sub_resource type="Resource" id="Resource_s6t8j"]
+script = ExtResource("1_ffufi")
+value = 10
+
+[resource]
+script = ExtResource("2_33qeh")
+id = 28
+name = "Colony Expansion"
+context = "New sector ready for development"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_ffufi")]([SubResource("Resource_ffufi"), SubResource("Resource_33qeh")])
+left_discription = "Expand colony"
+right_effects = Array[ExtResource("1_ffufi")]([SubResource("Resource_s6t8j")])
+right_discription = "Pause expansion"

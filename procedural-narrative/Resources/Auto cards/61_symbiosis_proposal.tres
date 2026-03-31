@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://dw4yg2h578pn"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_lpwp6"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_adex3"]
+
+[sub_resource type="Resource" id="Resource_lpwp6"]
+script = ExtResource("1_lpwp6")
+type = 2
+
+[sub_resource type="Resource" id="Resource_adex3"]
+script = ExtResource("1_lpwp6")
+target = 3
+value = 20
+
+[sub_resource type="Resource" id="Resource_g82sc"]
+script = ExtResource("1_lpwp6")
+target = 2
+value = 15
+
+[resource]
+script = ExtResource("2_adex3")
+id = 61
+name = "Symbiosis Proposal"
+context = "Alien life offers cooperation"
+weight = 1.0
+arc = 2
+arc_progression = 5
+cooldown = 5
+left_effects = Array[ExtResource("1_lpwp6")]([SubResource("Resource_lpwp6"), SubResource("Resource_adex3")])
+left_discription = "Accept symbiosis"
+right_effects = Array[ExtResource("1_lpwp6")]([SubResource("Resource_g82sc")])
+right_discription = "Reject offer"

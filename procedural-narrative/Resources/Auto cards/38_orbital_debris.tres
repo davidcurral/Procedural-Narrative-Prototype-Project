@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b4vb3himgccwi"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ut7nj"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_kamm1"]
+
+[sub_resource type="Resource" id="Resource_ut7nj"]
+script = ExtResource("1_ut7nj")
+value = -10
+
+[sub_resource type="Resource" id="Resource_kamm1"]
+script = ExtResource("1_ut7nj")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_ue3as"]
+script = ExtResource("1_ut7nj")
+value = 5
+
+[sub_resource type="Resource" id="Resource_l2yf2"]
+script = ExtResource("1_ut7nj")
+target = 4
+value = 1
+
+[resource]
+script = ExtResource("2_kamm1")
+id = 38
+name = "Orbital Debris"
+context = "Space junk threatens station"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_ut7nj")]([SubResource("Resource_ut7nj"), SubResource("Resource_kamm1")])
+left_discription = "Clear debris"
+right_effects = Array[ExtResource("1_ut7nj")]([SubResource("Resource_ue3as"), SubResource("Resource_l2yf2")])
+right_discription = "Ignore threat"

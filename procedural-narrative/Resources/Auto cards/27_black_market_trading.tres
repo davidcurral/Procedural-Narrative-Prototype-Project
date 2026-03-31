@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b8gwmlj5ukt5c"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_kn4wv"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_1f6jl"]
+
+[sub_resource type="Resource" id="Resource_kn4wv"]
+script = ExtResource("1_kn4wv")
+value = 10
+
+[sub_resource type="Resource" id="Resource_1f6jl"]
+script = ExtResource("1_kn4wv")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_5yvnq"]
+script = ExtResource("1_kn4wv")
+target = 2
+value = 15
+
+[sub_resource type="Resource" id="Resource_f12ml"]
+script = ExtResource("1_kn4wv")
+target = 3
+value = -5
+
+[resource]
+script = ExtResource("2_1f6jl")
+id = 27
+name = "Black Market Trading"
+context = "Illegal trade spreading among colonists"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_kn4wv")]([SubResource("Resource_kn4wv"), SubResource("Resource_1f6jl")])
+left_discription = "Allow trade"
+right_effects = Array[ExtResource("1_kn4wv")]([SubResource("Resource_5yvnq"), SubResource("Resource_f12ml")])
+right_discription = "Crack down"

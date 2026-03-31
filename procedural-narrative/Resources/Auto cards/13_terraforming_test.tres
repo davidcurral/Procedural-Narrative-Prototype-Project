@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://d271abb66g76n"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_me63t"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_vjf33"]
+
+[sub_resource type="Resource" id="Resource_me63t"]
+script = ExtResource("1_me63t")
+target = 1
+value = 20
+
+[sub_resource type="Resource" id="Resource_vjf33"]
+script = ExtResource("1_me63t")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_gyt4m"]
+script = ExtResource("1_me63t")
+value = 5
+
+[sub_resource type="Resource" id="Resource_vi4xn"]
+script = ExtResource("1_me63t")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("2_vjf33")
+id = 13
+name = "Terraforming Test"
+context = "Atmospheric conversion experiment"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_me63t")]([SubResource("Resource_me63t"), SubResource("Resource_vjf33")])
+left_discription = "Run test"
+right_effects = Array[ExtResource("1_me63t")]([SubResource("Resource_gyt4m"), SubResource("Resource_vi4xn")])
+right_discription = "Delay project"

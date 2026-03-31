@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bg1h7het5yqwi"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_m3i8l"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_q8sai"]
+
+[sub_resource type="Resource" id="Resource_m3i8l"]
+script = ExtResource("1_m3i8l")
+target = 1
+value = 20
+
+[sub_resource type="Resource" id="Resource_q8sai"]
+script = ExtResource("1_m3i8l")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_ftq71"]
+script = ExtResource("1_m3i8l")
+type = 2
+value = 3
+
+[sub_resource type="Resource" id="Resource_8jn88"]
+script = ExtResource("1_m3i8l")
+target = 2
+value = 15
+
+[resource]
+script = ExtResource("2_q8sai")
+id = 59
+name = "Biological Mutation"
+context = "Colonists begin mutating"
+weight = 1.0
+arc = 2
+arc_progression = 3
+cooldown = 5
+left_effects = Array[ExtResource("1_m3i8l")]([SubResource("Resource_m3i8l"), SubResource("Resource_q8sai"), SubResource("Resource_ftq71")])
+left_discription = "Study mutation"
+right_effects = Array[ExtResource("1_m3i8l")]([SubResource("Resource_8jn88"), SubResource("Resource_ftq71")])
+right_discription = "Contain infected"

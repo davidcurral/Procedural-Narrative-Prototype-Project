@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://bgtmpvxp2orq3"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_70pss"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_v58p4"]
+
+[sub_resource type="Resource" id="Resource_70pss"]
+script = ExtResource("1_70pss")
+target = 1
+value = 15
+
+[sub_resource type="Resource" id="Resource_v58p4"]
+script = ExtResource("1_70pss")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_tluyo"]
+script = ExtResource("1_70pss")
+target = 2
+value = 10
+
+[resource]
+script = ExtResource("2_v58p4")
+id = 45
+name = "Alien Microbes"
+context = "Unknown organisms discovered"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_70pss")]([SubResource("Resource_70pss"), SubResource("Resource_v58p4")])
+left_discription = "Study microbes"
+right_effects = Array[ExtResource("1_70pss")]([SubResource("Resource_tluyo")])
+right_discription = "Destroy samples"

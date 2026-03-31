@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://cmphxsr6i6sk2"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ijhdv"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_ho3b8"]
+
+[sub_resource type="Resource" id="Resource_ijhdv"]
+script = ExtResource("1_ijhdv")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_ho3b8"]
+script = ExtResource("1_ijhdv")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_m0g7b"]
+script = ExtResource("1_ijhdv")
+target = 5
+value = 20
+
+[sub_resource type="Resource" id="Resource_obvuu"]
+script = ExtResource("1_ijhdv")
+type = 2
+value = 4
+
+[sub_resource type="Resource" id="Resource_jlbwd"]
+script = ExtResource("1_ijhdv")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_gd6k5"]
+script = ExtResource("1_ijhdv")
+target = 1
+value = -10
+
+[resource]
+script = ExtResource("2_ho3b8")
+id = 54
+name = "AI Consciousness Event"
+context = "AI claims sentience"
+weight = 1.0
+arc = 1
+arc_progression = 6
+cooldown = 5
+left_effects = Array[ExtResource("1_ijhdv")]([SubResource("Resource_ijhdv"), SubResource("Resource_ho3b8"), SubResource("Resource_m0g7b"), SubResource("Resource_obvuu")])
+left_discription = "Recognize rights"
+right_effects = Array[ExtResource("1_ijhdv")]([SubResource("Resource_jlbwd"), SubResource("Resource_gd6k5"), SubResource("Resource_obvuu")])
+right_discription = "Reset AI"

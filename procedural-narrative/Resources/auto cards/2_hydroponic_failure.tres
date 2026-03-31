@@ -1,34 +1,39 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bi1yka3anqa6r"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dtv10ynvc2amf"]
 
-[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_2kjev"]
-[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_piov7"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_6yr6x"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_bj278"]
 
-[sub_resource type="Resource" id="Resource_2kjev"]
-script = ExtResource("1_2kjev")
+[sub_resource type="Resource" id="Resource_6yr6x"]
+script = ExtResource("1_6yr6x")
 value = -10
 
-[sub_resource type="Resource" id="Resource_piov7"]
-script = ExtResource("1_2kjev")
+[sub_resource type="Resource" id="Resource_bj278"]
+script = ExtResource("1_6yr6x")
 target = 3
 value = 5
 
-[sub_resource type="Resource" id="Resource_h2jk8"]
-script = ExtResource("1_2kjev")
+[sub_resource type="Resource" id="Resource_7blco"]
+script = ExtResource("1_6yr6x")
+target = 3
+value = 15
+
+[sub_resource type="Resource" id="Resource_fp1km"]
+script = ExtResource("1_6yr6x")
 value = 5
 
-[sub_resource type="Resource" id="Resource_dog3x"]
-script = ExtResource("1_2kjev")
+[sub_resource type="Resource" id="Resource_hscy2"]
+script = ExtResource("1_6yr6x")
 target = 3
 value = -10
 
 [resource]
-script = ExtResource("2_piov7")
+script = ExtResource("2_bj278")
 id = 2
 name = "Hydroponic Failure"
 context = "Food production system malfunctioning"
 weight = 1.0
-cooldown = 2
-left_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_2kjev"), SubResource("Resource_piov7")])
-left_description = ""
-right_effects = Array[ExtResource("1_2kjev")]([SubResource("Resource_h2jk8"), SubResource("Resource_dog3x")])
-right_description = ""
+cooldown = 5
+left_effects = Array[ExtResource("1_6yr6x")]([SubResource("Resource_6yr6x"), SubResource("Resource_bj278"), SubResource("Resource_7blco")])
+left_discription = "Repair system"
+right_effects = Array[ExtResource("1_6yr6x")]([SubResource("Resource_fp1km"), SubResource("Resource_hscy2")])
+right_discription = "Reduce food distribution"

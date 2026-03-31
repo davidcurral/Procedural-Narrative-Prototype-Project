@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dv024vboad8kn"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_rnika"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_p5ukg"]
+
+[sub_resource type="Resource" id="Resource_rnika"]
+script = ExtResource("1_rnika")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_p5ukg"]
+script = ExtResource("1_rnika")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_tqdvb"]
+script = ExtResource("1_rnika")
+value = -15
+
+[sub_resource type="Resource" id="Resource_lxxc5"]
+script = ExtResource("1_rnika")
+target = 1
+value = 10
+
+[resource]
+script = ExtResource("2_p5ukg")
+id = 8
+name = "Power Grid Overload"
+context = "Energy demand exceeds capacity"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_rnika")]([SubResource("Resource_rnika"), SubResource("Resource_p5ukg")])
+left_discription = "Shut sectors down"
+right_effects = Array[ExtResource("1_rnika")]([SubResource("Resource_tqdvb"), SubResource("Resource_lxxc5")])
+right_discription = "Upgrade grid"

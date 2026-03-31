@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://6jn32utj3nar"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_82etp"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_agllv"]
+
+[sub_resource type="Resource" id="Resource_82etp"]
+script = ExtResource("1_82etp")
+target = 2
+value = 20
+
+[sub_resource type="Resource" id="Resource_agllv"]
+script = ExtResource("1_82etp")
+value = -20
+
+[sub_resource type="Resource" id="Resource_n0mph"]
+script = ExtResource("1_82etp")
+value = -30
+
+[sub_resource type="Resource" id="Resource_vslpd"]
+script = ExtResource("1_82etp")
+target = 3
+value = 15
+
+[resource]
+script = ExtResource("2_agllv")
+id = 17
+name = "Total System Failure"
+context = "Colony systems collapsing"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_82etp")]([SubResource("Resource_82etp"), SubResource("Resource_agllv")])
+left_discription = "Sacrifice sector"
+right_effects = Array[ExtResource("1_82etp")]([SubResource("Resource_n0mph"), SubResource("Resource_vslpd")])
+right_discription = "Full repair"

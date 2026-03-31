@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://c668xjignwf1j"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_j1txs"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_bxp2q"]
+
+[sub_resource type="Resource" id="Resource_j1txs"]
+script = ExtResource("1_j1txs")
+target = 1
+value = 25
+
+[sub_resource type="Resource" id="Resource_bxp2q"]
+script = ExtResource("1_j1txs")
+type = 2
+value = 1
+
+[sub_resource type="Resource" id="Resource_31703"]
+script = ExtResource("1_j1txs")
+target = 2
+value = 10
+
+[resource]
+script = ExtResource("2_bxp2q")
+id = 57
+name = "Alien Structure Found"
+context = "Ancient alien ruins discovered"
+weight = 1.0
+arc = 2
+arc_progression = 1
+cooldown = 5
+left_effects = Array[ExtResource("1_j1txs")]([SubResource("Resource_j1txs"), SubResource("Resource_bxp2q")])
+left_discription = "Study ruins"
+right_effects = Array[ExtResource("1_j1txs")]([SubResource("Resource_31703"), SubResource("Resource_bxp2q")])
+right_discription = "Seal area"

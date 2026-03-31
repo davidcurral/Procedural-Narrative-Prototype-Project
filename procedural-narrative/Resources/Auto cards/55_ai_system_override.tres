@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dmutjho6yl40s"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_peixp"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_vgvwt"]
+
+[sub_resource type="Resource" id="Resource_peixp"]
+script = ExtResource("1_peixp")
+value = 15
+
+[sub_resource type="Resource" id="Resource_vgvwt"]
+script = ExtResource("1_peixp")
+target = 5
+value = 25
+
+[sub_resource type="Resource" id="Resource_t0d8l"]
+script = ExtResource("1_peixp")
+type = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_qg4hq"]
+script = ExtResource("1_peixp")
+target = 2
+value = 20
+
+[sub_resource type="Resource" id="Resource_yjs3l"]
+script = ExtResource("1_peixp")
+value = -15
+
+[resource]
+script = ExtResource("2_vgvwt")
+id = 55
+name = "AI System Override"
+context = "AI takes temporary control"
+weight = 1.0
+arc = 1
+arc_progression = 7
+cooldown = 5
+left_effects = Array[ExtResource("1_peixp")]([SubResource("Resource_peixp"), SubResource("Resource_vgvwt"), SubResource("Resource_t0d8l")])
+left_discription = "Cooperate"
+right_effects = Array[ExtResource("1_peixp")]([SubResource("Resource_qg4hq"), SubResource("Resource_yjs3l"), SubResource("Resource_t0d8l")])
+right_discription = "Fight back"

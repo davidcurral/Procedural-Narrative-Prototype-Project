@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="CardDatabase" load_steps=10 format=3 uid="uid://7yho5snn7qd3"]
+[gd_resource type="Resource" script_class="CardDatabase" load_steps=8 format=3 uid="uid://7yho5snn7qd3"]
 
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="1_vg1d5"]
 [ext_resource type="Script" uid="uid://b4gjbeghvnxg0" path="res://Scripts/Utilities/card_database.gd" id="2_4q1l7"]
-[ext_resource type="Resource" uid="uid://b41g3p0n5i8sr" path="res://Resources/auto cards/1_oxygen_shortage.tres" id="2_26kh7"]
-[ext_resource type="Resource" uid="uid://bi1yka3anqa6r" path="res://Resources/auto cards/2_hydroponic_failure.tres" id="3_5km27"]
 [ext_resource type="Resource" uid="uid://chxjw4sy3elih" path="res://Resources/manual cards/49_experimental_ai.tres" id="6_5km27"]
 [ext_resource type="Resource" uid="uid://biyn164p3wqr5" path="res://Resources/manual cards/56_ai_uprising.tres" id="6_ljpky"]
 [ext_resource type="Resource" uid="uid://btx40h8efyh6l" path="res://Resources/manual cards/57_alien_structure_found.tres" id="7_wdxk7"]
@@ -12,5 +10,5 @@
 
 [resource]
 script = ExtResource("2_4q1l7")
-card_list = Array[ExtResource("1_vg1d5")]([ExtResource("2_26kh7"), ExtResource("3_5km27"), ExtResource("6_5km27"), ExtResource("6_ljpky"), ExtResource("7_wdxk7"), ExtResource("9_60i7c"), ExtResource("10_1lhiu")])
+card_list = Array[ExtResource("1_vg1d5")]([ExtResource("6_5km27"), ExtResource("6_ljpky"), ExtResource("7_wdxk7"), ExtResource("9_60i7c"), ExtResource("10_1lhiu")])
 metadata/_custom_type_script = "uid://b4gjbeghvnxg0"

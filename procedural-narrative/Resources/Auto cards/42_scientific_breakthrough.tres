@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://y01v3mv0h2ph"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_tlsx4"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_soh7p"]
+
+[sub_resource type="Resource" id="Resource_tlsx4"]
+script = ExtResource("1_tlsx4")
+target = 1
+value = 15
+
+[sub_resource type="Resource" id="Resource_soh7p"]
+script = ExtResource("1_tlsx4")
+value = -15
+
+[sub_resource type="Resource" id="Resource_sqofs"]
+script = ExtResource("1_tlsx4")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("2_soh7p")
+id = 42
+name = "Scientific Breakthrough"
+context = "Researchers propose risky experiment"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_tlsx4")]([SubResource("Resource_tlsx4"), SubResource("Resource_soh7p")])
+left_discription = "Fund research"
+right_effects = Array[ExtResource("1_tlsx4")]([SubResource("Resource_sqofs")])
+right_discription = "Reject proposal"

@@ -10,10 +10,17 @@ extends Node
 
 @onready var card_builder_dictionary: Dictionary = {}
 @onready var effect_builder_dictionary: Dictionary = {}
-var folder_path: = "res://Resources/auto cards"
+var folder_path: = "res://Resources/Auto cards"
+
 
 
 func run():
+	var dir = DirAccess.open("res://Resources/Auto cards")
+	for file in dir.get_files():
+		dir.remove(file)
+	
+	card_builder_dictionary.clear()
+	effect_builder_dictionary.clear()
 	load_card()
 	load_efect()
 	link_effects_to_cards()
@@ -22,7 +29,7 @@ func run():
 	
 	
 func load_card():
-	var path = "res://Assets/Cards CSV/Cards_test.csv"
+	var path = "res://Assets/Cards CSV/Cards.csv"
 	if !FileAccess.file_exists(path):
 		push_error("Cards.csv not found")
 		return
@@ -40,19 +47,22 @@ func load_card():
 		card.context = line[3]
 		card.card_rarity = line[4]
 		card.arc = arc_to_enum(line[5])
-		if line[6] == 'true':
+		if line[6] == 'TRUE' or line[6] == "true":
 			card.available = true
 		else:
 			card.available = false
 		card.weight = float(line[7])
 		card.cooldown = int(line[8])
 		card.arc_progression = int(line[9])
+		card.left_discription = line[10]
+		card.right_discription = line[11]
+
 		card_builder_dictionary[card.id] = card
 
 func load_efect():
-	var path = "res://Assets/Cards CSV/Effects_test.csv"
+	var path = "res://Assets/Cards CSV/Effects.csv"
 	if !FileAccess.file_exists(path):
-		push_error("Cards.csv not found")
+		push_error("Effects.csv not found")
 		return
 		
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -86,8 +96,10 @@ func link_effects_to_cards():
 						"both":
 							card.left_effects.append(effect)
 							card.right_effects.append(effect)
+						"_":
+							pass
 		# Save card as a real file
-		var path = "res://Resources/auto cards//%s.tres" % card.game_name
+		var path = "res://Resources/Auto cards//%s.tres" % card.game_name
 		#var formated_path = path % [card.id,card.game_name]
 		ResourceSaver.save(card, path)
 						
@@ -130,6 +142,8 @@ static func target_to_enum(value: String) -> int:
 		return 3
 	elif value == "risk":
 		return 4	
+	elif value == "influence":
+		return 5	
 	return 0	
 
 static func arc_to_enum(value: String) -> int:

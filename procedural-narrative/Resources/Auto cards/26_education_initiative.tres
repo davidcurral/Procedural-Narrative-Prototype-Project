@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b7q58kvh6nws1"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_w0mji"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_x0wnx"]
+
+[sub_resource type="Resource" id="Resource_w0mji"]
+script = ExtResource("1_w0mji")
+target = 1
+value = 10
+
+[sub_resource type="Resource" id="Resource_x0wnx"]
+script = ExtResource("1_w0mji")
+value = -10
+
+[sub_resource type="Resource" id="Resource_ha15n"]
+script = ExtResource("1_w0mji")
+value = 10
+
+[sub_resource type="Resource" id="Resource_fuqmu"]
+script = ExtResource("1_w0mji")
+target = 3
+value = -5
+
+[resource]
+script = ExtResource("2_x0wnx")
+id = 26
+name = "Education Initiative"
+context = "Proposal for new schools."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_w0mji")]([SubResource("Resource_w0mji"), SubResource("Resource_x0wnx")])
+left_discription = "Fund education"
+right_effects = Array[ExtResource("1_w0mji")]([SubResource("Resource_ha15n"), SubResource("Resource_fuqmu")])
+right_discription = "Focus on labor"

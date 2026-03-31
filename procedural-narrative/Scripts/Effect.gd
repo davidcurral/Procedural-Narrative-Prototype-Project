@@ -4,7 +4,7 @@ class_name Effect
 
 # -- Common variables --
 enum type_options {stat, flag, unlock}
-enum target_options {resources, progress, security, moral, risk}
+enum target_options {resources, progress, security, moral, risk, influence}
 enum arc_options {no_arc, AI, Aliens, Rebellion}
 
 const TARGET_KEYS = {
@@ -12,7 +12,8 @@ const TARGET_KEYS = {
 	target_options.progress: "Progress",
 	target_options.security: "Security",
 	target_options.moral: "Moral",
-	target_options.risk: "Risk"
+	target_options.risk: "Risk",
+	target_options.influence: "Influence"
 
 }
 

@@ -15,10 +15,10 @@ func build_database():
 	database.card_list.clear()
 	print(database)
 	print(database.resource_path)
-	var dir := DirAccess.open("res://Resources/auto cards/")
+	var dir := DirAccess.open("res://Resources/Auto cards/")
 	for file in dir.get_files():
 		if file.ends_with(".tres"):
-			var card = load("res://Resources/auto cards/" + file)
+			var card = load("res://Resources/Auto cards/" + file)
 			print("Cards: ", card)
 			database.card_list.append(card)
 		

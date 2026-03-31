@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://dcr7dcqfg3qh7"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_dc7vr"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_qpwhl"]
+
+[sub_resource type="Resource" id="Resource_dc7vr"]
+script = ExtResource("1_dc7vr")
+target = 2
+value = 20
+
+[sub_resource type="Resource" id="Resource_qpwhl"]
+script = ExtResource("1_dc7vr")
+type = 2
+value = 3
+
+[sub_resource type="Resource" id="Resource_e7pq2"]
+script = ExtResource("1_dc7vr")
+target = 3
+value = -15
+
+[resource]
+script = ExtResource("2_qpwhl")
+id = 53
+name = "AI Predictive Policing"
+context = "AI predicts crimes before they happen"
+weight = 1.0
+arc = 1
+arc_progression = 5
+cooldown = 5
+left_effects = Array[ExtResource("1_dc7vr")]([SubResource("Resource_dc7vr"), SubResource("Resource_qpwhl")])
+left_discription = "Deploy system"
+right_effects = Array[ExtResource("1_dc7vr")]([SubResource("Resource_e7pq2"), SubResource("Resource_qpwhl")])
+right_discription = "Reject system"

@@ -39,7 +39,5 @@ arc = 3
 arc_progression = 2
 cooldown = 500
 left_effects = Array[ExtResource("1_d4dqj")]([SubResource("Resource_8bsru"), SubResource("Resource_6kh8n")])
-left_description = "Invest in army"
 right_effects = Array[ExtResource("1_d4dqj")]([SubResource("Resource_byaa3"), SubResource("Resource_al0r1")])
-right_description = "Allow elections"
 metadata/_custom_type_script = "uid://nvquj6gcvoei"

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://clt51rjidnijd"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_km71i"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_qfhru"]
+
+[sub_resource type="Resource" id="Resource_km71i"]
+script = ExtResource("1_km71i")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_qfhru"]
+script = ExtResource("1_km71i")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_ak48r"]
+script = ExtResource("1_km71i")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_8lc1a"]
+script = ExtResource("1_km71i")
+target = 2
+value = -10
+
+[resource]
+script = ExtResource("2_qfhru")
+id = 40
+name = "Prison Overcrowding"
+context = "Detention centers full."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_km71i")]([SubResource("Resource_km71i"), SubResource("Resource_qfhru")])
+left_discription = "Expand prisons"
+right_effects = Array[ExtResource("1_km71i")]([SubResource("Resource_ak48r"), SubResource("Resource_8lc1a")])
+right_discription = "Amnesty"

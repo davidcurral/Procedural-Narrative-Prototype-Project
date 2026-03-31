@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://brcpej7pn5xw1"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cxhai"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_yphfu"]
+
+[sub_resource type="Resource" id="Resource_cxhai"]
+script = ExtResource("1_cxhai")
+value = 30
+
+[sub_resource type="Resource" id="Resource_yphfu"]
+script = ExtResource("1_cxhai")
+target = 5
+value = 20
+
+[sub_resource type="Resource" id="Resource_rbjij"]
+script = ExtResource("1_cxhai")
+type = 2
+value = 3
+
+[sub_resource type="Resource" id="Resource_eckqq"]
+script = ExtResource("1_cxhai")
+target = 2
+value = 15
+
+[resource]
+script = ExtResource("2_yphfu")
+id = 33
+name = "Corporate Takeover"
+context = "Earth corporation seeks control"
+available = false
+weight = 1.0
+arc = 3
+arc_progression = 3
+cooldown = 5
+left_effects = Array[ExtResource("1_cxhai")]([SubResource("Resource_cxhai"), SubResource("Resource_yphfu"), SubResource("Resource_rbjij")])
+left_discription = "Allow control"
+right_effects = Array[ExtResource("1_cxhai")]([SubResource("Resource_eckqq"), SubResource("Resource_rbjij")])
+right_discription = "Resist takeover"

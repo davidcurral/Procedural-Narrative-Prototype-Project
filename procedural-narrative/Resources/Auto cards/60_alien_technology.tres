@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dpj7kxj68ikox"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_1la25"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_xefna"]
+
+[sub_resource type="Resource" id="Resource_1la25"]
+script = ExtResource("1_1la25")
+value = 30
+
+[sub_resource type="Resource" id="Resource_xefna"]
+script = ExtResource("1_1la25")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_26opc"]
+script = ExtResource("1_1la25")
+type = 2
+value = 4
+
+[sub_resource type="Resource" id="Resource_5vjwg"]
+script = ExtResource("1_1la25")
+target = 2
+value = 10
+
+[resource]
+script = ExtResource("2_xefna")
+id = 60
+name = "Alien Technology"
+context = "Powerful alien device found"
+weight = 1.0
+arc = 2
+arc_progression = 4
+cooldown = 5
+left_effects = Array[ExtResource("1_1la25")]([SubResource("Resource_1la25"), SubResource("Resource_xefna"), SubResource("Resource_26opc")])
+left_discription = "Use device"
+right_effects = Array[ExtResource("1_1la25")]([SubResource("Resource_5vjwg"), SubResource("Resource_26opc")])
+right_discription = "Store safely"

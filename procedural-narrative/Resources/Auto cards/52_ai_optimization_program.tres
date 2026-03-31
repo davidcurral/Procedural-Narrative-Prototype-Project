@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://d2bs7j4ovm2we"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cwsvf"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_r528m"]
+
+[sub_resource type="Resource" id="Resource_cwsvf"]
+script = ExtResource("1_cwsvf")
+value = 20
+
+[sub_resource type="Resource" id="Resource_r528m"]
+script = ExtResource("1_cwsvf")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_gxlfh"]
+script = ExtResource("1_cwsvf")
+target = 5
+value = 15
+
+[sub_resource type="Resource" id="Resource_fganh"]
+script = ExtResource("1_cwsvf")
+type = 2
+value = 2
+
+[sub_resource type="Resource" id="Resource_asce6"]
+script = ExtResource("1_cwsvf")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_y8yx3"]
+script = ExtResource("1_cwsvf")
+target = 1
+value = -5
+
+[resource]
+script = ExtResource("2_r528m")
+id = 52
+name = "AI Optimization Program"
+context = "AI proposes system optimization"
+weight = 1.0
+arc = 1
+arc_progression = 4
+cooldown = 5
+left_effects = Array[ExtResource("1_cwsvf")]([SubResource("Resource_cwsvf"), SubResource("Resource_r528m"), SubResource("Resource_gxlfh"), SubResource("Resource_fganh")])
+left_discription = "Allow control"
+right_effects = Array[ExtResource("1_cwsvf")]([SubResource("Resource_asce6"), SubResource("Resource_y8yx3"), SubResource("Resource_fganh")])
+right_discription = "Limit authority"

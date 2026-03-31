@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dnf1vexolymcb"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_bkch5"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_ai2si"]
+
+[sub_resource type="Resource" id="Resource_bkch5"]
+script = ExtResource("1_bkch5")
+target = 3
+value = 15
+
+[sub_resource type="Resource" id="Resource_ai2si"]
+script = ExtResource("1_bkch5")
+value = -10
+
+[sub_resource type="Resource" id="Resource_211jv"]
+script = ExtResource("1_bkch5")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_eoail"]
+script = ExtResource("1_bkch5")
+target = 3
+value = -15
+
+[resource]
+script = ExtResource("2_ai2si")
+id = 20
+name = "Worker Strike"
+context = "Colonists protest working conditions"
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_bkch5")]([SubResource("Resource_bkch5"), SubResource("Resource_ai2si")])
+left_discription = "Negotiate"
+right_effects = Array[ExtResource("1_bkch5")]([SubResource("Resource_211jv"), SubResource("Resource_eoail")])
+right_discription = "Suppress strike"

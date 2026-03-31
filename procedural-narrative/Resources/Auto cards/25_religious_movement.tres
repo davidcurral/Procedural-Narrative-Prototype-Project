@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://fr0k7ogn26nu"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_qj8lr"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_waakb"]
+
+[sub_resource type="Resource" id="Resource_qj8lr"]
+script = ExtResource("1_qj8lr")
+value = 10
+
+[sub_resource type="Resource" id="Resource_waakb"]
+script = ExtResource("1_qj8lr")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_x2st5"]
+script = ExtResource("1_qj8lr")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_7c8dh"]
+script = ExtResource("1_qj8lr")
+value = -10
+
+[resource]
+script = ExtResource("2_waakb")
+id = 25
+name = "Religious Movement"
+context = "New belief spreading."
+weight = 1.0
+cooldown = 5
+left_effects = Array[ExtResource("1_qj8lr")]([SubResource("Resource_qj8lr"), SubResource("Resource_waakb")])
+left_discription = "Allow"
+right_effects = Array[ExtResource("1_qj8lr")]([SubResource("Resource_x2st5"), SubResource("Resource_7c8dh")])
+right_discription = "Ban"

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://jg2wgdpql1te"]
+
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_4dbsj"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_j4did"]
+
+[sub_resource type="Resource" id="Resource_4dbsj"]
+script = ExtResource("1_4dbsj")
+target = 3
+value = 25
+
+[sub_resource type="Resource" id="Resource_j4did"]
+script = ExtResource("1_4dbsj")
+target = 2
+value = -15
+
+[sub_resource type="Resource" id="Resource_81diw"]
+script = ExtResource("1_4dbsj")
+type = 2
+value = 4
+
+[sub_resource type="Resource" id="Resource_5islc"]
+script = ExtResource("1_4dbsj")
+value = 15
+
+[resource]
+script = ExtResource("2_j4did")
+id = 34
+name = "Independence Movement"
+context = "Colony demands independence"
+available = false
+weight = 1.0
+arc = 3
+arc_progression = 4
+cooldown = 5
+left_effects = Array[ExtResource("1_4dbsj")]([SubResource("Resource_4dbsj"), SubResource("Resource_j4did"), SubResource("Resource_81diw")])
+left_discription = "Declare independence"
+right_effects = Array[ExtResource("1_4dbsj")]([SubResource("Resource_5islc"), SubResource("Resource_81diw")])
+right_discription = "Stay loyal"
