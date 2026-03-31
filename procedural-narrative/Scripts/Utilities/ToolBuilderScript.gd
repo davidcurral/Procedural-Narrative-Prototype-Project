@@ -13,8 +13,6 @@ extends Node
 func build_database():
 	print("Buidling")
 	database.card_list.clear()
-	print(database)
-	print(database.resource_path)
 	var dir := DirAccess.open("res://Resources/Auto cards/")
 	for file in dir.get_files():
 		if file.ends_with(".tres"):

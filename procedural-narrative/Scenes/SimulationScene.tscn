@@ -14,7 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_03oeb")
-turns_per_run = 200
+runs = 100
+turns_per_run = 100
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

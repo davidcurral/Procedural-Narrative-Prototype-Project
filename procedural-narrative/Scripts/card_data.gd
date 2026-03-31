@@ -26,7 +26,10 @@ var game_name: String = ''
 @export var card_rarity: card_rarity_options
 @export var available: bool = true
 @export var base_weight: float
-var weight = ceil(base_weight / (1 + card_rarity))
+var weight: int:
+	get:
+		return ceil(base_weight / (1 + card_rarity))
+		
 @export var arc: arc_options 
 @export var arc_progression: int = 0
 @export var cooldown: int

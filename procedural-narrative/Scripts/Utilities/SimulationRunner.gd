@@ -1,7 +1,7 @@
 extends Node
 
-@export var runs: int = 2
-@export var turns_per_run: int = 3
+@export var runs: int
+@export var turns_per_run: int
 @export var use_memory: bool   # Toggle A/B test
 
 var rng = RandomNumberGenerator.new()
@@ -13,6 +13,10 @@ var card_frequency_rows: Array[String] = []
 
 
 func _ready():
+	var dir = DirAccess.open("res://Data/")
+	for file in dir.get_files():
+		dir.remove(file)
+		
 	run_experiments()
 	if use_memory == true:
 		with_memory_save_csv()
@@ -43,7 +47,7 @@ func run_experiments():
 		
 		for turn in range(turns_per_run):
 			var card = game_state.pick_next_card()
-		
+			
 			if card == null:
 				break
 			
@@ -54,12 +58,12 @@ func run_experiments():
 			else:
 				distribution_cards[card.id] += 1
 			
-			# Track repetition (last 10 turns)
+			# Track repetition (last 100 turns)
 			if last_cards.has(card.id):
 				repetition_score += 1
 			
 			last_cards.append(card.id)
-			if last_cards.size() > 10:
+			if last_cards.size() > 100:
 				last_cards.pop_front()
 			
 			# Track unique cards

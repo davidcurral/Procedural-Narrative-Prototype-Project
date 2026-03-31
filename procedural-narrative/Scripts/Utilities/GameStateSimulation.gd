@@ -68,8 +68,8 @@ func initialize():
 
 		if card_data.arc != 0:
 			arc_cards_list.append(card_data)
-	#show_first_card()
 	
+	#show_first_card()
 
 # --- Running Functions ---
 func _on_choice_made(choice_id):
@@ -136,17 +136,20 @@ func process_cooldowns():
 func pick_next_card() -> Cards: 
 	var candidates: Array = []
 	
-	for card in available_cards_list.values():
-		if cooldown_tracker.has(card.id):
-			continue
-		candidates.append(card)
+	if simple_run == true:
+		candidates = available_cards_list.values()
+	else:
+		for card in available_cards_list.values():			
+			if cooldown_tracker.has(card.id):
+				continue
+			candidates.append(card)
 		
 	if candidates.is_empty():
 		return
-	
 	arc_amount_limit(candidates)
 
 	var total_weight = 0
+	
 	for card in candidates:
 		total_weight += card.weight # Single value sum of all weights
 		
