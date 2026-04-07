@@ -204,32 +204,32 @@ func evaluate_arc_unlocks()-> void:
 	check_rebellion_unlock()
 	#check_terraform_unlock()
 
-func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
+func progress_arc(current_card: Cards, choice_id: int)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
-	if card.arc == 0:
+	if current_card.arc == 0:
 		return
 		
 	if choice_id == 0:
-		for effect in card.left_effects:
-			if effect.type == 2:
-				complete_arc(arc_map[card.arc])		
-				available_cards_list.erase(card.id)
+		for effect in current_card.left_effects:
+			if effect.type == 1:				# Unlock to finish arc
+				complete_arc(arc_map[current_card.arc])		
+				available_cards_list.erase(current_card.id)
 				return
 				
 	elif choice_id == 1:
-		for effect in card.right_effects:
-			if effect.type == 2:
-				complete_arc(arc_map[card.arc])		
-				available_cards_list.erase(card.id)
-				return
-			
+		for effect in current_card.right_effects:
+			if effect.type == 1:
+				complete_arc(arc_map[current_card.arc])		
+				available_cards_list.erase(current_card.id)
+				return # return stops function to continue to next steps -> no cards added
+					
 	for cards in arc_cards_list: #adiciona a próxima carta à lista de disponíveis
-		if cards.arc == card.arc:
-			if cards.arc_progression == card.arc_progression + 1:	
+		if cards.arc == current_card.arc:
+			if cards.arc_progression == current_card.arc_progression + 1:	
 				available_cards_list[cards.id] = cards
-				available_cards_list.erase(card.id)
+				available_cards_list.erase(current_card.id)
 	
-	active_arcs[arc_map[card.arc]] = card.arc_progression
+	active_arcs[arc_map[current_card.arc]] = current_card.arc_progression
 
 func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)

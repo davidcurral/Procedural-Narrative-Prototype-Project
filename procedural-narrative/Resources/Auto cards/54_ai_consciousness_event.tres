@@ -39,6 +39,7 @@ script = ExtResource("2_ho3b8")
 id = 54
 name = "AI Consciousness Event"
 context = "AI claims sentience"
+available = false
 base_weight = 3.0
 arc = 1
 arc_progression = 6

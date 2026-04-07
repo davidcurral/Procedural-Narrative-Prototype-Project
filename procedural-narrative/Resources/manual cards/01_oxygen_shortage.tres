@@ -25,9 +25,9 @@ metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [resource]
 script = ExtResource("2_su4xj")
+id = 1
 name = "Oxygen Shortage"
 context = "Air reserves are dropping"
-id = 1
 left_effects = Array[ExtResource("1_21f72")]([SubResource("Resource_21f72"), SubResource("Resource_su4xj")])
 left_description = "Ration Oxygen"
 right_effects = Array[ExtResource("1_21f72")]([SubResource("Resource_asaem"), SubResource("Resource_adpg4")])

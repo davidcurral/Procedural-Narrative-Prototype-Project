@@ -28,6 +28,7 @@ script = ExtResource("2_xefna")
 id = 60
 name = "Alien Technology"
 context = "Powerful alien device found"
+available = false
 base_weight = 3.0
 arc = 2
 arc_progression = 4

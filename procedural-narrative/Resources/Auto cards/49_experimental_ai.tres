@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://dq4n1g3e35g2a"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dq4n1g3e35g2a"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_qqt10"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_mhoqv"]
@@ -18,6 +18,13 @@ script = ExtResource("1_qqt10")
 target = 2
 value = 5
 
+[sub_resource type="Resource" id="Resource_8w3yk"]
+script = ExtResource("1_qqt10")
+type = 1
+target = 6
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_mhoqv")
 id = 49
@@ -29,5 +36,5 @@ arc_progression = 1
 cooldown = 5
 left_effects = Array[ExtResource("1_qqt10")]([SubResource("Resource_qqt10"), SubResource("Resource_mhoqv")])
 left_discription = "Continue development"
-right_effects = Array[ExtResource("1_qqt10")]([SubResource("Resource_h1msy")])
+right_effects = Array[ExtResource("1_qqt10")]([SubResource("Resource_h1msy"), SubResource("Resource_8w3yk")])
 right_discription = "Shut down"

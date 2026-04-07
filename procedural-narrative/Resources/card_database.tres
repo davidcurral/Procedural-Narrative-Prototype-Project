@@ -1,13 +1,16 @@
-[gd_resource type="Resource" script_class="CardDatabase" load_steps=7 format=3 uid="uid://7yho5snn7qd3"]
+[gd_resource type="Resource" script_class="CardDatabase" load_steps=10 format=3 uid="uid://7yho5snn7qd3"]
 
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="1_vg1d5"]
 [ext_resource type="Script" uid="uid://b4gjbeghvnxg0" path="res://Scripts/Utilities/card_database.gd" id="2_4q1l7"]
 [ext_resource type="Resource" uid="uid://bi3ni5i1seris" path="res://Resources/Auto cards/10_mining_accident.tres" id="2_87ccm"]
 [ext_resource type="Resource" uid="uid://dhpy3db783fyv" path="res://Resources/Auto cards/11_communication_delay.tres" id="3_5luxt"]
+[ext_resource type="Resource" uid="uid://dq4n1g3e35g2a" path="res://Resources/Auto cards/49_experimental_ai.tres" id="6_ljpky"]
+[ext_resource type="Resource" uid="uid://bew1rowf2j1ok" path="res://Resources/Auto cards/50_surveillance_network.tres" id="7_wdxk7"]
+[ext_resource type="Resource" uid="uid://b6d5s8p7c7f65" path="res://Resources/Auto cards/51_ai_requests_autonomy.tres" id="8_wdxk7"]
 [ext_resource type="Resource" uid="uid://dd1s5n4btmqje" path="res://Resources/Auto cards/1_oxygen_shortage.tres" id="12_hp8rn"]
 [ext_resource type="Resource" uid="uid://d1c28btmg7121" path="res://Resources/Auto cards/36_strange_signal.tres" id="30_ouxpx"]
 
 [resource]
 script = ExtResource("2_4q1l7")
-card_list = Array[ExtResource("1_vg1d5")]([ExtResource("2_87ccm"), ExtResource("3_5luxt"), ExtResource("30_ouxpx"), ExtResource("12_hp8rn")])
+card_list = Array[ExtResource("1_vg1d5")]([ExtResource("2_87ccm"), ExtResource("3_5luxt"), ExtResource("30_ouxpx"), ExtResource("12_hp8rn"), ExtResource("6_ljpky"), ExtResource("7_wdxk7"), ExtResource("8_wdxk7")])
 metadata/_custom_type_script = "uid://b4gjbeghvnxg0"

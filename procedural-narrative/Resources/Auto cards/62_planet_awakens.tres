@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://rb8f000bsf6u"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://rb8f000bsf6u"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_phx0b"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_irbfj"]
 
 [sub_resource type="Resource" id="Resource_phx0b"]
 script = ExtResource("1_phx0b")
-type = 2
+type = 1
 target = 6
+arc = 2
 
 [sub_resource type="Resource" id="Resource_irbfj"]
 script = ExtResource("1_phx0b")
@@ -17,16 +18,24 @@ value = 30
 script = ExtResource("1_phx0b")
 value = -30
 
+[sub_resource type="Resource" id="Resource_7o5of"]
+script = ExtResource("1_phx0b")
+type = 1
+target = 6
+arc = 2
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_irbfj")
 id = 62
 name = "Planet Awakens"
 context = "Planet reacts to colony presence"
+available = false
 base_weight = 3.0
 arc = 2
 arc_progression = 6
 cooldown = 5
 left_effects = Array[ExtResource("1_phx0b")]([SubResource("Resource_phx0b")])
 left_discription = "Evacuate planet"
-right_effects = Array[ExtResource("1_phx0b")]([SubResource("Resource_irbfj"), SubResource("Resource_n5xds")])
+right_effects = Array[ExtResource("1_phx0b")]([SubResource("Resource_irbfj"), SubResource("Resource_n5xds"), SubResource("Resource_7o5of")])
 right_discription = "Fight planet"

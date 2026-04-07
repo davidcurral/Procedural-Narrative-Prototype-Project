@@ -38,6 +38,7 @@ script = ExtResource("2_r528m")
 id = 52
 name = "AI Optimization Program"
 context = "AI proposes system optimization"
+available = false
 base_weight = 3.0
 arc = 1
 arc_progression = 4

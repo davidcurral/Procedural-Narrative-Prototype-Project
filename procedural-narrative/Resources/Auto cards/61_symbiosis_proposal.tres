@@ -23,6 +23,7 @@ script = ExtResource("2_adex3")
 id = 61
 name = "Symbiosis Proposal"
 context = "Alien life offers cooperation"
+available = false
 base_weight = 3.0
 arc = 2
 arc_progression = 5

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bkhlvmvwxsxc1"]
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://bkhlvmvwxsxc1"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_sucyn"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_jsl24"]
@@ -14,9 +14,12 @@ type = 2
 target = 6
 value = 6
 
-[sub_resource type="Resource" id="Resource_7gqqr"]
+[sub_resource type="Resource" id="Resource_pw2e8"]
 script = ExtResource("1_sucyn")
+type = 1
 target = 6
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_2jxdf"]
 script = ExtResource("1_sucyn")
@@ -28,16 +31,24 @@ script = ExtResource("1_sucyn")
 target = 1
 value = -30
 
+[sub_resource type="Resource" id="Resource_vl6dd"]
+script = ExtResource("1_sucyn")
+type = 1
+target = 6
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_jsl24")
 id = 56
 name = "AI Uprising"
 context = "AI revolts against control"
+available = false
 base_weight = 3.0
 arc = 1
 arc_progression = 8
 cooldown = 5
-left_effects = Array[ExtResource("1_sucyn")]([SubResource("Resource_sucyn"), SubResource("Resource_jsl24"), SubResource("Resource_7gqqr")])
+left_effects = Array[ExtResource("1_sucyn")]([SubResource("Resource_sucyn"), SubResource("Resource_jsl24"), SubResource("Resource_pw2e8")])
 left_discription = "Negotiate peace"
-right_effects = Array[ExtResource("1_sucyn")]([SubResource("Resource_2jxdf"), SubResource("Resource_5q6v3"), SubResource("Resource_jsl24")])
+right_effects = Array[ExtResource("1_sucyn")]([SubResource("Resource_2jxdf"), SubResource("Resource_5q6v3"), SubResource("Resource_jsl24"), SubResource("Resource_vl6dd")])
 right_discription = "Destroy AI"

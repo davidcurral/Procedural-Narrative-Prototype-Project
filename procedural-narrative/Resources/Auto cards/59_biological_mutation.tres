@@ -29,6 +29,7 @@ script = ExtResource("2_q8sai")
 id = 59
 name = "Biological Mutation"
 context = "Colonists begin mutating"
+available = false
 base_weight = 3.0
 arc = 2
 arc_progression = 3

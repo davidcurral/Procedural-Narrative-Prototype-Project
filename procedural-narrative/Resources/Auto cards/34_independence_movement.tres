@@ -28,6 +28,7 @@ script = ExtResource("2_j4did")
 id = 34
 name = "Independence Movement"
 context = "Colony demands independence"
+available = false
 base_weight = 3.0
 arc = 3
 arc_progression = 4

@@ -36,9 +36,9 @@ var weight: int:
 
 
 @export var left_effects: Array[Effect]
-@export var left_discription: String = 'Left Discription'
+@export var left_description: String = 'Left Description'
 @export var right_effects: Array[Effect]
-@export var right_discription: String = 'Right Discription'
+@export var right_description: String = 'Right Description'
 
 
 

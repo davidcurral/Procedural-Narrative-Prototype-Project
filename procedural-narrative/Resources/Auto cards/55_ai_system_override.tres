@@ -32,6 +32,7 @@ script = ExtResource("2_vgvwt")
 id = 55
 name = "AI System Override"
 context = "AI takes temporary control"
+available = false
 base_weight = 3.0
 arc = 1
 arc_progression = 7

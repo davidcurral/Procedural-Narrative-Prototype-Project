@@ -23,10 +23,10 @@ const RIGHT_CHOICE = 1
 
 
 #-- World Variables -- 
-@onready var world_val1 = $ScenePanel/VBoxContainer/Control1
-@onready var world_val2 = $ScenePanel/VBoxContainer/Control2
-@onready var world_val3 = $ScenePanel/VBoxContainer/Control3
-@onready var world_val4 = $ScenePanel/VBoxContainer/Control4
+@onready var world_val1 = $ScenePanel/Panel/VBoxContainer/Control1
+@onready var world_val2 = $ScenePanel/Panel/VBoxContainer/Control2
+@onready var world_val3 = $ScenePanel/Panel/VBoxContainer/Control3
+@onready var world_val4 = $ScenePanel/Panel/VBoxContainer/Control4
 @onready var turns = $ScenePanel/Turns
 @onready var fade_anim = $FadeTransition/AnimationPlayer
 
@@ -77,16 +77,17 @@ func _on_memory_print() -> void:
 
 
 func _on_check_arcs_pressed() -> void:
-	print("Active Arcs: ", GameState.active_arcs)
+	print("\n","Active Arcs: ", GameState.active_arcs)
 	print("Locked Arcs: ", GameState.locked_arcs)
+	print("Completed Arcs: ", GameState.completed_arcs,"\n")
 
 
 func _on_available_cards_pressed() -> void:
-	print(GameState.available_cards_list)
+	print("Available Cards: ",GameState.available_cards_list,"\n")
 
 
 func _on_arc_cards_list_pressed() -> void:
-	print(GameState.arc_cards_list)
+	print("Arc Lis: ", GameState.arc_cards_list, "\n")
 
 
 func _on_fade_timer_timeout() -> void:

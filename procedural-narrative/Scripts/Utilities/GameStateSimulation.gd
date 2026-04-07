@@ -209,37 +209,38 @@ func evaluate_arc_unlocks()-> void:
 	check_rebellion_unlock()
 	#check_terraform_unlock()
 
-func progress_arc(card: Cards, choice_id: int)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
+func progress_arc(current_card: Cards, choice_id: int)-> void: # ver quando chamar isto e o que fazer- > mudar as cartas antigas para "lixo" e mudar weight de p´roxima carta na seq
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
-	if card.arc == 0:
+	if current_card.arc == 0:
 		return
 		
 	if choice_id == 0:
-		for effect in card.left_effects:
+		for effect in current_card.left_effects:
 			if effect.type == 1:
-				complete_arc(arc_map[card.arc])		
-				available_cards_list.erase(card.id)
+				complete_arc(arc_map[current_card.arc])		
+				available_cards_list.erase(current_card.id)
 				return
+				
 	elif choice_id == 1:
-		for effect in card.right_effects:
+		for effect in current_card.right_effects:
 			if effect.type == 1:
-				complete_arc(arc_map[card.arc])		
-				available_cards_list.erase(card.id)
-				return
+				complete_arc(arc_map[current_card.arc])		
+				available_cards_list.erase(current_card.id)
+				return # return stops function to continue to next steps -> no cards added
 		
-		
-	for cards in arc_cards_list:
-		if cards.arc == card.arc:
-			if cards.arc_progression == card.arc_progression + 1:	
-				available_cards_list[cards.id] = cards
-				available_cards_list.erase(card.id)
+	for cards_in_arc_list in arc_cards_list:
+		if cards_in_arc_list.arc == current_card.arc:
+			if cards_in_arc_list.arc_progression == current_card.arc_progression + 1:	
+				available_cards_list[cards_in_arc_list.id] = cards_in_arc_list
+				available_cards_list.erase(current_card.id)
 	
-	active_arcs[arc_map[card.arc]] = card.arc_progression
+	active_arcs[arc_map[current_card.arc]] = current_card.arc_progression
 
 func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)
 	completed_arcs.append(arc_name)
 	#print(arc_name + " completed")
+
 
 func arc_amount_limit(candidates: Array)-> void:		
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}

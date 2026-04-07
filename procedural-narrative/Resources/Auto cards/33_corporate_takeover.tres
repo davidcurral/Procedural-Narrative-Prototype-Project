@@ -28,6 +28,7 @@ script = ExtResource("2_yphfu")
 id = 33
 name = "Corporate Takeover"
 context = "Earth corporation seeks control"
+available = false
 base_weight = 3.0
 arc = 3
 arc_progression = 3

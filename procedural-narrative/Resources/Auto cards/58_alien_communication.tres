@@ -29,6 +29,7 @@ script = ExtResource("2_0k51d")
 id = 58
 name = "Alien Communication"
 context = "Unknown entity attempts contact"
+available = false
 base_weight = 3.0
 arc = 2
 arc_progression = 2

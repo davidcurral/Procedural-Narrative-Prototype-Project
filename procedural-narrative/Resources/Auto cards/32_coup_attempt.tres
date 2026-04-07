@@ -34,6 +34,7 @@ script = ExtResource("2_4cmt1")
 id = 32
 name = "Coup Attempt"
 context = "Government faces overthrow"
+available = false
 base_weight = 3.0
 arc = 3
 arc_progression = 2

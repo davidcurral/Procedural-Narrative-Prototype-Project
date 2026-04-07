@@ -24,6 +24,7 @@ script = ExtResource("2_qpwhl")
 id = 53
 name = "AI Predictive Policing"
 context = "AI predicts crimes before they happen"
+available = false
 base_weight = 3.0
 arc = 1
 arc_progression = 5
