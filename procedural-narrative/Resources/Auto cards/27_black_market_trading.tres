@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b8gwmlj5ukt5c"]
 
-[ext_resource type="Texture2D" uid="uid://bhtwnxgqm0j4n" path="res://Assets/CardsImages/sci-fi building3.jpg" id="1_5k38w"]
+[ext_resource type="Texture2D" uid="uid://cqldrc8s0xwwg" path="res://Assets/CardsImages/black market.png" id="1_5k38w"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_kn4wv"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_1f6jl"]
 

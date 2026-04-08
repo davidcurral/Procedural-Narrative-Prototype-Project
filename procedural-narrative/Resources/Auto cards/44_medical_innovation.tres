@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://chhq31ts7ofq1"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_iilem"]
-[ext_resource type="Texture2D" uid="uid://bh6fpp5kg77id" path="res://Assets/CardsImages/hospital.png" id="1_yl1aa"]
+[ext_resource type="Texture2D" uid="uid://dnhbc3vui2dwk" path="res://Assets/CardsImages/Lab chemistry.png" id="1_yl1aa"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_al113"]
 
 [sub_resource type="Resource" id="Resource_iilem"]

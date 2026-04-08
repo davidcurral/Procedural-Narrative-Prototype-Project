@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://fr0k7ogn26nu"]
 
-[ext_resource type="Texture2D" uid="uid://deoy0ewsaaald" path="res://Assets/CardsImages/festival.png" id="1_ltwbn"]
+[ext_resource type="Texture2D" uid="uid://dmulgyscdw686" path="res://Assets/CardsImages/church.png" id="1_ltwbn"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_qj8lr"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_waakb"]
 

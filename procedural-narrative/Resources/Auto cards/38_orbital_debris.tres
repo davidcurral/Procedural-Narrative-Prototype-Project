@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b4vb3himgccwi"]
 
-[ext_resource type="Texture2D" uid="uid://qtvsrjebxd65" path="res://Assets/CardsImages/planet view.png" id="1_f4yc3"]
+[ext_resource type="Texture2D" uid="uid://f22t7gr47sg1" path="res://Assets/CardsImages/spcae debries.png" id="1_f4yc3"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ut7nj"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_kamm1"]
 

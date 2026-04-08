@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://bf1brs3x7ivqv"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bf1brs3x7ivqv"]
 
+[ext_resource type="Texture2D" uid="uid://c6mcogby558f2" path="res://Assets/CardsImages/dyson sphere.png" id="1_o5oct"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_sglnx"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_vodli"]
 
@@ -20,6 +21,7 @@ value = 10
 script = ExtResource("2_vodli")
 id = 18
 name = "Dyson Prototype"
+card_texture = ExtResource("1_o5oct")
 context = "Massive energy project proposed"
 base_weight = 3.0
 cooldown = 5

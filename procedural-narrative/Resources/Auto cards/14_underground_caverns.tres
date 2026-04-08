@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cplhwyxyvdrdy"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cl58l"]
-[ext_resource type="Texture2D" uid="uid://clquvb1advyah" path="res://Assets/CardsImages/minning.png" id="1_qijkt"]
+[ext_resource type="Texture2D" uid="uid://517kqu3yep2m" path="res://Assets/CardsImages/cave system.png" id="1_qijkt"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_8psi1"]
 
 [sub_resource type="Resource" id="Resource_cl58l"]

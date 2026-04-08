@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://d2bs7j4ovm2we"]
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://d2bs7j4ovm2we"]
 
+[ext_resource type="Texture2D" uid="uid://dmf51mhsb2b1m" path="res://Assets/CardsImages/control room monitoring.png" id="1_117xy"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cwsvf"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_r528m"]
 
@@ -37,6 +38,7 @@ value = -5
 script = ExtResource("2_r528m")
 id = 52
 name = "AI Optimization Program"
+card_texture = ExtResource("1_117xy")
 context = "AI proposes system optimization"
 available = false
 base_weight = 3.0

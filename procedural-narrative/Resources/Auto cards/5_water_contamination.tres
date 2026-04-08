@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b2ywe6jkda7e7"]
 
-[ext_resource type="Texture2D" uid="uid://bhtwnxgqm0j4n" path="res://Assets/CardsImages/sci-fi building3.jpg" id="1_eo6wi"]
+[ext_resource type="Texture2D" uid="uid://deryctgqobrnt" path="res://Assets/CardsImages/water.png" id="1_eo6wi"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_u6k2a"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_c60iv"]
 

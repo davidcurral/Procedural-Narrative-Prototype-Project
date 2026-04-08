@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b7q58kvh6nws1"]
 
-[ext_resource type="Texture2D" uid="uid://bog8dcym62qlv" path="res://Assets/CardsImages/school.png" id="1_nryts"]
+[ext_resource type="Texture2D" uid="uid://bh6fpp5kg77id" path="res://Assets/CardsImages/hospital.png" id="1_nryts"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_w0mji"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_x0wnx"]
 
