@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://coj5i2mjf5qry"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://coj5i2mjf5qry"]
 
+[ext_resource type="Texture2D" uid="uid://clquvb1advyah" path="res://Assets/CardsImages/minning.png" id="1_kj5kb"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_s1o7x"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_8p15y"]
 
@@ -25,6 +26,7 @@ value = -10
 script = ExtResource("2_8p15y")
 id = 3
 name = "Mining Expedition"
+card_texture = ExtResource("1_kj5kb")
 context = "New mineral deposit detected."
 base_weight = 3.0
 cooldown = 5

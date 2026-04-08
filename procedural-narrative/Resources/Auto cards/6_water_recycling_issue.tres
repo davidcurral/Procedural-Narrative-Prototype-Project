@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://jjcky5ymgg6b"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://jjcky5ymgg6b"]
 
+[ext_resource type="Texture2D" uid="uid://dacouexl2yttr" path="res://Assets/CardsImages/Control Room.jpeg" id="1_br2j6"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_etvk8"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_4l1we"]
 
@@ -25,10 +26,11 @@ value = 10
 script = ExtResource("2_4l1we")
 id = 6
 name = "Water Recycling Issue"
+card_texture = ExtResource("1_br2j6")
 context = "Water purification malfunction."
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_etvk8")]([SubResource("Resource_etvk8"), SubResource("Resource_4l1we")])
-left_discription = "Strict rationing"
+left_description = "Strict rationing"
 right_effects = Array[ExtResource("1_etvk8")]([SubResource("Resource_8dnaw"), SubResource("Resource_1bwc4")])
-right_discription = "Upgrade System"
+right_description = "Upgrade System"

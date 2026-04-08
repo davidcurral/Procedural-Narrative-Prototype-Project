@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://6jn32utj3nar"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://6jn32utj3nar"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_82etp"]
+[ext_resource type="Texture2D" uid="uid://bc3ov307gya5t" path="res://Assets/CardsImages/futuristic city2.png" id="1_xlmnl"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_agllv"]
 
 [sub_resource type="Resource" id="Resource_82etp"]
@@ -25,10 +26,11 @@ value = 15
 script = ExtResource("2_agllv")
 id = 17
 name = "Total System Failure"
+card_texture = ExtResource("1_xlmnl")
 context = "Colony systems collapsing"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_82etp")]([SubResource("Resource_82etp"), SubResource("Resource_agllv")])
-left_discription = "Sacrifice sector"
+left_description = "Sacrifice sector"
 right_effects = Array[ExtResource("1_82etp")]([SubResource("Resource_n0mph"), SubResource("Resource_vslpd")])
-right_discription = "Full repair"
+right_description = "Full repair"

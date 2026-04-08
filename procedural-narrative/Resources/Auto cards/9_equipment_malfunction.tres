@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://ba77tjr1yn67u"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://ba77tjr1yn67u"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_6jw1b"]
+[ext_resource type="Texture2D" uid="uid://gyybe1cot3qi" path="res://Assets/CardsImages/engineroom.jpeg" id="1_7hh11"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_he3oy"]
 
 [sub_resource type="Resource" id="Resource_6jw1b"]
@@ -25,10 +26,11 @@ value = 5
 script = ExtResource("2_he3oy")
 id = 9
 name = "Equipment Malfunction"
+card_texture = ExtResource("1_7hh11")
 context = "Critical machines failing"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_6jw1b")]([SubResource("Resource_6jw1b"), SubResource("Resource_he3oy")])
-left_discription = "Repair now"
+left_description = "Repair now"
 right_effects = Array[ExtResource("1_6jw1b")]([SubResource("Resource_b04j2"), SubResource("Resource_v263e")])
-right_discription = "Delay maintenance"
+right_description = "Delay maintenance"

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://ucmshnpsmx6s"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://ucmshnpsmx6s"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_fcurl"]
+[ext_resource type="Texture2D" uid="uid://bnfq6wmanrfe8" path="res://Assets/CardsImages/meteor.png" id="1_q3ipr"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_oy7fj"]
 
 [sub_resource type="Resource" id="Resource_fcurl"]
@@ -21,10 +22,11 @@ value = -10
 script = ExtResource("2_oy7fj")
 id = 16
 name = "Meteor Impact"
+card_texture = ExtResource("1_q3ipr")
 context = "Meteor threatens colony sector"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_fcurl")]([SubResource("Resource_fcurl"), SubResource("Resource_oy7fj")])
-left_discription = "Repair damage"
+left_description = "Repair damage"
 right_effects = Array[ExtResource("1_fcurl")]([SubResource("Resource_abhno")])
-right_discription = "Evacuate sector"
+right_description = "Evacuate sector"

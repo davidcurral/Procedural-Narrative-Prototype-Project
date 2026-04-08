@@ -111,6 +111,7 @@ grow_vertical = 2
 theme_override_constants/separation = 90
 
 [node name="Play" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
@@ -132,7 +133,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
 text = "Quit"
 
 [node name="GameChoicePanel" type="Panel" parent="Panel"]
-visible = false
 custom_minimum_size = Vector2(900, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -189,4 +189,5 @@ offset_right = 0.0
 [connection signal="pressed" from="Panel/Button_manager/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Panel/Button_manager/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/GameChoicePanel/HBoxContainer/MemoryGame" to="." method="_on_memory_game_pressed"]
+[connection signal="pressed" from="Panel/GameChoicePanel/HBoxContainer/SimpleGame" to="." method="_on_simple_game_pressed"]
 [connection signal="timeout" from="FadeTransition/fade_timer" to="." method="_on_fade_timer_timeout"]

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://bew1rowf2j1ok"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bew1rowf2j1ok"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_7heou"]
+[ext_resource type="Texture2D" uid="uid://dt1vedyiyoacc" path="res://Assets/CardsImages/Control Room 3.jpeg" id="1_v6fd6"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_4ufr7"]
 
 [sub_resource type="Resource" id="Resource_7heou"]
@@ -22,6 +23,7 @@ value = 10
 script = ExtResource("2_4ufr7")
 id = 50
 name = "Surveillance Network"
+card_texture = ExtResource("1_v6fd6")
 context = "\"AI monitoring proposal.
 (AI arc starter)\""
 available = false
@@ -30,4 +32,6 @@ arc = 1
 arc_progression = 2
 cooldown = 5
 left_effects = Array[ExtResource("1_7heou")]([SubResource("Resource_7heou"), SubResource("Resource_4ufr7")])
+left_description = "Install"
 right_effects = Array[ExtResource("1_7heou")]([SubResource("Resource_yow74")])
+right_description = "Reject"

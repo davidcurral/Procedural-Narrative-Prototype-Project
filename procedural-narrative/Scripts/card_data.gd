@@ -21,6 +21,7 @@ const ARC_KEYS = {
 
 @export var id: int
 @export var name: String = ''
+@export var card_texture: Texture2D
 var game_name: String = ''
 @export var context: String = ''
 @export var card_rarity: card_rarity_options

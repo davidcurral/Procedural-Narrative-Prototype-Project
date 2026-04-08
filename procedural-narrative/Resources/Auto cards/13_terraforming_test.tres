@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://d271abb66g76n"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://d271abb66g76n"]
 
+[ext_resource type="Texture2D" uid="uid://b3xx4juavqday" path="res://Assets/CardsImages/valley.jpg" id="1_a5q5r"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_me63t"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_vjf33"]
 
@@ -26,10 +27,11 @@ value = 5
 script = ExtResource("2_vjf33")
 id = 13
 name = "Terraforming Test"
+card_texture = ExtResource("1_a5q5r")
 context = "Atmospheric conversion experiment"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_me63t")]([SubResource("Resource_me63t"), SubResource("Resource_vjf33")])
-left_discription = "Run test"
+left_description = "Run test"
 right_effects = Array[ExtResource("1_me63t")]([SubResource("Resource_gyt4m"), SubResource("Resource_vi4xn")])
-right_discription = "Delay project"
+right_description = "Delay project"

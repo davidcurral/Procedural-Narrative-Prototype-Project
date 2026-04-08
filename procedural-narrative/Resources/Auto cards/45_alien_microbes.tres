@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://bgtmpvxp2orq3"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bgtmpvxp2orq3"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_70pss"]
+[ext_resource type="Texture2D" uid="uid://ci1fes5d4qi85" path="res://Assets/CardsImages/scientists.jpeg" id="1_bnmdb"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_v58p4"]
 
 [sub_resource type="Resource" id="Resource_70pss"]
@@ -22,10 +23,11 @@ value = 10
 script = ExtResource("2_v58p4")
 id = 45
 name = "Alien Microbes"
+card_texture = ExtResource("1_bnmdb")
 context = "Unknown organisms discovered"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_70pss")]([SubResource("Resource_70pss"), SubResource("Resource_v58p4")])
-left_discription = "Study microbes"
+left_description = "Study microbes"
 right_effects = Array[ExtResource("1_70pss")]([SubResource("Resource_tluyo")])
-right_discription = "Destroy samples"
+right_description = "Destroy samples"

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://b6d5s8p7c7f65"]
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://b6d5s8p7c7f65"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_en1g4"]
+[ext_resource type="Texture2D" uid="uid://b5mukd4ae3r0q" path="res://Assets/CardsImages/lab.png" id="1_jbm3u"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_gcbm6"]
 
 [sub_resource type="Resource" id="Resource_en1g4"]
@@ -38,6 +39,7 @@ value = -10
 script = ExtResource("2_gcbm6")
 id = 51
 name = "AI Requests Autonomy"
+card_texture = ExtResource("1_jbm3u")
 context = "AI demands operational independence"
 available = false
 base_weight = 3.0
@@ -45,4 +47,6 @@ arc = 1
 arc_progression = 3
 cooldown = 5
 left_effects = Array[ExtResource("1_en1g4")]([SubResource("Resource_en1g4"), SubResource("Resource_gcbm6"), SubResource("Resource_giua4"), SubResource("Resource_4m05v")])
+left_description = "Grant autonomy"
 right_effects = Array[ExtResource("1_en1g4")]([SubResource("Resource_5fh4a"), SubResource("Resource_d6i3g"), SubResource("Resource_4m05v")])
+right_description = "Restrict AI"

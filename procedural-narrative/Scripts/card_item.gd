@@ -1,6 +1,7 @@
 extends Node
 
 var card_data
+@onready var card_texture = $Panel/VBoxContainer/TextureRect
 
 @onready var name_label = $Panel/VBoxContainer/Name
 @onready var context_label = $Panel/VBoxContainer/Card_Description
@@ -24,6 +25,8 @@ func setup(_card_data):
 func Update_Card_UI():
 	
 	name_label.text = card_data.name
+	card_texture = card_data.image
+	
 	if card_data.arc != 0:
 		context_label.text = translate_arc(card_data.arc) + " - " + card_data.context + "\n"
 	else:

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dak2x1d5ewck0"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dak2x1d5ewck0"]
 
+[ext_resource type="Texture2D" uid="uid://88gsfn3c6bm" path="res://Assets/CardsImages/ships4.jpg" id="1_mfnvd"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_n44sp"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_hohbm"]
 
@@ -26,10 +27,11 @@ value = -20
 script = ExtResource("2_hohbm")
 id = 29
 name = "Mass Exodus"
+card_texture = ExtResource("1_mfnvd")
 context = "Citizens attempt to leave colony"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_n44sp")]([SubResource("Resource_n44sp"), SubResource("Resource_hohbm")])
-left_discription = "Allow departure"
+left_description = "Allow departure"
 right_effects = Array[ExtResource("1_n44sp")]([SubResource("Resource_axans"), SubResource("Resource_itpa8")])
-right_discription = "Force stay"
+right_description = "Force stay"

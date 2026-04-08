@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b2ywe6jkda7e7"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b2ywe6jkda7e7"]
 
+[ext_resource type="Texture2D" uid="uid://bhtwnxgqm0j4n" path="res://Assets/CardsImages/sci-fi building3.jpg" id="1_eo6wi"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_u6k2a"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_c60iv"]
 
@@ -25,10 +26,11 @@ value = 5
 script = ExtResource("2_c60iv")
 id = 5
 name = "Water Contamination"
+card_texture = ExtResource("1_eo6wi")
 context = "Water supply shows impurities"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_u6k2a")]([SubResource("Resource_u6k2a"), SubResource("Resource_c60iv")])
-left_discription = "Purify water"
+left_description = "Purify water"
 right_effects = Array[ExtResource("1_u6k2a")]([SubResource("Resource_uyp62"), SubResource("Resource_er0fm")])
-right_discription = "Ignore issue"
+right_description = "Ignore issue"

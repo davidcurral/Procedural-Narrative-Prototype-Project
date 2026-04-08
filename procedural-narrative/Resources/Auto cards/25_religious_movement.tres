@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://fr0k7ogn26nu"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://fr0k7ogn26nu"]
 
+[ext_resource type="Texture2D" uid="uid://deoy0ewsaaald" path="res://Assets/CardsImages/festival.png" id="1_ltwbn"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_qj8lr"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_waakb"]
 
@@ -27,10 +28,11 @@ value = -10
 script = ExtResource("2_waakb")
 id = 25
 name = "Religious Movement"
+card_texture = ExtResource("1_ltwbn")
 context = "New belief spreading."
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_qj8lr")]([SubResource("Resource_qj8lr"), SubResource("Resource_waakb")])
-left_discription = "Allow"
+left_description = "Allow"
 right_effects = Array[ExtResource("1_qj8lr")]([SubResource("Resource_x2st5"), SubResource("Resource_7c8dh")])
-right_discription = "Ban"
+right_description = "Ban"

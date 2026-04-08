@@ -3,6 +3,7 @@ extends Control
 
 var button_type = null
 
+var memory: bool = true
 
 
 func _on_play_pressed() -> void:
@@ -21,13 +22,20 @@ func _on_settings_pressed() -> void:
 	
 # -- Play Buttons ----
 func _on_memory_game_pressed() -> void:
+	memory = true
 	button_type = "start"
 	$FadeTransition.show()
 	$FadeTransition/fade_timer.start()
 	$FadeTransition/AnimationPlayer.play("fade_in")
 
-
-# --- Timer ---
+func _on_simple_game_pressed() -> void:
+	memory = false
+	button_type = "start"
+	$FadeTransition.show()
+	$FadeTransition/fade_timer.start()
+	$FadeTransition/AnimationPlayer.play("fade_in")
+	
+	# --- Timer ---
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start":
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")

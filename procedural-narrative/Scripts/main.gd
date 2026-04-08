@@ -28,6 +28,7 @@ const RIGHT_CHOICE = 1
 @onready var world_val3 = $ScenePanel/Panel/VBoxContainer/Control3
 @onready var world_val4 = $ScenePanel/Panel/VBoxContainer/Control4
 @onready var turns = $ScenePanel/Turns
+@onready var game_mode = $ScenePanel/ColorRect/GameMode
 @onready var fade_anim = $FadeTransition/AnimationPlayer
 
 func _ready():
@@ -40,6 +41,12 @@ func _ready():
 	GameState.set_static_data(database.card_list, initial_card_list, max_concurrent_arcs)	
 	GameState.world_change.connect(world_UI)
 	GameState.initialize()
+	
+	if MainMenu.memory:
+		game_mode.text = "Game Mode: Memory Game"
+	else:
+		game_mode.text = "Game Mode: Simple Game"
+
 
 
 func updateUI(card_resource):

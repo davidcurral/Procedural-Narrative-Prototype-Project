@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dpj7kxj68ikox"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dpj7kxj68ikox"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_1la25"]
+[ext_resource type="Texture2D" uid="uid://d28d0suf7kkbn" path="res://Assets/CardsImages/fantasy building moebius1.png" id="1_pkbbm"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_xefna"]
 
 [sub_resource type="Resource" id="Resource_1la25"]
@@ -27,6 +28,7 @@ value = 10
 script = ExtResource("2_xefna")
 id = 60
 name = "Alien Technology"
+card_texture = ExtResource("1_pkbbm")
 context = "Powerful alien device found"
 available = false
 base_weight = 3.0
@@ -34,6 +36,6 @@ arc = 2
 arc_progression = 4
 cooldown = 5
 left_effects = Array[ExtResource("1_1la25")]([SubResource("Resource_1la25"), SubResource("Resource_xefna"), SubResource("Resource_26opc")])
-left_discription = "Use device"
+left_description = "Use device"
 right_effects = Array[ExtResource("1_1la25")]([SubResource("Resource_5vjwg"), SubResource("Resource_26opc")])
-right_discription = "Store safely"
+right_description = "Store safely"

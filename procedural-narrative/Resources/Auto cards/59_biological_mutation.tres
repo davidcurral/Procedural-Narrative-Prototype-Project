@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bg1h7het5yqwi"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bg1h7het5yqwi"]
 
+[ext_resource type="Texture2D" uid="uid://b5mukd4ae3r0q" path="res://Assets/CardsImages/lab.png" id="1_0cs4g"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_m3i8l"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_q8sai"]
 
@@ -28,6 +29,7 @@ value = 15
 script = ExtResource("2_q8sai")
 id = 59
 name = "Biological Mutation"
+card_texture = ExtResource("1_0cs4g")
 context = "Colonists begin mutating"
 available = false
 base_weight = 3.0
@@ -35,6 +37,6 @@ arc = 2
 arc_progression = 3
 cooldown = 5
 left_effects = Array[ExtResource("1_m3i8l")]([SubResource("Resource_m3i8l"), SubResource("Resource_q8sai"), SubResource("Resource_ftq71")])
-left_discription = "Study mutation"
+left_description = "Study mutation"
 right_effects = Array[ExtResource("1_m3i8l")]([SubResource("Resource_8jn88"), SubResource("Resource_ftq71")])
-right_discription = "Contain infected"
+right_description = "Contain infected"

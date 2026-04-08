@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://qncgi8u00sqi"]
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://qncgi8u00sqi"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_4ogha"]
+[ext_resource type="Texture2D" uid="uid://b8grhur3db2he" path="res://Assets/CardsImages/soldiers.png" id="1_8e0pb"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_4cmt1"]
 
 [sub_resource type="Resource" id="Resource_4ogha"]
@@ -33,6 +34,7 @@ value = -10
 script = ExtResource("2_4cmt1")
 id = 32
 name = "Coup Attempt"
+card_texture = ExtResource("1_8e0pb")
 context = "Government faces overthrow"
 available = false
 base_weight = 3.0
@@ -40,6 +42,6 @@ arc = 3
 arc_progression = 2
 cooldown = 5
 left_effects = Array[ExtResource("1_4ogha")]([SubResource("Resource_4ogha"), SubResource("Resource_4cmt1"), SubResource("Resource_guxqc")])
-left_discription = "Crush coup"
+left_description = "Crush coup"
 right_effects = Array[ExtResource("1_4ogha")]([SubResource("Resource_av0xi"), SubResource("Resource_w747a"), SubResource("Resource_guxqc")])
-right_discription = "Negotiate"
+right_description = "Negotiate"

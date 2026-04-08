@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://brcpej7pn5xw1"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://brcpej7pn5xw1"]
 
+[ext_resource type="Texture2D" uid="uid://bpk1r7ebwv3ca" path="res://Assets/CardsImages/futuristic building.png" id="1_31smt"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cxhai"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_yphfu"]
 
@@ -27,6 +28,7 @@ value = 15
 script = ExtResource("2_yphfu")
 id = 33
 name = "Corporate Takeover"
+card_texture = ExtResource("1_31smt")
 context = "Earth corporation seeks control"
 available = false
 base_weight = 3.0
@@ -34,6 +36,6 @@ arc = 3
 arc_progression = 3
 cooldown = 5
 left_effects = Array[ExtResource("1_cxhai")]([SubResource("Resource_cxhai"), SubResource("Resource_yphfu"), SubResource("Resource_rbjij")])
-left_discription = "Allow control"
+left_description = "Allow control"
 right_effects = Array[ExtResource("1_cxhai")]([SubResource("Resource_eckqq"), SubResource("Resource_rbjij")])
-right_discription = "Resist takeover"
+right_description = "Resist takeover"

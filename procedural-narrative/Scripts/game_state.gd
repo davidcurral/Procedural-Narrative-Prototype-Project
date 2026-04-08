@@ -3,10 +3,12 @@ extends Node
 # IMPORTANT - ❗ GameState should NOT reference Main. Ever.
 #region Variables
 # -- Static Data ---
-var card_database: Array [Cards] = []
+var card_database: CardDatabase
 var initial_card_list: Array[Cards]
 var max_weight = 1
 var max_concurrent_arcs: int
+var simple_run: bool
+
 
 # -- Runtime Data --
 var available_cards_list: Dictionary = {} # card_id : card
@@ -46,18 +48,24 @@ func _ready():
 	
 # --- Starting Functions ---
 func set_static_data(cards: Array[Cards], initial_cards : Array [Cards], max_arcs: int):
-	card_database = cards
+	card_database.card_list = cards
 	initial_card_list = initial_cards
 	max_concurrent_arcs = max_arcs
+	simple_run = !MainMenu.memory
+
 	
 func initialize():		
 	available_cards_list.clear()
 	arc_cards_list.clear()
-	for card_data in card_database:
+	
+	for card_data in card_database.card_list:
 		if card_data.available == true:
-			available_cards_list[card_data.id] = card_data
-		if card_data.arc != 0:
-			arc_cards_list.append(card_data)
+			if simple_run == true:
+				if card_data.arc == 0:
+					available_cards_list[card_data.id] = card_data
+			else:
+				available_cards_list[card_data.id] = card_data
+
 	show_first_card()
 	
 
@@ -74,9 +82,12 @@ func card_processing(choice_id: int): #Resolve current card → compute weights 
 		apply_effects(stored_current_card.right_effects)
 
 	on_card_played_memory_append(stored_current_card, choice_id)
-	process_cooldowns()
-	evaluate_arc_unlocks()
-	progress_arc(stored_current_card,choice_id)
+	
+	if simple_run == false: 
+		process_cooldowns()
+		evaluate_arc_unlocks()
+		progress_arc(stored_current_card,choice_id)
+		
 	pick_next_card()
 
 # --- Logic Fucntions ---
@@ -158,15 +169,6 @@ func apply_world_stat(effect) -> void:
 		return
 	world_state[key] = world_state.get(key, 0) + effect["value"]
 	
-'''func apply_world_arcs(effect) -> void: # rever se preciso disto assim	 
-	var key = effect.ARC_KEYS.get(effect["arc"])
-	if key == null:
-		push_error("Unknown stat target")
-		return
-		
-	if effect.value not in effect.arc_chapter:
-		effect.arc_chapter.append(effect.value)
-		GameMemory.memory_arcs[key] = effect.arc_chapter''' 
 	
 func show_first_card() -> void: 
 	var card_resource = initial_card_list[0]

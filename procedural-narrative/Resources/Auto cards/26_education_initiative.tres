@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b7q58kvh6nws1"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b7q58kvh6nws1"]
 
+[ext_resource type="Texture2D" uid="uid://bog8dcym62qlv" path="res://Assets/CardsImages/school.png" id="1_nryts"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_w0mji"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_x0wnx"]
 
@@ -25,10 +26,11 @@ value = -5
 script = ExtResource("2_x0wnx")
 id = 26
 name = "Education Initiative"
+card_texture = ExtResource("1_nryts")
 context = "Proposal for new schools."
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_w0mji")]([SubResource("Resource_w0mji"), SubResource("Resource_x0wnx")])
-left_discription = "Fund education"
+left_description = "Fund education"
 right_effects = Array[ExtResource("1_w0mji")]([SubResource("Resource_ha15n"), SubResource("Resource_fuqmu")])
-right_discription = "Focus on labor"
+right_description = "Focus on labor"

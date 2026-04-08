@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameState="*res://Scripts/game_state.gd"
 CardsStatic="*res://Scripts/cards_static.gd"
+MainMenu="*res://Scripts/main_menu.gd"
 GameMemory="*res://Scripts/game_memory.gd"
 
 [display]

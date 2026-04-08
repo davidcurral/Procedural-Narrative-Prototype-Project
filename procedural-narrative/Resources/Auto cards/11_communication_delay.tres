@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://dhpy3db783fyv"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dhpy3db783fyv"]
 
+[ext_resource type="Texture2D" uid="uid://53ci64hh8arq" path="res://Assets/CardsImages/antenas.png" id="1_dtodg"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_g68ne"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_40twl"]
 
@@ -20,10 +21,11 @@ value = 5
 script = ExtResource("2_40twl")
 id = 11
 name = "Communication Delay"
+card_texture = ExtResource("1_dtodg")
 context = "Signal with Earth unstable"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_g68ne")]([SubResource("Resource_g68ne"), SubResource("Resource_40twl")])
-left_discription = "Boost signal"
+left_description = "Boost signal"
 right_effects = Array[ExtResource("1_g68ne")]([SubResource("Resource_48rmw")])
-right_discription = "Ignore issue"
+right_description = "Ignore issue"

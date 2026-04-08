@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bi3ni5i1seris"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bi3ni5i1seris"]
 
+[ext_resource type="Texture2D" uid="uid://clquvb1advyah" path="res://Assets/CardsImages/minning.png" id="1_ovbyx"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_w3a7p"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_yf7cb"]
 
@@ -25,10 +26,11 @@ value = -10
 script = ExtResource("2_yf7cb")
 id = 10
 name = "Mining Accident"
+card_texture = ExtResource("1_ovbyx")
 context = "Workers injured in mining tunnels"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_w3a7p")]([SubResource("Resource_w3a7p"), SubResource("Resource_yf7cb")])
-left_discription = "Improve safety"
+left_description = "Improve safety"
 right_effects = Array[ExtResource("1_w3a7p")]([SubResource("Resource_1g5cs"), SubResource("Resource_5as16")])
-right_discription = "Push production"
+right_description = "Push production"

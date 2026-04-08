@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://chhq31ts7ofq1"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://chhq31ts7ofq1"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_iilem"]
+[ext_resource type="Texture2D" uid="uid://bh6fpp5kg77id" path="res://Assets/CardsImages/hospital.png" id="1_yl1aa"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_al113"]
 
 [sub_resource type="Resource" id="Resource_iilem"]
@@ -21,10 +22,11 @@ value = 5
 script = ExtResource("2_al113")
 id = 44
 name = "Medical Innovation"
+card_texture = ExtResource("1_yl1aa")
 context = "Doctors propose new treatment"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_iilem")]([SubResource("Resource_iilem"), SubResource("Resource_al113")])
-left_discription = "Approve research"
+left_description = "Approve research"
 right_effects = Array[ExtResource("1_iilem")]([SubResource("Resource_yb5bs")])
-right_discription = "Reject research"
+right_description = "Reject research"

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://cplhwyxyvdrdy"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cplhwyxyvdrdy"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cl58l"]
+[ext_resource type="Texture2D" uid="uid://clquvb1advyah" path="res://Assets/CardsImages/minning.png" id="1_qijkt"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_8psi1"]
 
 [sub_resource type="Resource" id="Resource_cl58l"]
@@ -22,10 +23,11 @@ value = 10
 script = ExtResource("2_8psi1")
 id = 14
 name = "Underground Caverns"
+card_texture = ExtResource("1_qijkt")
 context = "New subterranean area discovered"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_cl58l")]([SubResource("Resource_cl58l"), SubResource("Resource_8psi1")])
-left_discription = "Explore caverns"
+left_description = "Explore caverns"
 right_effects = Array[ExtResource("1_cl58l")]([SubResource("Resource_polqx")])
-right_discription = "Seal entrance"
+right_description = "Seal entrance"

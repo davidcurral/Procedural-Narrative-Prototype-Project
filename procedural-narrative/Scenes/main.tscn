@@ -404,6 +404,30 @@ text = "Turns - "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="ScenePanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 447.0
+offset_right = 545.0
+offset_bottom = 553.0
+color = Color(0.18000486, 0.18000486, 0.18000486, 1)
+
+[node name="GameMode" type="Label" parent="ScenePanel/ColorRect"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -246.5
+offset_top = 29.0
+offset_right = -46.5
+offset_bottom = 79.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 34
+text = "Game Mode:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="FadeTransition" parent="." instance=ExtResource("5_344ge")]
 visible = false
 layout_mode = 1

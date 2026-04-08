@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dd1s5n4btmqje"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dd1s5n4btmqje"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ektly"]
+[ext_resource type="Texture2D" uid="uid://c148fn2ne4ybs" path="res://Assets/CardsImages/tanks.png" id="1_ji3w2"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_c6qw1"]
 
 [sub_resource type="Resource" id="Resource_ektly"]
@@ -25,6 +26,7 @@ value = 5
 script = ExtResource("2_c6qw1")
 id = 1
 name = "Oxygen Shortage"
+card_texture = ExtResource("1_ji3w2")
 context = "Air reserves are dropping"
 base_weight = 3.0
 cooldown = 5

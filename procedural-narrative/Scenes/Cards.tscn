@@ -155,12 +155,24 @@ text = "Card Title"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 340)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+expand_mode = 1
+
 [node name="Image" type="ColorRect" parent="Panel/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(400, 330)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.8834328, 0.88541156, 0.85293067, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/Image"]
+position = Vector2(199.42302, 163.69234)
+scale = Vector2(0.5221354, 0.32617188)
 
 [node name="Card_Description" type="Label" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(400, 80)

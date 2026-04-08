@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dv024vboad8kn"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dv024vboad8kn"]
 
+[ext_resource type="Texture2D" uid="uid://chkf81bh2ma40" path="res://Assets/CardsImages/futuristic city3.png" id="1_51ori"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_rnika"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_p5ukg"]
 
@@ -26,10 +27,11 @@ value = 10
 script = ExtResource("2_p5ukg")
 id = 8
 name = "Power Grid Overload"
+card_texture = ExtResource("1_51ori")
 context = "Energy demand exceeds capacity"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_rnika")]([SubResource("Resource_rnika"), SubResource("Resource_p5ukg")])
-left_discription = "Shut sectors down"
+left_description = "Shut sectors down"
 right_effects = Array[ExtResource("1_rnika")]([SubResource("Resource_tqdvb"), SubResource("Resource_lxxc5")])
-right_discription = "Upgrade grid"
+right_description = "Upgrade grid"

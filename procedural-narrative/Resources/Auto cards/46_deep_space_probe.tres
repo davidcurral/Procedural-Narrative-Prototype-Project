@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://byhu74uch1jyy"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://byhu74uch1jyy"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_meogr"]
+[ext_resource type="Texture2D" uid="uid://qtvsrjebxd65" path="res://Assets/CardsImages/planet view.png" id="1_mse7t"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_un6io"]
 
 [sub_resource type="Resource" id="Resource_meogr"]
@@ -20,10 +21,11 @@ value = 5
 script = ExtResource("2_un6io")
 id = 46
 name = "Deep Space Probe"
+card_texture = ExtResource("1_mse7t")
 context = "Probe ready for launch"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_meogr")]([SubResource("Resource_meogr"), SubResource("Resource_un6io")])
-left_discription = "Launch probe"
+left_description = "Launch probe"
 right_effects = Array[ExtResource("1_meogr")]([SubResource("Resource_ff3lf")])
-right_discription = "Delay mission"
+right_description = "Delay mission"

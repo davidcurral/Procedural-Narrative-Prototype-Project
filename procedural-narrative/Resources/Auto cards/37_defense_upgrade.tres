@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://hlf1xcaqnq8r"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://hlf1xcaqnq8r"]
 
+[ext_resource type="Texture2D" uid="uid://b8grhur3db2he" path="res://Assets/CardsImages/soldiers.png" id="1_7mcku"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_qh58f"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_bhtwy"]
 
@@ -20,10 +21,11 @@ value = 10
 script = ExtResource("2_bhtwy")
 id = 37
 name = "Defense Upgrade"
+card_texture = ExtResource("1_7mcku")
 context = "Military proposes new defenses"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_qh58f")]([SubResource("Resource_qh58f"), SubResource("Resource_bhtwy")])
-left_discription = "Fund defenses"
+left_description = "Fund defenses"
 right_effects = Array[ExtResource("1_qh58f")]([SubResource("Resource_jl2gq")])
-right_discription = "Focus economy"
+right_description = "Focus economy"

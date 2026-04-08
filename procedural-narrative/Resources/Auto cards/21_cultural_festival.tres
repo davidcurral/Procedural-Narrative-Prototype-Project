@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dg4xutn2fhjna"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dg4xutn2fhjna"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_pkjg5"]
+[ext_resource type="Texture2D" uid="uid://deoy0ewsaaald" path="res://Assets/CardsImages/festival.png" id="1_x3yug"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_ldgif"]
 
 [sub_resource type="Resource" id="Resource_pkjg5"]
@@ -25,10 +26,11 @@ value = -10
 script = ExtResource("2_ldgif")
 id = 21
 name = "Cultural Festival"
+card_texture = ExtResource("1_x3yug")
 context = "Colonists request celebration"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_pkjg5")]([SubResource("Resource_pkjg5"), SubResource("Resource_ldgif")])
-left_discription = "Approve festival"
+left_description = "Approve festival"
 right_effects = Array[ExtResource("1_pkjg5")]([SubResource("Resource_elqyw"), SubResource("Resource_olf4h")])
-right_discription = "Deny request"
+right_description = "Deny request"

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b4vb3himgccwi"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b4vb3himgccwi"]
 
+[ext_resource type="Texture2D" uid="uid://qtvsrjebxd65" path="res://Assets/CardsImages/planet view.png" id="1_f4yc3"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ut7nj"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_kamm1"]
 
@@ -25,10 +26,11 @@ value = 1
 script = ExtResource("2_kamm1")
 id = 38
 name = "Orbital Debris"
+card_texture = ExtResource("1_f4yc3")
 context = "Space junk threatens station"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_ut7nj")]([SubResource("Resource_ut7nj"), SubResource("Resource_kamm1")])
-left_discription = "Clear debris"
+left_description = "Clear debris"
 right_effects = Array[ExtResource("1_ut7nj")]([SubResource("Resource_ue3as"), SubResource("Resource_l2yf2")])
-right_discription = "Ignore threat"
+right_description = "Ignore threat"

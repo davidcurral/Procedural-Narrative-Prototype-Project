@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://d1c28btmg7121"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://d1c28btmg7121"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_0evgq"]
+[ext_resource type="Texture2D" uid="uid://qtvsrjebxd65" path="res://Assets/CardsImages/planet view.png" id="1_6ngc5"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_ovgqr"]
 
 [sub_resource type="Resource" id="Resource_0evgq"]
@@ -22,10 +23,11 @@ value = 10
 script = ExtResource("2_ovgqr")
 id = 36
 name = "Strange Signal"
+card_texture = ExtResource("1_6ngc5")
 context = "Mysterious transmission detected"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_0evgq")]([SubResource("Resource_0evgq"), SubResource("Resource_ovgqr")])
-left_discription = "Investigate signal"
+left_description = "Investigate signal"
 right_effects = Array[ExtResource("1_0evgq")]([SubResource("Resource_7x7df")])
-right_discription = "Block signal"
+right_description = "Block signal"

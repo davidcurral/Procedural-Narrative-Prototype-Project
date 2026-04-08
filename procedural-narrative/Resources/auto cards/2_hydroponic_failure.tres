@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dtv10ynvc2amf"]
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://dtv10ynvc2amf"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_6yr6x"]
+[ext_resource type="Texture2D" uid="uid://xdxo2s5p5kmh" path="res://Assets/CardsImages/sci-fi hidropony.jpg" id="1_h8x11"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_bj278"]
 
 [sub_resource type="Resource" id="Resource_6yr6x"]
@@ -30,6 +31,7 @@ value = -10
 script = ExtResource("2_bj278")
 id = 2
 name = "Hydroponic Failure"
+card_texture = ExtResource("1_h8x11")
 context = "Food production system malfunctioning"
 base_weight = 3.0
 cooldown = 5

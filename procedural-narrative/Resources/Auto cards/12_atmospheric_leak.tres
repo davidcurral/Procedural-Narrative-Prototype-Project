@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dll8r5n5fb6gt"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dll8r5n5fb6gt"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_0aaky"]
+[ext_resource type="Texture2D" uid="uid://dj13n42o53b6w" path="res://Assets/CardsImages/oxygenleak.png" id="1_g5qgn"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_lhnra"]
 
 [sub_resource type="Resource" id="Resource_0aaky"]
@@ -25,10 +26,11 @@ value = 1
 script = ExtResource("2_lhnra")
 id = 12
 name = "Atmospheric Leak"
+card_texture = ExtResource("1_g5qgn")
 context = "Minor breach detected"
 base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_0aaky")]([SubResource("Resource_0aaky"), SubResource("Resource_lhnra")])
-left_discription = "Seal breach"
+left_description = "Seal breach"
 right_effects = Array[ExtResource("1_0aaky")]([SubResource("Resource_r66sk"), SubResource("Resource_e7ksb")])
-right_discription = "Delay repair"
+right_description = "Delay repair"

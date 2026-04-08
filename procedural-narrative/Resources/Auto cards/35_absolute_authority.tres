@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://b2btb12qshnp5"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b2btb12qshnp5"]
 
+[ext_resource type="Texture2D" uid="uid://b8grhur3db2he" path="res://Assets/CardsImages/soldiers.png" id="1_3lvhv"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_f1h86"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_ku4jf"]
 
@@ -29,6 +30,7 @@ arc = 3
 script = ExtResource("2_ku4jf")
 id = 35
 name = "Absolute Authority"
+card_texture = ExtResource("1_3lvhv")
 context = "Leader seeks full power"
 available = false
 base_weight = 3.0
@@ -36,6 +38,6 @@ arc = 3
 arc_progression = 5
 cooldown = 5
 left_effects = Array[ExtResource("1_f1h86")]([SubResource("Resource_f1h86")])
-left_discription = "Accept dictatorship"
+left_description = "Accept dictatorship"
 right_effects = Array[ExtResource("1_f1h86")]([SubResource("Resource_ku4jf"), SubResource("Resource_lhqe5"), SubResource("Resource_h16y5")])
-right_discription = "Resist rule"
+right_description = "Resist rule"
