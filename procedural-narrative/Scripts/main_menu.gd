@@ -22,14 +22,14 @@ func _on_settings_pressed() -> void:
 	
 # -- Play Buttons ----
 func _on_memory_game_pressed() -> void:
-	memory = true
+	MainMenu.memory = true
 	button_type = "start"
 	$FadeTransition.show()
 	$FadeTransition/fade_timer.start()
 	$FadeTransition/AnimationPlayer.play("fade_in")
 
 func _on_simple_game_pressed() -> void:
-	memory = false
+	MainMenu.memory = false
 	button_type = "start"
 	$FadeTransition.show()
 	$FadeTransition/fade_timer.start()

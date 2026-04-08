@@ -25,7 +25,7 @@ func setup(_card_data):
 func Update_Card_UI():
 	
 	name_label.text = card_data.name
-	card_texture = card_data.image
+	card_texture.texture = card_data.card_texture
 	
 	if card_data.arc != 0:
 		context_label.text = translate_arc(card_data.arc) + " - " + card_data.context + "\n"
@@ -75,20 +75,24 @@ func translate_arc(arc: int) -> String:
 #region Buttons
 
 func _on_left_button_mouse_entered() -> void:
-	left_effects_panel_UI.visible = true
-	$Sound/Reveal.play()
+	if not card_data.left_effects == []:
+		left_effects_panel_UI.visible = true
+		$Sound/Reveal.play()
 	
 func _on_left_button_mouse_exited() -> void:
-	left_effects_panel_UI.visible = false
+	if not card_data.left_effects == []:
+		left_effects_panel_UI.visible = false
 
 
 func _on_right_button_mouse_entered() -> void:
-	right_effects_panel_UI.visible = true
-	$Sound/Reveal.play()
+	if not card_data.right_effects == []:
+		right_effects_panel_UI.visible = true
+		$Sound/Reveal.play()
 
 
 func _on_right_button_mouse_exited() -> void:
-	right_effects_panel_UI.visible = false
+	if not card_data.right_effects == []:
+		right_effects_panel_UI.visible = false
 
 
 func _on_left_button_pressed() -> void:

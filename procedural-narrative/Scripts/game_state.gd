@@ -3,7 +3,7 @@ extends Node
 # IMPORTANT - ❗ GameState should NOT reference Main. Ever.
 #region Variables
 # -- Static Data ---
-var card_database: CardDatabase
+var card_database: Array[Cards]
 var initial_card_list: Array[Cards]
 var max_weight = 1
 var max_concurrent_arcs: int
@@ -48,7 +48,7 @@ func _ready():
 	
 # --- Starting Functions ---
 func set_static_data(cards: Array[Cards], initial_cards : Array [Cards], max_arcs: int):
-	card_database.card_list = cards
+	card_database = cards
 	initial_card_list = initial_cards
 	max_concurrent_arcs = max_arcs
 	simple_run = !MainMenu.memory
@@ -58,7 +58,7 @@ func initialize():
 	available_cards_list.clear()
 	arc_cards_list.clear()
 	
-	for card_data in card_database.card_list:
+	for card_data in card_database:
 		if card_data.available == true:
 			if simple_run == true:
 				if card_data.arc == 0:

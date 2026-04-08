@@ -42,10 +42,10 @@ func _ready():
 	GameState.world_change.connect(world_UI)
 	GameState.initialize()
 	
-	if MainMenu.memory:
-		game_mode.text = "Game Mode: Memory Game"
+	if MainMenu.memory == true:
+		game_mode.text = "Game Mode:  Memory Game"
 	else:
-		game_mode.text = "Game Mode: Simple Game"
+		game_mode.text = "Game Mode:  Simple Game"
 
 
 
@@ -55,12 +55,12 @@ func updateUI(card_resource):
 		world_progress_bar()
 
 func world_UI():
-	world_val1.get_child(0).text = "Resources: " + str(GameState.world_state.get("Resources"))
-	world_val2.get_child(0).text = "Security:  " + str(GameState.world_state.get("Security"))
-	world_val3.get_child(0).text = "Moral:  " + str(GameState.world_state.get("Moral"))
-	world_val4.get_child(0).text = "Progress:  " + str(GameState.world_state.get("Progress"))
+	world_val1.get_child(0).text = "Resources" #+ str(GameState.world_state.get("Resources"))
+	world_val2.get_child(0).text = "Security" #+ str(GameState.world_state.get("Security"))
+	world_val3.get_child(0).text = "Moral" #+ str(GameState.world_state.get("Moral"))
+	world_val4.get_child(0).text = "Progress" #+ str(GameState.world_state.get("Progress"))
 
-	turns.text = str(GameState.current_turn)
+	turns.text ="Turn: " + str(GameState.current_turn)
 
 func world_progress_bar():
 	world_val1.get_child(1).value = GameState.world_state.get("Resources")
@@ -81,7 +81,7 @@ func _on_left_choice_pressed() -> void:
 
 func _on_memory_print() -> void:
 	print("Event Memory: ", GameState.event_memory)
-
+	#print("Memory: ",MainMenu.memory)
 
 func _on_check_arcs_pressed() -> void:
 	print("\n","Active Arcs: ", GameState.active_arcs)
@@ -99,3 +99,12 @@ func _on_arc_cards_list_pressed() -> void:
 
 func _on_fade_timer_timeout() -> void:
 	$FadeTransition.hide()
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+	get_tree().quit()
+
+func _input(event):
+	if event.is_action_pressed("show_ui"): # "ui_cancel" é o padrão para Esc
+		$Panel.visible = !$Panel.visible

@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7c1xfww0va0j"]
+[gd_scene load_steps=21 format=3 uid="uid://c7c1xfww0va0j"]
 
 [ext_resource type="Script" uid="uid://csiy081se5hs" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cephiiu50nyso" path="res://Scenes/Cards.tscn" id="2_6bp64"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_jjvhh"]
-[ext_resource type="Resource" uid="uid://bx4htnae2si2l" path="res://Resources/manual cards/20_worker_strike.tres" id="3_6bp64"]
+[ext_resource type="Texture2D" uid="uid://bsx26roof45jm" path="res://Assets/Backgrounds/f8ee1089-8960-4543-acb9-abd9c2a05c3e.png" id="3_d1ilt"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="4_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dv8127gyeypre" path="res://Scenes/fade_transition.tscn" id="5_344ge"]
 [ext_resource type="Texture2D" uid="uid://wyf736vgk7o2" path="res://Assets/Backgrounds/3aa183c2-21d3-4c0f-987d-960cb1064e27.png" id="5_hptm8"]
 [ext_resource type="Texture2D" uid="uid://hde2jm542m5s" path="res://Assets/Images/Cards Back V1.1.jpg" id="5_ynf5e"]
@@ -11,54 +12,78 @@
 [ext_resource type="Script" uid="uid://bbx5hja5ve1l0" path="res://Scripts/Utilities/ToolBuilderScript.gd" id="8_344ge"]
 [ext_resource type="Resource" uid="uid://do3dbxg2dd4o1" path="res://Resources/card_database_V1.tres" id="11_d1ilt"]
 
+[sub_resource type="Resource" id="Resource_fdnlq"]
+script = ExtResource("2_jjvhh")
+id = -1
+name = "Start Colony"
+card_texture = ExtResource("3_d1ilt")
+context = "Build you colony by taking decisions. Each decision affects one variable of your colony, try to balance them."
+left_description = "Build your Colony"
+right_description = "Build your Colony"
+metadata/_custom_type_script = "uid://nvquj6gcvoei"
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6iyac"]
 texture = ExtResource("5_hptm8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1ilt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnlq"]
-bg_color = Color(0.20855945, 0.27427295, 0.27437732, 1)
+bg_color = Color(0.16353911, 0.21968237, 0.21968842, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.52915984, 0.6136256, 0.58828497, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+corner_detail = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
 bg_color = Color(0.7225545, 0.72255445, 0.72255456, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 2
 border_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
 border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynf5e"]
 bg_color = Color(0.1812182, 0.5784468, 0.3598875, 1)
-border_width_left = 4
-border_width_right = 4
 border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
 border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 corner_detail = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
 bg_color = Color(0.7308222, 0.71392596, 0.1583367, 1)
-border_width_left = 4
-border_width_right = 4
 border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
 border_blend = true
-corner_detail = 4
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ilt"]
 bg_color = Color(0.80499446, 0.313842, 0.22545129, 1)
-border_width_left = 4
-border_width_right = 4
-border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
-border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 corner_detail = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
 bg_color = Color(0.13377044, 0.5110136, 0.8227028, 1)
-border_width_left = 4
-border_width_right = 4
 border_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
 border_blend = true
-corner_detail = 4
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -67,7 +92,7 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_bo1nx")
-initial_card_list = Array[ExtResource("2_jjvhh")]([ExtResource("3_6bp64")])
+initial_card_list = Array[ExtResource("2_jjvhh")]([SubResource("Resource_fdnlq")])
 database = ExtResource("11_d1ilt")
 
 [node name="Background" type="Panel" parent="."]
@@ -98,6 +123,8 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_d1ilt")
 
 [node name="CardPile" type="Node2D" parent="ScenePanel"]
 modulate = Color(1, 1, 1, 0.6)
+position = Vector2(-39.999996, -9.999996)
+scale = Vector2(1.05, 1.05)
 
 [node name="Card_back7" type="Sprite2D" parent="ScenePanel/CardPile"]
 modulate = Color(1, 1, 1, 0.05)
@@ -150,20 +177,20 @@ scale = Vector2(1.3, 1.3)
 size_flags_stretch_ratio = 2.72
 
 [node name="Panel" type="Panel" parent="ScenePanel"]
-custom_minimum_size = Vector2(250, 600)
 layout_mode = 0
-offset_left = 1551.0
-offset_top = 104.0
-offset_right = 1801.0
-offset_bottom = 707.81
+offset_left = 1564.0
+offset_top = 236.0
+offset_right = 1788.0
+offset_bottom = 836.0
+pivot_offset = Vector2(112, 300)
 theme_override_styles/panel = SubResource("StyleBoxFlat_fdnlq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScenePanel/Panel"]
 custom_minimum_size = Vector2(100, 200)
-layout_mode = 0
-offset_left = 25.0
+layout_mode = 1
+offset_left = 22.0
 offset_top = 25.0
-offset_right = 225.0
+offset_right = 222.0
 offset_bottom = 575.0
 
 [node name="Control1" type="Control" parent="ScenePanel/Panel/VBoxContainer"]
@@ -198,6 +225,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ynf5e")
+min_value = -200.0
+max_value = 300.0
 step = 1.0
 value = 50.0
 show_percentage = false
@@ -235,6 +264,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hptm8")
+min_value = -200.0
+max_value = 300.0
 step = 1.0
 value = 50.0
 show_percentage = false
@@ -273,6 +304,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_d1ilt")
+min_value = -200.0
+max_value = 300.0
 step = 1.0
 value = 50.0
 show_percentage = false
@@ -312,12 +345,13 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_344ge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6iyac")
+min_value = -200.0
+max_value = 300.0
 step = 1.0
 value = 50.0
 show_percentage = false
 
 [node name="Buttons" type="Control" parent="ScenePanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -414,18 +448,15 @@ offset_bottom = 554.0
 color = Color(0.18000486, 0.18000486, 0.18000486, 1)
 
 [node name="GameMode" type="Label" parent="ScenePanel/ColorRect"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -258.5
-offset_top = 29.0
-offset_right = -58.5
-offset_bottom = 79.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 28
-text = "Game Mode:"
+text = "Game Mode: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -443,6 +474,32 @@ script = ExtResource("7_6bp64")
 script = ExtResource("8_344ge")
 database = ExtResource("11_d1ilt")
 
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Exit Game"
+
 [connection signal="pressed" from="ScenePanel/Buttons/LeftChoice" to="." method="_on_left_choice_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/RightChoice" to="." method="_on_right_choice_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/PrintMemory" to="." method="_on_memory_print"]
@@ -450,3 +507,4 @@ database = ExtResource("11_d1ilt")
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/AvailableCards" to="." method="_on_available_cards_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/ArcCardsList" to="." method="_on_arc_cards_list_pressed"]
 [connection signal="timeout" from="FadeTransition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
