@@ -30,7 +30,7 @@ func Update_Card_UI():
 	if card_data.arc != 0:
 		context_label.text = translate_arc(card_data.arc) + " - " + card_data.context + "\n"
 	else:
-		context_label.text = card_data.context
+		context_label.text = "\n"+card_data.context
 		
 	left_button.text = card_data.left_description
 	right_button.text = card_data.right_description
@@ -44,9 +44,9 @@ func show_card_effects_on_button_hover():
 		var value = effect["value"]
 		if effect.type == 0:
 			if value > 0:
-				left_effects_text += "  %s          ⬆︎\n" % [target_name]
+				left_effects_text += " %s          +\n" % [target_name]
 			else:
-				left_effects_text += "  %s          ⬇︎\n" % [target_name]
+				left_effects_text += " %s          -\n" % [target_name]
 
 	left_button_effect_text.text = "\n"+left_effects_text 
 	
@@ -56,9 +56,9 @@ func show_card_effects_on_button_hover():
 		var value = effect["value"]
 		if effect.type == 0:
 			if value > 0:
-				right_effects_text += "  %s          ⬆︎\n" % [target_name]
+				right_effects_text += " %s        +\n" % [target_name]
 			else:
-				right_effects_text += "  %s          ⬇︎\n" % [target_name]
+				right_effects_text += " %s        -\n" % [target_name]
 
 	right_button_effect_text.text = "\n"+right_effects_text
 

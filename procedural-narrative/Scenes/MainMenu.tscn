@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3e6w1vbqrnap"]
+[gd_scene load_steps=15 format=3 uid="uid://c3e6w1vbqrnap"]
 
+[ext_resource type="FontFile" uid="uid://dhacbwhlrox15" path="res://Assets/fonts/Bruno_Ace_SC/BrunoAceSC-Regular.ttf" id="1_ghw46"]
 [ext_resource type="Script" uid="uid://bjk3ck1cb4051" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://dvljrdmkvnt4v" path="res://Assets/Backgrounds/f2a56e92-e08b-4f60-8cc5-663d292c76e8.png" id="2_8saeu"]
 [ext_resource type="PackedScene" uid="uid://dv8127gyeypre" path="res://Scenes/fade_transition.tscn" id="2_853f1"]
+
+[sub_resource type="Theme" id="Theme_df05h"]
+default_font = ExtResource("1_ghw46")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghw46"]
 texture = ExtResource("2_8saeu")
@@ -44,8 +48,22 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmrfp"]
+bg_color = Color(0.7645111, 0.76451117, 0.7645108, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df05h"]
 bg_color = Color(0.13863751, 0.13863748, 0.13863745, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loo7a"]
+bg_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
@@ -58,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_df05h")
 script = ExtResource("1_tt5f1")
 
 [node name="Panel" type="Panel" parent="."]
@@ -66,7 +85,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -17.0
-offset_top = -80.0
+offset_top = -59.0
 offset_right = 191.0
 offset_bottom = 110.0
 grow_horizontal = 2
@@ -118,11 +137,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8um5k")
 text = "Play"
 
 [node name="Settings" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_xim88")
 text = "Settings"
+
+[node name="Spacer" type="Control" parent="Panel/Button_manager/VBoxContainer"]
+layout_mode = 2
 
 [node name="Quit" type="Button" parent="Panel/Button_manager/VBoxContainer"]
 layout_mode = 2
@@ -169,6 +192,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ghw46")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cmrfp")
 text = "Game with Memory"
 
 [node name="SimpleGame" type="Button" parent="Panel/GameChoicePanel/HBoxContainer"]
@@ -176,6 +200,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_df05h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_loo7a")
 text = "Simple Game (no memory)"
 
 [node name="FadeTransition" parent="." instance=ExtResource("2_853f1")]

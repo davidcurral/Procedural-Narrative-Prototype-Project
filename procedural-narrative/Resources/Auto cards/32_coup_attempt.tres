@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://qncgi8u00sqi"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_4ogha"]
-[ext_resource type="Texture2D" uid="uid://b8grhur3db2he" path="res://Assets/CardsImages/soldiers.png" id="1_8e0pb"]
+[ext_resource type="Texture2D" uid="uid://cncejjbaxe6wn" path="res://Assets/CardsImages/attact2.png" id="1_8e0pb"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_4cmt1"]
 
 [sub_resource type="Resource" id="Resource_4ogha"]

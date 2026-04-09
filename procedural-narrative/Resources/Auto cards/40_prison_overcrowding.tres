@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://clt51rjidnijd"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_km71i"]
-[ext_resource type="Texture2D" uid="uid://bgn42ebpdxh2p" path="res://Assets/CardsImages/school1.png" id="1_s77dx"]
+[ext_resource type="Texture2D" uid="uid://doyysj4p5gtvi" path="res://Assets/CardsImages/prisonOvercrowed.png" id="1_s77dx"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_qfhru"]
 
 [sub_resource type="Resource" id="Resource_km71i"]

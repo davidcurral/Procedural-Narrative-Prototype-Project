@@ -1,12 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://cephiiu50nyso"]
+[gd_scene load_steps=17 format=3 uid="uid://cephiiu50nyso"]
 
 [ext_resource type="Script" uid="uid://omiivakegf6c" path="res://Scripts/card_item.gd" id="1_3q7ms"]
 [ext_resource type="Texture2D" uid="uid://b5vw711kpnbia" path="res://Assets/Images/Cards Front V1.1.jpg" id="2_q2i7g"]
 [ext_resource type="AudioStream" uid="uid://du4fw5x71r64b" path="res://Assets/Sound/Sound Effects/reveal.mp3" id="2_uosef"]
 [ext_resource type="AudioStream" uid="uid://dauxr3kqgui2h" path="res://Assets/Sound/Sound Effects/select_effect.mp3" id="3_q2i7g"]
 
+[sub_resource type="SystemFont" id="SystemFont_q2i7g"]
+
+[sub_resource type="SystemFont" id="SystemFont_qxf0l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gisi"]
+bg_color = Color(0.29748532, 0.2716998, 0.2400937, 0.85)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2i7g"]
-bg_color = Color(0, 0, 0, 0.75000006)
+bg_color = Color(0.24780053, 0.22376983, 0.1931151, 0.90000004)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q7ms"]
 bg_color = Color(0.5058824, 0.5058824, 0.5058824, 0.8392157)
@@ -20,8 +27,13 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="SystemFont" id="SystemFont_4gisi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5vhg"]
+bg_color = Color(0.29748532, 0.2716998, 0.2400937, 0.85)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxf0l"]
-bg_color = Color(0, 0, 0, 0.75000006)
+bg_color = Color(0.24780053, 0.22376983, 0.1931151, 0.90000004)
 
 [sub_resource type="Animation" id="Animation_uosef"]
 resource_name = "Card_Left"
@@ -159,6 +171,7 @@ grow_vertical = 2
 [node name="Name" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Card Title"
@@ -170,6 +183,7 @@ custom_minimum_size = Vector2(420, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.16
 expand_mode = 1
 
 [node name="Image" type="ColorRect" parent="Panel/VBoxContainer"]
@@ -185,15 +199,18 @@ position = Vector2(199.42302, 163.69234)
 scale = Vector2(0.5221354, 0.32617188)
 
 [node name="Card_Description" type="Label" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(410, 80)
+custom_minimum_size = Vector2(410, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.43
+size_flags_stretch_ratio = 0.93
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 2
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = SubResource("SystemFont_q2i7g")
 theme_override_font_sizes/font_size = 18
-text = "Description"
+text = "
+Description"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -202,7 +219,7 @@ custom_minimum_size = Vector2(410, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-size_flags_stretch_ratio = 1.06
+size_flags_stretch_ratio = 0.42
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
@@ -223,6 +240,8 @@ grow_vertical = 2
 [node name="Left_Button" type="Button" parent="Panel/VBoxContainer/Buttons/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_qxf0l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gisi")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q2i7g")
 text = "Left Action"
 
@@ -260,6 +279,8 @@ size_flags_stretch_ratio = 0.06
 [node name="Right_Button" type="Button" parent="Panel/VBoxContainer/Buttons/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_4gisi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n5vhg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qxf0l")
 text = "Right Action"
 
