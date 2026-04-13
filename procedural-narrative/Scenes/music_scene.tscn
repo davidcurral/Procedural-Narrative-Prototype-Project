@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://crc4kli2no1wv"]
+
+[ext_resource type="AudioStream" uid="uid://c4ms57rcnhhgw" path="res://Assets/Sound/Music/eidunn-moebius-21329.mp3" id="1_6vxmv"]
+[ext_resource type="AudioStream" uid="uid://dglulue3hcuo0" path="res://Assets/Sound/Music/fidelfortune_2.mp3" id="3_5osu2"]
+[ext_resource type="AudioStream" uid="uid://bgnbw1tescpy8" path="res://Assets/Sound/Music/the_mountain-sci-fi-512284.mp3" id="4_5osu2"]
+[ext_resource type="Script" uid="uid://ce6lq62ams0lg" path="res://Scripts/music.gd" id="4_yja1l"]
+[ext_resource type="AudioStream" uid="uid://ojf2qba43hmk" path="res://Assets/Sound/Music/fidelfortune_1.mp3" id="5_yja1l"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_13bi0"]
+shuffle = true
+stream_count = 4
+stream_0 = ExtResource("1_6vxmv")
+stream_1 = ExtResource("3_5osu2")
+stream_2 = ExtResource("4_5osu2")
+stream_3 = ExtResource("5_yja1l")
+
+[node name="AudioStreamPlayer" type="Node"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_13bi0")
+volume_db = -23.537
+autoplay = true
+script = ExtResource("4_yja1l")

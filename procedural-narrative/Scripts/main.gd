@@ -14,6 +14,7 @@ Main emits choice made
 
 
 @onready var card_node = $ScenePanel/Cards
+@onready var sound_volume = $SoundVolume
 
 #var choice_id
 var right_choice
@@ -47,6 +48,8 @@ func _ready():
 	else:
 		game_mode.text = "Game Mode:  Simple Game"
 
+func _process(delta: float) -> void:
+	MusicScene.get_child(0).volume_db = sound_volume.value
 
 
 func updateUI(card_resource):

@@ -41,3 +41,7 @@ func _on_fade_timer_timeout() -> void:
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	elif button_type == "options":
 		get_tree().change_scene_to_file("res://Scenes/OptionsMenu.tscn")
+
+
+func _on_play_exit_pressed() -> void:
+	$Panel/GameChoicePanel.hide()
