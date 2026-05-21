@@ -7,7 +7,7 @@ var memory: bool = true
 
 
 func _on_play_pressed() -> void:
-	$Panel/GameChoicePanel.show()
+	$GameChoicePanel.show()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
@@ -44,4 +44,4 @@ func _on_fade_timer_timeout() -> void:
 
 
 func _on_play_exit_pressed() -> void:
-	$Panel/GameChoicePanel.hide()
+	$GameChoicePanel.hide()

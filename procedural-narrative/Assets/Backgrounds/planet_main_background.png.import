@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsx26roof45jm"
-path="res://.godot/imported/f8ee1089-8960-4543-acb9-abd9c2a05c3e.png-437ce60b6b752c03bbe4036d28c6db82.ctex"
+uid="uid://ben1dsl7i5xfd"
+path="res://.godot/imported/planet_main_background.png-5f5993f126579e0c9e23c5abbd8840a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/f8ee1089-8960-4543-acb9-abd9c2a05c3e.png"
-dest_files=["res://.godot/imported/f8ee1089-8960-4543-acb9-abd9c2a05c3e.png-437ce60b6b752c03bbe4036d28c6db82.ctex"]
+source_file="res://Assets/Backgrounds/planet_main_background.png"
+dest_files=["res://.godot/imported/planet_main_background.png-5f5993f126579e0c9e23c5abbd8840a6.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

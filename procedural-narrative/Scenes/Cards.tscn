@@ -1,39 +1,90 @@
-[gd_scene load_steps=17 format=3 uid="uid://cephiiu50nyso"]
+[gd_scene load_steps=20 format=3 uid="uid://cephiiu50nyso"]
 
 [ext_resource type="Script" uid="uid://omiivakegf6c" path="res://Scripts/card_item.gd" id="1_3q7ms"]
-[ext_resource type="Texture2D" uid="uid://b5vw711kpnbia" path="res://Assets/Images/Cards Front V1.1.jpg" id="2_q2i7g"]
+[ext_resource type="Texture2D" uid="uid://dur22vhwf616g" path="res://Assets/Images/Cards Front V2.1.jpg" id="2_q2i7g"]
 [ext_resource type="AudioStream" uid="uid://du4fw5x71r64b" path="res://Assets/Sound/Sound Effects/reveal.mp3" id="2_uosef"]
 [ext_resource type="AudioStream" uid="uid://dauxr3kqgui2h" path="res://Assets/Sound/Sound Effects/select_effect.mp3" id="3_q2i7g"]
 
 [sub_resource type="SystemFont" id="SystemFont_q2i7g"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_qxf0l"]
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gisi"]
 bg_color = Color(0.29748532, 0.2716998, 0.2400937, 0.85)
+corner_radius_top_left = 16
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6vhk"]
+bg_color = Color(0.23209421, 0.20906562, 0.18281268, 0.88000005)
+corner_radius_top_left = 16
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2i7g"]
 bg_color = Color(0.24780053, 0.22376983, 0.1931151, 0.90000004)
+corner_radius_top_left = 16
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q7ms"]
-bg_color = Color(0.5058824, 0.5058824, 0.5058824, 0.8392157)
+bg_color = Color(0.637777, 0.59390587, 0.54534984, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
-border_color = Color(0.45452422, 0.45452428, 0.45452398, 1)
-border_blend = true
-corner_radius_top_left = 2
+border_width_bottom = 1
+border_color = Color(0.36246037, 0.30917346, 0.23573154, 1)
+corner_radius_top_left = 12
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+corner_radius_bottom_left = 12
 
 [sub_resource type="SystemFont" id="SystemFont_4gisi"]
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5vhg"]
 bg_color = Color(0.29748532, 0.2716998, 0.2400937, 0.85)
+corner_radius_top_left = 4
+corner_radius_top_right = 16
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmq1r"]
+bg_color = Color(0.2374612, 0.21508199, 0.1897483, 0.88500005)
+corner_radius_top_left = 4
+corner_radius_top_right = 16
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxf0l"]
 bg_color = Color(0.24780053, 0.22376983, 0.1931151, 0.90000004)
+corner_radius_top_left = 4
+corner_radius_top_right = 16
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0yjy"]
+bg_color = Color(0.637777, 0.59390587, 0.54534984, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.36246037, 0.30917346, 0.23573154, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 2
 
 [sub_resource type="Animation" id="Animation_uosef"]
 resource_name = "Card_Left"
@@ -242,16 +293,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = SubResource("SystemFont_qxf0l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4gisi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p6vhk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q2i7g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p6vhk")
 text = "Left Action"
 
 [node name="EffectsLeftTextUI" type="Panel" parent="Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button"]
 visible = false
 layout_mode = 0
-offset_left = 0.5
-offset_top = -60.0
-offset_right = 186.5
-offset_bottom = 2.0
+offset_left = 3.0
+offset_top = -61.0
+offset_right = 189.0
+offset_bottom = 1.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3q7ms")
 
 [node name="LB_Text" type="Label" parent="Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI"]
@@ -281,17 +334,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = SubResource("SystemFont_4gisi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_n5vhg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nmq1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qxf0l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_nmq1r")
 text = "Right Action"
 
 [node name="EffectsRightTextUI" type="Panel" parent="Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button"]
 visible = false
 layout_mode = 0
-offset_left = 0.5
-offset_top = -60.0
-offset_right = 186.5
-offset_bottom = 2.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3q7ms")
+offset_top = -61.0
+offset_right = 188.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0yjy")
 
 [node name="RB_Text" type="Label" parent="Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI"]
 layout_mode = 1
@@ -321,9 +375,11 @@ libraries = {
 
 [node name="Reveal" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("2_uosef")
+volume_db = -8.0
 
 [node name="SelectEffect" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("3_q2i7g")
+volume_db = -22.0
 
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button" to="." method="_on_left_button_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button" to="." method="_on_left_button_mouse_exited"]

@@ -1,18 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3e6w1vbqrnap"]
+[gd_scene load_steps=19 format=3 uid="uid://c3e6w1vbqrnap"]
 
 [ext_resource type="FontFile" uid="uid://dhacbwhlrox15" path="res://Assets/fonts/Bruno_Ace_SC/BrunoAceSC-Regular.ttf" id="1_ghw46"]
 [ext_resource type="Script" uid="uid://bjk3ck1cb4051" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://dvljrdmkvnt4v" path="res://Assets/Backgrounds/f2a56e92-e08b-4f60-8cc5-663d292c76e8.png" id="2_8saeu"]
 [ext_resource type="PackedScene" uid="uid://dv8127gyeypre" path="res://Scenes/fade_transition.tscn" id="2_853f1"]
 
+[sub_resource type="FontVariation" id="FontVariation_ghw46"]
+base_font = ExtResource("1_ghw46")
+spacing_glyph = 4
+
 [sub_resource type="Theme" id="Theme_df05h"]
-default_font = ExtResource("1_ghw46")
+default_font = SubResource("FontVariation_ghw46")
+default_font_size = 39
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghw46"]
 texture = ExtResource("2_8saeu")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmrfp"]
+bg_color = Color(0.41056532, 0.3801664, 0.3714816, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 5
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8um5k"]
-bg_color = Color(0.44705883, 0.41568628, 0.40784314, 1)
+bg_color = Color(0.35140717, 0.32454878, 0.31783405, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 5
 corner_radius_bottom_right = 15
@@ -25,8 +37,15 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loo7a"]
+bg_color = Color(0.20348775, 0.18750855, 0.176857, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqhg"]
-bg_color = Color(0.19027689, 0.17454338, 0.16929775, 1)
+bg_color = Color(0.13158843, 0.11964207, 0.113668315, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -42,14 +61,14 @@ border_color = Color(0.3106173, 0.31061706, 0.3106171, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghw46"]
-bg_color = Color(0.8175222, 0.81752074, 0.8175216, 1)
+bg_color = Color(0.80049086, 0.80049074, 0.80049074, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmrfp"]
-bg_color = Color(0.7645111, 0.76451117, 0.7645108, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrcx7"]
+bg_color = Color(0.7371929, 0.737193, 0.7371927, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
@@ -62,15 +81,15 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loo7a"]
-bg_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh7cp"]
+bg_color = Color(0.08468992, 0.08468992, 0.08468992, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if7li"]
-bg_color = Color(0.19740582, 0.17142075, 0.122628756, 1)
+bg_color = Color(0.17425084, 0.15272239, 0.10607458, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -99,7 +118,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ghw46")
 
-[node name="Game_Name" type="Label" parent="Panel"]
+[node name="Game_Name" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -112,7 +131,7 @@ text = "Colony Survival"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_manager" type="Control" parent="Panel"]
+[node name="Button_manager" type="Control" parent="."]
 custom_minimum_size = Vector2(300, 400)
 layout_mode = 1
 anchors_preset = 8
@@ -120,14 +139,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -150.0
-offset_right = 125.0
-offset_bottom = 150.0
+offset_left = -150.0
+offset_top = -140.0
+offset_right = 150.0
+offset_bottom = 260.00024
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Button_manager"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button_manager"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,14 +155,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 90
 
-[node name="Play" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+[node name="Play" type="Button" parent="Button_manager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-theme_override_styles/normal = SubResource("StyleBoxFlat_8um5k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cmrfp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8um5k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8um5k")
 text = "Play"
 
-[node name="Settings" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+[node name="Settings" type="Button" parent="Button_manager/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -151,17 +171,18 @@ theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_xim88")
 text = "Settings"
 
-[node name="Spacer" type="Control" parent="Panel/Button_manager/VBoxContainer"]
+[node name="Spacer" type="Control" parent="Button_manager/VBoxContainer"]
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="Panel/Button_manager/VBoxContainer"]
+[node name="Quit" type="Button" parent="Button_manager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_loo7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqhg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_koqhg")
 text = "Quit"
 
-[node name="GameChoicePanel" type="Panel" parent="Panel"]
+[node name="GameChoicePanel" type="Panel" parent="."]
 visible = false
 custom_minimum_size = Vector2(900, 150)
 layout_mode = 1
@@ -170,52 +191,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -100.0
-offset_right = 250.0
-offset_bottom = 100.0
+offset_left = -363.0
+offset_top = -74.5
+offset_right = 537.0
+offset_bottom = 125.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8saeu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/GameChoicePanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GameChoicePanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -353.5
-offset_top = -25.0
-offset_right = 353.5
-offset_bottom = 25.0
+offset_left = -393.0
+offset_top = -35.5
+offset_right = 393.0
+offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 80
 
-[node name="MemoryGame" type="Button" parent="Panel/GameChoicePanel/HBoxContainer"]
+[node name="MemoryGame" type="Button" parent="GameChoicePanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ghw46")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cmrfp")
-text = "Game with Memory"
+theme_override_styles/hover = SubResource("StyleBoxFlat_rrcx7")
+text = "MEMORY GAME"
 
-[node name="SimpleGame" type="Button" parent="Panel/GameChoicePanel/HBoxContainer"]
+[node name="SimpleGame" type="Button" parent="GameChoicePanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_df05h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_loo7a")
-text = "Simple Game (no memory)"
+theme_override_styles/hover = SubResource("StyleBoxFlat_fh7cp")
+text = "SIMPLE GAME"
 
-[node name="play_exit" type="Button" parent="Panel/GameChoicePanel"]
+[node name="play_exit" type="Button" parent="GameChoicePanel"]
 layout_mode = 0
-offset_right = 72.0
-offset_bottom = 49.5
-theme_override_font_sizes/font_size = 36
+offset_left = 2.0
+offset_top = 2.5
+offset_right = 46.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_if7li")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_if7li")
+theme_override_styles/hover = SubResource("StyleBoxFlat_if7li")
 text = "X"
 
 [node name="FadeTransition" parent="." instance=ExtResource("2_853f1")]
@@ -225,10 +255,10 @@ offset_right = 0.0
 
 [node name="fade_timer" type="Timer" parent="FadeTransition"]
 
-[connection signal="pressed" from="Panel/Button_manager/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Panel/Button_manager/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Panel/Button_manager/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Panel/GameChoicePanel/HBoxContainer/MemoryGame" to="." method="_on_memory_game_pressed"]
-[connection signal="pressed" from="Panel/GameChoicePanel/HBoxContainer/SimpleGame" to="." method="_on_simple_game_pressed"]
-[connection signal="pressed" from="Panel/GameChoicePanel/play_exit" to="." method="_on_play_exit_pressed"]
+[connection signal="pressed" from="Button_manager/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button_manager/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button_manager/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="GameChoicePanel/HBoxContainer/MemoryGame" to="." method="_on_memory_game_pressed"]
+[connection signal="pressed" from="GameChoicePanel/HBoxContainer/SimpleGame" to="." method="_on_simple_game_pressed"]
+[connection signal="pressed" from="GameChoicePanel/play_exit" to="." method="_on_play_exit_pressed"]
 [connection signal="timeout" from="FadeTransition/fade_timer" to="." method="_on_fade_timer_timeout"]
