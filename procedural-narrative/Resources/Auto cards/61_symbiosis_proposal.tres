@@ -16,15 +16,15 @@ value = 20
 [sub_resource type="Resource" id="Resource_g82sc"]
 script = ExtResource("1_lpwp6")
 target = 2
-value = 15
+value = 10
 
 [resource]
 script = ExtResource("2_adex3")
 id = 61
 name = "Symbiosis Proposal"
 context = "Alien life offers cooperation"
+card_rarity = 3
 available = false
-base_weight = 3.0
 arc = 2
 arc_progression = 5
 cooldown = 5

@@ -22,7 +22,7 @@ value = 3
 [sub_resource type="Resource" id="Resource_eckqq"]
 script = ExtResource("1_cxhai")
 target = 2
-value = 15
+value = 10
 
 [resource]
 script = ExtResource("2_yphfu")
@@ -30,8 +30,8 @@ id = 33
 name = "Corporate Takeover"
 card_texture = ExtResource("1_31smt")
 context = "Earth corporation seeks control"
+card_rarity = 1
 available = false
-base_weight = 3.0
 arc = 3
 arc_progression = 3
 cooldown = 5

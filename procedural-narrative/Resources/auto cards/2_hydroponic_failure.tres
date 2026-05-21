@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://dtv10ynvc2amf"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dtv10ynvc2amf"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_6yr6x"]
 [ext_resource type="Texture2D" uid="uid://xdxo2s5p5kmh" path="res://Assets/CardsImages/sci-fi hidropony.jpg" id="1_h8x11"]
@@ -12,11 +12,6 @@ value = -10
 script = ExtResource("1_6yr6x")
 target = 3
 value = 5
-
-[sub_resource type="Resource" id="Resource_7blco"]
-script = ExtResource("1_6yr6x")
-target = 3
-value = 15
 
 [sub_resource type="Resource" id="Resource_fp1km"]
 script = ExtResource("1_6yr6x")
@@ -33,9 +28,8 @@ id = 2
 name = "Hydroponic Failure"
 card_texture = ExtResource("1_h8x11")
 context = "Food production system malfunctioning"
-base_weight = 3.0
 cooldown = 5
-left_effects = Array[ExtResource("1_6yr6x")]([SubResource("Resource_6yr6x"), SubResource("Resource_bj278"), SubResource("Resource_7blco")])
+left_effects = Array[ExtResource("1_6yr6x")]([SubResource("Resource_6yr6x"), SubResource("Resource_bj278")])
 left_description = "Repair system"
 right_effects = Array[ExtResource("1_6yr6x")]([SubResource("Resource_fp1km"), SubResource("Resource_hscy2")])
 right_description = "Reduce food distribution"

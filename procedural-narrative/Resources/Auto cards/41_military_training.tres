@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_xh4ag"]
 script = ExtResource("1_xh4ag")
 target = 2
-value = 15
+value = 10
 
 [sub_resource type="Resource" id="Resource_x76fh"]
 script = ExtResource("1_xh4ag")
@@ -28,7 +28,6 @@ id = 41
 name = "Military Training"
 card_texture = ExtResource("1_8s03b")
 context = "Defense forces request funding."
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_xh4ag")]([SubResource("Resource_xh4ag"), SubResource("Resource_x76fh")])
 left_description = "Approve"

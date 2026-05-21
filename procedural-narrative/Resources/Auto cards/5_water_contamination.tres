@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_u6k2a"]
 script = ExtResource("1_u6k2a")
-value = -10
+value = -5
 
 [sub_resource type="Resource" id="Resource_c60iv"]
 script = ExtResource("1_u6k2a")
@@ -28,7 +28,6 @@ id = 5
 name = "Water Contamination"
 card_texture = ExtResource("1_eo6wi")
 context = "Water supply shows impurities"
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_u6k2a")]([SubResource("Resource_u6k2a"), SubResource("Resource_c60iv")])
 left_description = "Purify water"

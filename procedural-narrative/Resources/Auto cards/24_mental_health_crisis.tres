@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://c5b8hutcpt0g0"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://c5b8hutcpt0g0"]
 
 [ext_resource type="Texture2D" uid="uid://bhtwnxgqm0j4n" path="res://Assets/CardsImages/sci-fi building3.jpg" id="1_60xpo"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_db3ps"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_7r4on"]
 
 [sub_resource type="Resource" id="Resource_db3ps"]
+script = ExtResource("1_db3ps")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_60xpo"]
 script = ExtResource("1_db3ps")
 value = -5
 
@@ -23,9 +28,9 @@ id = 24
 name = "Mental Health Crisis"
 card_texture = ExtResource("1_60xpo")
 context = "Isolation affecting colonists."
-base_weight = 3.0
+card_rarity = 1
 cooldown = 5
-left_effects = Array[ExtResource("1_db3ps")]([SubResource("Resource_db3ps")])
+left_effects = Array[ExtResource("1_db3ps")]([SubResource("Resource_db3ps"), SubResource("Resource_60xpo")])
 left_description = "Therapy programs"
 right_effects = Array[ExtResource("1_db3ps")]([SubResource("Resource_7r4on"), SubResource("Resource_e634a")])
 right_description = "Ignore"

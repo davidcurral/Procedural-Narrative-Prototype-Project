@@ -30,8 +30,8 @@ func _ready():
 func run_experiments():
 	
 	# CSV headers
-	log_rows.append("run,turn,card_id,choice,wealth,morale,stability,progress")
-	summary_rows.append("run,unique_cards,repetitions,final_wealth,final_morale,final_stability,final_progress")
+	log_rows.append("run,turn,card_id,choice,resources,security,moral,progress")
+	summary_rows.append("run,unique_cards,repetitions,final_resources,final_security,final_moral,final_progress")
 	card_frequency_rows.append("run,card_id,card_frequency")
 
 	for run_id in range(runs):

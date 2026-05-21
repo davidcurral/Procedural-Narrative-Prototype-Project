@@ -11,12 +11,12 @@ value = 15
 
 [sub_resource type="Resource" id="Resource_ai2si"]
 script = ExtResource("1_bkch5")
-value = -10
+value = -5
 
 [sub_resource type="Resource" id="Resource_211jv"]
 script = ExtResource("1_bkch5")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_eoail"]
 script = ExtResource("1_bkch5")
@@ -29,7 +29,6 @@ id = 20
 name = "Worker Strike"
 card_texture = ExtResource("1_ix7vv")
 context = "Colonists protest working conditions"
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_bkch5")]([SubResource("Resource_bkch5"), SubResource("Resource_ai2si")])
 left_description = "Negotiate"

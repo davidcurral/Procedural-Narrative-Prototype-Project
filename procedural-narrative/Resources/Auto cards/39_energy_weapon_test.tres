@@ -7,11 +7,11 @@
 [sub_resource type="Resource" id="Resource_ci4r7"]
 script = ExtResource("1_ci4r7")
 target = 2
-value = 15
+value = 5
 
 [sub_resource type="Resource" id="Resource_rgqd8"]
 script = ExtResource("1_ci4r7")
-value = -10
+value = -7
 
 [sub_resource type="Resource" id="Resource_t2a2w"]
 script = ExtResource("1_ci4r7")
@@ -23,7 +23,7 @@ id = 39
 name = "Energy Weapon Test"
 card_texture = ExtResource("1_jopcj")
 context = "Prototype weapon ready"
-base_weight = 3.0
+card_rarity = 1
 cooldown = 5
 left_effects = Array[ExtResource("1_ci4r7")]([SubResource("Resource_ci4r7"), SubResource("Resource_rgqd8")])
 left_description = "Test weapon"

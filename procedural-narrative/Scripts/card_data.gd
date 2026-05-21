@@ -9,7 +9,7 @@ Types of effects
 
 '''
 
-enum card_rarity_options {common, rare, epic}
+enum card_rarity_options {common,uncommon,rare,epic}
 enum arc_options {no_arc, AI, Aliens, Authoritarian_ruler}
 
 const ARC_KEYS = {
@@ -26,7 +26,7 @@ var game_name: String = ''
 @export var context: String = ''
 @export var card_rarity: card_rarity_options
 @export var available: bool = true
-@export var base_weight: float
+@export var base_weight: float = 12
 var weight: int:
 	get:
 		return ceil(base_weight / (1 + card_rarity))

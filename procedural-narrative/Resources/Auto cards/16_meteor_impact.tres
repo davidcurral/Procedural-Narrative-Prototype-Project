@@ -24,7 +24,6 @@ id = 16
 name = "Meteor Impact"
 card_texture = ExtResource("1_q3ipr")
 context = "Meteor threatens colony sector"
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_fcurl")]([SubResource("Resource_fcurl"), SubResource("Resource_oy7fj")])
 left_description = "Repair damage"

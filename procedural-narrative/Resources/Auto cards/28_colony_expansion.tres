@@ -6,12 +6,12 @@
 
 [sub_resource type="Resource" id="Resource_ffufi"]
 script = ExtResource("1_ffufi")
-value = -20
+value = -10
 
 [sub_resource type="Resource" id="Resource_33qeh"]
 script = ExtResource("1_ffufi")
 target = 1
-value = 15
+value = 10
 
 [sub_resource type="Resource" id="Resource_s6t8j"]
 script = ExtResource("1_ffufi")
@@ -23,7 +23,7 @@ id = 28
 name = "Colony Expansion"
 card_texture = ExtResource("1_6yf18")
 context = "New sector ready for development"
-base_weight = 3.0
+card_rarity = 1
 cooldown = 5
 left_effects = Array[ExtResource("1_ffufi")]([SubResource("Resource_ffufi"), SubResource("Resource_33qeh")])
 left_description = "Expand colony"

@@ -7,12 +7,12 @@
 [sub_resource type="Resource" id="Resource_ijhdv"]
 script = ExtResource("1_ijhdv")
 target = 2
-value = -10
+value = -5
 
 [sub_resource type="Resource" id="Resource_ho3b8"]
 script = ExtResource("1_ijhdv")
 target = 3
-value = 10
+value = -10
 
 [sub_resource type="Resource" id="Resource_m0g7b"]
 script = ExtResource("1_ijhdv")
@@ -28,7 +28,7 @@ value = 4
 [sub_resource type="Resource" id="Resource_jlbwd"]
 script = ExtResource("1_ijhdv")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_gd6k5"]
 script = ExtResource("1_ijhdv")
@@ -41,8 +41,8 @@ id = 54
 name = "AI Consciousness Event"
 card_texture = ExtResource("1_aengw")
 context = "AI claims sentience"
+card_rarity = 2
 available = false
-base_weight = 3.0
 arc = 1
 arc_progression = 6
 cooldown = 5

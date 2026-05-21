@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_6jw1b"]
 script = ExtResource("1_6jw1b")
-value = -10
+value = -5
 
 [sub_resource type="Resource" id="Resource_he3oy"]
 script = ExtResource("1_6jw1b")
@@ -28,7 +28,6 @@ id = 9
 name = "Equipment Malfunction"
 card_texture = ExtResource("1_7hh11")
 context = "Critical machines failing"
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_6jw1b")]([SubResource("Resource_6jw1b"), SubResource("Resource_he3oy")])
 left_description = "Repair now"

@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_en1g4"]
 script = ExtResource("1_en1g4")
 target = 1
-value = 20
+value = 15
 
 [sub_resource type="Resource" id="Resource_gcbm6"]
 script = ExtResource("1_en1g4")
@@ -28,7 +28,7 @@ value = 1
 [sub_resource type="Resource" id="Resource_5fh4a"]
 script = ExtResource("1_en1g4")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_d6i3g"]
 script = ExtResource("1_en1g4")
@@ -41,8 +41,8 @@ id = 51
 name = "AI Requests Autonomy"
 card_texture = ExtResource("1_jbm3u")
 context = "AI demands operational independence"
+card_rarity = 2
 available = false
-base_weight = 3.0
 arc = 1
 arc_progression = 3
 cooldown = 5

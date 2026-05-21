@@ -11,8 +11,8 @@ value = 15
 
 [sub_resource type="Resource" id="Resource_mhoqv"]
 script = ExtResource("1_qqt10")
-target = 2
-value = -5
+target = 5
+value = 10
 
 [sub_resource type="Resource" id="Resource_h1msy"]
 script = ExtResource("1_qqt10")
@@ -32,7 +32,7 @@ id = 49
 name = "Experimental AI"
 card_texture = ExtResource("1_opu43")
 context = "Research team built prototype AI."
-base_weight = 3.0
+card_rarity = 2
 arc = 1
 arc_progression = 1
 cooldown = 5

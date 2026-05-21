@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_1xp1w"]
 script = ExtResource("1_1xp1w")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_nd13o"]
 script = ExtResource("1_1xp1w")
@@ -31,7 +31,6 @@ id = 31
 name = "Faction Rivalry"
 card_texture = ExtResource("1_fd8yt")
 context = "Two political factions emerge"
-base_weight = 3.0
 arc = 3
 arc_progression = 1
 cooldown = 5

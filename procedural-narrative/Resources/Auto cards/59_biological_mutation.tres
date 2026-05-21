@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_m3i8l"]
 script = ExtResource("1_m3i8l")
 target = 1
-value = 20
+value = 10
 
 [sub_resource type="Resource" id="Resource_q8sai"]
 script = ExtResource("1_m3i8l")
@@ -23,7 +23,7 @@ value = 3
 [sub_resource type="Resource" id="Resource_8jn88"]
 script = ExtResource("1_m3i8l")
 target = 2
-value = 15
+value = 5
 
 [resource]
 script = ExtResource("2_q8sai")
@@ -31,8 +31,8 @@ id = 59
 name = "Biological Mutation"
 card_texture = ExtResource("1_0cs4g")
 context = "Colonists begin mutating"
+card_rarity = 1
 available = false
-base_weight = 3.0
 arc = 2
 arc_progression = 3
 cooldown = 5

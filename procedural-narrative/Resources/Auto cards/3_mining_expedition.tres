@@ -11,16 +11,16 @@ value = 15
 [sub_resource type="Resource" id="Resource_8p15y"]
 script = ExtResource("1_s1o7x")
 target = 3
-value = -5
+value = -10
 
 [sub_resource type="Resource" id="Resource_xfq1h"]
 script = ExtResource("1_s1o7x")
 target = 1
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_y3wck"]
 script = ExtResource("1_s1o7x")
-value = -10
+value = -7
 
 [resource]
 script = ExtResource("2_8p15y")
@@ -28,7 +28,6 @@ id = 3
 name = "Mining Expedition"
 card_texture = ExtResource("1_kj5kb")
 context = "New mineral deposit detected."
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_s1o7x")]([SubResource("Resource_s1o7x"), SubResource("Resource_8p15y")])
 left_description = "Send crew"

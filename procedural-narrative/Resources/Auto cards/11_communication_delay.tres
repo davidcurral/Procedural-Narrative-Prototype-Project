@@ -10,8 +10,8 @@ value = -5
 
 [sub_resource type="Resource" id="Resource_40twl"]
 script = ExtResource("1_g68ne")
-target = 4
-value = -1
+target = 1
+value = 2
 
 [sub_resource type="Resource" id="Resource_48rmw"]
 script = ExtResource("1_g68ne")
@@ -23,7 +23,6 @@ id = 11
 name = "Communication Delay"
 card_texture = ExtResource("1_dtodg")
 context = "Signal with Earth unstable"
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_g68ne")]([SubResource("Resource_g68ne"), SubResource("Resource_40twl")])
 left_description = "Boost signal"

@@ -6,12 +6,12 @@
 
 [sub_resource type="Resource" id="Resource_chfuv"]
 script = ExtResource("1_chfuv")
-value = -10
+value = -5
 
 [sub_resource type="Resource" id="Resource_wdkd6"]
 script = ExtResource("1_chfuv")
 target = 3
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_vm6oo"]
 script = ExtResource("1_chfuv")
@@ -29,7 +29,6 @@ id = 22
 name = "Population Growth"
 card_texture = ExtResource("1_qt3u8")
 context = "Birth rate rising."
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_chfuv")]([SubResource("Resource_chfuv"), SubResource("Resource_wdkd6")])
 left_description = "Expand housing"

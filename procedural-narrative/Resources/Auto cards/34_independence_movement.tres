@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_4dbsj"]
 script = ExtResource("1_4dbsj")
 target = 3
-value = 25
+value = 15
 
 [sub_resource type="Resource" id="Resource_j4did"]
 script = ExtResource("1_4dbsj")
@@ -30,8 +30,8 @@ id = 34
 name = "Independence Movement"
 card_texture = ExtResource("1_s3eif")
 context = "Colony demands independence"
+card_rarity = 2
 available = false
-base_weight = 3.0
 arc = 3
 arc_progression = 4
 cooldown = 5

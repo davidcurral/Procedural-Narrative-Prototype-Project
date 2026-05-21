@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_2nfi0"]
 script = ExtResource("1_2nfi0")
-value = 15
+value = 20
 
 [sub_resource type="Resource" id="Resource_hrpid"]
 script = ExtResource("1_2nfi0")
@@ -24,7 +24,6 @@ id = 15
 name = "Cargo Ship Arrival"
 card_texture = ExtResource("1_81tp6")
 context = "Supply ship offers goods."
-base_weight = 3.0
 cooldown = 5
 left_effects = Array[ExtResource("1_2nfi0")]([SubResource("Resource_2nfi0"), SubResource("Resource_hrpid")])
 left_description = "Purchase supplies"

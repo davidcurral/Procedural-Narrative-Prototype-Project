@@ -7,20 +7,21 @@
 [sub_resource type="Resource" id="Resource_pkjg5"]
 script = ExtResource("1_pkjg5")
 target = 3
-value = 20
+value = 15
 
 [sub_resource type="Resource" id="Resource_ldgif"]
 script = ExtResource("1_pkjg5")
-value = -10
+value = -5
 
 [sub_resource type="Resource" id="Resource_elqyw"]
 script = ExtResource("1_pkjg5")
+target = 2
 value = 5
 
 [sub_resource type="Resource" id="Resource_olf4h"]
 script = ExtResource("1_pkjg5")
 target = 3
-value = -10
+value = -15
 
 [resource]
 script = ExtResource("2_ldgif")
@@ -28,7 +29,7 @@ id = 21
 name = "Cultural Festival"
 card_texture = ExtResource("1_x3yug")
 context = "Colonists request celebration"
-base_weight = 3.0
+card_rarity = 1
 cooldown = 5
 left_effects = Array[ExtResource("1_pkjg5")]([SubResource("Resource_pkjg5"), SubResource("Resource_ldgif")])
 left_description = "Approve festival"
