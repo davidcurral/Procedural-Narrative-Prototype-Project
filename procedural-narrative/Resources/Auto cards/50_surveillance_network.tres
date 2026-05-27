@@ -24,8 +24,7 @@ script = ExtResource("2_4ufr7")
 id = 50
 name = "Surveillance Network"
 card_texture = ExtResource("1_v6fd6")
-context = "\"AI monitoring proposal.
-(AI arc starter)\""
+context = "The AI proposes a colony-wide monitoring system to improve efficiency and predict instability."
 card_rarity = 2
 available = false
 arc = 1

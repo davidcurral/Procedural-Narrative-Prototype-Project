@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=6 format=3 uid="uid://dw4yg2h578pn"]
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dw4yg2h578pn"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_lpwp6"]
+[ext_resource type="Texture2D" uid="uid://bq1hq3jdmg5nv" path="res://Assets/CardsImages/Lab life chamber.png" id="1_ofef0"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_adex3"]
 
 [sub_resource type="Resource" id="Resource_lpwp6"]
@@ -22,7 +23,8 @@ value = 10
 script = ExtResource("2_adex3")
 id = 61
 name = "Symbiosis Proposal"
-context = "Alien life offers cooperation"
+card_texture = ExtResource("1_ofef0")
+context = "A newly discovered alien lifeform offers cooperation in exchange for access to the colony."
 card_rarity = 3
 available = false
 arc = 2

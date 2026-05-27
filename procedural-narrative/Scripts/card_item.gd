@@ -10,7 +10,10 @@ var card_data
 @onready var right_button = $Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button
 
 @onready var left_button_effect_text = $Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI/LB_Text
+@onready var left_button_effect_signals = $Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI/LB_Text2
 @onready var right_button_effect_text = $Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI/RB_Text
+@onready var right_button_effect_signals = $Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI/RB_Text2
+
 @onready var left_effects_panel_UI = $Panel/VBoxContainer/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI
 @onready var right_effects_panel_UI = $Panel/VBoxContainer/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI
 
@@ -39,28 +42,38 @@ func Update_Card_UI():
 
 func show_card_effects_on_button_hover():
 	var left_effects_text: String = ""
+	var left_effects_signal: String = ""
+
 	for effect in card_data.left_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
 		if effect.type == 0:
 			if value > 0:
-				left_effects_text += " %s          +\n" % [target_name]
+				left_effects_text += " %s \n" % [target_name]
+				left_effects_signal += "[color=DARK_GREEN]+[/color]\n"
 			else:
-				left_effects_text += " %s          -\n" % [target_name]
+				left_effects_text += " %s \n" % [target_name]
+				left_effects_signal += "[color=DARK_RED]-[/color]\n"
 
 	left_button_effect_text.text = "\n"+left_effects_text 
+	left_button_effect_signals.text = left_effects_signal 
 	
 	var right_effects_text: String = ""
+	var right_effects_signal: String = ""
+	
 	for effect in card_data.right_effects:
 		var target_name = enum_to_string(effect.target_options, effect["target"])
 		var value = effect["value"]
 		if effect.type == 0:
 			if value > 0:
-				right_effects_text += " %s        +\n" % [target_name]
+				right_effects_text += " %s \n" % [target_name] 
+				right_effects_signal += "[color=DARK_GREEN]+[/color]\n"
 			else:
-				right_effects_text += " %s        -\n" % [target_name]
-
+				right_effects_text += " %s \n" % [target_name]
+				right_effects_signal += "[color=DARK_RED]-[/color]\n"
+				
 	right_button_effect_text.text = "\n"+right_effects_text
+	right_button_effect_signals.text = right_effects_signal 
 
 func return_card_ID():
 	return card_data.id
