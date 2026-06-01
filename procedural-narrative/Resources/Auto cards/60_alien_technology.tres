@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dpj7kxj68ikox"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_1la25"]
-[ext_resource type="Texture2D" uid="uid://d28d0suf7kkbn" path="res://Assets/CardsImages/fantasy building moebius1.png" id="1_pkbbm"]
+[ext_resource type="Texture2D" uid="uid://hx41ugd6xgeo" path="res://Assets/Version_2/Card_images_V2_Squared/id_60.jpg" id="1_pkbbm"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_xefna"]
 
 [sub_resource type="Resource" id="Resource_1la25"]

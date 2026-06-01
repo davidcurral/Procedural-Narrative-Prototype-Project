@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dcr7dcqfg3qh7"]
 
-[ext_resource type="Texture2D" uid="uid://dmf51mhsb2b1m" path="res://Assets/CardsImages/control room monitoring.png" id="1_arqmr"]
+[ext_resource type="Texture2D" uid="uid://4gdhjmktgh3g" path="res://Assets/Version_2/Card_images_V2_Squared/id_53.jpg" id="1_arqmr"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_dc7vr"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_qpwhl"]
 

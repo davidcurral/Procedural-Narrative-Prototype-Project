@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://brcpej7pn5xw1"]
 
-[ext_resource type="Texture2D" uid="uid://bpk1r7ebwv3ca" path="res://Assets/CardsImages/futuristic building.png" id="1_31smt"]
+[ext_resource type="Texture2D" uid="uid://bgn46uwdrijd7" path="res://Assets/Version_2/Card_images_V2_Squared/id_33.jpg" id="1_31smt"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_cxhai"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_yphfu"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://c668xjignwf1j"]
 
-[ext_resource type="Texture2D" uid="uid://cbi3e38aj3pt7" path="res://Assets/CardsImages/fantasy ladscape moebius1.png" id="1_bal02"]
+[ext_resource type="Texture2D" uid="uid://bfi45tyq7vc2g" path="res://Assets/Version_2/Card_images_V2_Squared/id_57.jpg" id="1_bal02"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_j1txs"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_bxp2q"]
 

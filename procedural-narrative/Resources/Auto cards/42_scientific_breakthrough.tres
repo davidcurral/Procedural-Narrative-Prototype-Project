@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://y01v3mv0h2ph"]
 
-[ext_resource type="Texture2D" uid="uid://ci1fes5d4qi85" path="res://Assets/CardsImages/scientists.jpeg" id="1_q0yr7"]
+[ext_resource type="Texture2D" uid="uid://djlh54un53068" path="res://Assets/Version_2/Card_images_V2_Squared/id_42.jpg" id="1_q0yr7"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_tlsx4"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_soh7p"]
 

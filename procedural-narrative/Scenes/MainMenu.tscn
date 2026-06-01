@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c3e6w1vbqrnap"]
+[gd_scene load_steps=18 format=3 uid="uid://c3e6w1vbqrnap"]
 
 [ext_resource type="FontFile" uid="uid://dhacbwhlrox15" path="res://Assets/fonts/Bruno_Ace_SC/BrunoAceSC-Regular.ttf" id="1_ghw46"]
 [ext_resource type="Script" uid="uid://bjk3ck1cb4051" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
-[ext_resource type="Texture2D" uid="uid://dvljrdmkvnt4v" path="res://Assets/Backgrounds/f2a56e92-e08b-4f60-8cc5-663d292c76e8.png" id="2_8saeu"]
 [ext_resource type="PackedScene" uid="uid://dv8127gyeypre" path="res://Scenes/fade_transition.tscn" id="2_853f1"]
+[ext_resource type="Shader" uid="uid://dx72sjh8mp0kd" path="res://Assets/Animations/saturation.gdshader" id="3_df05h"]
+[ext_resource type="Texture2D" uid="uid://dwy7txy51fapt" path="res://Assets/Version_2/backgrounds/Background_01.png" id="3_ghw46"]
 
 [sub_resource type="FontVariation" id="FontVariation_ghw46"]
 base_font = ExtResource("1_ghw46")
@@ -13,22 +14,24 @@ spacing_glyph = 4
 default_font = SubResource("FontVariation_ghw46")
 default_font_size = 39
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghw46"]
-texture = ExtResource("2_8saeu")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8um5k"]
+shader = ExtResource("3_df05h")
+shader_parameter/saturation = 0.794000037715
+shader_parameter/brightness = 0.986000046835
+shader_parameter/blur = 1.0970000521075
+shader_parameter/minha_textura = ExtResource("3_ghw46")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmrfp"]
-bg_color = Color(0.41056532, 0.3801664, 0.3714816, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 5
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8um5k"]
-bg_color = Color(0.35140717, 0.32454878, 0.31783405, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 5
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 5
+bg_color = Color(0.364697, 0.42407998, 0.44633186, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26145527, 0.30906227, 0.32687694, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xim88"]
 bg_color = Color(0.32624683, 0.30078664, 0.2944215, 1)
@@ -38,14 +41,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loo7a"]
-bg_color = Color(0.20348775, 0.18750855, 0.176857, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqhg"]
-bg_color = Color(0.13158843, 0.11964207, 0.113668315, 1)
+bg_color = Color(0.16054162, 0.19370538, 0.2069416, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -106,27 +102,25 @@ theme = SubResource("Theme_df05h")
 script = ExtResource("1_tt5f1")
 
 [node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_8um5k")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -59.0
-offset_right = 191.0
-offset_bottom = 110.0
+offset_top = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ghw46")
 
 [node name="Game_Name" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 306.0
+offset_bottom = 400.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.25391474, 0.2669605, 0.21504211, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 82
+theme_override_colors/font_color = Color(0.99266356, 0.93022823, 0.71569616, 1)
+theme_override_colors/font_outline_color = Color(0.5722932, 0.50052303, 0.07247249, 1)
+theme_override_constants/outline_size = 36
+theme_override_font_sizes/font_size = 140
 text = "Colony Survival"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -151,16 +145,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 717.0
+offset_top = 341.0
+offset_right = 717.0
+offset_bottom = 213.99976
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 90
+theme_override_constants/separation = 40
 
 [node name="Play" type="Button" parent="Button_manager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmrfp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8um5k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8um5k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmrfp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cmrfp")
 text = "Play"
 
 [node name="Settings" type="Button" parent="Button_manager/VBoxContainer"]
@@ -175,11 +173,13 @@ text = "Settings"
 layout_mode = 2
 
 [node name="Quit" type="Button" parent="Button_manager/VBoxContainer"]
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_override_styles/normal = SubResource("StyleBoxFlat_loo7a")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_koqhg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_koqhg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_loo7a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_loo7a")
 text = "Quit"
 
 [node name="GameChoicePanel" type="Panel" parent="."]

@@ -1,0 +1,484 @@
+[gd_scene load_steps=22 format=3 uid="uid://jvym656sj1bx"]
+
+[ext_resource type="Script" uid="uid://omiivakegf6c" path="res://Scripts/card_item.gd" id="1_nxdwk"]
+[ext_resource type="Texture2D" uid="uid://xiktyw11qhb" path="res://Assets/Version_2/Basic_Card/card_base.png" id="3_07mhw"]
+[ext_resource type="Texture2D" uid="uid://oog0kyypp3fr" path="res://Assets/Version_2/Basic_Card/Image_line_Bottom.png" id="3_xad42"]
+[ext_resource type="Texture2D" uid="uid://b05ktivbl15h5" path="res://Assets/Version_2/Basic_Card/Image_line_Top.png" id="4_l8vvv"]
+[ext_resource type="AudioStream" uid="uid://du4fw5x71r64b" path="res://Assets/Sound/Sound Effects/reveal.mp3" id="4_xad42"]
+[ext_resource type="Texture2D" uid="uid://byxt727npa6ln" path="res://Assets/Version_2/Basic_Card/title_line.png" id="5_2k0y2"]
+[ext_resource type="AudioStream" uid="uid://dauxr3kqgui2h" path="res://Assets/Sound/Sound Effects/select_effect.mp3" id="5_l8vvv"]
+
+[sub_resource type="SystemFont" id="SystemFont_q2i7g"]
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_qxf0l"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gisi"]
+bg_color = Color(0.50638646, 0.41551143, 0.30153242, 0.8)
+corner_radius_top_left = 46
+corner_radius_top_right = 46
+corner_radius_bottom_right = 46
+corner_radius_bottom_left = 46
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6vhk"]
+bg_color = Color(0.23209421, 0.20906562, 0.18281268, 0.88000005)
+corner_radius_top_left = 46
+corner_radius_top_right = 46
+corner_radius_bottom_right = 46
+corner_radius_bottom_left = 46
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q7ms"]
+bg_color = Color(0.637777, 0.59390587, 0.54534984, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.36246037, 0.30917346, 0.23573154, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 12
+
+[sub_resource type="SystemFont" id="SystemFont_4gisi"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5vhg"]
+bg_color = Color(0.5021107, 0.41551143, 0.30153242, 0.8)
+corner_radius_top_left = 46
+corner_radius_top_right = 46
+corner_radius_bottom_right = 46
+corner_radius_bottom_left = 46
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmq1r"]
+bg_color = Color(0.2374612, 0.21508199, 0.1897483, 0.88500005)
+corner_radius_top_left = 46
+corner_radius_top_right = 46
+corner_radius_bottom_right = 46
+corner_radius_bottom_left = 46
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxf0l"]
+bg_color = Color(0.24780053, 0.22376983, 0.1931151, 0.90000004)
+corner_radius_top_left = 46
+corner_radius_top_right = 46
+corner_radius_bottom_right = 46
+corner_radius_bottom_left = 46
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0yjy"]
+bg_color = Color(0.637777, 0.59390587, 0.54534984, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.36246037, 0.30917346, 0.23573154, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 2
+
+[sub_resource type="Animation" id="Animation_uosef"]
+resource_name = "Card_Left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3665667, 0.36666667),
+"transitions": PackedFloat32Array(2.0000002, 0.5743491, 0.5743491),
+"update": 0,
+"values": [Vector2(-220, -300), Vector2(-360, -300), Vector2(-220, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3665667, 0.36666667),
+"transitions": PackedFloat32Array(1.9999992, 0.5743491, 0.5743491),
+"update": 0,
+"values": [0.0, -0.3490658503988659, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qxf0l"]
+resource_name = "Card_Right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3665667, 0.36666667),
+"transitions": PackedFloat32Array(2.0000002, 0.5743491, 0.5743491),
+"update": 0,
+"values": [Vector2(-220, -300), Vector2(-80, -300), Vector2(-220, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3665667, 0.36666667),
+"transitions": PackedFloat32Array(1.9999992, 0.5743491, 0.5743491),
+"update": 0,
+"values": [0.0, 0.3490658503988659, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q2i7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-219.99951, -300)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4gisi"]
+_data = {
+&"Card_Left": SubResource("Animation_uosef"),
+&"Card_Right": SubResource("Animation_qxf0l"),
+&"RESET": SubResource("Animation_q2i7g")
+}
+
+[node name="Cards" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_nxdwk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.99951
+offset_top = -300.0
+offset_right = -219.99951
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cardfront" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -768.0
+offset_right = 512.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_07mhw")
+stretch_mode = 5
+
+[node name="image_lines_bottom" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -768.0
+offset_right = 512.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xad42")
+stretch_mode = 5
+
+[node name="image_lines_top" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -792.0
+offset_right = 535.0
+offset_bottom = 744.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_l8vvv")
+stretch_mode = 5
+
+[node name="title_line" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = -779.0
+offset_right = 553.0
+offset_bottom = 757.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2k0y2")
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -506.0
+offset_top = 45.0
+offset_right = 508.0
+offset_bottom = 184.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.65
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Card Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 522.0
+offset_top = -784.0
+offset_right = 1546.0
+offset_bottom = 752.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="Image" type="ColorRect" parent="Panel"]
+visible = false
+custom_minimum_size = Vector2(400, 330)
+layout_mode = 0
+offset_left = -200.0
+offset_top = -52.0
+offset_right = 200.0
+offset_bottom = 278.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.8834328, 0.88541156, 0.85293067, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Image"]
+position = Vector2(199.42302, 163.69234)
+scale = Vector2(0.5221354, 0.32617188)
+
+[node name="Card_Description" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 0
+offset_left = -446.0
+offset_top = 213.0
+offset_right = 454.0
+offset_bottom = 513.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.93
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 2
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = SubResource("SystemFont_q2i7g")
+theme_override_font_sizes/font_size = 28
+text = "
+Description"
+autowrap_mode = 2
+
+[node name="Buttons" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(800, 120)
+layout_mode = 0
+offset_left = -448.0
+offset_top = 589.0
+offset_right = 452.0
+offset_bottom = 719.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Panel/Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left_Button" type="Button" parent="Panel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_qxf0l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gisi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p6vhk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p6vhk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_p6vhk")
+text = "Left Action"
+
+[node name="EffectsLeftTextUI" type="Panel" parent="Panel/Buttons/VBoxContainer/Left_Button"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -99.0
+offset_right = 353.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q7ms")
+
+[node name="LB_Text" type="Label" parent="Panel/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_right = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 6
+theme_override_font_sizes/font_size = 24
+text = "1º Effect ---- 
+2º Effect ---- "
+vertical_alignment = 1
+
+[node name="LB_Text2" type="RichTextLabel" parent="Panel/Buttons/VBoxContainer/Left_Button/EffectsLeftTextUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 278.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "+
+-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Panel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Right_Button" type="Button" parent="Panel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_4gisi")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_n5vhg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nmq1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qxf0l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_nmq1r")
+text = "Right Action"
+
+[node name="EffectsRightTextUI" type="Panel" parent="Panel/Buttons/VBoxContainer/Right_Button"]
+visible = false
+layout_mode = 0
+offset_top = -96.0
+offset_right = 350.0
+offset_bottom = 4.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0yjy")
+
+[node name="RB_Text" type="Label" parent="Panel/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 6
+theme_override_font_sizes/font_size = 24
+text = "1º Effect ---- 
+2º Effect ---- "
+vertical_alignment = 1
+
+[node name="RB_Text2" type="RichTextLabel" parent="Panel/Buttons/VBoxContainer/Right_Button/EffectsRightTextUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 270.0
+offset_top = -1.6921997
+offset_right = -7.0
+offset_bottom = -1.6921997
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "+
+-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_4gisi")
+}
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Reveal" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("4_xad42")
+volume_db = -8.0
+
+[node name="SelectEffect" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("5_l8vvv")
+volume_db = -22.0
+
+[connection signal="mouse_entered" from="Panel/Buttons/VBoxContainer/Left_Button" to="." method="_on_left_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Buttons/VBoxContainer/Left_Button" to="." method="_on_left_button_mouse_exited"]
+[connection signal="pressed" from="Panel/Buttons/VBoxContainer/Left_Button" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Panel/Buttons/VBoxContainer/Right_Button" to="." method="_on_right_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Buttons/VBoxContainer/Right_Button" to="." method="_on_right_button_mouse_exited"]
+[connection signal="pressed" from="Panel/Buttons/VBoxContainer/Right_Button" to="." method="_on_right_button_pressed"]

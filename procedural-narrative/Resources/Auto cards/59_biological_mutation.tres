@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bg1h7het5yqwi"]
 
-[ext_resource type="Texture2D" uid="uid://bq1hq3jdmg5nv" path="res://Assets/CardsImages/Lab life chamber.png" id="1_0cs4g"]
+[ext_resource type="Texture2D" uid="uid://rh0437irdae1" path="res://Assets/Version_2/Card_images_V2_Squared/id_59.jpg" id="1_0cs4g"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_m3i8l"]
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="2_q8sai"]
 
