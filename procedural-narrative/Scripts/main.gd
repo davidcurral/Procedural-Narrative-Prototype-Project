@@ -31,6 +31,8 @@ const RIGHT_CHOICE = 1
 @onready var turns = $ScenePanel/Turns
 @onready var game_mode = $ScenePanel/ColorRect/GameMode
 @onready var fade_anim = $FadeTransition/AnimationPlayer
+@onready var print_text = $ScenePanel/Prints
+
 
 func _ready():
 	if $FadeTransition.visible == true:
@@ -42,6 +44,8 @@ func _ready():
 	GameState.set_static_data(database.card_list, initial_card_list, max_concurrent_arcs)	
 	GameState.world_change.connect(world_UI)
 	GameState.initialize()
+	GameState.print_cue.connect(print_cues_func)
+
 	
 	if MainMenu.memory == true:
 		game_mode.text = "Game Mode:  Memory Game"
@@ -62,8 +66,15 @@ func world_UI():
 	world_val2.get_child(0).text = "Security" #+ str(GameState.world_state.get("Security"))
 	world_val3.get_child(0).text = "Moral" #+ str(GameState.world_state.get("Moral"))
 	world_val4.get_child(0).text = "Progress" #+ str(GameState.world_state.get("Progress"))
-
+	
 	turns.text ="Turn: " + str(GameState.current_turn)
+
+	
+func print_cues_func(passed_print):
+	print_text.text = passed_print
+	print_text.show()
+	await get_tree().create_timer(1).timeout
+	print_text.hide()
 
 func world_progress_bar():
 	world_val1.get_child(1).value = GameState.world_state.get("Resources")

@@ -11,12 +11,12 @@ value = 10
 [sub_resource type="Resource" id="Resource_1f6jl"]
 script = ExtResource("1_kn4wv")
 target = 2
-value = -10
+value = -15
 
 [sub_resource type="Resource" id="Resource_5yvnq"]
 script = ExtResource("1_kn4wv")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_f12ml"]
 script = ExtResource("1_kn4wv")
@@ -30,7 +30,7 @@ name = "Black Market Trading"
 card_texture = ExtResource("1_5k38w")
 context = "Illegal trade networks are flourishing in the lower sectors as shortages continue to worsen."
 card_rarity = 1
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_kn4wv")]([SubResource("Resource_kn4wv"), SubResource("Resource_1f6jl")])
 left_description = "Allow trade"
 right_effects = Array[ExtResource("1_kn4wv")]([SubResource("Resource_5yvnq"), SubResource("Resource_f12ml")])

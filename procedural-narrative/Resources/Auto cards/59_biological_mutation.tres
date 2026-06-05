@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_m3i8l"]
 script = ExtResource("1_m3i8l")
 target = 1
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_q8sai"]
 script = ExtResource("1_m3i8l")

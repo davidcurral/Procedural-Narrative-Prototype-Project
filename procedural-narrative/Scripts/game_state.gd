@@ -37,6 +37,7 @@ var locked_arcs : Array[String] = []
 signal card_selected (card_resource)
 signal choice_made (choice_id)
 signal world_change 
+signal print_cue (passed_print) 
 
 #endregion 
 
@@ -65,6 +66,8 @@ func initialize():
 					available_cards_list[card_data.id] = card_data
 			else:
 				available_cards_list[card_data.id] = card_data
+				if card_data.arc != 0:
+					arc_cards_list.append(card_data)
 
 	show_first_card()
 	
@@ -237,6 +240,7 @@ func complete_arc(arc_name: String)-> void:
 	active_arcs.erase(arc_name)
 	completed_arcs.append(arc_name)
 	print(arc_name + " completed")
+	print_cue.emit(arc_name + " completed")
 
 func arc_amount_limit(candidates: Array)-> void:		
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
@@ -254,13 +258,18 @@ func print_arc_start() -> void:
 			match stored_current_card.arc:
 				1: 
 					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("AI Uprising Started")
+					print("AI Uprising has Started")
+					print_cue.emit("AI Uprising has Started")
 				2:
 					active_arcs[arc_map[stored_current_card.arc]] = 1
 					print("Alien Life Found")
+					print_cue.emit("Alien Life Found")
+
 				3:
 					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("Rebellion is coming")
+					print("Rebellion has Started")
+					print_cue.emit("Rebellion has Started")
+
 
 			
 #region Arc Condition Functions ---- Show first card of arc?
@@ -270,13 +279,15 @@ func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI beco
 	if completed_arcs.has("AI_Uprising"):
 		return
 
-	if get_effects_in_memory("Progress") >= 1 and world_state.get("Moral") < -90:  
+	if get_effects_in_memory("Progress") >= 30 and world_state.get("Moral") < -50:  
 		active_arcs["AI_Uprising"] = 0 			# 0 = unlocked but has not appear yet
 		for elements in available_cards_list:
 			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 1 and card.arc_progression == 1:
-				card.weight = 10
-				print("AI Uprising Started")
+				card.weight = 24
+				print("AI Uprising is coming")
+				print_cue.emit("AI Uprising is coming")
+
 
 func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
 	if active_arcs.has("Alien"):
@@ -284,13 +295,14 @@ func check_alien_arc_unlock() -> void: # Too much automation + low morale = AI b
 	if completed_arcs.has("Aien"):
 		return
 
-	if get_effects_in_memory("Progress") >= 1 and world_state.get("Resources") > 60:  
+	if get_effects_in_memory("Progress") >= 75 and world_state.get("Resources") > 50:  
 		active_arcs["Aliens"] = 0
 		for elements in available_cards_list:
 			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 2 and card.arc_progression == 1:
-				card.weight = 10
-				print("Alien Lifeforms Started")
+				card.weight = 24
+				print("Alien Lifeforms is coming")
+				print_cue.emit("Alien Lifeforms is coming")
 
 func check_rebellion_unlock() -> void: 
 	if active_arcs.has("Rebellion"):
@@ -298,13 +310,14 @@ func check_rebellion_unlock() -> void:
 	if completed_arcs.has("Rebellion"):
 		return
 		
-	if get_effects_in_memory("Resources") >= 3 and world_state.get("Moral") < 40:	
+	if get_effects_in_memory("Resources") <= 0  and world_state.get("Moral") < 0:	
 		active_arcs["Rebellion"] = 0
 		for elements in available_cards_list:
 			var card: Cards =  available_cards_list.get(elements)
 			if card.arc == 3 and card.arc_progression == 1:
-				card.weight = 10
-		print("Rebellion Arc Started")		
+				card.weight = 24
+				print("Rebellion Arc is coming")	
+				print_cue.emit("Rebellion Arc is coming")
 
 func check_terraform_unlock() -> void:
 	if active_arcs.has("Terraforming"):

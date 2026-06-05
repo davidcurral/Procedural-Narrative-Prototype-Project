@@ -19,7 +19,7 @@ value = -8
 
 [sub_resource type="Resource" id="Resource_krejy"]
 script = ExtResource("1_ektly")
-target = 1
+target = 3
 value = 5
 
 [resource]
@@ -28,7 +28,7 @@ id = 1
 name = "Oxygen Shortage"
 card_texture = ExtResource("1_ji3w2")
 context = "The colony’s oxygen reserves are falling faster than expected, and panic is beginning to spread through the lower sectors."
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_ektly")]([SubResource("Resource_ektly"), SubResource("Resource_c6qw1")])
 left_description = "Ration oxygen"
 right_effects = Array[ExtResource("1_ektly")]([SubResource("Resource_d5efj"), SubResource("Resource_krejy")])

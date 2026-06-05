@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_qh58f"]
 script = ExtResource("1_qh58f")
 target = 2
-value = 15
+value = 10
 
 [sub_resource type="Resource" id="Resource_bhtwy"]
 script = ExtResource("1_qh58f")
@@ -24,7 +24,7 @@ name = "Defense Upgrade"
 card_texture = ExtResource("1_7mcku")
 context = "Military officials request additional funding to strengthen the colony’s defenses against unknown threats."
 card_rarity = 1
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_qh58f")]([SubResource("Resource_qh58f"), SubResource("Resource_bhtwy")])
 left_description = "Fund defenses"
 right_effects = Array[ExtResource("1_qh58f")]([SubResource("Resource_jl2gq")])

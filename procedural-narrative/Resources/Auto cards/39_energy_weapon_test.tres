@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cd6nuj1jbxl0i"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://cd6nuj1jbxl0i"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_ci4r7"]
 [ext_resource type="Texture2D" uid="uid://doe6niksckl2p" path="res://Assets/CardsImages/energybeams.png" id="1_jopcj"]
@@ -17,6 +17,12 @@ value = -7
 script = ExtResource("1_ci4r7")
 value = 5
 
+[sub_resource type="Resource" id="Resource_jopcj"]
+script = ExtResource("1_ci4r7")
+target = 1
+value = -5
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
 [resource]
 script = ExtResource("2_rgqd8")
 id = 39
@@ -24,8 +30,8 @@ name = "Energy Weapon Test"
 card_texture = ExtResource("1_jopcj")
 context = "Scientists prepare to test a prototype energy weapon whose destructive potential remains uncertain."
 card_rarity = 1
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_ci4r7")]([SubResource("Resource_ci4r7"), SubResource("Resource_rgqd8")])
 left_description = "Test weapon"
-right_effects = Array[ExtResource("1_ci4r7")]([SubResource("Resource_t2a2w")])
+right_effects = Array[ExtResource("1_ci4r7")]([SubResource("Resource_t2a2w"), SubResource("Resource_jopcj")])
 right_description = "Cancel test"

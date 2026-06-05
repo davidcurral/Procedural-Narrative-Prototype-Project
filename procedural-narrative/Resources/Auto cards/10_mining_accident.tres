@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_w3a7p"]
 script = ExtResource("1_w3a7p")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_yf7cb"]
 script = ExtResource("1_w3a7p")
@@ -28,7 +28,7 @@ id = 10
 name = "Mining Accident"
 card_texture = ExtResource("1_ovbyx")
 context = "A tunnel collapse has trapped several workers beneath the mines, and rescue teams are running out of time."
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_w3a7p")]([SubResource("Resource_w3a7p"), SubResource("Resource_yf7cb")])
 left_description = "Improve safety"
 right_effects = Array[ExtResource("1_w3a7p")]([SubResource("Resource_1g5cs"), SubResource("Resource_5as16")])

@@ -19,8 +19,8 @@ value = 10
 
 [sub_resource type="Resource" id="Resource_ff6sb"]
 script = ExtResource("1_u4rbd")
-target = 4
-value = 2
+target = 1
+value = -5
 
 [resource]
 script = ExtResource("2_dxshu")
@@ -28,7 +28,7 @@ id = 4
 name = "Reactor Maintenance"
 card_texture = ExtResource("1_8l3y3")
 context = "Engineers warn that the aging reactor core requires immediate maintenance before a catastrophic failure occurs."
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_u4rbd")]([SubResource("Resource_u4rbd"), SubResource("Resource_dxshu")])
 left_description = "Perform maintenance"
 right_effects = Array[ExtResource("1_u4rbd")]([SubResource("Resource_hybr3"), SubResource("Resource_ff6sb")])

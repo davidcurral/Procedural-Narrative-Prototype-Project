@@ -6,12 +6,12 @@
 
 [sub_resource type="Resource" id="Resource_fcurl"]
 script = ExtResource("1_fcurl")
-value = -15
+value = -10
 
 [sub_resource type="Resource" id="Resource_oy7fj"]
 script = ExtResource("1_fcurl")
 target = 2
-value = 10
+value = 5
 
 [sub_resource type="Resource" id="Resource_abhno"]
 script = ExtResource("1_fcurl")
@@ -24,7 +24,7 @@ id = 16
 name = "Meteor Impact"
 card_texture = ExtResource("1_q3ipr")
 context = "A fast-moving meteor is projected to strike one of the colony’s outer districts within hours."
-cooldown = 5
+cooldown = 10
 left_effects = Array[ExtResource("1_fcurl")]([SubResource("Resource_fcurl"), SubResource("Resource_oy7fj")])
 left_description = "Repair damage"
 right_effects = Array[ExtResource("1_fcurl")]([SubResource("Resource_abhno")])

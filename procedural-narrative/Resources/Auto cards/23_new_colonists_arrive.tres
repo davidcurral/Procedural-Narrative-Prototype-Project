@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://c4248572lungg"]
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://c4248572lungg"]
 
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_1wble"]
 [ext_resource type="Texture2D" uid="uid://dg4m3uopn06x" path="res://Assets/CardsImages/ships2.png" id="1_66oql"]
@@ -13,10 +13,15 @@ value = 5
 script = ExtResource("1_1wble")
 value = -5
 
-[sub_resource type="Resource" id="Resource_uwgbe"]
+[sub_resource type="Resource" id="Resource_66oql"]
 script = ExtResource("1_1wble")
 target = 2
-value = 5
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_uwgbe"]
+script = ExtResource("1_1wble")
+value = 10
 
 [sub_resource type="Resource" id="Resource_tcpko"]
 script = ExtResource("1_1wble")
@@ -29,8 +34,8 @@ id = 23
 name = "New Colonists Arrive"
 card_texture = ExtResource("1_66oql")
 context = "A transport shuttle from Earth has arrived carrying hopeful settlers eager to begin a new life."
-cooldown = 5
-left_effects = Array[ExtResource("1_1wble")]([SubResource("Resource_1wble"), SubResource("Resource_evje0")])
+cooldown = 10
+left_effects = Array[ExtResource("1_1wble")]([SubResource("Resource_1wble"), SubResource("Resource_evje0"), SubResource("Resource_66oql")])
 left_description = "Accept them"
 right_effects = Array[ExtResource("1_1wble")]([SubResource("Resource_uwgbe"), SubResource("Resource_tcpko")])
 right_description = "Turn them away"

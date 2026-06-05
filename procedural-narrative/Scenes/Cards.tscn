@@ -207,19 +207,20 @@ texture = ExtResource("2_q2i7g")
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-custom_minimum_size = Vector2(440, 0)
+custom_minimum_size = Vector2(430, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.5769196
+offset_left = 7.9995117
 offset_top = 7.3076935
-offset_right = -4.4230957
+offset_right = -7.0004883
 offset_bottom = -6.53833
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Name" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(430, 72)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
@@ -228,6 +229,7 @@ theme_override_font_sizes/font_size = 28
 text = "Card Title"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(425, 345)

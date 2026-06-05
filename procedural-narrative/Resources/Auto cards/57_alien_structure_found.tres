@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://c668xjignwf1j"]
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://c668xjignwf1j"]
 
 [ext_resource type="Texture2D" uid="uid://bfi45tyq7vc2g" path="res://Assets/Version_2/Card_images_V2_Squared/id_57.jpg" id="1_bal02"]
 [ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="1_j1txs"]
@@ -7,7 +7,12 @@
 [sub_resource type="Resource" id="Resource_j1txs"]
 script = ExtResource("1_j1txs")
 target = 1
-value = 15
+value = 5
+
+[sub_resource type="Resource" id="Resource_bal02"]
+script = ExtResource("1_j1txs")
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
 
 [sub_resource type="Resource" id="Resource_bxp2q"]
 script = ExtResource("1_j1txs")
@@ -30,7 +35,7 @@ card_rarity = 2
 arc = 2
 arc_progression = 1
 cooldown = 5
-left_effects = Array[ExtResource("1_j1txs")]([SubResource("Resource_j1txs"), SubResource("Resource_bxp2q")])
+left_effects = Array[ExtResource("1_j1txs")]([SubResource("Resource_j1txs"), SubResource("Resource_bal02"), SubResource("Resource_bxp2q")])
 left_description = "Study ruins"
 right_effects = Array[ExtResource("1_j1txs")]([SubResource("Resource_31703"), SubResource("Resource_bxp2q")])
 right_description = "Seal area"

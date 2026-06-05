@@ -7,7 +7,9 @@ var memory: bool = true
 
 
 func _on_play_pressed() -> void:
-	$GameChoicePanel.show()
+	#$GameChoicePanel.show()
+	#_on_memory_game_pressed()
+	_on_simple_game_pressed()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
