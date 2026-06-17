@@ -14,6 +14,8 @@ var simple_run: bool
 var available_cards_list: Dictionary = {} # card_id : card
 var cooldown_tracker: Dictionary = {} # card_id : card.cooldown
 var arc_cards_list: Array [Cards] = []
+var debug_candidates: Array = []
+
 
 var rng = RandomNumberGenerator.new()
 var stored_current_card
@@ -124,8 +126,9 @@ func on_card_played_memory_append(card: Cards, choice: int):
 	if event_memory.size() > memory_limit:
 		event_memory.pop_front()
 	
-	if card.cooldown > 0:
-		cooldown_tracker[card.id] = card.cooldown
+	if simple_run == false:
+		if card.cooldown > 0:
+			cooldown_tracker[card.id] = card.cooldown
 
 func process_cooldowns():
 	var to_remove: Array = []
@@ -138,16 +141,21 @@ func process_cooldowns():
 
 func pick_next_card() -> Cards: 
 	var candidates: Array = []
+	debug_candidates = candidates
 
 	for card in available_cards_list.values():
-		if cooldown_tracker.has(card.id):
-			continue
-		candidates.append(card)
+		if simple_run == false:
+			if cooldown_tracker.has(card.id):
+				continue
+			candidates.append(card)
+		else:
+			candidates.append(card)
 		
 	if candidates.is_empty():
 		return
 	
 	arc_amount_limit(candidates)
+	debug_candidates = candidates
 
 	var total_weight = 0
 	for card in candidates:

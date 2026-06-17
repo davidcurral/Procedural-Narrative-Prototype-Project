@@ -24,7 +24,6 @@ name = "Dyson Prototype"
 card_texture = ExtResource("1_o5oct")
 context = "Researchers propose constructing a prototype orbital energy array capable of powering the colony indefinitely."
 card_rarity = 2
-base_weight = 3.0
 cooldown = 12
 left_effects = Array[ExtResource("1_sglnx")]([SubResource("Resource_sglnx"), SubResource("Resource_vodli")])
 left_description = "Build prototype"

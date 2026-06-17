@@ -108,7 +108,7 @@ func _on_available_cards_pressed() -> void:
 
 
 func _on_arc_cards_list_pressed() -> void:
-	print("Arc Lis: ", GameState.arc_cards_list, "\n")
+	print("Arc List: ", GameState.arc_cards_list, "\n")
 
 
 func _on_fade_timer_timeout() -> void:
@@ -122,3 +122,11 @@ func _on_exit_pressed() -> void:
 func _input(event):
 	if event.is_action_pressed("show_ui"): # "ui_cancel" é o padrão para Esc
 		$Panel.visible = !$Panel.visible
+
+
+func _on_candidates_pressed() -> void:
+	print("Candidates List: ", GameState.debug_candidates, "\n") 
+
+
+func _on_cooldown_pressed() -> void:
+	print("Cooldown List: ", GameState.cooldown_tracker, "\n") 

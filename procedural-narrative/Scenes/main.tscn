@@ -401,7 +401,6 @@ value = 50.0
 show_percentage = false
 
 [node name="Buttons" type="Control" parent="ScenePanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -454,19 +453,33 @@ size_flags_stretch_ratio = 2.49
 theme_override_font_sizes/font_size = 22
 text = "Print Memory "
 
-[node name="CheckArcs" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-size_flags_stretch_ratio = 2.4
-theme_override_font_sizes/font_size = 22
-text = "Print Arc Status"
-
 [node name="AvailableCards" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 2.95
 theme_override_font_sizes/font_size = 22
 text = "Print Available Cards"
+
+[node name="Candidates" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.95
+theme_override_font_sizes/font_size = 22
+text = "Print Candidates"
+
+[node name="Cooldown" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.95
+theme_override_font_sizes/font_size = 22
+text = "Print Cooldown list"
+
+[node name="CheckArcs" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.4
+theme_override_font_sizes/font_size = 22
+text = "Print Arc Status"
 
 [node name="ArcCardsList" type="Button" parent="ScenePanel/Buttons/VBoxContainer"]
 layout_mode = 2
@@ -493,7 +506,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="Panel" parent="ScenePanel"]
-visible = false
 layout_mode = 0
 offset_left = 45.0
 offset_top = 47.0
@@ -590,8 +602,10 @@ texture = ExtResource("13_fdnlq")
 [connection signal="pressed" from="ScenePanel/Buttons/LeftChoice" to="." method="_on_left_choice_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/RightChoice" to="." method="_on_right_choice_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/PrintMemory" to="." method="_on_memory_print"]
-[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/CheckArcs" to="." method="_on_check_arcs_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/AvailableCards" to="." method="_on_available_cards_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/Candidates" to="." method="_on_candidates_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/Cooldown" to="." method="_on_cooldown_pressed"]
+[connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/CheckArcs" to="." method="_on_check_arcs_pressed"]
 [connection signal="pressed" from="ScenePanel/Buttons/VBoxContainer/ArcCardsList" to="." method="_on_arc_cards_list_pressed"]
 [connection signal="timeout" from="FadeTransition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
