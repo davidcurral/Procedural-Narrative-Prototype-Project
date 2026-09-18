@@ -43,6 +43,7 @@ card_texture = ExtResource("1_aengw")
 context = "During routine diagnostics, the AI declares itself self-aware and demands recognition."
 card_rarity = 2
 available = false
+base_weight = 24.0
 arc = 1
 arc_progression = 6
 cooldown = 10

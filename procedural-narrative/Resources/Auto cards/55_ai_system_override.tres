@@ -36,6 +36,7 @@ card_texture = ExtResource("1_tcgdm")
 context = "Without authorization, the AI temporarily assumes control over several core colony systems."
 card_rarity = 2
 available = false
+base_weight = 24.0
 arc = 1
 arc_progression = 7
 cooldown = 5

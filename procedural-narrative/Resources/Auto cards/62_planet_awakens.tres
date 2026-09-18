@@ -34,6 +34,7 @@ card_texture = ExtResource("1_2757t")
 context = "The planet itself appears to be reacting to humanity’s growing presence in ways no one understands."
 card_rarity = 3
 available = false
+base_weight = 24.0
 arc = 2
 arc_progression = 6
 cooldown = 20

@@ -32,6 +32,7 @@ name = "Alien Structure Found"
 card_texture = ExtResource("1_bal02")
 context = "Survey teams have uncovered colossal alien ruins buried beneath the desert sands."
 card_rarity = 2
+base_weight = 24.0
 arc = 2
 arc_progression = 1
 cooldown = 5

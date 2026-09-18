@@ -38,6 +38,7 @@ card_texture = ExtResource("1_8e0pb")
 context = "Armed dissidents move against the colonial administration in an attempt to seize control."
 card_rarity = 2
 available = false
+base_weight = 24.0
 arc = 3
 arc_progression = 2
 cooldown = 5

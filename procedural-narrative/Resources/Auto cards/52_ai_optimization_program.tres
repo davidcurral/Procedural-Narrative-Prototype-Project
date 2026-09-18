@@ -42,6 +42,7 @@ card_texture = ExtResource("1_117xy")
 context = "The AI claims it can eliminate inefficiencies across the colony if granted broader authority."
 card_rarity = 1
 available = false
+base_weight = 24.0
 arc = 1
 arc_progression = 4
 cooldown = 5

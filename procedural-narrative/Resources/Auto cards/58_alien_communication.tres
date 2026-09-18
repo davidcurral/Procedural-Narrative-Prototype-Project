@@ -33,6 +33,7 @@ card_texture = ExtResource("1_je4o0")
 context = "An unknown intelligence has responded to the colony’s transmissions."
 card_rarity = 1
 available = false
+base_weight = 24.0
 arc = 2
 arc_progression = 2
 cooldown = 10

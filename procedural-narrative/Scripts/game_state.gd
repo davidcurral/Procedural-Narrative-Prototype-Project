@@ -33,6 +33,7 @@ const RIGHT_CHOICE = 1
 var active_arcs : Dictionary = {}   # arc_name : step
 var completed_arcs : Array[String] = []
 var locked_arcs : Array[String] = []
+var first_print: Array = []
 
 
 # -- Signals --
@@ -60,16 +61,18 @@ func set_static_data(cards: Array[Cards], initial_cards : Array [Cards], max_arc
 func initialize():		
 	available_cards_list.clear()
 	arc_cards_list.clear()
+	print("Simple Run: ",simple_run)
 	
 	for card_data in card_database:
-		if card_data.available == true:
-			if simple_run == true:
+		if simple_run == true:	
+			if card_data.available == true:
 				if card_data.arc == 0:
 					available_cards_list[card_data.id] = card_data
-			else:
+		elif simple_run == false:
+			if card_data.available == true:
 				available_cards_list[card_data.id] = card_data
-				if card_data.arc != 0:
-					arc_cards_list.append(card_data)
+			if card_data.arc != 0:
+				arc_cards_list.append(card_data)
 
 	show_first_card()
 	
@@ -260,28 +263,38 @@ func arc_amount_limit(candidates: Array)-> void:
 
 func print_arc_start() -> void:
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
+	
 
 	if not active_arcs.has(stored_current_card.arc):
 		if stored_current_card.arc_progression == 1:
 			match stored_current_card.arc:
 				1: 
-					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("AI Uprising has Started")
-					print_cue.emit("AI Uprising has Started")
+					if not "AI" in first_print:
+						active_arcs[arc_map[stored_current_card.arc]] = 1
+						print("AI Uprising has Started")
+						print_cue.emit("AI Uprising has Started")
+						first_print.append("AI")
 				2:
-					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("Alien Life Found")
-					print_cue.emit("Alien Life Found")
+					if not "Alien" in first_print:
+						active_arcs[arc_map[stored_current_card.arc]] = 1
+						print("Alien Life Found")
+						print_cue.emit("Alien Life Found")
+						first_print.append("Alien")
+
 
 				3:
-					active_arcs[arc_map[stored_current_card.arc]] = 1
-					print("Rebellion has Started")
-					print_cue.emit("Rebellion has Started")
+					if not "Rebellion" in first_print:
+						active_arcs[arc_map[stored_current_card.arc]] = 1
+						print("Rebellion has Started")
+						print_cue.emit("Rebellion has Started")
+						first_print.append("Rebellion")
 
 
 			
 #region Arc Condition Functions ---- Show first card of arc?
 func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
+	
+	
 	if active_arcs.has("AI_Uprising"):
 		return
 	if completed_arcs.has("AI_Uprising"):

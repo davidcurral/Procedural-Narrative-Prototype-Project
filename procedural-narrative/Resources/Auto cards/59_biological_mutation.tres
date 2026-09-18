@@ -33,6 +33,7 @@ card_texture = ExtResource("1_0cs4g")
 context = "Colonists exposed to alien spores are beginning to exhibit disturbing physical changes."
 card_rarity = 1
 available = false
+base_weight = 24.0
 arc = 2
 arc_progression = 3
 cooldown = 5

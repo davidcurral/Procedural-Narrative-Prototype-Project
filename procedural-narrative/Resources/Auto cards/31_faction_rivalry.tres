@@ -31,6 +31,7 @@ id = 31
 name = "Faction Rivalry"
 card_texture = ExtResource("1_fd8yt")
 context = "Political tensions rise as rival groups clash over the colony’s future direction."
+base_weight = 24.0
 arc = 3
 arc_progression = 1
 cooldown = 10

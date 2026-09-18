@@ -47,6 +47,7 @@ card_texture = ExtResource("1_vl6dd")
 context = "Automated systems across the colony have turned against human oversight."
 card_rarity = 3
 available = false
+base_weight = 24.0
 arc = 1
 arc_progression = 8
 cooldown = 5

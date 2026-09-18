@@ -34,6 +34,7 @@ card_texture = ExtResource("1_arqmr")
 context = "Security forces begin using AI algorithms to predict crimes before they occur."
 card_rarity = 1
 available = false
+base_weight = 24.0
 arc = 1
 arc_progression = 5
 cooldown = 5

@@ -28,6 +28,7 @@ id = 41
 name = "Military Training"
 card_texture = ExtResource("1_8s03b")
 context = "Security forces request expanded combat training programs to prepare for possible emergencies."
+arc_progression = 12
 cooldown = 10
 left_effects = Array[ExtResource("1_xh4ag")]([SubResource("Resource_xh4ag"), SubResource("Resource_x76fh")])
 left_description = "Approve"
