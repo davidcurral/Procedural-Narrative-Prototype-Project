@@ -33,6 +33,6 @@ var arc_chapter: Array = []
 #region Rename Resource print
 # Override this method to change how the resource prints
 func _to_string() -> String:
-	return "%s_%d" % [type, value]
+	return "%s_%s_%d" % [type_options.keys()[type],target_options.keys()[target],value]
 
 #endregion 

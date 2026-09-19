@@ -264,7 +264,6 @@ func arc_amount_limit(candidates: Array)-> void:
 func print_arc_start() -> void:
 	var arc_map: Dictionary = { 1: "AI_Uprising",  2: "Aliens", 3: "Rebellion"}
 	
-
 	if not active_arcs.has(stored_current_card.arc):
 		if stored_current_card.arc_progression == 1:
 			match stored_current_card.arc:
@@ -293,7 +292,6 @@ func print_arc_start() -> void:
 			
 #region Arc Condition Functions ---- Show first card of arc?
 func check_ai_arc_unlock() -> void: # Too much automation + low morale = AI becomes dominant.
-	
 	
 	if active_arcs.has("AI_Uprising"):
 		return
