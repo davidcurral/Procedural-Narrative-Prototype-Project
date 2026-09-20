@@ -192,7 +192,7 @@ func get_effects_in_memory(target)-> int:
 			for effect in entry.get("left_effects"):
 				#print("Left - ","Effect accurate target: ", effect.target, " Target ID: ", target_id)
 				if effect.target == target_id:
-					count += 1 if effect.value > 0 else 0
+					count += 1 if effect.value > 0 else 0  #If value is >0 consider it affected target so count +1 for world conditional purpose
 		elif entry.get("choice") == 1:
 			for effect in entry.get("right_effects"):
 				#print("Right - ","Effect accurate target: ", effect.target, " Target ID: ", target_id)

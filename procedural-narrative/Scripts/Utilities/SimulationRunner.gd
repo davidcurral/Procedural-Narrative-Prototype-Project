@@ -126,15 +126,15 @@ func no_memory_save_csv():
 
 func with_memory_save_csv():
 	
-	var log_file = FileAccess.open("res://Data/with_memory_sim_log.txt", FileAccess.WRITE)	
+	var log_file = FileAccess.open("res://Data/62_cards_memory_sim_log.txt", FileAccess.WRITE)	
 	for row in log_rows:
 		log_file.store_line(row) #writes a string followed by a newline character (\n)
 	
-	var frequency_file = FileAccess.open("res://Data/with_memory_sim_card_frequency.txt", FileAccess.WRITE)
+	var frequency_file = FileAccess.open("res://Data/62_cards_memory_sim_card_frequency.txt", FileAccess.WRITE)
 	for row in card_frequency_rows:
 		frequency_file.store_line(row)
 		
-	var summary_file = FileAccess.open("res://Data/with_memory_sim_summary.txt", FileAccess.WRITE)
+	var summary_file = FileAccess.open("res://Data/62_cards_memory_sim_summary.txt", FileAccess.WRITE)
 	for row in summary_rows:
 		summary_file.store_line(row)
 #endregion
