@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dvpbrloybg6rb"]
+
+[ext_resource type="Texture2D" uid="uid://b5mukd4ae3r0q" path="res://Assets/CardsImages/lab.png" id="1_0btqe"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_6hmtb"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_sikuc"]
+
+[sub_resource type="Resource" id="Resource_qqt10"]
+script = ExtResource("2_6hmtb")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_h1msy"]
+script = ExtResource("2_6hmtb")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_8w3yk"]
+script = ExtResource("2_6hmtb")
+type = 1
+target = 6
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("3_sikuc")
+id = 49
+name = "Experimental AI"
+card_texture = ExtResource("1_0btqe")
+context = "Researchers have developed a prototype artificial intelligence to assist in managing colony operations."
+card_rarity = 1
+base_weight = 24.0
+arc = 1
+arc_progression = 1
+cooldown = 10
+left_effects = Array[ExtResource("2_6hmtb")]([SubResource("Resource_qqt10")])
+left_description = "Continue development"
+right_effects = Array[ExtResource("2_6hmtb")]([SubResource("Resource_h1msy"), SubResource("Resource_8w3yk")])
+right_description = "Shut down"

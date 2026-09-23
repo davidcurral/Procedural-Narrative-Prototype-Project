@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://2oci4qb04150"]
+
+[ext_resource type="Texture2D" uid="uid://dwduk405pdfen" path="res://Assets/Version_2/Card_images_V2_Squared/id_10.jpg" id="1_lockf"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_f1sgw"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_atg0y"]
+
+[sub_resource type="Resource" id="Resource_w3a7p"]
+script = ExtResource("2_f1sgw")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_yf7cb"]
+script = ExtResource("2_f1sgw")
+value = -5
+
+[sub_resource type="Resource" id="Resource_1g5cs"]
+script = ExtResource("2_f1sgw")
+value = 20
+
+[sub_resource type="Resource" id="Resource_5as16"]
+script = ExtResource("2_f1sgw")
+target = 3
+value = -10
+
+[resource]
+script = ExtResource("3_atg0y")
+id = 10
+name = "Mining Accident"
+card_texture = ExtResource("1_lockf")
+context = "A tunnel collapse has trapped several workers beneath the mines, and rescue teams are running out of time."
+cooldown = 10
+left_effects = Array[ExtResource("2_f1sgw")]([SubResource("Resource_w3a7p"), SubResource("Resource_yf7cb")])
+left_description = "Improve safety"
+right_effects = Array[ExtResource("2_f1sgw")]([SubResource("Resource_1g5cs"), SubResource("Resource_5as16")])
+right_description = "Push production"

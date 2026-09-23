@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dy6cwcpwyqlnr"]
+
+[ext_resource type="Texture2D" uid="uid://dnhbc3vui2dwk" path="res://Assets/CardsImages/Lab chemistry.png" id="1_xgwxq"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_yivxh"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_onkyg"]
+
+[sub_resource type="Resource" id="Resource_iilem"]
+script = ExtResource("2_yivxh")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_al113"]
+script = ExtResource("2_yivxh")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_yb5bs"]
+script = ExtResource("2_yivxh")
+value = 5
+
+[resource]
+script = ExtResource("3_onkyg")
+id = 44
+name = "Medical Innovation"
+card_texture = ExtResource("1_xgwxq")
+context = "Doctors unveil a promising new treatment that could dramatically extend colonist survival rates."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_yivxh")]([SubResource("Resource_iilem"), SubResource("Resource_al113")])
+left_description = "Approve research"
+right_effects = Array[ExtResource("2_yivxh")]([SubResource("Resource_yb5bs")])
+right_description = "Reject research"

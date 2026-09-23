@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cu8oldysyy6ro"]
+
+[ext_resource type="Texture2D" uid="uid://c6mcogby558f2" path="res://Assets/CardsImages/dyson sphere.png" id="1_rrfme"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_qjbax"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_2a1y7"]
+
+[sub_resource type="Resource" id="Resource_sglnx"]
+script = ExtResource("2_qjbax")
+target = 1
+value = 10
+
+[sub_resource type="Resource" id="Resource_vodli"]
+script = ExtResource("2_qjbax")
+value = -25
+
+[sub_resource type="Resource" id="Resource_fplsk"]
+script = ExtResource("2_qjbax")
+value = 10
+
+[resource]
+script = ExtResource("3_2a1y7")
+id = 18
+name = "Dyson Prototype"
+card_texture = ExtResource("1_rrfme")
+context = "Researchers propose constructing a prototype orbital energy array capable of powering the colony indefinitely."
+card_rarity = 2
+cooldown = 18
+left_effects = Array[ExtResource("2_qjbax")]([SubResource("Resource_sglnx"), SubResource("Resource_vodli")])
+left_description = "Build prototype"
+right_effects = Array[ExtResource("2_qjbax")]([SubResource("Resource_fplsk")])
+right_description = "Cancel project"

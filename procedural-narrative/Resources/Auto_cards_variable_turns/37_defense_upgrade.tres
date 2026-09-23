@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dn52vrlkyb28k"]
+
+[ext_resource type="Texture2D" uid="uid://dx55ahrujgbj" path="res://Assets/CardsImages/military1.png" id="1_ay23w"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_xh6al"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_nj1ex"]
+
+[sub_resource type="Resource" id="Resource_qh58f"]
+script = ExtResource("2_xh6al")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_bhtwy"]
+script = ExtResource("2_xh6al")
+value = -12
+
+[sub_resource type="Resource" id="Resource_jl2gq"]
+script = ExtResource("2_xh6al")
+value = 10
+
+[resource]
+script = ExtResource("3_nj1ex")
+id = 37
+name = "Defense Upgrade"
+card_texture = ExtResource("1_ay23w")
+context = "Military officials request additional funding to strengthen the colony’s defenses against unknown threats."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_xh6al")]([SubResource("Resource_qh58f"), SubResource("Resource_bhtwy")])
+left_description = "Fund defenses"
+right_effects = Array[ExtResource("2_xh6al")]([SubResource("Resource_jl2gq")])
+right_description = "Focus economy"

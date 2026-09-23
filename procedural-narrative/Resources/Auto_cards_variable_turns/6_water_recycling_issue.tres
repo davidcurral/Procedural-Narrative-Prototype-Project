@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://da1edhmbkdb1m"]
+
+[ext_resource type="Texture2D" uid="uid://deryctgqobrnt" path="res://Assets/CardsImages/water.png" id="1_evbdy"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_667a3"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_hvwnq"]
+
+[sub_resource type="Resource" id="Resource_etvk8"]
+script = ExtResource("2_667a3")
+value = 10
+
+[sub_resource type="Resource" id="Resource_4l1we"]
+script = ExtResource("2_667a3")
+target = 3
+value = -5
+
+[sub_resource type="Resource" id="Resource_8dnaw"]
+script = ExtResource("2_667a3")
+value = -8
+
+[sub_resource type="Resource" id="Resource_1bwc4"]
+script = ExtResource("2_667a3")
+target = 1
+value = 5
+
+[resource]
+script = ExtResource("3_hvwnq")
+id = 6
+name = "Water Recycling Issue"
+card_texture = ExtResource("1_evbdy")
+context = "The colony’s recycling systems are malfunctioning, causing purified water reserves to steadily decline."
+card_rarity = 1
+cooldown = 12
+left_effects = Array[ExtResource("2_667a3")]([SubResource("Resource_etvk8"), SubResource("Resource_4l1we")])
+left_description = "Strict rationing"
+right_effects = Array[ExtResource("2_667a3")]([SubResource("Resource_8dnaw"), SubResource("Resource_1bwc4")])
+right_description = "Upgrade System"

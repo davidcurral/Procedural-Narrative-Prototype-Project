@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://crka4pp2wp1pi"]
+
+[ext_resource type="Texture2D" uid="uid://bnw8e61txffet" path="res://Assets/Version_2/Card_images_V2_Squared/id_55.jpg" id="1_8f58a"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_3rwoe"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_bsekl"]
+
+[sub_resource type="Resource" id="Resource_peixp"]
+script = ExtResource("2_3rwoe")
+value = 15
+
+[sub_resource type="Resource" id="Resource_vgvwt"]
+script = ExtResource("2_3rwoe")
+target = 5
+value = 25
+
+[sub_resource type="Resource" id="Resource_t0d8l"]
+script = ExtResource("2_3rwoe")
+type = 2
+target = 6
+value = 5
+
+[sub_resource type="Resource" id="Resource_qg4hq"]
+script = ExtResource("2_3rwoe")
+target = 2
+value = 20
+
+[sub_resource type="Resource" id="Resource_yjs3l"]
+script = ExtResource("2_3rwoe")
+value = -15
+
+[resource]
+script = ExtResource("3_bsekl")
+id = 55
+name = "Without authorization, the AI temporarily assumes control over several core colony systems."
+card_texture = ExtResource("1_8f58a")
+context = "Without authorization, the AI temporarily assumes control over several core colony systems."
+card_rarity = 2
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 7
+cooldown = 5
+left_effects = Array[ExtResource("2_3rwoe")]([SubResource("Resource_peixp"), SubResource("Resource_vgvwt"), SubResource("Resource_t0d8l")])
+left_description = "Cooperate"
+right_effects = Array[ExtResource("2_3rwoe")]([SubResource("Resource_qg4hq"), SubResource("Resource_yjs3l"), SubResource("Resource_t0d8l")])
+right_description = "Fight back"

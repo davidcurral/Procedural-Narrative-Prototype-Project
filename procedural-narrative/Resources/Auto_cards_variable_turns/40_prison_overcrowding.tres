@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dyxn3mvco4hxm"]
+
+[ext_resource type="Texture2D" uid="uid://doyysj4p5gtvi" path="res://Assets/CardsImages/prisonOvercrowed.png" id="1_tjuc6"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_msnwc"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_46qy6"]
+
+[sub_resource type="Resource" id="Resource_km71i"]
+script = ExtResource("2_msnwc")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_qfhru"]
+script = ExtResource("2_msnwc")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_ak48r"]
+script = ExtResource("2_msnwc")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_8lc1a"]
+script = ExtResource("2_msnwc")
+target = 2
+value = -10
+
+[resource]
+script = ExtResource("3_46qy6")
+id = 40
+name = "Prison Overcrowding"
+card_texture = ExtResource("1_tjuc6")
+context = "Detention facilities are overflowing as unrest and criminal activity increase across the colony."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_msnwc")]([SubResource("Resource_km71i"), SubResource("Resource_qfhru")])
+left_description = "Expand prisons"
+right_effects = Array[ExtResource("2_msnwc")]([SubResource("Resource_ak48r"), SubResource("Resource_8lc1a")])
+right_description = "Amnesty"

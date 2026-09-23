@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bqykb887hvhhi"]
+
+[ext_resource type="Texture2D" uid="uid://h23dhh4ioqq1" path="res://Assets/Version_2/Card_images_V2_Squared/id_17.jpg" id="1_7hjdg"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_18wqs"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_kruqh"]
+
+[sub_resource type="Resource" id="Resource_82etp"]
+script = ExtResource("2_18wqs")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_agllv"]
+script = ExtResource("2_18wqs")
+value = -20
+
+[sub_resource type="Resource" id="Resource_n0mph"]
+script = ExtResource("2_18wqs")
+value = -15
+
+[sub_resource type="Resource" id="Resource_vslpd"]
+script = ExtResource("2_18wqs")
+target = 3
+value = 10
+
+[resource]
+script = ExtResource("3_kruqh")
+id = 17
+name = "Total System Failure"
+card_texture = ExtResource("1_7hjdg")
+context = "Multiple core systems are shutting down simultaneously as the colony spirals toward collapse."
+card_rarity = 2
+cooldown = 18
+left_effects = Array[ExtResource("2_18wqs")]([SubResource("Resource_82etp"), SubResource("Resource_agllv")])
+left_description = "Sacrifice sector"
+right_effects = Array[ExtResource("2_18wqs")]([SubResource("Resource_n0mph"), SubResource("Resource_vslpd")])
+right_description = "Full repair"

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://wpj0ilflatuv"]
+
+[ext_resource type="Texture2D" uid="uid://bjuh5os23oyny" path="res://Assets/CardsImages/shipyard1.png" id="1_hawyd"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_ykgem"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_fh0wo"]
+
+[sub_resource type="Resource" id="Resource_63ae2"]
+script = ExtResource("2_ykgem")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_ahdei"]
+script = ExtResource("2_ykgem")
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_trnsh"]
+script = ExtResource("2_ykgem")
+target = 2
+value = 5
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_myfu8"]
+script = ExtResource("2_ykgem")
+target = 1
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("3_fh0wo")
+id = 48
+name = "Colony Shipyard"
+card_texture = ExtResource("1_hawyd")
+context = "Plans are underway to construct a massive shipyard capable of supporting interstellar expansion."
+card_rarity = 2
+cooldown = 20
+left_effects = Array[ExtResource("2_ykgem")]([SubResource("Resource_63ae2"), SubResource("Resource_ahdei")])
+left_description = "Build ships"
+right_effects = Array[ExtResource("2_ykgem")]([SubResource("Resource_trnsh"), SubResource("Resource_myfu8")])
+right_description = "Focus inward"

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=9 format=3 uid="uid://br8jbv3mkeeh4"]
+
+[ext_resource type="Texture2D" uid="uid://cncejjbaxe6wn" path="res://Assets/CardsImages/attact2.png" id="1_8dwcb"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_vbqgy"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_0q6hc"]
+
+[sub_resource type="Resource" id="Resource_4ogha"]
+script = ExtResource("2_vbqgy")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_4cmt1"]
+script = ExtResource("2_vbqgy")
+target = 3
+value = -15
+
+[sub_resource type="Resource" id="Resource_guxqc"]
+script = ExtResource("2_vbqgy")
+type = 2
+target = 6
+value = 2
+
+[sub_resource type="Resource" id="Resource_av0xi"]
+script = ExtResource("2_vbqgy")
+target = 3
+value = 15
+
+[sub_resource type="Resource" id="Resource_w747a"]
+script = ExtResource("2_vbqgy")
+target = 2
+value = -10
+
+[resource]
+script = ExtResource("3_0q6hc")
+id = 32
+name = "Coup Attempt"
+card_texture = ExtResource("1_8dwcb")
+context = "Armed dissidents move against the colonial administration in an attempt to seize control."
+card_rarity = 2
+available = false
+base_weight = 24.0
+arc = 3
+arc_progression = 2
+cooldown = 5
+left_effects = Array[ExtResource("2_vbqgy")]([SubResource("Resource_4ogha"), SubResource("Resource_4cmt1"), SubResource("Resource_guxqc")])
+left_description = "Crush coup"
+right_effects = Array[ExtResource("2_vbqgy")]([SubResource("Resource_av0xi"), SubResource("Resource_w747a"), SubResource("Resource_guxqc")])
+right_description = "Negotiate"

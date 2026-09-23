@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://cwlx86y5431hh"]
+
+[ext_resource type="Texture2D" uid="uid://dtehbg1fql5x2" path="res://Assets/Version_2/Card_images_V2_Squared/id_58.jpg" id="1_0ugvo"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_huwaa"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_y3in8"]
+
+[sub_resource type="Resource" id="Resource_fqglw"]
+script = ExtResource("2_huwaa")
+target = 5
+value = 20
+
+[sub_resource type="Resource" id="Resource_0k51d"]
+script = ExtResource("2_huwaa")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_l0662"]
+script = ExtResource("2_huwaa")
+type = 2
+target = 6
+value = 2
+
+[sub_resource type="Resource" id="Resource_xlr16"]
+script = ExtResource("2_huwaa")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_y3in8")
+id = 58
+name = "Alien Communication"
+card_texture = ExtResource("1_0ugvo")
+context = "An unknown intelligence has responded to the colony’s transmissions."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 2
+arc_progression = 2
+cooldown = 10
+left_effects = Array[ExtResource("2_huwaa")]([SubResource("Resource_fqglw"), SubResource("Resource_0k51d"), SubResource("Resource_l0662")])
+left_description = "Respond"
+right_effects = Array[ExtResource("2_huwaa")]([SubResource("Resource_xlr16"), SubResource("Resource_l0662")])
+right_description = "Ignore signal"

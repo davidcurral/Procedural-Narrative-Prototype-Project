@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://dpmqy3ndvh53e"]
+
+[ext_resource type="Texture2D" uid="uid://53ci64hh8arq" path="res://Assets/CardsImages/antenas.png" id="1_hyqa5"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_v7max"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_pboqn"]
+
+[sub_resource type="Resource" id="Resource_g68ne"]
+script = ExtResource("2_v7max")
+value = -5
+
+[sub_resource type="Resource" id="Resource_40twl"]
+script = ExtResource("2_v7max")
+target = 1
+value = 2
+
+[sub_resource type="Resource" id="Resource_48rmw"]
+script = ExtResource("2_v7max")
+value = 5
+
+[resource]
+script = ExtResource("3_pboqn")
+id = 11
+name = "Communication Delay"
+card_texture = ExtResource("1_hyqa5")
+context = "Messages from Earth are arriving days late, deepening the colony’s growing sense of isolation."
+cooldown = 10
+left_effects = Array[ExtResource("2_v7max")]([SubResource("Resource_g68ne"), SubResource("Resource_40twl")])
+left_description = "Boost signal"
+right_effects = Array[ExtResource("2_v7max")]([SubResource("Resource_48rmw")])
+right_description = "Ignore issue"

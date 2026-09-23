@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://8rm8f1ragjcr"]
+
+[ext_resource type="Texture2D" uid="uid://d1yfr2jnpi18v" path="res://Assets/CardsImages/controlroom4.png" id="1_54qni"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_alpiy"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_o1r5c"]
+
+[sub_resource type="Resource" id="Resource_bkch5"]
+script = ExtResource("2_alpiy")
+target = 3
+value = 15
+
+[sub_resource type="Resource" id="Resource_ai2si"]
+script = ExtResource("2_alpiy")
+value = -5
+
+[sub_resource type="Resource" id="Resource_211jv"]
+script = ExtResource("2_alpiy")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_eoail"]
+script = ExtResource("2_alpiy")
+target = 3
+value = -15
+
+[resource]
+script = ExtResource("3_o1r5c")
+id = 20
+name = "Worker Strike"
+card_texture = ExtResource("1_54qni")
+context = "Exhausted labor crews have abandoned their posts, demanding safer conditions and fair resource distribution."
+cooldown = 15
+left_effects = Array[ExtResource("2_alpiy")]([SubResource("Resource_bkch5"), SubResource("Resource_ai2si")])
+left_description = "Negotiate"
+right_effects = Array[ExtResource("2_alpiy")]([SubResource("Resource_211jv"), SubResource("Resource_eoail")])
+right_description = "Suppress strike"

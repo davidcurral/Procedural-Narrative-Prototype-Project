@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardDatabase" load_steps=51 format=3 uid="uid://dv0njqdp1uqgs"]
+[gd_resource type="Resource" script_class="CardDatabase" load_steps=46 format=3 uid="uid://dv0njqdp1uqgs"]
 
 [ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="1_7asgo"]
 [ext_resource type="Resource" uid="uid://dd1s5n4btmqje" path="res://Resources/Auto cards/1_oxygen_shortage.tres" id="2_fyrl4"]
@@ -31,11 +31,6 @@
 [ext_resource type="Resource" uid="uid://b58uo540abs3s" path="res://Resources/Auto cards/28_colony_expansion.tres" id="29_tunje"]
 [ext_resource type="Resource" uid="uid://dak2x1d5ewck0" path="res://Resources/Auto cards/29_mass_exodus.tres" id="30_meufp"]
 [ext_resource type="Resource" uid="uid://ed2fepix1lyn" path="res://Resources/Auto cards/30_human_enhancement_program.tres" id="31_q76ah"]
-[ext_resource type="Resource" uid="uid://1uvnvgrud6ya" path="res://Resources/Auto cards/31_faction_rivalry.tres" id="32_s81x3"]
-[ext_resource type="Resource" uid="uid://qncgi8u00sqi" path="res://Resources/Auto cards/32_coup_attempt.tres" id="33_povip"]
-[ext_resource type="Resource" uid="uid://brcpej7pn5xw1" path="res://Resources/Auto cards/33_corporate_takeover.tres" id="34_je0p2"]
-[ext_resource type="Resource" uid="uid://jg2wgdpql1te" path="res://Resources/Auto cards/34_independence_movement.tres" id="35_34fwf"]
-[ext_resource type="Resource" uid="uid://b2btb12qshnp5" path="res://Resources/Auto cards/35_absolute_authority.tres" id="36_w7rja"]
 [ext_resource type="Resource" uid="uid://d1c28btmg7121" path="res://Resources/Auto cards/36_strange_signal.tres" id="37_11htw"]
 [ext_resource type="Resource" uid="uid://hlf1xcaqnq8r" path="res://Resources/Auto cards/37_defense_upgrade.tres" id="38_ge7lb"]
 [ext_resource type="Resource" uid="uid://b4vb3himgccwi" path="res://Resources/Auto cards/38_orbital_debris.tres" id="39_svyil"]
@@ -53,5 +48,5 @@
 
 [resource]
 script = ExtResource("50_8ric3")
-card_list = Array[ExtResource("1_7asgo")]([ExtResource("2_fyrl4"), ExtResource("3_of0w7"), ExtResource("4_mj822"), ExtResource("5_ij6rs"), ExtResource("6_c5e6i"), ExtResource("7_ogatp"), ExtResource("8_yn7n2"), ExtResource("9_4ygy0"), ExtResource("10_wtqxu"), ExtResource("11_u80f6"), ExtResource("12_huq2f"), ExtResource("13_t06s3"), ExtResource("14_kpxdo"), ExtResource("15_deeii"), ExtResource("16_ic3hj"), ExtResource("17_ub66j"), ExtResource("18_uop2e"), ExtResource("19_fh637"), ExtResource("20_1u2kc"), ExtResource("21_61gpf"), ExtResource("22_2tw28"), ExtResource("23_dhltt"), ExtResource("24_d8qns"), ExtResource("25_6ueq5"), ExtResource("26_b8vh6"), ExtResource("27_3n1vn"), ExtResource("28_0mv3u"), ExtResource("29_tunje"), ExtResource("30_meufp"), ExtResource("31_q76ah"), ExtResource("32_s81x3"), ExtResource("33_povip"), ExtResource("34_je0p2"), ExtResource("35_34fwf"), ExtResource("36_w7rja"), ExtResource("37_11htw"), ExtResource("38_ge7lb"), ExtResource("39_svyil"), ExtResource("40_yp6cb"), ExtResource("41_do8xu"), ExtResource("42_rf7ab"), ExtResource("43_6cdpy"), ExtResource("44_kl5g4"), ExtResource("45_s3vva"), ExtResource("46_3pche"), ExtResource("47_nmy1l"), ExtResource("48_arnfp"), ExtResource("49_ybop6")])
+card_list = Array[ExtResource("1_7asgo")]([ExtResource("2_fyrl4"), ExtResource("3_of0w7"), ExtResource("4_mj822"), ExtResource("5_ij6rs"), ExtResource("6_c5e6i"), ExtResource("7_ogatp"), ExtResource("8_yn7n2"), ExtResource("9_4ygy0"), ExtResource("10_wtqxu"), ExtResource("11_u80f6"), ExtResource("12_huq2f"), ExtResource("13_t06s3"), ExtResource("14_kpxdo"), ExtResource("15_deeii"), ExtResource("16_ic3hj"), ExtResource("17_ub66j"), ExtResource("18_uop2e"), ExtResource("19_fh637"), ExtResource("20_1u2kc"), ExtResource("21_61gpf"), ExtResource("22_2tw28"), ExtResource("23_dhltt"), ExtResource("24_d8qns"), ExtResource("25_6ueq5"), ExtResource("26_b8vh6"), ExtResource("27_3n1vn"), ExtResource("28_0mv3u"), ExtResource("29_tunje"), ExtResource("30_meufp"), ExtResource("31_q76ah"), ExtResource("37_11htw"), ExtResource("38_ge7lb"), ExtResource("39_svyil"), ExtResource("40_yp6cb"), ExtResource("41_do8xu"), ExtResource("42_rf7ab"), ExtResource("43_6cdpy"), ExtResource("44_kl5g4"), ExtResource("45_s3vva"), ExtResource("46_3pche"), ExtResource("47_nmy1l"), ExtResource("48_arnfp"), ExtResource("49_ybop6")])
 metadata/_custom_type_script = "uid://b4gjbeghvnxg0"

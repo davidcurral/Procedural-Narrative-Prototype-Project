@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://ct2coich7c7iq"]
+
+[ext_resource type="Texture2D" uid="uid://dnms4ku0lqni" path="res://Assets/Version_2/Card_images_V2_Squared/id_34.jpg" id="1_77c78"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_qef0g"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_3bhie"]
+
+[sub_resource type="Resource" id="Resource_4dbsj"]
+script = ExtResource("2_qef0g")
+target = 3
+value = 15
+
+[sub_resource type="Resource" id="Resource_j4did"]
+script = ExtResource("2_qef0g")
+target = 2
+value = -15
+
+[sub_resource type="Resource" id="Resource_81diw"]
+script = ExtResource("2_qef0g")
+type = 2
+target = 6
+value = 4
+
+[sub_resource type="Resource" id="Resource_5islc"]
+script = ExtResource("2_qef0g")
+value = 15
+
+[resource]
+script = ExtResource("3_3bhie")
+id = 34
+name = "Independence Movement"
+card_texture = ExtResource("1_77c78")
+context = "More colonists now question whether the colony should continue answering to Earth at all."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 3
+arc_progression = 4
+cooldown = 5
+left_effects = Array[ExtResource("2_qef0g")]([SubResource("Resource_4dbsj"), SubResource("Resource_j4did"), SubResource("Resource_81diw")])
+left_description = "Declare independence"
+right_effects = Array[ExtResource("2_qef0g")]([SubResource("Resource_5islc"), SubResource("Resource_81diw")])
+right_description = "Stay loyal"

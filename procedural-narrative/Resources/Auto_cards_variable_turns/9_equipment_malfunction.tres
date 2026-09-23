@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://tcslhfnw67gc"]
+
+[ext_resource type="Texture2D" uid="uid://gyybe1cot3qi" path="res://Assets/CardsImages/engineroom.jpeg" id="1_ghxru"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_iquxs"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_tsf1d"]
+
+[sub_resource type="Resource" id="Resource_6jw1b"]
+script = ExtResource("2_iquxs")
+value = -5
+
+[sub_resource type="Resource" id="Resource_he3oy"]
+script = ExtResource("2_iquxs")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_b04j2"]
+script = ExtResource("2_iquxs")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_v263e"]
+script = ExtResource("2_iquxs")
+value = 5
+
+[resource]
+script = ExtResource("3_tsf1d")
+id = 9
+name = "Equipment Malfunction"
+card_texture = ExtResource("1_ghxru")
+context = "Essential machinery across multiple sectors is failing without explanation, slowing daily operations."
+cooldown = 15
+left_effects = Array[ExtResource("2_iquxs")]([SubResource("Resource_6jw1b"), SubResource("Resource_he3oy")])
+left_description = "Repair now"
+right_effects = Array[ExtResource("2_iquxs")]([SubResource("Resource_b04j2"), SubResource("Resource_v263e")])
+right_description = "Delay maintenance"

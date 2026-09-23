@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bntokl677xnmj"]
+
+[ext_resource type="Texture2D" uid="uid://yyorsudiblo5" path="res://Assets/CardsImages/factions.png" id="1_ksayi"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_e5xxo"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_fl1us"]
+
+[sub_resource type="Resource" id="Resource_1xp1w"]
+script = ExtResource("2_e5xxo")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_nd13o"]
+script = ExtResource("2_e5xxo")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_voda0"]
+script = ExtResource("2_e5xxo")
+type = 2
+target = 6
+value = 1
+
+[sub_resource type="Resource" id="Resource_kuspr"]
+script = ExtResource("2_e5xxo")
+target = 3
+value = 10
+
+[resource]
+script = ExtResource("3_fl1us")
+id = 31
+name = "Faction Rivalry"
+card_texture = ExtResource("1_ksayi")
+context = "Political tensions rise as rival groups clash over the colony’s future direction."
+base_weight = 24.0
+arc = 3
+arc_progression = 1
+cooldown = 10
+left_effects = Array[ExtResource("2_e5xxo")]([SubResource("Resource_1xp1w"), SubResource("Resource_nd13o"), SubResource("Resource_voda0")])
+left_description = "Support one"
+right_effects = Array[ExtResource("2_e5xxo")]([SubResource("Resource_kuspr"), SubResource("Resource_voda0")])
+right_description = "Mediate conflict"

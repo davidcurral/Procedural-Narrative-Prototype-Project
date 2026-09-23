@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://daxy01df6grlh"]
+
+[ext_resource type="Texture2D" uid="uid://hx41ugd6xgeo" path="res://Assets/Version_2/Card_images_V2_Squared/id_60.jpg" id="1_4qqne"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_3l2rf"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_jpy3x"]
+
+[sub_resource type="Resource" id="Resource_1la25"]
+script = ExtResource("2_3l2rf")
+value = 30
+
+[sub_resource type="Resource" id="Resource_xefna"]
+script = ExtResource("2_3l2rf")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_26opc"]
+script = ExtResource("2_3l2rf")
+type = 2
+target = 6
+value = 4
+
+[sub_resource type="Resource" id="Resource_5vjwg"]
+script = ExtResource("2_3l2rf")
+target = 2
+value = 10
+
+[resource]
+script = ExtResource("3_jpy3x")
+id = 60
+name = "Alien Technology"
+card_texture = ExtResource("1_4qqne")
+context = "Researchers recover a mysterious alien device emitting enormous amounts of energy."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 2
+arc_progression = 4
+cooldown = 5
+left_effects = Array[ExtResource("2_3l2rf")]([SubResource("Resource_1la25"), SubResource("Resource_xefna"), SubResource("Resource_26opc")])
+left_description = "Use device"
+right_effects = Array[ExtResource("2_3l2rf")]([SubResource("Resource_5vjwg"), SubResource("Resource_26opc")])
+right_description = "Store safely"

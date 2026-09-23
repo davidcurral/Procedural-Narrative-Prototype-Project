@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://0i1brttwi8qs"]
+
+[ext_resource type="Texture2D" uid="uid://517kqu3yep2m" path="res://Assets/CardsImages/cave system.png" id="1_185ck"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_4weql"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_r8rp7"]
+
+[sub_resource type="Resource" id="Resource_cl58l"]
+script = ExtResource("2_4weql")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_8psi1"]
+script = ExtResource("2_4weql")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_polqx"]
+script = ExtResource("2_4weql")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_r8rp7")
+id = 14
+name = "Underground Caverns"
+card_texture = ExtResource("1_185ck")
+context = "Explorers have uncovered vast underground caverns beneath the colony, untouched by human presence."
+cooldown = 12
+left_effects = Array[ExtResource("2_4weql")]([SubResource("Resource_cl58l"), SubResource("Resource_8psi1")])
+left_description = "Explore caverns"
+right_effects = Array[ExtResource("2_4weql")]([SubResource("Resource_polqx")])
+right_description = "Seal entrance"

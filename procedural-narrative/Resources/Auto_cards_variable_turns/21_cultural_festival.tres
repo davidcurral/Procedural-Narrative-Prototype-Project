@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bhom40kkuxagk"]
+
+[ext_resource type="Texture2D" uid="uid://deoy0ewsaaald" path="res://Assets/CardsImages/festival.png" id="1_vjpg0"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_kygnj"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_evp2q"]
+
+[sub_resource type="Resource" id="Resource_pkjg5"]
+script = ExtResource("2_kygnj")
+target = 3
+value = 15
+
+[sub_resource type="Resource" id="Resource_ldgif"]
+script = ExtResource("2_kygnj")
+value = -5
+
+[sub_resource type="Resource" id="Resource_elqyw"]
+script = ExtResource("2_kygnj")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_olf4h"]
+script = ExtResource("2_kygnj")
+target = 3
+value = -15
+
+[resource]
+script = ExtResource("3_evp2q")
+id = 21
+name = "Cultural Festival"
+card_texture = ExtResource("1_vjpg0")
+context = "Colonists request permission to hold a rare festival to remind the colony what life once felt like."
+card_rarity = 1
+cooldown = 12
+left_effects = Array[ExtResource("2_kygnj")]([SubResource("Resource_pkjg5"), SubResource("Resource_ldgif")])
+left_description = "Approve festival"
+right_effects = Array[ExtResource("2_kygnj")]([SubResource("Resource_elqyw"), SubResource("Resource_olf4h")])
+right_description = "Deny request"

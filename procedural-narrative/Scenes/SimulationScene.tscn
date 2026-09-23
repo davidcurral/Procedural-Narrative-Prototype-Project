@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_03oeb")
 runs = 100
 turns_per_run = 100
+use_memory = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

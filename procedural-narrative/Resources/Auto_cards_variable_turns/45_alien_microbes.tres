@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://wgr7egti0q1r"]
+
+[ext_resource type="Texture2D" uid="uid://bq1hq3jdmg5nv" path="res://Assets/CardsImages/Lab life chamber.png" id="1_eenfd"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_dj6my"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_fm57k"]
+
+[sub_resource type="Resource" id="Resource_70pss"]
+script = ExtResource("2_dj6my")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_v58p4"]
+script = ExtResource("2_dj6my")
+target = 4
+value = 1
+
+[sub_resource type="Resource" id="Resource_tluyo"]
+script = ExtResource("2_dj6my")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_fm57k")
+id = 45
+name = "Alien Microbes"
+card_texture = ExtResource("1_eenfd")
+context = "Microscopic alien organisms have been discovered in the soil surrounding the colony."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_dj6my")]([SubResource("Resource_70pss"), SubResource("Resource_v58p4")])
+left_description = "Study microbes"
+right_effects = Array[ExtResource("2_dj6my")]([SubResource("Resource_tluyo")])
+right_description = "Destroy samples"

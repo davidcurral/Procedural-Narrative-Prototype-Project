@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://c8knfx286rv8g"]
+
+[ext_resource type="Texture2D" uid="uid://b8grhur3db2he" path="res://Assets/CardsImages/soldiers.png" id="1_oak6w"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_gh5np"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_xyyta"]
+
+[sub_resource type="Resource" id="Resource_xh4ag"]
+script = ExtResource("2_gh5np")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_x76fh"]
+script = ExtResource("2_gh5np")
+value = -10
+
+[sub_resource type="Resource" id="Resource_wgujs"]
+script = ExtResource("2_gh5np")
+value = 5
+
+[sub_resource type="Resource" id="Resource_f73q0"]
+script = ExtResource("2_gh5np")
+target = 2
+value = -10
+
+[resource]
+script = ExtResource("3_xyyta")
+id = 41
+name = "Military Training"
+card_texture = ExtResource("1_oak6w")
+context = "Security forces request expanded combat training programs to prepare for possible emergencies."
+arc_progression = 12
+cooldown = 10
+left_effects = Array[ExtResource("2_gh5np")]([SubResource("Resource_xh4ag"), SubResource("Resource_x76fh")])
+left_description = "Approve"
+right_effects = Array[ExtResource("2_gh5np")]([SubResource("Resource_wgujs"), SubResource("Resource_f73q0")])
+right_description = "Deny"

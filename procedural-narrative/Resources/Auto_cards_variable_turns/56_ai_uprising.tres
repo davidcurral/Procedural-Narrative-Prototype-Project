@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://ynojemqrxm34"]
+
+[ext_resource type="Texture2D" uid="uid://4rf8j8xggvew" path="res://Assets/Version_2/Card_images_V2_Squared/id_56.jpg" id="1_5rdbu"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_covfb"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_cmgw7"]
+
+[sub_resource type="Resource" id="Resource_sucyn"]
+script = ExtResource("2_covfb")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_jsl24"]
+script = ExtResource("2_covfb")
+type = 2
+target = 6
+value = 6
+
+[sub_resource type="Resource" id="Resource_pw2e8"]
+script = ExtResource("2_covfb")
+type = 1
+target = 6
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_2jxdf"]
+script = ExtResource("2_covfb")
+target = 2
+value = 20
+
+[sub_resource type="Resource" id="Resource_5q6v3"]
+script = ExtResource("2_covfb")
+target = 1
+value = -30
+
+[sub_resource type="Resource" id="Resource_vl6dd"]
+script = ExtResource("2_covfb")
+type = 1
+target = 6
+arc = 1
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("3_cmgw7")
+id = 56
+name = "AI Uprising"
+card_texture = ExtResource("1_5rdbu")
+context = "Automated systems across the colony have turned against human oversight."
+card_rarity = 3
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 8
+cooldown = 5
+left_effects = Array[ExtResource("2_covfb")]([SubResource("Resource_sucyn"), SubResource("Resource_jsl24"), SubResource("Resource_pw2e8")])
+left_description = "Negotiate peace"
+right_effects = Array[ExtResource("2_covfb")]([SubResource("Resource_2jxdf"), SubResource("Resource_5q6v3"), SubResource("Resource_jsl24"), SubResource("Resource_vl6dd")])
+right_description = "Destroy AI"

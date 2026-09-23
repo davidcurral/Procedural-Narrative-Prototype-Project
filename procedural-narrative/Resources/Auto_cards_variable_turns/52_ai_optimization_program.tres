@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://xnfhp3rnrxm5"]
+
+[ext_resource type="Texture2D" uid="uid://dmf51mhsb2b1m" path="res://Assets/CardsImages/control room monitoring.png" id="1_b6e18"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_hjc13"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_0j3u3"]
+
+[sub_resource type="Resource" id="Resource_cwsvf"]
+script = ExtResource("2_hjc13")
+value = 20
+
+[sub_resource type="Resource" id="Resource_r528m"]
+script = ExtResource("2_hjc13")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_gxlfh"]
+script = ExtResource("2_hjc13")
+target = 5
+value = 15
+
+[sub_resource type="Resource" id="Resource_fganh"]
+script = ExtResource("2_hjc13")
+type = 2
+target = 6
+value = 2
+
+[sub_resource type="Resource" id="Resource_asce6"]
+script = ExtResource("2_hjc13")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_y8yx3"]
+script = ExtResource("2_hjc13")
+target = 1
+value = -15
+
+[resource]
+script = ExtResource("3_0j3u3")
+id = 52
+name = "AI Optimization Program"
+card_texture = ExtResource("1_b6e18")
+context = "The AI claims it can eliminate inefficiencies across the colony if granted broader authority."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 4
+cooldown = 5
+left_effects = Array[ExtResource("2_hjc13")]([SubResource("Resource_cwsvf"), SubResource("Resource_r528m"), SubResource("Resource_gxlfh"), SubResource("Resource_fganh")])
+left_description = "Allow control"
+right_effects = Array[ExtResource("2_hjc13")]([SubResource("Resource_asce6"), SubResource("Resource_y8yx3"), SubResource("Resource_fganh")])
+right_description = "Limit authority"

@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://do2kfpdwbl1a3"]
+
+[ext_resource type="Texture2D" uid="uid://cphjks5fliynw" path="res://Assets/CardsImages/attack1.png" id="1_v0pja"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_kxhb1"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_kauvl"]
+
+[sub_resource type="Resource" id="Resource_f1h86"]
+script = ExtResource("2_kxhb1")
+type = 1
+target = 6
+arc = 3
+
+[sub_resource type="Resource" id="Resource_3lvhv"]
+script = ExtResource("2_kxhb1")
+target = 3
+value = -15
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_frqut"]
+script = ExtResource("2_kxhb1")
+target = 2
+value = 8
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_ku4jf"]
+script = ExtResource("2_kxhb1")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_lhqe5"]
+script = ExtResource("2_kxhb1")
+target = 2
+value = -10
+
+[sub_resource type="Resource" id="Resource_h16y5"]
+script = ExtResource("2_kxhb1")
+type = 1
+target = 6
+arc = 3
+
+[resource]
+script = ExtResource("3_kauvl")
+id = 35
+name = "Absolute Authority"
+card_texture = ExtResource("1_v0pja")
+context = "The colony’s leadership seeks emergency powers to maintain order during the escalating crises."
+card_rarity = 2
+available = false
+base_weight = 24.0
+arc = 3
+arc_progression = 5
+cooldown = 5
+left_effects = Array[ExtResource("2_kxhb1")]([SubResource("Resource_f1h86"), SubResource("Resource_3lvhv"), SubResource("Resource_frqut")])
+left_description = "Accept dictatorship"
+right_effects = Array[ExtResource("2_kxhb1")]([SubResource("Resource_ku4jf"), SubResource("Resource_lhqe5"), SubResource("Resource_h16y5")])
+right_description = "Resist rule"

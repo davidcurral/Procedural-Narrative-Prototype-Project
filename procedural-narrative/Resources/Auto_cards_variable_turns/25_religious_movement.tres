@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bntlo8wq2664g"]
+
+[ext_resource type="Texture2D" uid="uid://dmulgyscdw686" path="res://Assets/CardsImages/church.png" id="1_blttt"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_g51t0"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_df8xe"]
+
+[sub_resource type="Resource" id="Resource_qj8lr"]
+script = ExtResource("2_g51t0")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_waakb"]
+script = ExtResource("2_g51t0")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_x2st5"]
+script = ExtResource("2_g51t0")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_7c8dh"]
+script = ExtResource("2_g51t0")
+target = 3
+value = -10
+
+[resource]
+script = ExtResource("3_df8xe")
+id = 25
+name = "Religious Movement"
+card_texture = ExtResource("1_blttt")
+context = "A new spiritual movement has begun spreading through the colony, promising purpose in the void."
+cooldown = 12
+left_effects = Array[ExtResource("2_g51t0")]([SubResource("Resource_qj8lr"), SubResource("Resource_waakb")])
+left_description = "Allow"
+right_effects = Array[ExtResource("2_g51t0")]([SubResource("Resource_x2st5"), SubResource("Resource_7c8dh")])
+right_description = "Ban"

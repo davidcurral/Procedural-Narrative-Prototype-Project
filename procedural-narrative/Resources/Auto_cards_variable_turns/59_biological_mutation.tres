@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://c8hjtprjqg3qs"]
+
+[ext_resource type="Texture2D" uid="uid://rh0437irdae1" path="res://Assets/Version_2/Card_images_V2_Squared/id_59.jpg" id="1_gijtk"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_eis0h"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_yk7pn"]
+
+[sub_resource type="Resource" id="Resource_m3i8l"]
+script = ExtResource("2_eis0h")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_q8sai"]
+script = ExtResource("2_eis0h")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_ftq71"]
+script = ExtResource("2_eis0h")
+type = 2
+target = 6
+value = 3
+
+[sub_resource type="Resource" id="Resource_8jn88"]
+script = ExtResource("2_eis0h")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_yk7pn")
+id = 59
+name = "Biological Mutation"
+card_texture = ExtResource("1_gijtk")
+context = "Colonists exposed to alien spores are beginning to exhibit disturbing physical changes."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 2
+arc_progression = 3
+cooldown = 5
+left_effects = Array[ExtResource("2_eis0h")]([SubResource("Resource_m3i8l"), SubResource("Resource_q8sai"), SubResource("Resource_ftq71")])
+left_description = "Study mutation"
+right_effects = Array[ExtResource("2_eis0h")]([SubResource("Resource_8jn88"), SubResource("Resource_ftq71")])
+right_description = "Contain infected"

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://gsxsi52ddoba"]
+
+[ext_resource type="Texture2D" uid="uid://nm2v4jfhrf87" path="res://Assets/CardsImages/mining2.png" id="1_qdsvn"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_pp1wc"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_5jpja"]
+
+[sub_resource type="Resource" id="Resource_s1o7x"]
+script = ExtResource("2_pp1wc")
+value = 15
+
+[sub_resource type="Resource" id="Resource_8p15y"]
+script = ExtResource("2_pp1wc")
+target = 3
+value = -5
+
+[sub_resource type="Resource" id="Resource_xfq1h"]
+script = ExtResource("2_pp1wc")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_y3wck"]
+script = ExtResource("2_pp1wc")
+value = -7
+
+[resource]
+script = ExtResource("3_5jpja")
+id = 3
+name = "Mining Expedition"
+card_texture = ExtResource("1_qdsvn")
+context = "Deep scanners have detected a rich mineral vein beneath the eastern canyon, but the route is unstable and dangerous."
+cooldown = 12
+left_effects = Array[ExtResource("2_pp1wc")]([SubResource("Resource_s1o7x"), SubResource("Resource_8p15y")])
+left_description = "Send crew"
+right_effects = Array[ExtResource("2_pp1wc")]([SubResource("Resource_xfq1h"), SubResource("Resource_y3wck")])
+right_description = "Deploy drones"

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dwrardt7n7eov"]
+
+[ext_resource type="Texture2D" uid="uid://bhtwnxgqm0j4n" path="res://Assets/CardsImages/sci-fi building3.jpg" id="1_c8tfu"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_2wcot"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_kkrqh"]
+
+[sub_resource type="Resource" id="Resource_db3ps"]
+script = ExtResource("2_2wcot")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_60xpo"]
+script = ExtResource("2_2wcot")
+value = -5
+
+[sub_resource type="Resource" id="Resource_7r4on"]
+script = ExtResource("2_2wcot")
+value = 5
+
+[sub_resource type="Resource" id="Resource_e634a"]
+script = ExtResource("2_2wcot")
+target = 4
+value = 1
+
+[resource]
+script = ExtResource("3_kkrqh")
+id = 24
+name = "Mental Health Crisis"
+card_texture = ExtResource("1_c8tfu")
+context = "Months of confinement and isolation are taking a psychological toll on the colony’s population."
+card_rarity = 1
+cooldown = 12
+left_effects = Array[ExtResource("2_2wcot")]([SubResource("Resource_db3ps"), SubResource("Resource_60xpo")])
+left_description = "Therapy programs"
+right_effects = Array[ExtResource("2_2wcot")]([SubResource("Resource_7r4on"), SubResource("Resource_e634a")])
+right_description = "Ignore"

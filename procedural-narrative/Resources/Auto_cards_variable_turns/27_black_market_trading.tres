@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://ssvmna4hc0ts"]
+
+[ext_resource type="Texture2D" uid="uid://cqldrc8s0xwwg" path="res://Assets/CardsImages/black market.png" id="1_qyyk1"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_0y3bn"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_pl77j"]
+
+[sub_resource type="Resource" id="Resource_kn4wv"]
+script = ExtResource("2_0y3bn")
+value = 10
+
+[sub_resource type="Resource" id="Resource_1f6jl"]
+script = ExtResource("2_0y3bn")
+target = 2
+value = -15
+
+[sub_resource type="Resource" id="Resource_5yvnq"]
+script = ExtResource("2_0y3bn")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_f12ml"]
+script = ExtResource("2_0y3bn")
+target = 3
+value = -5
+
+[resource]
+script = ExtResource("3_pl77j")
+id = 27
+name = "Black Market Trading"
+card_texture = ExtResource("1_qyyk1")
+context = "Illegal trade networks are flourishing in the lower sectors as shortages continue to worsen."
+card_rarity = 1
+cooldown = 12
+left_effects = Array[ExtResource("2_0y3bn")]([SubResource("Resource_kn4wv"), SubResource("Resource_1f6jl")])
+left_description = "Allow trade"
+right_effects = Array[ExtResource("2_0y3bn")]([SubResource("Resource_5yvnq"), SubResource("Resource_f12ml")])
+right_description = "Crack down"

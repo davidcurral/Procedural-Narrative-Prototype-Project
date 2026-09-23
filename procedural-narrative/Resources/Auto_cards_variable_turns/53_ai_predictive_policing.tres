@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dbnqb4wf70wje"]
+
+[ext_resource type="Texture2D" uid="uid://4gdhjmktgh3g" path="res://Assets/Version_2/Card_images_V2_Squared/id_53.jpg" id="1_gdibj"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_kmjde"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_t3p00"]
+
+[sub_resource type="Resource" id="Resource_arqmr"]
+script = ExtResource("2_kmjde")
+target = 3
+value = -15
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_dc7vr"]
+script = ExtResource("2_kmjde")
+target = 2
+value = 15
+
+[sub_resource type="Resource" id="Resource_qpwhl"]
+script = ExtResource("2_kmjde")
+type = 2
+target = 6
+value = 3
+
+[sub_resource type="Resource" id="Resource_e7pq2"]
+script = ExtResource("2_kmjde")
+target = 3
+value = 10
+
+[resource]
+script = ExtResource("3_t3p00")
+id = 53
+name = "AI Predictive Policing"
+card_texture = ExtResource("1_gdibj")
+context = "Security forces begin using AI algorithms to predict crimes before they occur."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 5
+cooldown = 5
+left_effects = Array[ExtResource("2_kmjde")]([SubResource("Resource_arqmr"), SubResource("Resource_dc7vr"), SubResource("Resource_qpwhl")])
+left_description = "Deploy system"
+right_effects = Array[ExtResource("2_kmjde")]([SubResource("Resource_e7pq2"), SubResource("Resource_qpwhl")])
+right_description = "Reject system"

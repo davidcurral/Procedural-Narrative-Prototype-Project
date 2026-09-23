@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://dh883c78upfce"]
+
+[ext_resource type="Texture2D" uid="uid://n66kv1i6085l" path="res://Assets/Version_2/Card_images_V2_Squared/id_51.jpg" id="1_ddsc4"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_cdkgf"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_wqhlu"]
+
+[sub_resource type="Resource" id="Resource_en1g4"]
+script = ExtResource("2_cdkgf")
+target = 1
+value = 10
+
+[sub_resource type="Resource" id="Resource_gcbm6"]
+script = ExtResource("2_cdkgf")
+target = 5
+value = 20
+
+[sub_resource type="Resource" id="Resource_giua4"]
+script = ExtResource("2_cdkgf")
+target = 2
+value = -20
+
+[sub_resource type="Resource" id="Resource_4m05v"]
+script = ExtResource("2_cdkgf")
+type = 2
+target = 6
+value = 1
+
+[sub_resource type="Resource" id="Resource_5fh4a"]
+script = ExtResource("2_cdkgf")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_d6i3g"]
+script = ExtResource("2_cdkgf")
+target = 5
+value = -10
+
+[resource]
+script = ExtResource("3_wqhlu")
+id = 51
+name = "AI Requests Autonomy"
+card_texture = ExtResource("1_ddsc4")
+context = "The colony AI has begun requesting greater independence over critical infrastructure systems."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 3
+cooldown = 5
+left_effects = Array[ExtResource("2_cdkgf")]([SubResource("Resource_en1g4"), SubResource("Resource_gcbm6"), SubResource("Resource_giua4"), SubResource("Resource_4m05v")])
+left_description = "Grant autonomy"
+right_effects = Array[ExtResource("2_cdkgf")]([SubResource("Resource_5fh4a"), SubResource("Resource_d6i3g"), SubResource("Resource_4m05v")])
+right_description = "Restrict AI"

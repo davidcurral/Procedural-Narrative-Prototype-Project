@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bh78epcusmw6"]
+
+[ext_resource type="Texture2D" uid="uid://bn60ejbkss4ic" path="res://Assets/Version_2/Card_images_V2_Squared/id_29.jpg" id="1_ityh1"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_mun4x"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_hsgwv"]
+
+[sub_resource type="Resource" id="Resource_n44sp"]
+script = ExtResource("2_mun4x")
+value = -10
+
+[sub_resource type="Resource" id="Resource_hohbm"]
+script = ExtResource("2_mun4x")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_axans"]
+script = ExtResource("2_mun4x")
+target = 2
+value = 15
+
+[sub_resource type="Resource" id="Resource_itpa8"]
+script = ExtResource("2_mun4x")
+target = 3
+value = -20
+
+[resource]
+script = ExtResource("3_hsgwv")
+id = 29
+name = "Mass Exodus"
+card_texture = ExtResource("1_ityh1")
+context = "A growing number of colonists are demanding passage off-world before conditions deteriorate further."
+card_rarity = 2
+cooldown = 12
+left_effects = Array[ExtResource("2_mun4x")]([SubResource("Resource_n44sp"), SubResource("Resource_hohbm")])
+left_description = "Allow departure"
+right_effects = Array[ExtResource("2_mun4x")]([SubResource("Resource_axans"), SubResource("Resource_itpa8")])
+right_description = "Force stay"

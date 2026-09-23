@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cq1lh4u8oi5fg"]
+
+[ext_resource type="Texture2D" uid="uid://cb7n8sak14ckj" path="res://Assets/Version_2/Card_images_V2_Squared/id_15.jpg" id="1_26osr"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_54d3a"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_4fqft"]
+
+[sub_resource type="Resource" id="Resource_2nfi0"]
+script = ExtResource("2_54d3a")
+value = 20
+
+[sub_resource type="Resource" id="Resource_hrpid"]
+script = ExtResource("2_54d3a")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_ks7fo"]
+script = ExtResource("2_54d3a")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_4fqft")
+id = 15
+name = "Cargo Ship Arrival"
+card_texture = ExtResource("1_26osr")
+context = "A long-awaited cargo vessel has entered orbit carrying vital supplies, luxury goods, and new rumors from Earth."
+cooldown = 10
+left_effects = Array[ExtResource("2_54d3a")]([SubResource("Resource_2nfi0"), SubResource("Resource_hrpid")])
+left_description = "Purchase supplies"
+right_effects = Array[ExtResource("2_54d3a")]([SubResource("Resource_ks7fo")])
+right_description = "Refuse trade"

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bxld1w3f7t665"]
+
+[ext_resource type="Texture2D" uid="uid://f22t7gr47sg1" path="res://Assets/CardsImages/spcae debries.png" id="1_prskh"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_har3s"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_au1hj"]
+
+[sub_resource type="Resource" id="Resource_ut7nj"]
+script = ExtResource("2_har3s")
+value = -5
+
+[sub_resource type="Resource" id="Resource_kamm1"]
+script = ExtResource("2_har3s")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_ue3as"]
+script = ExtResource("2_har3s")
+value = 5
+
+[sub_resource type="Resource" id="Resource_l2yf2"]
+script = ExtResource("2_har3s")
+target = 4
+value = 1
+
+[resource]
+script = ExtResource("3_au1hj")
+id = 38
+name = "Orbital Debries"
+card_texture = ExtResource("1_prskh")
+context = "A dense cloud of abandoned debris is drifting toward the station’s orbital infrastructure."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_har3s")]([SubResource("Resource_ut7nj"), SubResource("Resource_kamm1")])
+left_description = "Clear debris"
+right_effects = Array[ExtResource("2_har3s")]([SubResource("Resource_ue3as"), SubResource("Resource_l2yf2")])
+right_description = "Ignore threat"

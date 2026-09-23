@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://c62ybo83ul1lo"]
+
+[ext_resource type="Texture2D" uid="uid://ckhshylhkbkiv" path="res://Assets/Version_2/Card_images_V2_Squared/id_30.jpg" id="1_010o5"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_1ctni"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_t4tr1"]
+
+[sub_resource type="Resource" id="Resource_k6l4f"]
+script = ExtResource("2_1ctni")
+target = 1
+value = 10
+
+[sub_resource type="Resource" id="Resource_4a577"]
+script = ExtResource("2_1ctni")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_re8mg"]
+script = ExtResource("2_1ctni")
+target = 3
+value = 10
+
+[resource]
+script = ExtResource("3_t4tr1")
+id = 30
+name = "Human Enhancement Program"
+card_texture = ExtResource("1_010o5")
+context = "Geneticists propose modifying colonists to better survive the planet’s hostile environment."
+card_rarity = 3
+cooldown = 20
+left_effects = Array[ExtResource("2_1ctni")]([SubResource("Resource_k6l4f"), SubResource("Resource_4a577")])
+left_description = "Approve program"
+right_effects = Array[ExtResource("2_1ctni")]([SubResource("Resource_re8mg")])
+right_description = "Ban program"

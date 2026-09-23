@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://cyx6t3lh7vooe"]
+
+[ext_resource type="Texture2D" uid="uid://bx0ruca1jmb0o" path="res://Assets/CardsImages/Water2.png" id="1_57as6"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_8bimc"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_ea2po"]
+
+[sub_resource type="Resource" id="Resource_u6k2a"]
+script = ExtResource("2_8bimc")
+value = -5
+
+[sub_resource type="Resource" id="Resource_c60iv"]
+script = ExtResource("2_8bimc")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_uyp62"]
+script = ExtResource("2_8bimc")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_er0fm"]
+script = ExtResource("2_8bimc")
+value = 5
+
+[resource]
+script = ExtResource("3_ea2po")
+id = 5
+name = "Water Contamination"
+card_texture = ExtResource("1_57as6")
+context = "Trace contaminants have been discovered in the drinking water, and medical staff fear long-term exposure effects."
+cooldown = 12
+left_effects = Array[ExtResource("2_8bimc")]([SubResource("Resource_u6k2a"), SubResource("Resource_c60iv")])
+left_description = "Purify water"
+right_effects = Array[ExtResource("2_8bimc")]([SubResource("Resource_uyp62"), SubResource("Resource_er0fm")])
+right_description = "Ignore issue"

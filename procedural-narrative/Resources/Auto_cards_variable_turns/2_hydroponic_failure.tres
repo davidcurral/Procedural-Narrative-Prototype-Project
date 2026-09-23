@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://43uxyt0i04l3"]
+
+[ext_resource type="Texture2D" uid="uid://xdxo2s5p5kmh" path="res://Assets/CardsImages/sci-fi hidropony.jpg" id="1_5dkt5"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_4rcv3"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_f5f5c"]
+
+[sub_resource type="Resource" id="Resource_6yr6x"]
+script = ExtResource("2_4rcv3")
+value = -10
+
+[sub_resource type="Resource" id="Resource_bj278"]
+script = ExtResource("2_4rcv3")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_fp1km"]
+script = ExtResource("2_4rcv3")
+value = 5
+
+[sub_resource type="Resource" id="Resource_hscy2"]
+script = ExtResource("2_4rcv3")
+target = 3
+value = -10
+
+[resource]
+script = ExtResource("3_f5f5c")
+id = 2
+name = "Hydroponic Failure"
+card_texture = ExtResource("1_5dkt5")
+context = "A fungal infestation has crippled the hydroponic farms, threatening the colony’s primary food supply."
+cooldown = 15
+left_effects = Array[ExtResource("2_4rcv3")]([SubResource("Resource_6yr6x"), SubResource("Resource_bj278")])
+left_description = "Repair system"
+right_effects = Array[ExtResource("2_4rcv3")]([SubResource("Resource_fp1km"), SubResource("Resource_hscy2")])
+right_description = "Reduce food distribution"

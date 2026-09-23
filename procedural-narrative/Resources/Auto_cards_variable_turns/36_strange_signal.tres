@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b7un2igbj0kc7"]
+
+[ext_resource type="Texture2D" uid="uid://qtvsrjebxd65" path="res://Assets/CardsImages/planet view.png" id="1_5bmm3"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_dubqu"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_sodej"]
+
+[sub_resource type="Resource" id="Resource_0evgq"]
+script = ExtResource("2_dubqu")
+target = 1
+value = 2
+
+[sub_resource type="Resource" id="Resource_ovgqr"]
+script = ExtResource("2_dubqu")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_7x7df"]
+script = ExtResource("2_dubqu")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_6ngc5"]
+script = ExtResource("2_dubqu")
+target = 1
+value = -5
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("3_sodej")
+id = 36
+name = "Strange Signal"
+card_texture = ExtResource("1_5bmm3")
+context = "Long-range antennas have intercepted a repeating signal originating far beyond the colony perimeter."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_dubqu")]([SubResource("Resource_0evgq"), SubResource("Resource_ovgqr")])
+left_description = "Investigate signal"
+right_effects = Array[ExtResource("2_dubqu")]([SubResource("Resource_7x7df"), SubResource("Resource_6ngc5")])
+right_description = "Block signal"

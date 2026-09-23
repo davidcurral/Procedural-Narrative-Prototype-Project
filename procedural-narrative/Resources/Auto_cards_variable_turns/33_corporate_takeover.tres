@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://u84qp800a3nj"]
+
+[ext_resource type="Texture2D" uid="uid://bgn46uwdrijd7" path="res://Assets/Version_2/Card_images_V2_Squared/id_33.jpg" id="1_y8uv7"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_jwup1"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_kwsav"]
+
+[sub_resource type="Resource" id="Resource_cxhai"]
+script = ExtResource("2_jwup1")
+value = 30
+
+[sub_resource type="Resource" id="Resource_yphfu"]
+script = ExtResource("2_jwup1")
+target = 5
+value = 20
+
+[sub_resource type="Resource" id="Resource_rbjij"]
+script = ExtResource("2_jwup1")
+type = 2
+target = 6
+value = 3
+
+[sub_resource type="Resource" id="Resource_eckqq"]
+script = ExtResource("2_jwup1")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_kwsav")
+id = 33
+name = "Corporate Takeover"
+card_texture = ExtResource("1_y8uv7")
+context = "A powerful Earth corporation offers support in exchange for direct authority over the colony."
+available = false
+base_weight = 24.0
+arc = 3
+arc_progression = 3
+cooldown = 5
+left_effects = Array[ExtResource("2_jwup1")]([SubResource("Resource_cxhai"), SubResource("Resource_yphfu"), SubResource("Resource_rbjij")])
+left_description = "Allow control"
+right_effects = Array[ExtResource("2_jwup1")]([SubResource("Resource_eckqq"), SubResource("Resource_rbjij")])
+right_description = "Resist takeover"

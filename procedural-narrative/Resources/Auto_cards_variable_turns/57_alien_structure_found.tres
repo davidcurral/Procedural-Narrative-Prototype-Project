@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://etnm0rdtm0h7"]
+
+[ext_resource type="Texture2D" uid="uid://bfi45tyq7vc2g" path="res://Assets/Version_2/Card_images_V2_Squared/id_57.jpg" id="1_3p2jk"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_3x375"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_spxyw"]
+
+[sub_resource type="Resource" id="Resource_j1txs"]
+script = ExtResource("2_3x375")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_bal02"]
+script = ExtResource("2_3x375")
+value = -10
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[sub_resource type="Resource" id="Resource_bxp2q"]
+script = ExtResource("2_3x375")
+type = 2
+target = 6
+value = 1
+
+[sub_resource type="Resource" id="Resource_31703"]
+script = ExtResource("2_3x375")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_spxyw")
+id = 57
+name = "Alien Structure Found"
+card_texture = ExtResource("1_3p2jk")
+context = "Survey teams have uncovered colossal alien ruins buried beneath the desert sands."
+card_rarity = 2
+base_weight = 24.0
+arc = 2
+arc_progression = 1
+cooldown = 5
+left_effects = Array[ExtResource("2_3x375")]([SubResource("Resource_j1txs"), SubResource("Resource_bal02"), SubResource("Resource_bxp2q")])
+left_description = "Study ruins"
+right_effects = Array[ExtResource("2_3x375")]([SubResource("Resource_31703"), SubResource("Resource_bxp2q")])
+right_description = "Seal area"

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://1t5fqecawn48"]
+
+[ext_resource type="Texture2D" uid="uid://dt1vedyiyoacc" path="res://Assets/CardsImages/Control Room 3.jpeg" id="1_q6co4"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_joj0u"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_kg8h4"]
+
+[sub_resource type="Resource" id="Resource_7heou"]
+script = ExtResource("2_joj0u")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_4ufr7"]
+script = ExtResource("2_joj0u")
+target = 5
+value = 5
+
+[sub_resource type="Resource" id="Resource_yow74"]
+script = ExtResource("2_joj0u")
+target = 3
+value = 10
+
+[resource]
+script = ExtResource("3_kg8h4")
+id = 50
+name = "Surveillance Network"
+card_texture = ExtResource("1_q6co4")
+context = "The AI proposes a colony-wide monitoring system to improve efficiency and predict instability."
+card_rarity = 1
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 2
+cooldown = 10
+left_effects = Array[ExtResource("2_joj0u")]([SubResource("Resource_7heou"), SubResource("Resource_4ufr7")])
+left_description = "Install"
+right_effects = Array[ExtResource("2_joj0u")]([SubResource("Resource_yow74")])
+right_description = "Reject"

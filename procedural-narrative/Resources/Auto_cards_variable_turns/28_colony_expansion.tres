@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://bjqcmkrf80jj2"]
+
+[ext_resource type="Texture2D" uid="uid://csvw7s5qspis0" path="res://Assets/CardsImages/city5.png" id="1_wrw3d"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_63joh"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_rf2p7"]
+
+[sub_resource type="Resource" id="Resource_ffufi"]
+script = ExtResource("2_63joh")
+value = -10
+
+[sub_resource type="Resource" id="Resource_33qeh"]
+script = ExtResource("2_63joh")
+target = 3
+value = 10
+
+[sub_resource type="Resource" id="Resource_s6t8j"]
+script = ExtResource("2_63joh")
+value = 10
+
+[resource]
+script = ExtResource("3_rf2p7")
+id = 28
+name = "Colony Expansion"
+card_texture = ExtResource("1_wrw3d")
+context = "Construction crews are ready to expand the colony into a newly stabilized sector beyond the main dome."
+card_rarity = 1
+cooldown = 15
+left_effects = Array[ExtResource("2_63joh")]([SubResource("Resource_ffufi"), SubResource("Resource_33qeh")])
+left_description = "Expand colony"
+right_effects = Array[ExtResource("2_63joh")]([SubResource("Resource_s6t8j")])
+right_description = "Pause expansion"

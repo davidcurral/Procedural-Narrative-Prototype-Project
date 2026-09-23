@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://cvv66i70cqko5"]
+
+[ext_resource type="Texture2D" uid="uid://ce2y1snb4xgax" path="res://Assets/CardsImages/city4.png" id="1_jrp4c"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_erp3j"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_afvf6"]
+
+[sub_resource type="Resource" id="Resource_chfuv"]
+script = ExtResource("2_erp3j")
+value = -5
+
+[sub_resource type="Resource" id="Resource_wdkd6"]
+script = ExtResource("2_erp3j")
+target = 3
+value = 5
+
+[sub_resource type="Resource" id="Resource_vm6oo"]
+script = ExtResource("2_erp3j")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_ybrc8"]
+script = ExtResource("2_erp3j")
+target = 3
+value = -10
+
+[resource]
+script = ExtResource("3_afvf6")
+id = 22
+name = "Population Growth"
+card_texture = ExtResource("1_jrp4c")
+context = "Birth rates are rising across the colony, placing additional pressure on already strained resources."
+cooldown = 15
+left_effects = Array[ExtResource("2_erp3j")]([SubResource("Resource_chfuv"), SubResource("Resource_wdkd6")])
+left_description = "Expand housing"
+right_effects = Array[ExtResource("2_erp3j")]([SubResource("Resource_vm6oo"), SubResource("Resource_ybrc8")])
+right_description = "Limit population"

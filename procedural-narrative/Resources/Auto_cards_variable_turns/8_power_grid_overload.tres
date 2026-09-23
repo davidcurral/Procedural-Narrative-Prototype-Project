@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bescrvf4sfuob"]
+
+[ext_resource type="Texture2D" uid="uid://bsm2uds5hml7b" path="res://Assets/CardsImages/power grid.png" id="1_hisd5"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_tpcl7"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_8s5de"]
+
+[sub_resource type="Resource" id="Resource_rnika"]
+script = ExtResource("2_tpcl7")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_p5ukg"]
+script = ExtResource("2_tpcl7")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_tqdvb"]
+script = ExtResource("2_tpcl7")
+value = -10
+
+[sub_resource type="Resource" id="Resource_lxxc5"]
+script = ExtResource("2_tpcl7")
+target = 1
+value = 5
+
+[resource]
+script = ExtResource("3_8s5de")
+id = 8
+name = "Power Grid Overload"
+card_texture = ExtResource("1_hisd5")
+context = "Energy consumption has reached critical levels as more sectors compete for power during the freezing nights."
+card_rarity = 1
+cooldown = 12
+left_effects = Array[ExtResource("2_tpcl7")]([SubResource("Resource_rnika"), SubResource("Resource_p5ukg")])
+left_description = "Shut sectors down"
+right_effects = Array[ExtResource("2_tpcl7")]([SubResource("Resource_tqdvb"), SubResource("Resource_lxxc5")])
+right_description = "Upgrade grid"

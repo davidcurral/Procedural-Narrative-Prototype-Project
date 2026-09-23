@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://cr8dmx6j47b5h"]
+
+[ext_resource type="Texture2D" uid="uid://c148fn2ne4ybs" path="res://Assets/CardsImages/tanks.png" id="1_3g8qh"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_ynagh"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_mvs5c"]
+
+[sub_resource type="Resource" id="Resource_ektly"]
+script = ExtResource("2_ynagh")
+value = 10
+
+[sub_resource type="Resource" id="Resource_c6qw1"]
+script = ExtResource("2_ynagh")
+target = 3
+value = -15
+
+[sub_resource type="Resource" id="Resource_d5efj"]
+script = ExtResource("2_ynagh")
+value = -8
+
+[sub_resource type="Resource" id="Resource_krejy"]
+script = ExtResource("2_ynagh")
+target = 3
+value = 5
+
+[resource]
+script = ExtResource("3_mvs5c")
+id = 1
+name = "Oxygen Shortage"
+card_texture = ExtResource("1_3g8qh")
+context = "The colony’s oxygen reserves are falling faster than expected, and panic is beginning to spread through the lower sectors."
+cooldown = 12
+left_effects = Array[ExtResource("2_ynagh")]([SubResource("Resource_ektly"), SubResource("Resource_c6qw1")])
+left_description = "Ration oxygen"
+right_effects = Array[ExtResource("2_ynagh")]([SubResource("Resource_d5efj"), SubResource("Resource_krejy")])
+right_description = "Increase production"

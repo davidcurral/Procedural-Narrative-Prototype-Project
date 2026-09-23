@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cw7indihiorrj"]
+
+[ext_resource type="Texture2D" uid="uid://dlvnxg4nqcjjy" path="res://Assets/Version_2/Card_images_V2_Squared/id_61.jpg" id="1_bdvmp"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_dci0c"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_ii5g1"]
+
+[sub_resource type="Resource" id="Resource_lpwp6"]
+script = ExtResource("2_dci0c")
+type = 2
+target = 6
+
+[sub_resource type="Resource" id="Resource_adex3"]
+script = ExtResource("2_dci0c")
+target = 3
+value = 20
+
+[sub_resource type="Resource" id="Resource_g82sc"]
+script = ExtResource("2_dci0c")
+target = 2
+value = 10
+
+[resource]
+script = ExtResource("3_ii5g1")
+id = 61
+name = "Symbiosis Proposal"
+card_texture = ExtResource("1_bdvmp")
+context = "A newly discovered alien lifeform offers cooperation in exchange for access to the colony."
+card_rarity = 2
+available = false
+base_weight = 24.0
+arc = 2
+arc_progression = 5
+cooldown = 20
+left_effects = Array[ExtResource("2_dci0c")]([SubResource("Resource_lpwp6"), SubResource("Resource_adex3")])
+left_description = "Accept symbiosis"
+right_effects = Array[ExtResource("2_dci0c")]([SubResource("Resource_g82sc")])
+right_description = "Reject offer"

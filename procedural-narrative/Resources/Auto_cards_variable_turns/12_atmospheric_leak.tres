@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://dwk6tuy8c3rn5"]
+
+[ext_resource type="Texture2D" uid="uid://dj13n42o53b6w" path="res://Assets/CardsImages/oxygenleak.png" id="1_3r03s"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_vhymo"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_c0smk"]
+
+[sub_resource type="Resource" id="Resource_0aaky"]
+script = ExtResource("2_vhymo")
+target = 2
+value = 10
+
+[sub_resource type="Resource" id="Resource_lhnra"]
+script = ExtResource("2_vhymo")
+value = -5
+
+[sub_resource type="Resource" id="Resource_r66sk"]
+script = ExtResource("2_vhymo")
+value = 5
+
+[sub_resource type="Resource" id="Resource_e7ksb"]
+script = ExtResource("2_vhymo")
+target = 4
+value = 1
+
+[resource]
+script = ExtResource("3_c0smk")
+id = 12
+name = "Atmospheric Leak"
+card_texture = ExtResource("1_3r03s")
+context = "Sensors have detected a slow air leak somewhere within the habitat ring, but its exact location remains unknown."
+cooldown = 10
+left_effects = Array[ExtResource("2_vhymo")]([SubResource("Resource_0aaky"), SubResource("Resource_lhnra")])
+left_description = "Seal breach"
+right_effects = Array[ExtResource("2_vhymo")]([SubResource("Resource_r66sk"), SubResource("Resource_e7ksb")])
+right_description = "Delay repair"

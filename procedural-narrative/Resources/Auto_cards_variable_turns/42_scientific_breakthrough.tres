@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=7 format=3 uid="uid://cwm7yq023f7rq"]
+
+[ext_resource type="Texture2D" uid="uid://djlh54un53068" path="res://Assets/Version_2/Card_images_V2_Squared/id_42.jpg" id="1_3t52i"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_ttej0"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_db2bs"]
+
+[sub_resource type="Resource" id="Resource_tlsx4"]
+script = ExtResource("2_ttej0")
+target = 1
+value = 10
+
+[sub_resource type="Resource" id="Resource_soh7p"]
+script = ExtResource("2_ttej0")
+value = -8
+
+[sub_resource type="Resource" id="Resource_sqofs"]
+script = ExtResource("2_ttej0")
+target = 2
+value = 5
+
+[resource]
+script = ExtResource("3_db2bs")
+id = 42
+name = "Scientific Breakthrough"
+card_texture = ExtResource("1_3t52i")
+context = "Researchers claim to have made a revolutionary discovery, though its long-term risks are unknown."
+card_rarity = 1
+cooldown = 17
+left_effects = Array[ExtResource("2_ttej0")]([SubResource("Resource_tlsx4"), SubResource("Resource_soh7p")])
+left_description = "Fund research"
+right_effects = Array[ExtResource("2_ttej0")]([SubResource("Resource_sqofs")])
+right_description = "Reject proposal"

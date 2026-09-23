@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://b1an8tw7cw5x3"]
+
+[ext_resource type="Texture2D" uid="uid://bh6fpp5kg77id" path="res://Assets/CardsImages/hospital.png" id="1_3cnxn"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_386hx"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_nqadg"]
+
+[sub_resource type="Resource" id="Resource_w0mji"]
+script = ExtResource("2_386hx")
+target = 1
+value = 5
+
+[sub_resource type="Resource" id="Resource_x0wnx"]
+script = ExtResource("2_386hx")
+value = -5
+
+[sub_resource type="Resource" id="Resource_ha15n"]
+script = ExtResource("2_386hx")
+value = 10
+
+[sub_resource type="Resource" id="Resource_fuqmu"]
+script = ExtResource("2_386hx")
+target = 3
+value = -5
+
+[resource]
+script = ExtResource("3_nqadg")
+id = 26
+name = "Education Initiative"
+card_texture = ExtResource("1_3cnxn")
+context = "Teachers and scientists propose building dedicated schools to prepare the colony’s next generation."
+cooldown = 12
+left_effects = Array[ExtResource("2_386hx")]([SubResource("Resource_w0mji"), SubResource("Resource_x0wnx")])
+left_description = "Fund education"
+right_effects = Array[ExtResource("2_386hx")]([SubResource("Resource_ha15n"), SubResource("Resource_fuqmu")])
+right_description = "Focus on labor"

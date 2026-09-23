@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=8 format=3 uid="uid://bv6ufw53um5fj"]
+
+[ext_resource type="Texture2D" uid="uid://qtvsrjebxd65" path="res://Assets/CardsImages/planet view.png" id="1_oaru1"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_wmues"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_fpf8k"]
+
+[sub_resource type="Resource" id="Resource_phx0b"]
+script = ExtResource("2_wmues")
+type = 1
+target = 6
+arc = 2
+
+[sub_resource type="Resource" id="Resource_irbfj"]
+script = ExtResource("2_wmues")
+target = 2
+value = 20
+
+[sub_resource type="Resource" id="Resource_n5xds"]
+script = ExtResource("2_wmues")
+value = -30
+
+[sub_resource type="Resource" id="Resource_7o5of"]
+script = ExtResource("2_wmues")
+type = 1
+target = 6
+arc = 2
+metadata/_custom_type_script = "uid://1wjhtkh2chtx"
+
+[resource]
+script = ExtResource("3_fpf8k")
+id = 62
+name = "Planet Awakens"
+card_texture = ExtResource("1_oaru1")
+context = "The planet itself appears to be reacting to humanity’s growing presence in ways no one understands."
+card_rarity = 3
+available = false
+base_weight = 24.0
+arc = 2
+arc_progression = 6
+cooldown = 20
+left_effects = Array[ExtResource("2_wmues")]([SubResource("Resource_phx0b")])
+left_description = "Evacuate planet"
+right_effects = Array[ExtResource("2_wmues")]([SubResource("Resource_irbfj"), SubResource("Resource_n5xds"), SubResource("Resource_7o5of")])
+right_description = "Fight planet"

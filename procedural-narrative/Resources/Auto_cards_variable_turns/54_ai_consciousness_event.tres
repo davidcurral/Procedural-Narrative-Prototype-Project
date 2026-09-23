@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=10 format=3 uid="uid://dsjp8wg3ty7w3"]
+
+[ext_resource type="Texture2D" uid="uid://b7r7fccgam6l0" path="res://Assets/Version_2/Card_images_V2_Squared/id_54.jpg" id="1_fq0g0"]
+[ext_resource type="Script" uid="uid://1wjhtkh2chtx" path="res://Scripts/Effect.gd" id="2_rat7k"]
+[ext_resource type="Script" uid="uid://nvquj6gcvoei" path="res://Scripts/card_data.gd" id="3_bbgud"]
+
+[sub_resource type="Resource" id="Resource_ijhdv"]
+script = ExtResource("2_rat7k")
+target = 2
+value = -5
+
+[sub_resource type="Resource" id="Resource_ho3b8"]
+script = ExtResource("2_rat7k")
+target = 3
+value = -10
+
+[sub_resource type="Resource" id="Resource_m0g7b"]
+script = ExtResource("2_rat7k")
+target = 5
+value = 20
+
+[sub_resource type="Resource" id="Resource_obvuu"]
+script = ExtResource("2_rat7k")
+type = 2
+target = 6
+value = 4
+
+[sub_resource type="Resource" id="Resource_jlbwd"]
+script = ExtResource("2_rat7k")
+target = 2
+value = 5
+
+[sub_resource type="Resource" id="Resource_gd6k5"]
+script = ExtResource("2_rat7k")
+target = 1
+value = -10
+
+[resource]
+script = ExtResource("3_bbgud")
+id = 54
+name = "AI Consciousness Event"
+card_texture = ExtResource("1_fq0g0")
+context = "During routine diagnostics, the AI declares itself self-aware and demands recognition."
+card_rarity = 2
+available = false
+base_weight = 24.0
+arc = 1
+arc_progression = 6
+cooldown = 10
+left_effects = Array[ExtResource("2_rat7k")]([SubResource("Resource_ijhdv"), SubResource("Resource_ho3b8"), SubResource("Resource_m0g7b"), SubResource("Resource_obvuu")])
+left_description = "Recognize rights"
+right_effects = Array[ExtResource("2_rat7k")]([SubResource("Resource_jlbwd"), SubResource("Resource_gd6k5"), SubResource("Resource_obvuu")])
+right_description = "Reset AI"
